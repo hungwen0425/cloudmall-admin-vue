@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-switch v-model="draggable" active-text="开启拖拽" inactive-text="关闭拖拽"></el-switch>
+    <el-switch v-model="draggable" active-text="開启拖拽" inactive-text="关闭拖拽"></el-switch>
     <el-button v-if="draggable" type="success" @click="batchSave">批量保存</el-button>
     <el-button type="danger" @click="batchDelete">批量删除</el-button>
     <el-tree
@@ -38,27 +38,27 @@
         <el-form-item label="圖標">
           <el-input v-model="category.icon" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="计量單位">
+        <el-form-item label="計量單位">
           <el-input v-model="category.productUnit" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="submitData">确 定</el-button>
+        <el-button type="primary" @click="submitData">確 定</el-button>
       </div>
     </el-dialog>
   </div>
 </template>
 
 <script>
-//这里可以导入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
-//例如：import 《組件名稱》 from '《組件路径》';
+//這裡可以導入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
+//例如：import 《組件名稱》 from '《組件路徑》';
 
 export default {
-  //import引入的組件需要注入到對象中才能使用
+  //import引入的組件需要注入到物件中才能使用
   components: {},
   data() {
-    //这里存放数据
+    //這裡存放資料
     return {
       pCid: [],
       draggable: false,
@@ -85,9 +85,9 @@ export default {
       }
     };
   },
-  //监听屬性 類似于data概念
+  //監听屬性 類似於data概念
   computed: {},
-  //监控data中的数据变化
+  //監控data中的資料變化
   watch: {},
   //方法集合
   methods: {
@@ -119,8 +119,8 @@ export default {
         return { catIds, catNames };
       })();
 
-      this.$confirm(`确定删除[${catNames}]菜單吗?`, "提示", {
-        confirmButtonText: "确定",
+      this.$confirm(`確定删除[${catNames}]菜單吗?`, "提示", {
+        confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"
       })
@@ -139,7 +139,7 @@ export default {
               this.getMenus();
               this.expandedKey = [deleteNodes[0].parentCid];
             } else {
-              //显示失败信息
+              //显示失败資料
               this.$message.error(data.msg);
             }
           });
@@ -163,7 +163,7 @@ export default {
         });
         //刷新出新的菜單
         this.getMenus();
-        //設定需要默認展开的菜單
+        //設定需要默認展開的菜單
         this.expandedKey = this.pCid;
         this.updateNodes = [];
         this.maxLevel = 0;
@@ -172,7 +172,7 @@ export default {
     },
     handleDrop(draggingNode, dropNode, dropType, ev) {
       console.log("handleDrop: ", draggingNode, dropNode, dropType);
-      //1、当前节点最新的父节点id
+      //1、當前节点最新的父节点id
       let pCid = 0;
       let siblings = null;
       if (dropType == "before" || dropType == "after") {
@@ -187,13 +187,13 @@ export default {
       }
       this.pCid.push(pCid);
 
-      //2、当前拖拽节点的最新顺序，
+      //2、當前拖拽节点的最新顺序，
       for (let i = 0; i < siblings.length; i++) {
         if (siblings[i].data.catId == draggingNode.data.catId) {
-          //如果遍歷的是当前正在拖拽的节点
+          //如果遍歷的是當前正在拖拽的节点
           let catLevel = draggingNode.level;
           if (siblings[i].level != draggingNode.level) {
-            //当前节点的层级发生变化
+            //當前节点的层级發生變化
             catLevel = siblings[i].level;
             //修改他子节点的层级
             this.updateChildNodeLevel(siblings[i]);
@@ -209,7 +209,7 @@ export default {
         }
       }
 
-      //3、当前拖拽节点的最新层级
+      //3、當前拖拽节点的最新层级
       console.log("updateNodes", this.updateNodes);
     },
     updateChildNodeLevel(node) {
@@ -225,9 +225,9 @@ export default {
       }
     },
     allowDrop(draggingNode, dropNode, type) {
-      //1、被拖动的当前节点以及所在的父节点总层数不能大于3
+      //1、被拖動的當前节点以及所在的父节点總层數不能大于3
 
-      //1）、被拖动的当前节点总层数
+      //1）、被拖動的當前节点總层數
       console.log(
         "allowDrop:",
         draggingNode.data.name,
@@ -237,7 +237,7 @@ export default {
       //
       this.countNodeLevel(draggingNode);
       console.log(this.maxLevel);
-      //当前正在拖动的节点+父节点所在的深度不大于3即可
+      //當前正在拖動的节点+父节点所在的深度不大于3即可
       let deep =
         this.maxLevel == 0
           ? 1
@@ -277,12 +277,12 @@ export default {
       this.dialogType = "edit";
       this.title = "编辑分類";
 
-      //為了严谨从数据库获取值(有可能是 10 分钟前的页面,其他人已经更改了)
+      //為了严谨从資料库取得值(有可能是 10 分钟前的頁面,其他人已经更改了)
       this.$http({
         url: this.$http.adornUrl(`/product/category/info/${data.catId}`),
         method: "get"
       }).then(({ data }) => {
-        //处理 data 数据
+        //處理 data 資料
         this.category.name = data.data.name;
         this.category.catId = data.data.catId;
         this.category.icon = data.data.icon;
@@ -308,7 +308,7 @@ export default {
         this.dialogVisible = false;
         //刷新出新的菜單
         this.getMenus();
-        //設定需要默認展开的菜單
+        //設定需要默認展開的菜單
         this.expandedKey = [this.category.parentCid];
       });
     },
@@ -317,7 +317,7 @@ export default {
       this.dialogType = "add";
       this.title = "新增分類";
 
-      //赋值
+      //賦值
       this.category.parentCid = data.catId;
       this.category.catLevel = data.catLevel * 1 + 1;
       this.category.catId = null;
@@ -344,14 +344,14 @@ export default {
           this.getMenus();
           this.expandedKey = [this.category.parentCid];
         } else {
-          //显示失败信息
+          //显示失败資料
           this.$message.error(data.msg);
         }
       });
     },
     remove(node, data) {
-      this.$confirm(`确定删除[${data.name}]菜單吗?`, "提示", {
-        confirmButtonText: "确定",
+      this.$confirm(`確定删除[${data.name}]菜單吗?`, "提示", {
+        confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"
       })
@@ -382,19 +382,19 @@ export default {
         });
     }
   },
-  //生命周期 - 创建完成（可以访问当前this实例）
+  //生命週期 - 創建完成（可以訪問當前this實例）
   created() {
     this.getMenus();
   },
-  //生命周期 - 挂载完成（可以访问DOM元素）
+  //生命週期 - 掛載完成（可以訪問DOM元素）
   mounted() {},
-  beforeCreate() {}, //生命周期 - 创建之前
-  beforeMount() {}, //生命周期 - 挂载之前
-  beforeUpdate() {}, //生命周期 - 更新之前
-  updated() {}, //生命周期 - 更新之后
-  beforeDestroy() {}, //生命周期 - 销毁之前
-  destroyed() {}, //生命周期 - 销毁完成
-  activated() {} //如果页面有keep-alive缓存功能，这個函数會触发
+  beforeCreate() {}, //生命週期 - 創建之前
+  beforeMount() {}, //生命週期 - 掛載之前
+  beforeUpdate() {}, //生命週期 - 更新之前
+  updated() {}, //生命週期 - 更新之後
+  beforeDestroy() {}, //生命週期 - 銷毁之前
+  destroyed() {}, //生命週期 - 銷毁完成
+  activated() {} //如果頁面有keep-alive緩存功能，這個函數會觸發
 };
 </script>
 <style scoped>

@@ -30,7 +30,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -56,7 +56,7 @@ export default {
           { required: true, message: "角色名稱不能為空", trigger: "blur" }
         ]
       },
-      tempKey: -666666 // 临时key, 用于解决tree半选中状态项不能传给后台接口问题. # 待優化
+      tempKey: -666666 // 临時key, 用于解决tree半選中状泰項不能傳给後台接口問题. # 待優化
     };
   },
   methods: {

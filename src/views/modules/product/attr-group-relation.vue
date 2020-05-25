@@ -5,7 +5,7 @@
         <div>
           <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
             <el-form-item>
-              <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
+              <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
             </el-form-item>
             <el-form-item>
               <el-button @click="getDataList()">查询</el-button>
@@ -22,7 +22,7 @@
             <el-table-column prop="attrId" header-align="center" align="center" label="屬性id"></el-table-column>
             <el-table-column prop="attrName" header-align="center" align="center" label="屬性名"></el-table-column>
             <el-table-column prop="icon" header-align="center" align="center" label="屬性圖標"></el-table-column>
-            <el-table-column prop="valueSelect" header-align="center" align="center" label="可选值列表"></el-table-column>
+            <el-table-column prop="valueSelect" header-align="center" align="center" label="可選值列表"></el-table-column>
           </el-table>
           <el-pagination
             @size-change="sizeChangeHandle"
@@ -36,12 +36,12 @@
         </div>
         <div slot="footer" class="dialog-footer">
           <el-button @click="innerVisible = false">取 消</el-button>
-          <el-button type="primary" @click="submitAddRealtion">确認新增</el-button>
+          <el-button type="primary" @click="submitAddRealtion">確認新增</el-button>
         </div>
       </el-dialog>
       <el-row>
         <el-col :span="24">
-          <el-button type="primary" @click="addRelation">新建关联</el-button>
+          <el-button type="primary" @click="addRelation">新建关聯</el-button>
           <el-button
             type="danger"
             @click="batchDeleteRelation"
@@ -57,7 +57,7 @@
             <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
             <el-table-column prop="attrId" label="#"></el-table-column>
             <el-table-column prop="attrName" label="屬性名"></el-table-column>
-            <el-table-column prop="valueSelect" label="可选值">
+            <el-table-column prop="valueSelect" label="可選值">
               <template slot-scope="scope">
                 <el-tooltip placement="top">
                   <div slot="content">
@@ -83,15 +83,15 @@
 </template>
 
 <script>
-//这里可以导入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
-//例如：import 《組件名稱》 from '《組件路径》';
+//這裡可以導入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
+//例如：import 《組件名稱》 from '《組件路徑》';
 
 export default {
-  //import引入的組件需要注入到對象中才能使用
+  //import引入的組件需要注入到物件中才能使用
   components: {},
   props: {},
   data() {
-    //这里存放数据
+    //這裡存放資料
     return {
       attrGroupId: 0,
       visible: false,
@@ -109,9 +109,9 @@ export default {
       innerdataListSelections: []
     };
   },
-  //计算屬性 類似于data概念
+  //計算屬性 類似於data概念
   computed: {},
-  //监控data中的数据变化
+  //監控data中的資料變化
   watch: {},
   //方法集合
   methods: {
@@ -143,7 +143,7 @@ export default {
         }
       });
     },
-    //移除关联
+    //移除关聯
     relationRemove(attrId) {
       let data = [];
       data.push({ attrId, attrGroupId: this.attrGroupId });
@@ -162,8 +162,8 @@ export default {
     },
     submitAddRealtion() {
       this.innerVisible = false;
-      //准备数据
-      console.log("准备新增的数据", this.innerdataListSelections);
+      //准备資料
+      console.log("准备新增的資料", this.innerdataListSelections);
       if (this.innerdataListSelections.length > 0) {
         let postData = [];
         this.innerdataListSelections.forEach(item => {
@@ -175,7 +175,7 @@ export default {
           data: this.$http.adornData(postData, false)
         }).then(({ data }) => {
           if (data.code == 0) {
-            this.$message({ type: "success", message: "新增关联成功" });
+            this.$message({ type: "success", message: "新增关聯成功" });
           }
           this.$emit("refreshData");
           this.init(this.attrGroupId);
@@ -199,7 +199,7 @@ export default {
     dialogClose() {},
 
     //========
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -223,13 +223,13 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每页数
+    // 每頁數
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 当前页
+    // 當前頁
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();

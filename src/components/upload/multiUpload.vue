@@ -25,9 +25,9 @@ import { getUUID } from "@/utils";
 export default {
   name: "multiUpload",
   props: {
-    //片屬性数組
+    //片屬性陣列
     value: Array,
-    //最大上传圖片数量
+    //最大上傳圖片數量
     maxCount: {
       type: Number,
       default: 30
@@ -107,7 +107,7 @@ export default {
     },
     handleExceed(files, fileList) {
       this.$message({
-        message: "最多只能上传" + this.maxCount + "张圖片",
+        message: "最多只能上傳" + this.maxCount + "张圖片",
         type: "warning",
         duration: 1000
       });

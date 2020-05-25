@@ -27,13 +27,13 @@
       <el-form-item label="所屬分類" prop="catelogId">
         <!-- <el-input v-model="dataForm.catelogId" placeholder="所屬分類id"></el-input> @change="handleChange" -->
         <!-- <el-cascader filterable placeholder="试试搜索：手机" v-model="catelogPath" :options="categorys"  :props="props"></el-cascader> -->
-        <!-- :catelogPath="catelogPath"自定義绑定的屬性，可以给子組件传值 -->
+        <!-- :catelogPath="catelogPath"自定義绑定的屬性，可以给子組件傳值 -->
         <category-cascader :catelogPath.sync="catelogPath"></category-cascader>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -107,7 +107,7 @@ export default {
               this.dataForm.descript = data.attrGroup.descript;
               this.dataForm.icon = data.attrGroup.icon;
               this.dataForm.catelogId = data.attrGroup.catelogId;
-              //查出catelogId的完整路径
+              //查出catelogId的完整路徑
               this.catelogPath = data.attrGroup.catelogPath;
             }
           });

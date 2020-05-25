@@ -11,8 +11,8 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="专题名字" prop="name">
-        <el-input v-model="dataForm.name" placeholder="专题名字"></el-input>
+      <el-form-item label="专题名稱" prop="name">
+        <el-input v-model="dataForm.name" placeholder="专题名稱"></el-input>
       </el-form-item>
       <el-form-item label="专题標题" prop="title">
         <el-input v-model="dataForm.title" placeholder="专题標题"></el-input>
@@ -20,11 +20,11 @@
       <el-form-item label="专题副標题" prop="subTitle">
         <el-input v-model="dataForm.subTitle" placeholder="专题副標题"></el-input>
       </el-form-item>
-      <el-form-item label="显示状态" prop="status">
+      <el-form-item label="显示状泰" prop="status">
         <el-switch v-model="dataForm.status" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
       </el-form-item>
-      <el-form-item label="详情连接" prop="url">
-        <el-input v-model="dataForm.url" placeholder="详情连接"></el-input>
+      <el-form-item label="詳情连接" prop="url">
+        <el-input v-model="dataForm.url" placeholder="詳情连接"></el-input>
       </el-form-item>
       <el-form-item label="排序" prop="sort">
         <el-input v-model="dataForm.sort" placeholder="排序"></el-input>
@@ -35,7 +35,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -59,7 +59,7 @@ export default {
       },
       dataRule: {
         name: [
-          { required: true, message: "专题名字不能為空", trigger: "blur" }
+          { required: true, message: "专题名稱不能為空", trigger: "blur" }
         ],
         title: [
           { required: true, message: "专题標题不能為空", trigger: "blur" }
@@ -68,9 +68,9 @@ export default {
           { required: true, message: "专题副標题不能為空", trigger: "blur" }
         ],
         status: [
-          { required: true, message: "显示状态不能為空", trigger: "blur" }
+          { required: true, message: "显示状泰不能為空", trigger: "blur" }
         ],
-        url: [{ required: true, message: "详情连接不能為空", trigger: "blur" }],
+        url: [{ required: true, message: "詳情连接不能為空", trigger: "blur" }],
         sort: [{ required: true, message: "排序不能為空", trigger: "blur" }],
         img: [
           { required: true, message: "专题圖片地址不能為空", trigger: "blur" }

@@ -86,7 +86,7 @@
           <el-col :span="2" class="icon-list__tips">
             <el-tooltip placement="top" effect="light">
               <div slot="content">
-                全站推荐使用SVG Sprite, 详细請参考:
+                全站推荐使用SVG Sprite, 詳细請参考:
                 <a
                   href="//github.com/daxiongYang/renren-fast-vue/blob/master/src/icons/index.js"
                   target="_blank"
@@ -100,7 +100,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -192,18 +192,18 @@ export default {
           }
         });
     },
-    // 菜單树选中
+    // 菜單树選中
     menuListTreeCurrentChangeHandle(data, node) {
       this.dataForm.parentId = data.menuId;
       this.dataForm.parentName = data.name;
     },
-    // 菜單树設定当前选中节点
+    // 菜單树設定當前選中节点
     menuListTreeSetCurrentNode() {
       this.$refs.menuListTree.setCurrentKey(this.dataForm.parentId);
       this.dataForm.parentName = (this.$refs.menuListTree.getCurrentNode() ||
         {})["name"];
     },
-    // 圖標选中
+    // 圖標選中
     iconActiveHandle(iconName) {
       this.dataForm.icon = iconName;
     },

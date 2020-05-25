@@ -200,24 +200,24 @@
     //,'paragraph':{'p':'', 'h1':'', 'h2':'', 'h3':'', 'h4':'', 'h5':'', 'h6':''}
 
     //rowspacingtop
-    //段間距 值和顯示的名字相同
+    //段間距 值和顯示的名稱相同
     //,'rowspacingtop':['5', '10', '15', '20', '25']
 
     //rowspacingBottom
-    //段間距 值和顯示的名字相同
+    //段間距 值和顯示的名稱相同
     //,'rowspacingbottom':['5', '10', '15', '20', '25']
 
     //lineheight
-    //行内間距 值和顯示的名字相同
+    //行内間距 值和顯示的名稱相同
     //,'lineheight':['1', '1.5','1.75','2', '3', '4', '5']
 
     //customstyle
     //自定義樣式，不支持國际化，此處設定值即可最後顯示值
-    //block的元素是依据設定段落的邏輯設定的，inline的元素依据BIU的邏輯設定
+    //block的元素是依據設定段落的邏輯設定的，inline的元素依據BIU的邏輯設定
     //尽量使用一些常用的標簽
     //参數说明
-    //tag 使用的標簽名字
-    //label 顯示的名字也是用來標识不同類型的標识符，注意這個值每個要不同，
+    //tag 使用的標簽名稱
+    //label 顯示的名稱也是用來標识不同類型的標识符，注意這個值每個要不同，
     //style 添加的樣式
     //每一個物件就是一個自定義的樣式
     //,'customstyle':[
@@ -313,7 +313,7 @@
     //    clearFontFamily: false,         //去掉所有的内嵌字體，使用編輯器默認的字體
     //    removeEmptyNode: false,         // 去掉空節點
     //    //可以去掉的標簽
-    //    removeTagNames: {標簽名字:1},
+    //    removeTagNames: {標簽名稱:1},
     //    indent: false,                  // 行首縮進
     //    indentValue : '2em',            //行首縮進的大小
     //    bdc2sb: false,

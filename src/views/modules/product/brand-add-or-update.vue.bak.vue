@@ -21,8 +21,8 @@
       <el-form-item label="介绍" prop="descript">
         <el-input v-model="dataForm.descript" placeholder="介绍"></el-input>
       </el-form-item>
-      <el-form-item label="显示状态" prop="showStatus">
-        <!-- <el-input v-model="dataForm.showStatus" placeholder="显示状态"></el-input> -->
+      <el-form-item label="显示状泰" prop="showStatus">
+        <!-- <el-input v-model="dataForm.showStatus" placeholder="显示状泰"></el-input> -->
         <el-switch
           v-model="dataForm.showStatus"
           active-color="#13ce66"
@@ -32,8 +32,8 @@
           @change="updateBrandStatus(scope.row)"
         ></el-switch>
       </el-form-item>
-      <el-form-item label="检索首字母" prop="firstLetter">
-        <el-input v-model="dataForm.firstLetter" placeholder="检索首字母"></el-input>
+      <el-form-item label="檢索首字母" prop="firstLetter">
+        <el-input v-model="dataForm.firstLetter" placeholder="檢索首字母"></el-input>
       </el-form-item>
       <el-form-item label="排序" prop="sort">
         <el-input v-model="dataForm.sort" placeholder="排序"></el-input>
@@ -41,7 +41,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -73,7 +73,7 @@ export default {
         showStatus: [
           {
             required: true,
-            message: "显示状态[0-不显示；1-显示]不能為空",
+            message: "显示状泰[0-不显示；1-显示]不能為空",
             trigger: "blur"
           }
         ],
@@ -81,9 +81,9 @@ export default {
           {
             validator: (rule, value, callback) => {
               if (value == "") {
-                callback(new Error("首字母必须填写"));
+                callback(new Error("首字母必須填寫"));
               } else if (!/^[a-zA-Z]$/.test(value)) {
-                callback(new Error("首字母必须a-z或者A-Z之间"));
+                callback(new Error("首字母必須a-z或者A-Z之間"));
               } else {
                 callback();
               }
@@ -95,9 +95,9 @@ export default {
           {
             validator: (rule, value, callback) => {
               if (value == "") {
-                callback(new Error("排序字段必须填写"));
+                callback(new Error("排序字段必須填寫"));
               } else if (!Number.isInteger(value) || value < 0) {
-                callback(new Error("排序必须是一個大于等于0的整数"));
+                callback(new Error("排序必須是一個大于等于0的整數"));
               } else {
                 callback();
               }

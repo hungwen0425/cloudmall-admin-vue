@@ -20,8 +20,8 @@
       <el-form-item label="订單编号" prop="orderSn">
         <el-input v-model="dataForm.orderSn" placeholder="订單编号"></el-input>
       </el-form-item>
-      <el-form-item label="申請时间" prop="createTime">
-        <el-input v-model="dataForm.createTime" placeholder="申請时间"></el-input>
+      <el-form-item label="申請時間" prop="createTime">
+        <el-input v-model="dataForm.createTime" placeholder="申請時間"></el-input>
       </el-form-item>
       <el-form-item label="會員用户名" prop="memberUsername">
         <el-input v-model="dataForm.memberUsername" placeholder="會員用户名"></el-input>
@@ -35,11 +35,11 @@
       <el-form-item label="退货人电话" prop="returnPhone">
         <el-input v-model="dataForm.returnPhone" placeholder="退货人电话"></el-input>
       </el-form-item>
-      <el-form-item label="申請状态[0->待处理；1->退货中；2->已完成；3->已拒绝]" prop="status">
-        <el-input v-model="dataForm.status" placeholder="申請状态[0->待处理；1->退货中；2->已完成；3->已拒绝]"></el-input>
+      <el-form-item label="申請状泰[0->待處理；1->退货中；2->已完成；3->已拒绝]" prop="status">
+        <el-input v-model="dataForm.status" placeholder="申請状泰[0->待處理；1->退货中；2->已完成；3->已拒绝]"></el-input>
       </el-form-item>
-      <el-form-item label="处理时间" prop="handleTime">
-        <el-input v-model="dataForm.handleTime" placeholder="处理时间"></el-input>
+      <el-form-item label="處理時間" prop="handleTime">
+        <el-input v-model="dataForm.handleTime" placeholder="處理時間"></el-input>
       </el-form-item>
       <el-form-item label="商品圖片" prop="skuImg">
         <el-input v-model="dataForm.skuImg" placeholder="商品圖片"></el-input>
@@ -53,14 +53,14 @@
       <el-form-item label="商品銷售屬性(JSON)" prop="skuAttrsVals">
         <el-input v-model="dataForm.skuAttrsVals" placeholder="商品銷售屬性(JSON)"></el-input>
       </el-form-item>
-      <el-form-item label="退货数量" prop="skuCount">
-        <el-input v-model="dataForm.skuCount" placeholder="退货数量"></el-input>
+      <el-form-item label="退货數量" prop="skuCount">
+        <el-input v-model="dataForm.skuCount" placeholder="退货數量"></el-input>
       </el-form-item>
       <el-form-item label="商品單價" prop="skuPrice">
         <el-input v-model="dataForm.skuPrice" placeholder="商品單價"></el-input>
       </el-form-item>
-      <el-form-item label="商品实际支付單價" prop="skuRealPrice">
-        <el-input v-model="dataForm.skuRealPrice" placeholder="商品实际支付單價"></el-input>
+      <el-form-item label="商品實际支付單價" prop="skuRealPrice">
+        <el-input v-model="dataForm.skuRealPrice" placeholder="商品實际支付單價"></el-input>
       </el-form-item>
       <el-form-item label="原因" prop="reason">
         <el-input v-model="dataForm.reason" placeholder="原因"></el-input>
@@ -68,20 +68,20 @@
       <el-form-item label="描述" prop="description述">
         <el-input v-model="dataForm.description述" placeholder="描述"></el-input>
       </el-form-item>
-      <el-form-item label="凭证圖片，以逗号隔开" prop="descPics">
-        <el-input v-model="dataForm.descPics" placeholder="凭证圖片，以逗号隔开"></el-input>
+      <el-form-item label="凭证圖片，以逗号隔開" prop="descPics">
+        <el-input v-model="dataForm.descPics" placeholder="凭证圖片，以逗号隔開"></el-input>
       </el-form-item>
-      <el-form-item label="处理备注" prop="handleNote">
-        <el-input v-model="dataForm.handleNote" placeholder="处理备注"></el-input>
+      <el-form-item label="處理备注" prop="handleNote">
+        <el-input v-model="dataForm.handleNote" placeholder="處理备注"></el-input>
       </el-form-item>
-      <el-form-item label="处理人員" prop="handleMan">
-        <el-input v-model="dataForm.handleMan" placeholder="处理人員"></el-input>
+      <el-form-item label="處理人員" prop="handleMan">
+        <el-input v-model="dataForm.handleMan" placeholder="處理人員"></el-input>
       </el-form-item>
       <el-form-item label="收货人" prop="receiveMan">
         <el-input v-model="dataForm.receiveMan" placeholder="收货人"></el-input>
       </el-form-item>
-      <el-form-item label="收货时间" prop="receiveTime">
-        <el-input v-model="dataForm.receiveTime" placeholder="收货时间"></el-input>
+      <el-form-item label="收货時間" prop="receiveTime">
+        <el-input v-model="dataForm.receiveTime" placeholder="收货時間"></el-input>
       </el-form-item>
       <el-form-item label="收货备注" prop="receiveNote">
         <el-input v-model="dataForm.receiveNote" placeholder="收货备注"></el-input>
@@ -95,7 +95,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -146,7 +146,7 @@ export default {
           { required: true, message: "订單编号不能為空", trigger: "blur" }
         ],
         createTime: [
-          { required: true, message: "申請时间不能為空", trigger: "blur" }
+          { required: true, message: "申請時間不能為空", trigger: "blur" }
         ],
         memberUsername: [
           { required: true, message: "會員用户名不能為空", trigger: "blur" }
@@ -164,12 +164,12 @@ export default {
           {
             required: true,
             message:
-              "申請状态[0->待处理；1->退货中；2->已完成；3->已拒绝]不能為空",
+              "申請状泰[0->待處理；1->退货中；2->已完成；3->已拒绝]不能為空",
             trigger: "blur"
           }
         ],
         handleTime: [
-          { required: true, message: "处理时间不能為空", trigger: "blur" }
+          { required: true, message: "處理時間不能為空", trigger: "blur" }
         ],
         skuImg: [
           { required: true, message: "商品圖片不能為空", trigger: "blur" }
@@ -188,7 +188,7 @@ export default {
           }
         ],
         skuCount: [
-          { required: true, message: "退货数量不能為空", trigger: "blur" }
+          { required: true, message: "退货數量不能為空", trigger: "blur" }
         ],
         skuPrice: [
           { required: true, message: "商品單價不能為空", trigger: "blur" }
@@ -196,7 +196,7 @@ export default {
         skuRealPrice: [
           {
             required: true,
-            message: "商品实际支付單價不能為空",
+            message: "商品實际支付單價不能為空",
             trigger: "blur"
           }
         ],
@@ -207,21 +207,21 @@ export default {
         descPics: [
           {
             required: true,
-            message: "凭证圖片，以逗号隔开不能為空",
+            message: "凭证圖片，以逗号隔開不能為空",
             trigger: "blur"
           }
         ],
         handleNote: [
-          { required: true, message: "处理备注不能為空", trigger: "blur" }
+          { required: true, message: "處理备注不能為空", trigger: "blur" }
         ],
         handleMan: [
-          { required: true, message: "处理人員不能為空", trigger: "blur" }
+          { required: true, message: "處理人員不能為空", trigger: "blur" }
         ],
         receiveMan: [
           { required: true, message: "收货人不能為空", trigger: "blur" }
         ],
         receiveTime: [
-          { required: true, message: "收货时间不能為空", trigger: "blur" }
+          { required: true, message: "收货時間不能為空", trigger: "blur" }
         ],
         receiveNote: [
           { required: true, message: "收货备注不能為空", trigger: "blur" }

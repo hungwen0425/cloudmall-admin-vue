@@ -11,8 +11,8 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="专题名字" prop="name">
-        <el-input v-model="dataForm.name" placeholder="专题名字"></el-input>
+      <el-form-item label="专题名稱" prop="name">
+        <el-input v-model="dataForm.name" placeholder="专题名稱"></el-input>
       </el-form-item>
       <el-form-item label="专题id" prop="subjectId">
         <el-input v-model="dataForm.subjectId" placeholder="专题id"></el-input>
@@ -26,7 +26,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -45,7 +45,7 @@ export default {
       },
       dataRule: {
         name: [
-          { required: true, message: "专题名字不能為空", trigger: "blur" }
+          { required: true, message: "专题名稱不能為空", trigger: "blur" }
         ],
         subjectId: [
           { required: true, message: "专题id不能為空", trigger: "blur" }

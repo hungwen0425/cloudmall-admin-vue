@@ -32,8 +32,8 @@
       <el-form-item label="付款方式【 1:在线付款 2:货到付款】" prop="paymentWay">
         <el-input v-model="dataForm.paymentWay" placeholder="付款方式【 1:在线付款 2:货到付款】"></el-input>
       </el-form-item>
-      <el-form-item label="任务状态" prop="taskStatus">
-        <el-input v-model="dataForm.taskStatus" placeholder="任务状态"></el-input>
+      <el-form-item label="任务状泰" prop="taskStatus">
+        <el-input v-model="dataForm.taskStatus" placeholder="任务状泰"></el-input>
       </el-form-item>
       <el-form-item label="订單描述" prop="orderBody">
         <el-input v-model="dataForm.orderBody" placeholder="订單描述"></el-input>
@@ -53,7 +53,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -106,7 +106,7 @@ export default {
           }
         ],
         taskStatus: [
-          { required: true, message: "任务状态不能為空", trigger: "blur" }
+          { required: true, message: "任务状泰不能為空", trigger: "blur" }
         ],
         orderBody: [
           { required: true, message: "订單描述不能為空", trigger: "blur" }

@@ -14,8 +14,8 @@
       <el-form-item label="采购商品id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="采购商品id"></el-input>
       </el-form-item>
-      <el-form-item label="采购数量" prop="skuNum">
-        <el-input v-model="dataForm.skuNum" placeholder="采购数量"></el-input>
+      <el-form-item label="采购數量" prop="skuNum">
+        <el-input v-model="dataForm.skuNum" placeholder="采购數量"></el-input>
       </el-form-item>
       <el-form-item label="仓库" prop="wareId">
         <el-select v-model="dataForm.wareId" placeholder="請選擇仓库" clearable>
@@ -23,8 +23,8 @@
         </el-select>
       </el-form-item>
       <!-- [0新建，1已分配，2正在采购，3已完成，4采购失败] -->
-      <!-- <el-form-item label="状态" prop="status">
-        <el-select v-model="dataForm.status" placeholder="請選擇状态" clearable>
+      <!-- <el-form-item label="状泰" prop="status">
+        <el-select v-model="dataForm.status" placeholder="請選擇状泰" clearable>
           <el-option label="新建" :value="0"></el-option>
           <el-option label="已分配" :value="1"></el-option>
           <el-option label="正在采购" :value="2"></el-option>
@@ -35,7 +35,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -60,7 +60,7 @@ export default {
           { required: true, message: "采购商品id不能為空", trigger: "blur" }
         ],
         skuNum: [
-          { required: true, message: "采购数量不能為空", trigger: "blur" }
+          { required: true, message: "采购數量不能為空", trigger: "blur" }
         ],
         wareId: [{ required: true, message: "仓库id不能為空", trigger: "blur" }]
       }

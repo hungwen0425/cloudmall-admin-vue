@@ -14,14 +14,14 @@
       <el-form-item label="spu_id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="spu_id"></el-input>
       </el-form-item>
-      <el-form-item label="滿几件" prop="fullCount">
-        <el-input v-model="dataForm.fullCount" placeholder="滿几件"></el-input>
+      <el-form-item label="滿幾件" prop="fullCount">
+        <el-input v-model="dataForm.fullCount" placeholder="滿幾件"></el-input>
       </el-form-item>
-      <el-form-item label="打几折" prop="discount">
-        <el-input v-model="dataForm.discount" placeholder="打几折"></el-input>
+      <el-form-item label="打幾折" prop="discount">
+        <el-input v-model="dataForm.discount" placeholder="打幾折"></el-input>
       </el-form-item>
-      <el-form-item label="折后價" prop="price">
-        <el-input v-model="dataForm.price" placeholder="折后價"></el-input>
+      <el-form-item label="折後價" prop="price">
+        <el-input v-model="dataForm.price" placeholder="折後價"></el-input>
       </el-form-item>
       <el-form-item label="是否疊加其他優惠" prop="addOther">
         <el-select v-model="dataForm.addOther" placeholder="請選擇">
@@ -32,7 +32,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -53,12 +53,12 @@ export default {
       dataRule: {
         skuId: [{ required: true, message: "spu_id不能為空", trigger: "blur" }],
         fullCount: [
-          { required: true, message: "滿几件不能為空", trigger: "blur" }
+          { required: true, message: "滿幾件不能為空", trigger: "blur" }
         ],
         discount: [
-          { required: true, message: "打几折不能為空", trigger: "blur" }
+          { required: true, message: "打幾折不能為空", trigger: "blur" }
         ],
-        price: [{ required: true, message: "折后價不能為空", trigger: "blur" }],
+        price: [{ required: true, message: "折後價不能為空", trigger: "blur" }],
         addOther: [
           {
             required: true,

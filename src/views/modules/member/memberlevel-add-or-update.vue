@@ -20,10 +20,10 @@
       <el-form-item label="默認等级" prop="defaultStatus">
         <el-checkbox v-model="dataForm.defaultStatus" :true-label="1" :false-label="0"></el-checkbox>
       </el-form-item>
-      <el-form-item label="免运费標准" prop="freeFreightPoint">
+      <el-form-item label="免運费標准" prop="freeFreightPoint">
         <el-input-number :min="0" v-model="dataForm.freeFreightPoint"></el-input-number>
       </el-form-item>
-      <el-form-item label="每次评價获取的成長值" prop="commentGrowthPoint">
+      <el-form-item label="每次评價取得的成長值" prop="commentGrowthPoint">
         <el-input-number :min="0" v-model="dataForm.commentGrowthPoint"></el-input-number>
       </el-form-item>
       <el-form-item label="是否有免邮特权" prop="priviledgeFreeFreight">
@@ -41,7 +41,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -82,12 +82,12 @@ export default {
           }
         ],
         freeFreightPoint: [
-          { required: true, message: "免运费標准不能為空", trigger: "blur" }
+          { required: true, message: "免運费標准不能為空", trigger: "blur" }
         ],
         commentGrowthPoint: [
           {
             required: true,
-            message: "每次评價获取的成長值不能為空",
+            message: "每次评價取得的成長值不能為空",
             trigger: "blur"
           }
         ],

@@ -14,15 +14,15 @@
       <el-table-column prop="catalogId" header-align="center" align="center" label="分類"></el-table-column>
       <el-table-column prop="brandId" header-align="center" align="center" label="品牌"></el-table-column>
       <el-table-column prop="weight" header-align="center" align="center" label="重量"></el-table-column>
-      <el-table-column prop="publishStatus" header-align="center" align="center" label="上架状态">
+      <el-table-column prop="publishStatus" header-align="center" align="center" label="上架状泰">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.publishStatus == 0">新建</el-tag>
           <el-tag v-if="scope.row.publishStatus == 1">已上架</el-tag>
           <el-tag v-if="scope.row.publishStatus == 2">已下架</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="createTime" header-align="center" align="center" label="创建时间"></el-table-column>
-      <el-table-column prop="updateTime" header-align="center" align="center" label="修改时间"></el-table-column>
+      <el-table-column prop="createTime" header-align="center" align="center" label="創建時間"></el-table-column>
+      <el-table-column prop="updateTime" header-align="center" align="center" label="修改時間"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button
@@ -100,7 +100,7 @@ export default {
         query: { spuId: row.id, catalogId: row.catalogId }
       });
     },
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       let param = {};
@@ -123,18 +123,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每页数
+    // 每頁數
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 当前页
+    // 當前頁
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多选
+    // 多選
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },

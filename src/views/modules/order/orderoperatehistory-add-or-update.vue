@@ -14,16 +14,16 @@
       <el-form-item label="订單id" prop="orderId">
         <el-input v-model="dataForm.orderId" placeholder="订單id"></el-input>
       </el-form-item>
-      <el-form-item label="操作人[用户；系统；后台管理員]" prop="operateMan">
-        <el-input v-model="dataForm.operateMan" placeholder="操作人[用户；系统；后台管理員]"></el-input>
+      <el-form-item label="操作人[用户；系统；後台管理員]" prop="operateMan">
+        <el-input v-model="dataForm.operateMan" placeholder="操作人[用户；系统；後台管理員]"></el-input>
       </el-form-item>
-      <el-form-item label="操作时间" prop="createTime">
-        <el-input v-model="dataForm.createTime" placeholder="操作时间"></el-input>
+      <el-form-item label="操作時間" prop="createTime">
+        <el-input v-model="dataForm.createTime" placeholder="操作時間"></el-input>
       </el-form-item>
-      <el-form-item label="订單状态【0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订單】" prop="orderStatus">
+      <el-form-item label="订單状泰【0->待付款；1->待發货；2->已發货；3->已完成；4->已关闭；5->无效订單】" prop="orderStatus">
         <el-input
           v-model="dataForm.orderStatus"
-          placeholder="订單状态【0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订單】"
+          placeholder="订單状泰【0->待付款；1->待發货；2->已發货；3->已完成；4->已关闭；5->无效订單】"
         ></el-input>
       </el-form-item>
       <el-form-item label="备注" prop="note">
@@ -32,7 +32,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -57,18 +57,18 @@ export default {
         operateMan: [
           {
             required: true,
-            message: "操作人[用户；系统；后台管理員]不能為空",
+            message: "操作人[用户；系统；後台管理員]不能為空",
             trigger: "blur"
           }
         ],
         createTime: [
-          { required: true, message: "操作时间不能為空", trigger: "blur" }
+          { required: true, message: "操作時間不能為空", trigger: "blur" }
         ],
         orderStatus: [
           {
             required: true,
             message:
-              "订單状态【0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订單】不能為空",
+              "订單状泰【0->待付款；1->待發货；2->已發货；3->已完成；4->已关闭；5->无效订單】不能為空",
             trigger: "blur"
           }
         ],

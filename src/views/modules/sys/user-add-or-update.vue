@@ -17,8 +17,8 @@
       <el-form-item label="密码" prop="password" :class="{ 'is-required': !dataForm.id }">
         <el-input v-model="dataForm.password" type="password" placeholder="密码"></el-input>
       </el-form-item>
-      <el-form-item label="确認密码" prop="comfirmPassword" :class="{ 'is-required': !dataForm.id }">
-        <el-input v-model="dataForm.comfirmPassword" type="password" placeholder="确認密码"></el-input>
+      <el-form-item label="確認密码" prop="comfirmPassword" :class="{ 'is-required': !dataForm.id }">
+        <el-input v-model="dataForm.comfirmPassword" type="password" placeholder="確認密码"></el-input>
       </el-form-item>
       <el-form-item label="邮箱" prop="email">
         <el-input v-model="dataForm.email" placeholder="邮箱"></el-input>
@@ -35,7 +35,7 @@
           >{{ role.roleName }}</el-checkbox>
         </el-checkbox-group>
       </el-form-item>
-      <el-form-item label="状态" size="mini" prop="status">
+      <el-form-item label="状泰" size="mini" prop="status">
         <el-radio-group v-model="dataForm.status">
           <el-radio :label="0">禁用</el-radio>
           <el-radio :label="1">正常</el-radio>
@@ -44,7 +44,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -62,9 +62,9 @@ export default {
     };
     var validateComfirmPassword = (rule, value, callback) => {
       if (!this.dataForm.id && !/\S/.test(value)) {
-        callback(new Error("确認密码不能為空"));
+        callback(new Error("確認密码不能為空"));
       } else if (this.dataForm.password !== value) {
-        callback(new Error("确認密码与密码输入不一致"));
+        callback(new Error("確認密码与密码输入不一致"));
       } else {
         callback();
       }

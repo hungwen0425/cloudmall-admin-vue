@@ -2,7 +2,7 @@
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
         <el-button @click="getDataList()">查询</el-button>
@@ -32,31 +32,31 @@
         prop="flashOrderOvertime"
         header-align="center"
         align="center"
-        label="秒杀订單超时关闭时间(分)"
+        label="秒杀订單超時关闭時間(分)"
       ></el-table-column>
       <el-table-column
         prop="normalOrderOvertime"
         header-align="center"
         align="center"
-        label="正常订單超时时间(分)"
+        label="正常订單超時時間(分)"
       ></el-table-column>
       <el-table-column
         prop="confirmOvertime"
         header-align="center"
         align="center"
-        label="发货后自动确認收货时间（天）"
+        label="發货後自動確認收货時間（天）"
       ></el-table-column>
       <el-table-column
         prop="finishOvertime"
         header-align="center"
         align="center"
-        label="自动完成交易时间，不能申請退货（天）"
+        label="自動完成交易時間，不能申請退货（天）"
       ></el-table-column>
       <el-table-column
         prop="commentOvertime"
         header-align="center"
         align="center"
-        label="订單完成后自动好评时间（天）"
+        label="订單完成後自動好评時間（天）"
       ></el-table-column>
       <el-table-column
         prop="memberLevel"
@@ -109,7 +109,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -131,18 +131,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每页数
+    // 每頁數
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 当前页
+    // 當前頁
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多选
+    // 多選
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -161,10 +161,10 @@ export default {
             return item.id;
           });
       this.$confirm(
-        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
+        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "确定",
+          confirmButtonText: "確定",
           cancelButtonText: "取消",
           type: "warning"
         }

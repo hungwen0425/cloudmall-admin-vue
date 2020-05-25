@@ -2,7 +2,7 @@
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
         <el-button @click="getDataList()">查询</el-button>
@@ -33,7 +33,7 @@
       <el-table-column prop="sourceType" header-align="center" align="center" label="用户来源"></el-table-column>
       <el-table-column prop="integration" header-align="center" align="center" label="積分"></el-table-column>
       <el-table-column prop="growth" header-align="center" align="center" label="成長值"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="启用状态">
+      <el-table-column prop="status" header-align="center" align="center" label="启用状泰">
         <template slot-scope="scope">
           <el-switch
             v-model="scope.row.status"
@@ -44,7 +44,7 @@
           ></el-switch>
         </template>
       </el-table-column>
-      <el-table-column prop="createTime" header-align="center" align="center" label="注册时间"></el-table-column>
+      <el-table-column prop="createTime" header-align="center" align="center" label="注册時間"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small">送券</el-button>
@@ -90,7 +90,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -112,18 +112,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每页数
+    // 每頁數
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 当前页
+    // 當前頁
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多选
+    // 多選
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -139,8 +139,8 @@ export default {
     //     var ids = id ? [id] : this.dataListSelections.map(item => {
     //       return item.id
     //     })
-    //     this.$confirm(`确定對[id=${ids.join(',')}]进行[${id ? '删除' : '批量删除'}]操作?`, '提示', {
-    //       confirmButtonText: '确定',
+    //     this.$confirm(`確定對[id=${ids.join(',')}]進行[${id ? '删除' : '批量删除'}]操作?`, '提示', {
+    //       confirmButtonText: '確定',
     //       cancelButtonText: '取消',
     //       type: 'warning'
     //     }).then(() => {

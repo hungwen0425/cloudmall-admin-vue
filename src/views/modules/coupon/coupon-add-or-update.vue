@@ -22,28 +22,28 @@
       <el-form-item label="優惠券圖片" prop="couponImg">
         <single-upload v-model="dataForm.couponImg"></single-upload>
       </el-form-item>
-      <el-form-item label="優惠卷名字" prop="couponName">
-        <el-input v-model="dataForm.couponName" placeholder="優惠卷名字"></el-input>
+      <el-form-item label="優惠卷名稱" prop="couponName">
+        <el-input v-model="dataForm.couponName" placeholder="優惠卷名稱"></el-input>
       </el-form-item>
-      <el-form-item label="数量" prop="num">
+      <el-form-item label="數量" prop="num">
         <el-input-number :min="0" v-model="dataForm.num"></el-input-number>
       </el-form-item>
       <el-form-item label="金额" prop="amount">
         <el-input-number :min="0" v-model="dataForm.amount" :precision="2"></el-input-number>
       </el-form-item>
-      <el-form-item label="每人限领张数" prop="perLimit">
+      <el-form-item label="每人限领张數" prop="perLimit">
         <el-input-number :min="0" v-model="dataForm.perLimit"></el-input-number>
       </el-form-item>
       <el-form-item label="使用门槛（最小積分）" prop="minPoint">
         <el-input-number :min="0" v-model="dataForm.minPoint"></el-input-number>
       </el-form-item>
-      <el-form-item label="有效时间" prop="useTimeRange">
+      <el-form-item label="有效時間" prop="useTimeRange">
         <el-date-picker
           v-model="dataForm.useTimeRange"
           type="daterange"
           range-separator="至"
-          start-placeholder="开始时间"
-          end-placeholder="结束时间"
+          start-placeholder="開始時間"
+          end-placeholder="結束時間"
         ></el-date-picker>
       </el-form-item>
       <el-form-item label="使用類型" prop="useType">
@@ -56,7 +56,7 @@
       <el-form-item label="备注" prop="note">
         <el-input v-model="dataForm.note" placeholder="备注"></el-input>
       </el-form-item>
-      <el-form-item label="发行数量" prop="publishCount">
+      <el-form-item label="發行數量" prop="publishCount">
         <el-input-number v-model="dataForm.publishCount" :min="0"></el-input-number>
       </el-form-item>
       <el-form-item label="领取日期" prop="enableStartTime">
@@ -64,8 +64,8 @@
           v-model="dataForm.timeRange"
           type="daterange"
           range-separator="至"
-          start-placeholder="开始日期"
-          end-placeholder="结束日期"
+          start-placeholder="開始日期"
+          end-placeholder="結束日期"
         ></el-date-picker>
       </el-form-item>
       <el-form-item label="優惠码" prop="code">
@@ -85,7 +85,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -134,12 +134,12 @@ export default {
           { required: true, message: "優惠券圖片不能為空", trigger: "blur" }
         ],
         couponName: [
-          { required: true, message: "優惠卷名字不能為空", trigger: "blur" }
+          { required: true, message: "優惠卷名稱不能為空", trigger: "blur" }
         ],
-        num: [{ required: true, message: "数量不能為空", trigger: "blur" }],
+        num: [{ required: true, message: "數量不能為空", trigger: "blur" }],
         amount: [{ required: true, message: "金额不能為空", trigger: "blur" }],
         perLimit: [
-          { required: true, message: "每人限领张数不能為空", trigger: "blur" }
+          { required: true, message: "每人限领张數不能為空", trigger: "blur" }
         ],
         minPoint: [
           { required: true, message: "使用门槛不能為空", trigger: "blur" }
@@ -153,19 +153,19 @@ export default {
         ],
         note: [{ required: true, message: "备注不能為空", trigger: "blur" }],
         publishCount: [
-          { required: true, message: "发行数量不能為空", trigger: "blur" }
+          { required: true, message: "發行數量不能為空", trigger: "blur" }
         ],
         enableStartTime: [
           {
             required: true,
-            message: "可以领取的开始日期不能為空",
+            message: "可以领取的開始日期不能為空",
             trigger: "blur"
           }
         ],
         enableEndTime: [
           {
             required: true,
-            message: "可以领取的结束日期不能為空",
+            message: "可以领取的結束日期不能為空",
             trigger: "blur"
           }
         ],
@@ -185,7 +185,7 @@ export default {
   },
   methods: {
     getMemberLevels() {
-      //获取所有的會員等级
+      //取得所有的會員等级
       this.$http({
         url: this.$http.adornUrl("/member/memberlevel/list"),
         method: "get",

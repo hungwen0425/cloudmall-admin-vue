@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    title="上传文件"
+    title="上傳文件"
     :close-on-click-modal="false"
     @close="closeHandle"
     :visible.sync="visible"
@@ -16,8 +16,8 @@
     >
       <i class="el-icon-upload"></i>
       <div class="el-upload__text">
-        将文件拖到此处，或
-        <em>点击上传</em>
+        將文件拖到此處，或
+        <em>点击上傳</em>
       </div>
       <div class="el-upload__tip" slot="tip">只支持jpg、png、gif格式的圖片！</div>
     </el-upload>
@@ -42,7 +42,7 @@ export default {
       );
       this.visible = true;
     },
-    // 上传之前
+    // 上傳之前
     beforeUploadHandle(file) {
       if (
         file.type !== "image/jpg" &&
@@ -55,14 +55,14 @@ export default {
       }
       this.num++;
     },
-    // 上传成功
+    // 上傳成功
     successHandle(response, file, fileList) {
       this.fileList = fileList;
       this.successNum++;
       if (response && response.code === 0) {
         if (this.num === this.successNum) {
           this.$confirm("操作成功, 是否繼續操作?", "提示", {
-            confirmButtonText: "确定",
+            confirmButtonText: "確定",
             cancelButtonText: "取消",
             type: "warning"
           }).catch(() => {
@@ -73,7 +73,7 @@ export default {
         this.$message.error(response.msg);
       }
     },
-    // 弹窗关闭时
+    // 弹窗关闭時
     closeHandle() {
       this.fileList = [];
       this.$emit("refreshDataList");

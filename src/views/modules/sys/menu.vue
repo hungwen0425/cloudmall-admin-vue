@@ -85,7 +85,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -106,8 +106,8 @@ export default {
     },
     // 删除
     deleteHandle(id) {
-      this.$confirm(`确定對[id=${id}]进行[删除]操作?`, "提示", {
-        confirmButtonText: "确定",
+      this.$confirm(`確定對[id=${id}]進行[删除]操作?`, "提示", {
+        confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"
       })

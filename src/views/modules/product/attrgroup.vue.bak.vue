@@ -9,7 +9,7 @@
         <div class="mod-config">
           <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
             <el-form-item>
-              <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
+              <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
             </el-form-item>
             <el-form-item>
               <el-button @click="getDataList()" type="success">查询</el-button>
@@ -76,17 +76,17 @@
 
 <script>
 /**
- * 父子組件传递数据
- * 1)、子組件给父組件传递数据，事件机制；
- *    子組件给父組件发送一個事件，携带上数据。
- * // this.$emit("事件名",携带的数据...)
+ * 父子組件傳递資料
+ * 1)、子組件给父組件傳递資料，事件机制；
+ *    子組件给父組件發送一個事件，携带上資料。
+ * // this.$emit("事件名",携带的資料...)
  */
-//这里可以导入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
-//例如：import 《組件名稱》 from '《組件路径》';
+//這裡可以導入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
+//例如：import 《組件名稱》 from '《組件路徑》';
 import Category from "../common/category";
 import AddOrUpdate from "./attrgroup-add-or-update";
 export default {
-  //import引入的組件需要注入到對象中才能使用
+  //import引入的組件需要注入到物件中才能使用
   components: { Category, AddOrUpdate },
   data() {
     return {
@@ -115,7 +115,7 @@ export default {
         this.getDataList();
       }
     },
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -137,18 +137,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每页数
+    // 每頁數
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 当前页
+    // 當前頁
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多选
+    // 多選
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -167,10 +167,10 @@ export default {
             return item.attrGroupId;
           });
       this.$confirm(
-        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
+        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "确定",
+          confirmButtonText: "確定",
           cancelButtonText: "取消",
           type: "warning"
         }

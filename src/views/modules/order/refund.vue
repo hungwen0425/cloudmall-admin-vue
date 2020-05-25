@@ -2,7 +2,7 @@
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
         <el-button @click="getDataList()">查询</el-button>
@@ -31,12 +31,12 @@
       <el-table-column prop="orderReturnId" header-align="center" align="center" label="退款的订單"></el-table-column>
       <el-table-column prop="refund" header-align="center" align="center" label="退款金额"></el-table-column>
       <el-table-column prop="refundSn" header-align="center" align="center" label="退款交易流水号"></el-table-column>
-      <el-table-column prop="refundStatus" header-align="center" align="center" label="退款状态"></el-table-column>
+      <el-table-column prop="refundStatus" header-align="center" align="center" label="退款状泰"></el-table-column>
       <el-table-column
         prop="refundChannel"
         header-align="center"
         align="center"
-        label="退款渠道[1-支付宝，2-微信，3-银联，4-汇款]"
+        label="退款渠道[1-支付宝，2-微信，3-银聯，4-汇款]"
       ></el-table-column>
       <el-table-column prop="refundContent" header-align="center" align="center" label></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
@@ -84,7 +84,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -106,18 +106,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每页数
+    // 每頁數
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 当前页
+    // 當前頁
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多选
+    // 多選
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -136,10 +136,10 @@ export default {
             return item.id;
           });
       this.$confirm(
-        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
+        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "确定",
+          confirmButtonText: "確定",
           cancelButtonText: "取消",
           type: "warning"
         }

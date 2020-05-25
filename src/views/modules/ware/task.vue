@@ -2,7 +2,7 @@
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
         <el-button @click="getDataList()">查询</el-button>
@@ -40,7 +40,7 @@
           <el-tag v-if="scope.row.payment==2">货到付款</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="taskStatus" header-align="center" align="center" label="任务状态"></el-table-column>
+      <el-table-column prop="taskStatus" header-align="center" align="center" label="任务状泰"></el-table-column>
       <el-table-column prop="orderBody" header-align="center" align="center" label="订單描述"></el-table-column>
       <el-table-column prop="trackingNo" header-align="center" align="center" label="物流單号"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="create_time"></el-table-column>
@@ -91,7 +91,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -113,18 +113,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每页数
+    // 每頁數
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 当前页
+    // 當前頁
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多选
+    // 多選
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -143,10 +143,10 @@ export default {
             return item.id;
           });
       this.$confirm(
-        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
+        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "确定",
+          confirmButtonText: "確定",
           cancelButtonText: "取消",
           type: "warning"
         }

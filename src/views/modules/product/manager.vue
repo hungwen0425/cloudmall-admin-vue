@@ -12,7 +12,7 @@
           <el-input-number style="width:160px" v-model="dataForm.price.min" :min="0"></el-input-number>-
           <el-input-number style="width:160px" v-model="dataForm.price.max" :min="0"></el-input-number>
         </el-form-item>
-        <el-form-item label="检索">
+        <el-form-item label="檢索">
           <el-input style="width:160px" v-model="dataForm.key" clearable></el-input>
         </el-form-item>
         <el-form-item>
@@ -53,7 +53,7 @@
         </template>
       </el-table-column>
       <el-table-column prop="price" header-align="center" align="center" label="價格"></el-table-column>
-      <el-table-column prop="saleCount" header-align="center" align="center" label="销量"></el-table-column>
+      <el-table-column prop="saleCount" header-align="center" align="center" label="銷量"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="previewHandle(scope.row.skuId)">预览</el-button>
@@ -66,7 +66,7 @@
           >
             更多
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item command="uploadImages">上传圖片</el-dropdown-item>
+              <el-dropdown-item command="uploadImages">上傳圖片</el-dropdown-item>
               <el-dropdown-item command="seckillSettings">参与秒杀</el-dropdown-item>
               <el-dropdown-item command="reductionSettings">滿減設定</el-dropdown-item>
               <el-dropdown-item command="discountSettings">折扣設定</el-dropdown-item>
@@ -126,10 +126,10 @@ export default {
   },
   methods: {
     getSkuDetails(row, expand) {
-      //sku详情查询
-      console.log("展开某行...", row, expand);
+      //sku詳情查询
+      console.log("展開某行...", row, expand);
     },
-    //处理更多指令
+    //處理更多指令
     handleCommand(row, command) {
       console.log("~~~~~", row, command);
       if ("stockSettings" == command) {
@@ -139,7 +139,7 @@ export default {
     searchSkuInfo() {
       this.getDataList();
     },
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -165,18 +165,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每页数
+    // 每頁數
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 当前页
+    // 當前頁
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多选
+    // 多選
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     }
@@ -192,6 +192,6 @@ export default {
   beforeDestroy() {
     PubSub.unsubscribe(this.catPathSub);
     PubSub.unsubscribe(this.brandIdSub);
-  } //生命周期 - 销毁之前
+  } //生命週期 - 銷毁之前
 };
 </script>

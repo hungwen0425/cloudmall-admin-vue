@@ -14,19 +14,19 @@
       <el-form-item label="场次名稱" prop="name">
         <el-input v-model="dataForm.name" placeholder="场次名稱"></el-input>
       </el-form-item>
-      <el-form-item label="每日开始时间" prop="startTime">
-        <el-date-picker type="datetime" placeholder="每日开始时间" v-model="dataForm.startTime"></el-date-picker>
+      <el-form-item label="每日開始時間" prop="startTime">
+        <el-date-picker type="datetime" placeholder="每日開始時間" v-model="dataForm.startTime"></el-date-picker>
       </el-form-item>
-      <el-form-item label="每日结束时间" prop="endTime">
-        <el-date-picker type="datetime" placeholder="每日结束时间" v-model="dataForm.endTime"></el-date-picker>
+      <el-form-item label="每日結束時間" prop="endTime">
+        <el-date-picker type="datetime" placeholder="每日結束時間" v-model="dataForm.endTime"></el-date-picker>
       </el-form-item>
-      <el-form-item label="启用状态" prop="status">
-        <el-input v-model="dataForm.status" placeholder="启用状态"></el-input>
+      <el-form-item label="启用状泰" prop="status">
+        <el-input v-model="dataForm.status" placeholder="启用状泰"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -49,13 +49,13 @@ export default {
           { required: true, message: "场次名稱不能為空", trigger: "blur" }
         ],
         startTime: [
-          { required: true, message: "每日开始时间不能為空", trigger: "blur" }
+          { required: true, message: "每日開始時間不能為空", trigger: "blur" }
         ],
         endTime: [
-          { required: true, message: "每日结束时间不能為空", trigger: "blur" }
+          { required: true, message: "每日結束時間不能為空", trigger: "blur" }
         ],
         status: [
-          { required: true, message: "启用状态不能為空", trigger: "blur" }
+          { required: true, message: "启用状泰不能為空", trigger: "blur" }
         ]
       }
     };

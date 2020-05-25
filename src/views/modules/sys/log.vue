@@ -26,16 +26,16 @@
         align="center"
         width="150"
         :show-overflow-tooltip="true"
-        label="請求参数"
+        label="請求参數"
       ></el-table-column>
-      <el-table-column prop="time" header-align="center" align="center" label="执行时長(毫秒)"></el-table-column>
+      <el-table-column prop="time" header-align="center" align="center" label="执行時長(毫秒)"></el-table-column>
       <el-table-column prop="ip" header-align="center" align="center" width="150" label="IP地址"></el-table-column>
       <el-table-column
         prop="createDate"
         header-align="center"
         align="center"
         width="180"
-        label="创建时间"
+        label="創建時間"
       ></el-table-column>
     </el-table>
     <el-pagination
@@ -69,7 +69,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -91,13 +91,13 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每页数
+    // 每頁數
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 当前页
+    // 當前頁
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();

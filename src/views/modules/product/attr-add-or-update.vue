@@ -12,7 +12,7 @@
       </el-form-item>
       <el-form-item label="屬性類型" prop="attrType">
         <el-select v-model="dataForm.attrType" placeholder="請選擇">
-          <el-option label="规格参数" :value="1"></el-option>
+          <el-option label="规格参數" :value="1"></el-option>
           <el-option label="銷售屬性" :value="0"></el-option>
         </el-select>
       </el-form-item>
@@ -28,7 +28,7 @@
           :active-value="1"
         ></el-switch>
       </el-form-item>
-      <el-form-item label="可选值" prop="valueSelect">
+      <el-form-item label="可選值" prop="valueSelect">
         <!-- <el-input v-model="dataForm.valueSelect"></el-input> -->
         <el-select
           v-model="dataForm.valueSelect"
@@ -54,7 +54,7 @@
           ></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="可检索" prop="searchType" v-if="type == 1">
+      <el-form-item label="可檢索" prop="searchType" v-if="type == 1">
         <el-switch
           v-model="dataForm.searchType"
           active-color="#13ce66"
@@ -72,7 +72,7 @@
           :inactive-value="0"
         ></el-switch>
       </el-form-item>
-      <el-form-item label="启用状态" prop="enable">
+      <el-form-item label="启用状泰" prop="enable">
         <el-switch
           v-model="dataForm.enable"
           active-color="#13ce66"
@@ -84,7 +84,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -117,7 +117,7 @@ export default {
         searchType: [
           {
             required: true,
-            message: "是否需要检索不能為空",
+            message: "是否需要檢索不能為空",
             trigger: "blur"
           }
         ],
@@ -141,14 +141,14 @@ export default {
         enable: [
           {
             required: true,
-            message: "启用状态不能為空",
+            message: "启用状泰不能為空",
             trigger: "blur"
           }
         ],
         catelogId: [
           {
             required: true,
-            message: "需要選擇正确的三级分類数据",
+            message: "需要選擇正確的三级分類資料",
             trigger: "blur"
           }
         ],
@@ -170,8 +170,8 @@ export default {
   },
   watch: {
     catelogPath(path) {
-      //监听到路径变化需要查出这個三级分類的分組信息
-      console.log("路径变了", path);
+      //監听到路徑變化需要查出這個三级分類的分組資料
+      console.log("路徑變了", path);
       this.attrGroups = [];
       this.dataForm.attrGroupId = "";
       this.dataForm.catelogId = path[path.length - 1];
@@ -192,7 +192,7 @@ export default {
       } else if (path.length == 0) {
         this.dataForm.catelogId = "";
       } else {
-        this.$message.error("請選擇正确的分類");
+        this.$message.error("請選擇正確的分類");
         this.dataForm.catelogId = "";
       }
     }

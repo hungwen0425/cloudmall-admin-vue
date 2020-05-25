@@ -68,7 +68,7 @@
     }
 
     /**
-     * 监听確認和取消两個按钮事件，使用者执行插入或者清空正在播放的視频實例操作
+     * 監听確認和取消两個按钮事件，使用者执行插入或者清空正在播放的視频實例操作
      */
     function addOkListener() {
         dialog.onok = function () {
@@ -92,7 +92,7 @@
     }
 
     /**
-     * 依据傳入的align值更新按钮資料
+     * 依據傳入的align值更新按钮資料
      * @param align
      */
     function updateAlignButton(align) {
@@ -246,7 +246,7 @@
     }
 
     /**
-     * 监听url改變事件
+     * 監听url改變事件
      * @param url
      */
     function addUrlChangeListener(url) {

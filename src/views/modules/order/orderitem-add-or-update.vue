@@ -35,8 +35,8 @@
       <el-form-item label="商品sku编号" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="商品sku编号"></el-input>
       </el-form-item>
-      <el-form-item label="商品sku名字" prop="skuName">
-        <el-input v-model="dataForm.skuName" placeholder="商品sku名字"></el-input>
+      <el-form-item label="商品sku名稱" prop="skuName">
+        <el-input v-model="dataForm.skuName" placeholder="商品sku名稱"></el-input>
       </el-form-item>
       <el-form-item label="商品sku圖片" prop="skuPic">
         <el-input v-model="dataForm.skuPic" placeholder="商品sku圖片"></el-input>
@@ -44,14 +44,14 @@
       <el-form-item label="商品sku價格" prop="skuPrice">
         <el-input v-model="dataForm.skuPrice" placeholder="商品sku價格"></el-input>
       </el-form-item>
-      <el-form-item label="商品购买的数量" prop="skuQuantity">
-        <el-input v-model="dataForm.skuQuantity" placeholder="商品购买的数量"></el-input>
+      <el-form-item label="商品购买的數量" prop="skuQuantity">
+        <el-input v-model="dataForm.skuQuantity" placeholder="商品购买的數量"></el-input>
       </el-form-item>
       <el-form-item label="商品銷售屬性組合（JSON）" prop="skuAttrsVals">
         <el-input v-model="dataForm.skuAttrsVals" placeholder="商品銷售屬性組合（JSON）"></el-input>
       </el-form-item>
-      <el-form-item label="商品促销分解金额" prop="promotionAmount">
-        <el-input v-model="dataForm.promotionAmount" placeholder="商品促销分解金额"></el-input>
+      <el-form-item label="商品促銷分解金额" prop="promotionAmount">
+        <el-input v-model="dataForm.promotionAmount" placeholder="商品促銷分解金额"></el-input>
       </el-form-item>
       <el-form-item label="優惠券優惠分解金额" prop="couponAmount">
         <el-input v-model="dataForm.couponAmount" placeholder="優惠券優惠分解金额"></el-input>
@@ -59,8 +59,8 @@
       <el-form-item label="積分優惠分解金额" prop="integrationAmount">
         <el-input v-model="dataForm.integrationAmount" placeholder="積分優惠分解金额"></el-input>
       </el-form-item>
-      <el-form-item label="该商品经过優惠后的分解金额" prop="realAmount">
-        <el-input v-model="dataForm.realAmount" placeholder="该商品经过優惠后的分解金额"></el-input>
+      <el-form-item label="该商品经过優惠後的分解金额" prop="realAmount">
+        <el-input v-model="dataForm.realAmount" placeholder="该商品经过優惠後的分解金额"></el-input>
       </el-form-item>
       <el-form-item label="赠送積分" prop="giftIntegration">
         <el-input v-model="dataForm.giftIntegration" placeholder="赠送積分"></el-input>
@@ -71,7 +71,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -127,7 +127,7 @@ export default {
           { required: true, message: "商品sku编号不能為空", trigger: "blur" }
         ],
         skuName: [
-          { required: true, message: "商品sku名字不能為空", trigger: "blur" }
+          { required: true, message: "商品sku名稱不能為空", trigger: "blur" }
         ],
         skuPic: [
           { required: true, message: "商品sku圖片不能為空", trigger: "blur" }
@@ -136,7 +136,7 @@ export default {
           { required: true, message: "商品sku價格不能為空", trigger: "blur" }
         ],
         skuQuantity: [
-          { required: true, message: "商品购买的数量不能為空", trigger: "blur" }
+          { required: true, message: "商品购买的數量不能為空", trigger: "blur" }
         ],
         skuAttrsVals: [
           {
@@ -148,7 +148,7 @@ export default {
         promotionAmount: [
           {
             required: true,
-            message: "商品促销分解金额不能為空",
+            message: "商品促銷分解金额不能為空",
             trigger: "blur"
           }
         ],
@@ -169,7 +169,7 @@ export default {
         realAmount: [
           {
             required: true,
-            message: "该商品经过優惠后的分解金额不能為空",
+            message: "该商品经过優惠後的分解金额不能為空",
             trigger: "blur"
           }
         ],

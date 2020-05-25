@@ -475,7 +475,7 @@ UE.I18N['zh-cn'] = {
     },
     'anchor': {
         'static': {
-            'lang_input_anchorName': '锚點名字：'
+            'lang_input_anchorName': '锚點名稱：'
         }
     },
     'charts': {

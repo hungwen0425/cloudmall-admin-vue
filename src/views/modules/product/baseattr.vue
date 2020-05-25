@@ -7,7 +7,7 @@
       <div class="mod-config">
         <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
           <el-form-item>
-            <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
+            <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
           </el-form-item>
           <el-form-item>
             <el-button @click="getDataList()">查询</el-button>
@@ -40,7 +40,7 @@
             prop="searchType"
             header-align="center"
             align="center"
-            label="可检索"
+            label="可檢索"
           >
             <template slot-scope="scope">
               <i class="el-icon-success" v-if="scope.row.searchType==1"></i>
@@ -49,12 +49,12 @@
           </el-table-column>
           <el-table-column prop="valueType" header-align="center" align="center" label="值類型">
             <template slot-scope="scope">
-              <el-tag type="success" v-if="scope.row.valueType==0">單选</el-tag>
-              <el-tag v-else>多选</el-tag>
+              <el-tag type="success" v-if="scope.row.valueType==0">單選</el-tag>
+              <el-tag v-else>多選</el-tag>
             </template>
           </el-table-column>
           <el-table-column prop="icon" header-align="center" align="center" label="圖標"></el-table-column>
-          <el-table-column prop="valueSelect" header-align="center" align="center" label="可选值">
+          <el-table-column prop="valueSelect" header-align="center" align="center" label="可選值">
             <template slot-scope="scope">
               <el-tooltip placement="top">
                 <div slot="content">
@@ -128,12 +128,12 @@
 </template>
 
 <script>
-//这里可以导入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
-//例如：import 《組件名稱》 from '《組件路径》';
+//這裡可以導入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
+//例如：import 《組件名稱》 from '《組件路徑》';
 import Category from "../common/category";
 import AddOrUpdate from "./attr-add-or-update";
 export default {
-  //import引入的組件需要注入到對象中才能使用
+  //import引入的組件需要注入到物件中才能使用
   components: { Category, AddOrUpdate },
   props: {
     attrtype: {
@@ -172,7 +172,7 @@ export default {
       this.catId = 0;
       this.getDataList();
     },
-    // 获取数据列表
+    // 取得資料列表
     getDataList() {
       this.dataListLoading = true;
       let type = this.attrtype == 0 ? "sale" : "base";
@@ -195,18 +195,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每页数
+    // 每頁數
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 当前页
+    // 當前頁
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多选
+    // 多選
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -225,10 +225,10 @@ export default {
             return item.attrId;
           });
       this.$confirm(
-        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
+        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "确定",
+          confirmButtonText: "確定",
           cancelButtonText: "取消",
           type: "warning"
         }

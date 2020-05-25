@@ -20,14 +20,14 @@
       <el-form-item label="购物積分" prop="buyBounds">
         <el-input v-model="dataForm.buyBounds" placeholder="购物積分"></el-input>
       </el-form-item>
-      <!-- [1111（四個状态位，从右到左）;0 - 无優惠，成長積分是否赠送;1 - 无優惠，购物積分是否赠送;2 - 有優惠，成長積分是否赠送;3 - 有優惠，购物積分是否赠送【状态位0：不赠送，1：赠送】] -->
+      <!-- [1111（四個状泰位，从右到左）;0 - 无優惠，成長積分是否赠送;1 - 无優惠，购物積分是否赠送;2 - 有優惠，成長積分是否赠送;3 - 有優惠，购物積分是否赠送【状泰位0：不赠送，1：赠送】] -->
       <el-form-item label="優惠生效情况" prop="work">
         <el-input v-model="dataForm.work" placeholder="優惠生效情况"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -56,7 +56,7 @@ export default {
           {
             required: true,
             message:
-              "優惠生效情况[1111（四個状态位，从右到左）;0 - 无優惠，成長積分是否赠送;1 - 无優惠，购物積分是否赠送;2 - 有優惠，成長積分是否赠送;3 - 有優惠，购物積分是否赠送【状态位0：不赠送，1：赠送】]不能為空",
+              "優惠生效情况[1111（四個状泰位，从右到左）;0 - 无優惠，成長積分是否赠送;1 - 无優惠，购物積分是否赠送;2 - 有優惠，成長積分是否赠送;3 - 有優惠，购物積分是否赠送【状泰位0：不赠送，1：赠送】]不能為空",
             trigger: "blur"
           }
         ]

@@ -169,7 +169,7 @@
      * Web Uploader内部類的詳細说明，以下提及的功能類，都可以在`WebUploader`這個變量中訪問到。
      *
      * As you know, Web Uploader的每個文件都是用過[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)规范中的`define`組织起來的, 每個Module都會有個module id.
-     * 默認module id該文件的路徑，而此路徑將會轉化成名字空間存放在WebUploader中。如：
+     * 默認module id該文件的路徑，而此路徑將會轉化成名稱空間存放在WebUploader中。如：
      *
      * * module `base`：WebUploader.Base
      * * module `file`: WebUploader.File
@@ -359,7 +359,7 @@
             },
 
             /**
-             * 一個不做任何事情的方法。可以用來赋值給默認的callback.
+             * 一個不做任何事情的方法。可以用來賦值給默認的callback.
              * @method noop
              */
             noop: noop,
@@ -1381,8 +1381,8 @@
 
             init: Base.noop,
 
-            // 類Backbone的事件监听声明，监听uploader實例上的事件
-            // widget直接無法监听事件，事件只能通過uploader來傳递
+            // 類Backbone的事件監听声明，監听uploader實例上的事件
+            // widget直接無法監听事件，事件只能通過uploader來傳递
             invoke: function (apiName, args) {
 
                 /*
@@ -2506,7 +2506,7 @@
             acceptFile: function (file) {
                 var invalid = !file || file.size < 6 || this.accept &&
 
-                    // 如果名字中有後缀，才做後缀白名單處理。
+                    // 如果名稱中有後缀，才做後缀白名單處理。
                     rExt.exec(file.name) && !this.accept.test(file.name);
 
                 return !invalid;
@@ -3022,7 +3022,7 @@
                 // 记入當前正在傳的資料，跟threads相關
                 this.pool = [];
 
-                // 缓存即將上傳的文件。
+                // 緩存即將上傳的文件。
                 this.pending = [];
 
                 // 跟踪還有多少分片没有完成上傳。
@@ -3213,7 +3213,7 @@
                     // 否則，如果正在運行，則準備下一個文件，並等待完成後返回下個分片。
                 } else if (me.runing) {
 
-                    // 如果缓存中有，則直接在缓存中取，没有則去queue中取。
+                    // 如果緩存中有，則直接在緩存中取，没有則去queue中取。
                     if (!me.pending.length && me.getStats().numOfQueue) {
                         me._prepareNextFile();
                     }
@@ -3498,7 +3498,7 @@
                 });
 
                 // 在發送之間可以添加字段什么的。。。
-                // 如果默認的字段不够使用，可以通過监听此事件來擴展
+                // 如果默認的字段不够使用，可以通過監听此事件來擴展
                 owner.trigger('uploadBeforeSend', block, data, headers);
 
                 // 開始發送。
@@ -3701,7 +3701,7 @@
          * @property {int} [duplicate=undefined]
          * @namespace options
          * @for Uploader
-         * @description 去重， 根據文件名字、文件大小和最後修改時間來生成hash Key.
+         * @description 去重， 根據文件名稱、文件大小和最後修改時間來生成hash Key.
          */
         api.addValidator('duplicate', function () {
             var uploader = this,

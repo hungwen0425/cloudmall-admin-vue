@@ -7,7 +7,7 @@
         >1. 此Demo只提供UEditor官方使用文件，入門部署和體驗功能。具體使用請参考：http://fex.baidu.com/ueditor/</p>
         <p
           class="el-alert__description"
-        >2. 瀏覽器控制台报錯“請求後台設定項http錯誤，上傳功能將不能正常使用！”，此錯需要後台提供上傳接口方法（赋值給serverUrl屬性）</p>
+        >2. 瀏覽器控制台报錯“請求後台設定項http錯誤，上傳功能將不能正常使用！”，此錯需要後台提供上傳接口方法（賦值給serverUrl屬性）</p>
       </div>
     </el-alert>
 

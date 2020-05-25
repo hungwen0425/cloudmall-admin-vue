@@ -16,12 +16,12 @@
       </el-form-item>
       <template v-if="dataForm.type === 1">
         <el-form-item size="mini">
-          <a href="http://www.renren.io/open/qiniu.html" target="_blank">免费申請(七牛)10GB储存空间</a>
+          <a href="http://www.renren.io/open/qiniu.html" target="_blank">免费申請(七牛)10GB储存空間</a>
         </el-form-item>
         <el-form-item label="域名">
           <el-input v-model="dataForm.qiniuDomain" placeholder="七牛绑定的域名"></el-input>
         </el-form-item>
-        <el-form-item label="路径前缀">
+        <el-form-item label="路徑前缀">
           <el-input v-model="dataForm.qiniuPrefix" placeholder="不設定默認為空"></el-input>
         </el-form-item>
         <el-form-item label="AccessKey">
@@ -30,15 +30,15 @@
         <el-form-item label="SecretKey">
           <el-input v-model="dataForm.qiniuSecretKey" placeholder="七牛SecretKey"></el-input>
         </el-form-item>
-        <el-form-item label="空间名">
-          <el-input v-model="dataForm.qiniuBucketName" placeholder="七牛存储空间名"></el-input>
+        <el-form-item label="空間名">
+          <el-input v-model="dataForm.qiniuBucketName" placeholder="七牛存储空間名"></el-input>
         </el-form-item>
       </template>
       <template v-else-if="dataForm.type === 2">
         <el-form-item label="域名">
           <el-input v-model="dataForm.aliyunDomain" placeholder="阿里云绑定的域名"></el-input>
         </el-form-item>
-        <el-form-item label="路径前缀">
+        <el-form-item label="路徑前缀">
           <el-input v-model="dataForm.aliyunPrefix" placeholder="不設定默認為空"></el-input>
         </el-form-item>
         <el-form-item label="EndPoint">
@@ -58,7 +58,7 @@
         <el-form-item label="域名">
           <el-input v-model="dataForm.qcloudDomain" placeholder="腾讯云绑定的域名"></el-input>
         </el-form-item>
-        <el-form-item label="路径前缀">
+        <el-form-item label="路徑前缀">
           <el-input v-model="dataForm.qcloudPrefix" placeholder="不設定默認為空"></el-input>
         </el-form-item>
         <el-form-item label="AppId">
@@ -74,13 +74,13 @@
           <el-input v-model="dataForm.qcloudBucketName" placeholder="腾讯云BucketName"></el-input>
         </el-form-item>
         <el-form-item label="Bucket所屬地区">
-          <el-input v-model="dataForm.qcloudRegion" placeholder="如：sh（可选值 ，华南：gz 华北：tj 华东：sh）"></el-input>
+          <el-input v-model="dataForm.qcloudRegion" placeholder="如：sh（可選值 ，华南：gz 华北：tj 华东：sh）"></el-input>
         </el-form-item>
       </template>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>

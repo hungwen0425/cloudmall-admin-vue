@@ -17,8 +17,8 @@
       <el-form-item label="排序" prop="sort">
         <el-input v-model="dataForm.sort" placeholder="排序"></el-input>
       </el-form-item>
-      <el-form-item label="启用状态" prop="status">
-        <el-input v-model="dataForm.status" placeholder="启用状态"></el-input>
+      <el-form-item label="启用状泰" prop="status">
+        <el-input v-model="dataForm.status" placeholder="启用状泰"></el-input>
       </el-form-item>
       <el-form-item label="create_time" prop="createTime">
         <el-input v-model="dataForm.createTime" placeholder="create_time"></el-input>
@@ -26,7 +26,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -49,7 +49,7 @@ export default {
         ],
         sort: [{ required: true, message: "排序不能為空", trigger: "blur" }],
         status: [
-          { required: true, message: "启用状态不能為空", trigger: "blur" }
+          { required: true, message: "启用状泰不能為空", trigger: "blur" }
         ],
         createTime: [
           { required: true, message: "create_time不能為空", trigger: "blur" }

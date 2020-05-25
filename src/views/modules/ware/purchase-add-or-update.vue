@@ -17,7 +17,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -47,20 +47,20 @@ export default {
           { required: true, message: "采购人名不能為空", trigger: "blur" }
         ],
         phone: [
-          { required: true, message: "联系方式不能為空", trigger: "blur" }
+          { required: true, message: "聯系方式不能為空", trigger: "blur" }
         ],
         priority: [
           { required: true, message: "優先级不能為空", trigger: "blur" }
         ],
-        status: [{ required: true, message: "状态不能為空", trigger: "blur" }],
+        status: [{ required: true, message: "状泰不能為空", trigger: "blur" }],
         wareId: [
           { required: true, message: "仓库id不能為空", trigger: "blur" }
         ],
         amount: [
-          { required: true, message: "总金额不能為空", trigger: "blur" }
+          { required: true, message: "總金额不能為空", trigger: "blur" }
         ],
         createTime: [
-          { required: true, message: "创建日期不能為空", trigger: "blur" }
+          { required: true, message: "創建日期不能為空", trigger: "blur" }
         ],
         updateTime: [
           { required: true, message: "更新日期不能為空", trigger: "blur" }
