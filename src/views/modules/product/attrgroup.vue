@@ -7,11 +7,11 @@
       <div class="mod-config">
         <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
           <el-form-item>
-            <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
+            <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button @click="getDataList()">查詢</el-button>
-            <el-button type="success" @click="getAllDataList()">查詢全部</el-button>
+            <el-button @click="getDataList()">查询</el-button>
+            <el-button type="success" @click="getAllDataList()">查询全部</el-button>
             <el-button
               v-if="isAuth('product:attrgroup:save')"
               type="primary"
@@ -47,7 +47,7 @@
             label="操作"
           >
             <template slot-scope="scope">
-              <el-button type="text" size="small" @click="relationHandle(scope.row.attrGroupId)">關聯</el-button>
+              <el-button type="text" size="small" @click="relationHandle(scope.row.attrGroupId)">关联</el-button>
               <el-button
                 type="text"
                 size="small"
@@ -66,10 +66,10 @@
           :total="totalPage"
           layout="total, sizes, prev, pager, next, jumper"
         ></el-pagination>
-        <!-- 彈窗, 新增 / 修改 -->
+        <!-- 弹窗, 新增 / 修改 -->
         <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
 
-        <!-- 修改關聯關系 -->
+        <!-- 修改关联关系 -->
         <relation-update v-if="relationVisible" ref="relationUpdate" @refreshData="getDataList"></relation-update>
       </div>
     </el-col>
@@ -78,18 +78,18 @@
 
 <script>
 /**
- * 父子組件傳递資料
- * 1)、子組件給父組件傳递資料，事件機製；
- *    子組件給父組件發送一個事件，携带上資料。
- * // this.$emit("事件名",携带的資料...)
+ * 父子組件传递数据
+ * 1)、子組件给父組件传递数据，事件机制；
+ *    子組件给父組件发送一個事件，携带上数据。
+ * // this.$emit("事件名",携带的数据...)
  */
-//這裡可以導入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
-//例如：import 《組件名稱》 from '《組件路徑》';
+//这里可以导入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
+//例如：import 《組件名稱》 from '《組件路径》';
 import Category from "../common/category";
 import AddOrUpdate from "./attrgroup-add-or-update";
 import RelationUpdate from "./attr-group-relation";
 export default {
-  //import引入的組件需要注入到物件中才能使用
+  //import引入的組件需要注入到對象中才能使用
   components: { Category, AddOrUpdate, RelationUpdate },
   props: {},
   data() {
@@ -112,25 +112,25 @@ export default {
     this.getDataList();
   },
   methods: {
-    //處理分組與屬性的關聯
+    //处理分組与屬性的关联
     relationHandle(groupId) {
       this.relationVisible = true;
       this.$nextTick(() => {
         this.$refs.relationUpdate.init(groupId);
       });
     },
-    //感知樹節點被點擊
+    //感知树节点被点击
     treenodeclick(data, node, component) {
       if (node.level == 3) {
         this.catId = data.catId;
-        this.getDataList(); //重新查詢
+        this.getDataList(); //重新查询
       }
     },
     getAllDataList() {
       this.catId = 0;
       this.getDataList();
     },
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -152,18 +152,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多選
+    // 多选
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -182,10 +182,10 @@ export default {
             return item.attrGroupId;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
+        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }

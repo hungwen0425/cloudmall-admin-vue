@@ -11,19 +11,19 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="80px"
     >
-      <el-form-item label="参數名" prop="paramKey">
-        <el-input v-model="dataForm.paramKey" placeholder="参數名"></el-input>
+      <el-form-item label="参数名" prop="paramKey">
+        <el-input v-model="dataForm.paramKey" placeholder="参数名"></el-input>
       </el-form-item>
-      <el-form-item label="参數值" prop="paramValue">
-        <el-input v-model="dataForm.paramValue" placeholder="参數值"></el-input>
+      <el-form-item label="参数值" prop="paramValue">
+        <el-input v-model="dataForm.paramValue" placeholder="参数值"></el-input>
       </el-form-item>
-      <el-form-item label="備註" prop="remark">
-        <el-input v-model="dataForm.remark" placeholder="備註"></el-input>
+      <el-form-item label="备注" prop="remark">
+        <el-input v-model="dataForm.remark" placeholder="备注"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -41,10 +41,10 @@ export default {
       },
       dataRule: {
         paramKey: [
-          { required: true, message: "参數名不能為空", trigger: "blur" }
+          { required: true, message: "参数名不能為空", trigger: "blur" }
         ],
         paramValue: [
-          { required: true, message: "参數值不能為空", trigger: "blur" }
+          { required: true, message: "参数值不能為空", trigger: "blur" }
         ]
       }
     };

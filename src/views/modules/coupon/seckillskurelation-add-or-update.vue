@@ -12,20 +12,20 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="活動場次id" prop="promotionSessionId">
-        <el-input v-model="sessionId" placeholder="活動場次id" :disabled="true"></el-input>
+      <el-form-item label="活动场次id" prop="promotionSessionId">
+        <el-input v-model="sessionId" placeholder="活动场次id" :disabled="true"></el-input>
       </el-form-item>
       <el-form-item label="商品id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="商品id"></el-input>
       </el-form-item>
-      <el-form-item label="秒殺價格" prop="seckillPrice">
+      <el-form-item label="秒杀價格" prop="seckillPrice">
         <el-input-number v-model="dataForm.seckillPrice" :min="0" :precision="2" :step="0.1"></el-input-number>
       </el-form-item>
-      <el-form-item label="秒殺總量" prop="seckillCount">
-        <el-input-number v-model="dataForm.seckillCount" :min="1" label="秒殺總量"></el-input-number>
+      <el-form-item label="秒杀总量" prop="seckillCount">
+        <el-input-number v-model="dataForm.seckillCount" :min="1" label="秒杀总量"></el-input-number>
       </el-form-item>
-      <el-form-item label="每人限購數量" prop="seckillLimit">
-        <el-input-number v-model="dataForm.seckillLimit" :min="1" label="每人限購數量"></el-input-number>
+      <el-form-item label="每人限购数量" prop="seckillLimit">
+        <el-input-number v-model="dataForm.seckillLimit" :min="1" label="每人限购数量"></el-input-number>
       </el-form-item>
       <el-form-item label="排序" prop="seckillSort">
         <el-input v-model="dataForm.seckillSort" placeholder="排序"></el-input>
@@ -33,7 +33,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -55,17 +55,17 @@ export default {
       },
       dataRule: {
         sessionId: [
-          { required: true, message: "活動場次id不能為空", trigger: "blur" }
+          { required: true, message: "活动场次id不能為空", trigger: "blur" }
         ],
         skuId: [{ required: true, message: "商品id不能為空", trigger: "blur" }],
         seckillPrice: [
-          { required: true, message: "秒殺價格不能為空", trigger: "blur" }
+          { required: true, message: "秒杀價格不能為空", trigger: "blur" }
         ],
         seckillCount: [
-          { required: true, message: "秒殺總量不能為空", trigger: "blur" }
+          { required: true, message: "秒杀总量不能為空", trigger: "blur" }
         ],
         seckillLimit: [
-          { required: true, message: "每人限購數量不能為空", trigger: "blur" }
+          { required: true, message: "每人限购数量不能為空", trigger: "blur" }
         ],
         seckillSort: [
           { required: true, message: "排序不能為空", trigger: "blur" }

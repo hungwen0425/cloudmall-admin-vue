@@ -13,7 +13,7 @@
         header-align="center"
         align="center"
         width="120"
-        label="上級選單"
+        label="上级菜單"
       ></el-table-column>
       <el-table-column header-align="center" align="center" label="圖標">
         <template slot-scope="scope">
@@ -22,19 +22,19 @@
       </el-table-column>
       <el-table-column prop="type" header-align="center" align="center" label="類型">
         <template slot-scope="scope">
-          <el-tag v-if="scope.row.type === 0" size="small">目入</el-tag>
-          <el-tag v-else-if="scope.row.type === 1" size="small" type="success">選單</el-tag>
+          <el-tag v-if="scope.row.type === 0" size="small">目录</el-tag>
+          <el-tag v-else-if="scope.row.type === 1" size="small" type="success">菜單</el-tag>
           <el-tag v-else-if="scope.row.type === 2" size="small" type="info">按钮</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="orderNum" header-align="center" align="center" label="排序號"></el-table-column>
+      <el-table-column prop="orderNum" header-align="center" align="center" label="排序号"></el-table-column>
       <el-table-column
         prop="url"
         header-align="center"
         align="center"
         width="150"
         :show-overflow-tooltip="true"
-        label="選單URL"
+        label="菜單URL"
       ></el-table-column>
       <el-table-column
         prop="perms"
@@ -42,7 +42,7 @@
         align="center"
         width="150"
         :show-overflow-tooltip="true"
-        label="授權標识"
+        label="授权標识"
       ></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
@@ -61,7 +61,7 @@
         </template>
       </el-table-column>
     </el-table>
-    <!-- 彈窗, 新增 / 修改 -->
+    <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
   </div>
 </template>
@@ -85,7 +85,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -106,8 +106,8 @@ export default {
     },
     // 删除
     deleteHandle(id) {
-      this.$confirm(`確定對[id=${id}]進行[删除]操作?`, "提示", {
-        confirmButtonText: "確定",
+      this.$confirm(`确定對[id=${id}]进行[删除]操作?`, "提示", {
+        confirmButtonText: "确定",
         cancelButtonText: "取消",
         type: "warning"
       })

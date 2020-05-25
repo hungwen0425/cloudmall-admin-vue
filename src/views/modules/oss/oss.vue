@@ -2,8 +2,8 @@
   <div class="mod-oss">
     <el-form :inline="true" :model="dataForm">
       <el-form-item>
-        <el-button type="primary" @click="configHandle()">雲端存儲設定</el-button>
-        <el-button type="primary" @click="uploadHandle()">上傳文件</el-button>
+        <el-button type="primary" @click="configHandle()">云存储配置</el-button>
+        <el-button type="primary" @click="uploadHandle()">上传文件</el-button>
         <el-button
           type="danger"
           @click="deleteHandle()"
@@ -26,7 +26,7 @@
         header-align="center"
         align="center"
         width="180"
-        label="創建時間"
+        label="创建时间"
       ></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
@@ -43,9 +43,9 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 彈窗, 雲端存儲設定 -->
+    <!-- 弹窗, 云存储配置 -->
     <config v-if="configVisible" ref="config"></config>
-    <!-- 彈窗, 上傳文件 -->
+    <!-- 弹窗, 上传文件 -->
     <upload v-if="uploadVisible" ref="upload" @refreshDataList="getDataList"></upload>
   </div>
 </template>
@@ -75,7 +75,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -96,29 +96,29 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多選
+    // 多选
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
-    // 雲端存儲設定
+    // 云存储配置
     configHandle() {
       this.configVisible = true;
       this.$nextTick(() => {
         this.$refs.config.init();
       });
     },
-    // 上傳文件
+    // 上传文件
     uploadHandle() {
       this.uploadVisible = true;
       this.$nextTick(() => {
@@ -133,10 +133,10 @@ export default {
             return item.id;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
+        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }

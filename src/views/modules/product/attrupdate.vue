@@ -9,7 +9,7 @@
               v-for="(group,gidx) in dataResp.attrGroups"
               :key="group.attrGroupId"
             >
-              <!-- 遍厲屬性,每個tab-pane對應一個表單，每個屬性是一個表單項  spu.baseAttrs[0] = [{attrId:xx,val:}]-->
+              <!-- 遍歷屬性,每個tab-pane對應一個表單，每個屬性是一個表單项  spu.baseAttrs[0] = [{attrId:xx,val:}]-->
               <el-form ref="form" :model="dataResp">
                 <el-form-item
                   :label="attr.attrName"
@@ -46,7 +46,7 @@
             </el-tab-pane>
           </el-tabs>
           <div style="margin:auto">
-            <el-button type="success" style="float:right" @click="submitSpuAttrs">確認修改</el-button>
+            <el-button type="success" style="float:right" @click="submitSpuAttrs">确認修改</el-button>
           </div>
         </el-card>
       </el-col>
@@ -63,7 +63,7 @@ export default {
       spuId: "",
       catalogId: "",
       dataResp: {
-        //後台返回的所有資料
+        //后台返回的所有数据
         attrGroups: [],
         baseAttrs: []
       },
@@ -102,7 +102,7 @@ export default {
         method: "get",
         params: this.$http.adornParams({})
       }).then(({ data }) => {
-        //先對表單的baseAttrs進行初始化
+        //先對表單的baseAttrs进行初始化
         data.data.forEach(item => {
           let attrArray = [];
           item.attrs.forEach(attr => {
@@ -151,8 +151,8 @@ export default {
         });
       });
 
-      this.$confirm("修改商品规格資料, 是否繼續?", "提示", {
-        confirmButtonText: "確定",
+      this.$confirm("修改商品规格信息, 是否繼續?", "提示", {
+        confirmButtonText: "确定",
         cancelButtonText: "取消",
         type: "warning"
       })

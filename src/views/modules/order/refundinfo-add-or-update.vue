@@ -11,20 +11,20 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="退款的訂單" prop="orderReturnId">
-        <el-input v-model="dataForm.orderReturnId" placeholder="退款的訂單"></el-input>
+      <el-form-item label="退款的订單" prop="orderReturnId">
+        <el-input v-model="dataForm.orderReturnId" placeholder="退款的订單"></el-input>
       </el-form-item>
       <el-form-item label="退款金额" prop="refund">
         <el-input v-model="dataForm.refund" placeholder="退款金额"></el-input>
       </el-form-item>
-      <el-form-item label="退款交易流水號" prop="refundSn">
-        <el-input v-model="dataForm.refundSn" placeholder="退款交易流水號"></el-input>
+      <el-form-item label="退款交易流水号" prop="refundSn">
+        <el-input v-model="dataForm.refundSn" placeholder="退款交易流水号"></el-input>
       </el-form-item>
-      <el-form-item label="退款狀態" prop="refundStatus">
-        <el-input v-model="dataForm.refundStatus" placeholder="退款狀態"></el-input>
+      <el-form-item label="退款状态" prop="refundStatus">
+        <el-input v-model="dataForm.refundStatus" placeholder="退款状态"></el-input>
       </el-form-item>
-      <el-form-item label="退款渠道[1-支付寶，2-微信，3-银聯，4-匯款]" prop="refundChannel">
-        <el-input v-model="dataForm.refundChannel" placeholder="退款渠道[1-支付寶，2-微信，3-银聯，4-匯款]"></el-input>
+      <el-form-item label="退款渠道[1-支付宝，2-微信，3-银联，4-汇款]" prop="refundChannel">
+        <el-input v-model="dataForm.refundChannel" placeholder="退款渠道[1-支付宝，2-微信，3-银联，4-汇款]"></el-input>
       </el-form-item>
       <el-form-item label prop="refundContent">
         <el-input v-model="dataForm.refundContent" placeholder></el-input>
@@ -32,7 +32,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -53,21 +53,21 @@ export default {
       },
       dataRule: {
         orderReturnId: [
-          { required: true, message: "退款的訂單不能為空", trigger: "blur" }
+          { required: true, message: "退款的订單不能為空", trigger: "blur" }
         ],
         refund: [
           { required: true, message: "退款金额不能為空", trigger: "blur" }
         ],
         refundSn: [
-          { required: true, message: "退款交易流水號不能為空", trigger: "blur" }
+          { required: true, message: "退款交易流水号不能為空", trigger: "blur" }
         ],
         refundStatus: [
-          { required: true, message: "退款狀態不能為空", trigger: "blur" }
+          { required: true, message: "退款状态不能為空", trigger: "blur" }
         ],
         refundChannel: [
           {
             required: true,
-            message: "退款渠道[1-支付寶，2-微信，3-银聯，4-匯款]不能為空",
+            message: "退款渠道[1-支付宝，2-微信，3-银联，4-汇款]不能為空",
             trigger: "blur"
           }
         ],

@@ -14,10 +14,10 @@
       <el-form-item label="角色名稱" prop="roleName">
         <el-input v-model="dataForm.roleName" placeholder="角色名稱"></el-input>
       </el-form-item>
-      <el-form-item label="備註" prop="remark">
-        <el-input v-model="dataForm.remark" placeholder="備註"></el-input>
+      <el-form-item label="备注" prop="remark">
+        <el-input v-model="dataForm.remark" placeholder="备注"></el-input>
       </el-form-item>
-      <el-form-item size="mini" label="授權">
+      <el-form-item size="mini" label="授权">
         <el-tree
           :data="menuList"
           :props="menuListTreeProps"
@@ -30,7 +30,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -56,7 +56,7 @@ export default {
           { required: true, message: "角色名稱不能為空", trigger: "blur" }
         ]
       },
-      tempKey: -666666 // 临時key, 用于解决tree半選中狀態項不能傳給後台接口問题. # 待優化
+      tempKey: -666666 // 临时key, 用于解决tree半选中状态项不能传给后台接口问题. # 待優化
     };
   },
   methods: {

@@ -11,40 +11,40 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="訂單號（對外業務號）" prop="orderSn">
-        <el-input v-model="dataForm.orderSn" placeholder="訂單號（對外業務號）"></el-input>
+      <el-form-item label="订單号（對外业务号）" prop="orderSn">
+        <el-input v-model="dataForm.orderSn" placeholder="订單号（對外业务号）"></el-input>
       </el-form-item>
-      <el-form-item label="訂單id" prop="orderId">
-        <el-input v-model="dataForm.orderId" placeholder="訂單id"></el-input>
+      <el-form-item label="订單id" prop="orderId">
+        <el-input v-model="dataForm.orderId" placeholder="订單id"></el-input>
       </el-form-item>
-      <el-form-item label="支付寶交易流水號" prop="alipayTradeNo">
-        <el-input v-model="dataForm.alipayTradeNo" placeholder="支付寶交易流水號"></el-input>
+      <el-form-item label="支付宝交易流水号" prop="alipayTradeNo">
+        <el-input v-model="dataForm.alipayTradeNo" placeholder="支付宝交易流水号"></el-input>
       </el-form-item>
-      <el-form-item label="支付總金额" prop="totalAmount">
-        <el-input v-model="dataForm.totalAmount" placeholder="支付總金额"></el-input>
+      <el-form-item label="支付总金额" prop="totalAmount">
+        <el-input v-model="dataForm.totalAmount" placeholder="支付总金额"></el-input>
       </el-form-item>
       <el-form-item label="交易内容" prop="subject">
         <el-input v-model="dataForm.subject" placeholder="交易内容"></el-input>
       </el-form-item>
-      <el-form-item label="支付狀態" prop="paymentStatus">
-        <el-input v-model="dataForm.paymentStatus" placeholder="支付狀態"></el-input>
+      <el-form-item label="支付状态" prop="paymentStatus">
+        <el-input v-model="dataForm.paymentStatus" placeholder="支付状态"></el-input>
       </el-form-item>
-      <el-form-item label="創建時間" prop="createTime">
-        <el-input v-model="dataForm.createTime" placeholder="創建時間"></el-input>
+      <el-form-item label="创建时间" prop="createTime">
+        <el-input v-model="dataForm.createTime" placeholder="创建时间"></el-input>
       </el-form-item>
-      <el-form-item label="確認時間" prop="confirmTime">
-        <el-input v-model="dataForm.confirmTime" placeholder="確認時間"></el-input>
+      <el-form-item label="确認时间" prop="confirmTime">
+        <el-input v-model="dataForm.confirmTime" placeholder="确認时间"></el-input>
       </el-form-item>
-      <el-form-item label="回調内容" prop="callbackContent">
-        <el-input v-model="dataForm.callbackContent" placeholder="回調内容"></el-input>
+      <el-form-item label="回调内容" prop="callbackContent">
+        <el-input v-model="dataForm.callbackContent" placeholder="回调内容"></el-input>
       </el-form-item>
-      <el-form-item label="回調時間" prop="callbackTime">
-        <el-input v-model="dataForm.callbackTime" placeholder="回調時間"></el-input>
+      <el-form-item label="回调时间" prop="callbackTime">
+        <el-input v-model="dataForm.callbackTime" placeholder="回调时间"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -71,40 +71,40 @@ export default {
         orderSn: [
           {
             required: true,
-            message: "訂單號（對外業務號）不能為空",
+            message: "订單号（對外业务号）不能為空",
             trigger: "blur"
           }
         ],
         orderId: [
-          { required: true, message: "訂單id不能為空", trigger: "blur" }
+          { required: true, message: "订單id不能為空", trigger: "blur" }
         ],
         alipayTradeNo: [
           {
             required: true,
-            message: "支付寶交易流水號不能為空",
+            message: "支付宝交易流水号不能為空",
             trigger: "blur"
           }
         ],
         totalAmount: [
-          { required: true, message: "支付總金额不能為空", trigger: "blur" }
+          { required: true, message: "支付总金额不能為空", trigger: "blur" }
         ],
         subject: [
           { required: true, message: "交易内容不能為空", trigger: "blur" }
         ],
         paymentStatus: [
-          { required: true, message: "支付狀態不能為空", trigger: "blur" }
+          { required: true, message: "支付状态不能為空", trigger: "blur" }
         ],
         createTime: [
-          { required: true, message: "創建時間不能為空", trigger: "blur" }
+          { required: true, message: "创建时间不能為空", trigger: "blur" }
         ],
         confirmTime: [
-          { required: true, message: "確認時間不能為空", trigger: "blur" }
+          { required: true, message: "确認时间不能為空", trigger: "blur" }
         ],
         callbackContent: [
-          { required: true, message: "回調内容不能為空", trigger: "blur" }
+          { required: true, message: "回调内容不能為空", trigger: "blur" }
         ],
         callbackTime: [
-          { required: true, message: "回調時間不能為空", trigger: "blur" }
+          { required: true, message: "回调时间不能為空", trigger: "blur" }
         ]
       }
     };

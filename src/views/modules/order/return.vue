@@ -2,10 +2,10 @@
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查詢</el-button>
+        <el-button @click="getDataList()">查询</el-button>
         <el-button
           v-if="isAuth('order:orderreturnapply:save')"
           type="primary"
@@ -29,20 +29,20 @@
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="orderId" header-align="center" align="center" label="order_id"></el-table-column>
-      <el-table-column prop="skuId" header-align="center" align="center" label="退貨商品id"></el-table-column>
-      <el-table-column prop="orderSn" header-align="center" align="center" label="訂單編號"></el-table-column>
-      <el-table-column prop="createTime" header-align="center" align="center" label="申請時間"></el-table-column>
-      <el-table-column prop="memberUsername" header-align="center" align="center" label="會員使用者名"></el-table-column>
+      <el-table-column prop="skuId" header-align="center" align="center" label="退货商品id"></el-table-column>
+      <el-table-column prop="orderSn" header-align="center" align="center" label="订單编号"></el-table-column>
+      <el-table-column prop="createTime" header-align="center" align="center" label="申請时间"></el-table-column>
+      <el-table-column prop="memberUsername" header-align="center" align="center" label="會員用户名"></el-table-column>
       <el-table-column prop="returnAmount" header-align="center" align="center" label="退款金额"></el-table-column>
-      <el-table-column prop="returnName" header-align="center" align="center" label="退貨人姓名"></el-table-column>
-      <el-table-column prop="returnPhone" header-align="center" align="center" label="退貨人電話"></el-table-column>
+      <el-table-column prop="returnName" header-align="center" align="center" label="退货人姓名"></el-table-column>
+      <el-table-column prop="returnPhone" header-align="center" align="center" label="退货人电话"></el-table-column>
       <el-table-column
         prop="status"
         header-align="center"
         align="center"
-        label="申請狀態[0->待處理；1->退貨中；2->已完成；3->已拒绝]"
+        label="申請状态[0->待处理；1->退货中；2->已完成；3->已拒绝]"
       ></el-table-column>
-      <el-table-column prop="handleTime" header-align="center" align="center" label="處理時間"></el-table-column>
+      <el-table-column prop="handleTime" header-align="center" align="center" label="处理时间"></el-table-column>
       <el-table-column prop="skuImg" header-align="center" align="center" label="商品圖片"></el-table-column>
       <el-table-column prop="skuName" header-align="center" align="center" label="商品名稱"></el-table-column>
       <el-table-column prop="skuBrand" header-align="center" align="center" label="商品品牌"></el-table-column>
@@ -52,19 +52,19 @@
         align="center"
         label="商品銷售屬性(JSON)"
       ></el-table-column>
-      <el-table-column prop="skuCount" header-align="center" align="center" label="退貨數量"></el-table-column>
+      <el-table-column prop="skuCount" header-align="center" align="center" label="退货数量"></el-table-column>
       <el-table-column prop="skuPrice" header-align="center" align="center" label="商品單價"></el-table-column>
-      <el-table-column prop="skuRealPrice" header-align="center" align="center" label="商品實际支付單價"></el-table-column>
+      <el-table-column prop="skuRealPrice" header-align="center" align="center" label="商品实际支付單價"></el-table-column>
       <el-table-column prop="reason" header-align="center" align="center" label="原因"></el-table-column>
       <el-table-column prop="description述" header-align="center" align="center" label="描述"></el-table-column>
-      <el-table-column prop="descPics" header-align="center" align="center" label="凭證圖片，以逗號隔開"></el-table-column>
-      <el-table-column prop="handleNote" header-align="center" align="center" label="處理備註"></el-table-column>
-      <el-table-column prop="handleMan" header-align="center" align="center" label="處理人員"></el-table-column>
-      <el-table-column prop="receiveMan" header-align="center" align="center" label="收貨人"></el-table-column>
-      <el-table-column prop="receiveTime" header-align="center" align="center" label="收貨時間"></el-table-column>
-      <el-table-column prop="receiveNote" header-align="center" align="center" label="收貨備註"></el-table-column>
-      <el-table-column prop="receivePhone" header-align="center" align="center" label="收貨電話"></el-table-column>
-      <el-table-column prop="companyAddress" header-align="center" align="center" label="公司收貨地址"></el-table-column>
+      <el-table-column prop="descPics" header-align="center" align="center" label="凭证圖片，以逗号隔开"></el-table-column>
+      <el-table-column prop="handleNote" header-align="center" align="center" label="处理备注"></el-table-column>
+      <el-table-column prop="handleMan" header-align="center" align="center" label="处理人員"></el-table-column>
+      <el-table-column prop="receiveMan" header-align="center" align="center" label="收货人"></el-table-column>
+      <el-table-column prop="receiveTime" header-align="center" align="center" label="收货时间"></el-table-column>
+      <el-table-column prop="receiveNote" header-align="center" align="center" label="收货备注"></el-table-column>
+      <el-table-column prop="receivePhone" header-align="center" align="center" label="收货电话"></el-table-column>
+      <el-table-column prop="companyAddress" header-align="center" align="center" label="公司收货地址"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>
@@ -81,7 +81,7 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 彈窗, 新增 / 修改 -->
+    <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
   </div>
 </template>
@@ -110,7 +110,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -132,18 +132,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多選
+    // 多选
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -162,10 +162,10 @@ export default {
             return item.id;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
+        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }

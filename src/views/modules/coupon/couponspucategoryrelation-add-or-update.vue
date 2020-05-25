@@ -14,16 +14,16 @@
       <el-form-item label="優惠券id" prop="couponId">
         <el-input v-model="dataForm.couponId" placeholder="優惠券id"></el-input>
       </el-form-item>
-      <el-form-item label="產品分類id" prop="categoryId">
-        <el-input v-model="dataForm.categoryId" placeholder="產品分類id"></el-input>
+      <el-form-item label="产品分類id" prop="categoryId">
+        <el-input v-model="dataForm.categoryId" placeholder="产品分類id"></el-input>
       </el-form-item>
-      <el-form-item label="產品分類名稱" prop="categoryName">
-        <el-input v-model="dataForm.categoryName" placeholder="產品分類名稱"></el-input>
+      <el-form-item label="产品分類名稱" prop="categoryName">
+        <el-input v-model="dataForm.categoryName" placeholder="产品分類名稱"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -44,10 +44,10 @@ export default {
           { required: true, message: "優惠券id不能為空", trigger: "blur" }
         ],
         categoryId: [
-          { required: true, message: "產品分類id不能為空", trigger: "blur" }
+          { required: true, message: "产品分類id不能為空", trigger: "blur" }
         ],
         categoryName: [
-          { required: true, message: "產品分類名稱不能為空", trigger: "blur" }
+          { required: true, message: "产品分類名稱不能為空", trigger: "blur" }
         ]
       }
     };

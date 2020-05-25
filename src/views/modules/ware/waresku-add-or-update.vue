@@ -14,24 +14,24 @@
       <el-form-item label="sku_id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="sku_id"></el-input>
       </el-form-item>
-      <el-form-item label="倉庫" prop="wareId">
-        <el-select v-model="dataForm.wareId" placeholder="請選擇倉庫" clearable>
+      <el-form-item label="仓库" prop="wareId">
+        <el-select v-model="dataForm.wareId" placeholder="請選擇仓库" clearable>
           <el-option :label="w.name" :value="w.id" v-for="w in wareList" :key="w.id"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="庫存數" prop="stock">
-        <el-input v-model="dataForm.stock" placeholder="庫存數"></el-input>
+      <el-form-item label="库存数" prop="stock">
+        <el-input v-model="dataForm.stock" placeholder="库存数"></el-input>
       </el-form-item>
       <el-form-item label="sku_name" prop="skuName">
         <el-input v-model="dataForm.skuName" placeholder="sku_name"></el-input>
       </el-form-item>
-      <el-form-item label="锁定庫存" prop="stockLocked">
-        <el-input v-model="dataForm.stockLocked" placeholder="锁定庫存"></el-input>
+      <el-form-item label="锁定库存" prop="stockLocked">
+        <el-input v-model="dataForm.stockLocked" placeholder="锁定库存"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -53,9 +53,9 @@ export default {
       dataRule: {
         skuId: [{ required: true, message: "sku_id不能為空", trigger: "blur" }],
         wareId: [
-          { required: true, message: "倉庫id不能為空", trigger: "blur" }
+          { required: true, message: "仓库id不能為空", trigger: "blur" }
         ],
-        stock: [{ required: true, message: "庫存數不能為空", trigger: "blur" }],
+        stock: [{ required: true, message: "库存数不能為空", trigger: "blur" }],
         skuName: [
           { required: true, message: "sku_name不能為空", trigger: "blur" }
         ]

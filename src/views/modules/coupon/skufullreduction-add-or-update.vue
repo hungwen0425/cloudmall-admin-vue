@@ -22,13 +22,13 @@
         <el-form-item label="減多少" prop="reducePrice">
           <el-input v-model="dataForm.reducePrice" placeholder="減多少"></el-input>
         </el-form-item>
-        <el-form-item label="是否参與其他優惠" prop="addOther">
-          <el-input v-model="dataForm.addOther" placeholder="是否参與其他優惠"></el-input>
+        <el-form-item label="是否参与其他優惠" prop="addOther">
+          <el-input v-model="dataForm.addOther" placeholder="是否参与其他優惠"></el-input>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="visible = false">取消</el-button>
-        <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+        <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -57,7 +57,7 @@ export default {
         addOther: [
           {
             required: true,
-            message: "是否参與其他優惠不能為空",
+            message: "是否参与其他優惠不能為空",
             trigger: "blur"
           }
         ]

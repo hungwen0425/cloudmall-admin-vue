@@ -1,25 +1,25 @@
 <template>
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
-      <el-form-item label="倉庫">
-        <el-select style="width:120px;" v-model="dataForm.wareId" placeholder="請選擇倉庫" clearable>
+      <el-form-item label="仓库">
+        <el-select style="width:120px;" v-model="dataForm.wareId" placeholder="請選擇仓库" clearable>
           <el-option :label="w.name" :value="w.id" v-for="w in wareList" :key="w.id"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="狀態">
-        <el-select style="width:120px;" v-model="dataForm.status" placeholder="請選擇狀態" clearable>
+      <el-form-item label="状态">
+        <el-select style="width:120px;" v-model="dataForm.status" placeholder="請選擇状态" clearable>
           <el-option label="新建" :value="0"></el-option>
           <el-option label="已分配" :value="1"></el-option>
-          <el-option label="正在采購" :value="2"></el-option>
+          <el-option label="正在采购" :value="2"></el-option>
           <el-option label="已完成" :value="3"></el-option>
-          <el-option label="采購失败" :value="4"></el-option>
+          <el-option label="采购失败" :value="4"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="關键字">
-        <el-input style="width:120px;" v-model="dataForm.key" placeholder="参數名" clearable></el-input>
+      <el-form-item label="关键字">
+        <el-input style="width:120px;" v-model="dataForm.key" placeholder="参数名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查詢</el-button>
+        <el-button @click="getDataList()">查询</el-button>
         <el-button
           v-if="isAuth('ware:purchasedetail:save')"
           type="primary"
@@ -32,7 +32,7 @@
           </el-button>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item command="delete">批量删除</el-dropdown-item>
-            <el-dropdown-item command="merge">合併整單</el-dropdown-item>
+            <el-dropdown-item command="merge">合并整單</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </el-form-item>
@@ -46,18 +46,18 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="purchaseId" header-align="center" align="center" label="采購單id"></el-table-column>
-      <el-table-column prop="skuId" header-align="center" align="center" label="采購商品id"></el-table-column>
-      <el-table-column prop="skuNum" header-align="center" align="center" label="采購數量"></el-table-column>
-      <el-table-column prop="skuPrice" header-align="center" align="center" label="采購金额"></el-table-column>
-      <el-table-column prop="wareId" header-align="center" align="center" label="倉庫id"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="狀態">
+      <el-table-column prop="purchaseId" header-align="center" align="center" label="采购單id"></el-table-column>
+      <el-table-column prop="skuId" header-align="center" align="center" label="采购商品id"></el-table-column>
+      <el-table-column prop="skuNum" header-align="center" align="center" label="采购数量"></el-table-column>
+      <el-table-column prop="skuPrice" header-align="center" align="center" label="采购金额"></el-table-column>
+      <el-table-column prop="wareId" header-align="center" align="center" label="仓库id"></el-table-column>
+      <el-table-column prop="status" header-align="center" align="center" label="状态">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.status==0">新建</el-tag>
           <el-tag type="info" v-if="scope.row.status==1">已分配</el-tag>
-          <el-tag type="wanring" v-if="scope.row.status==2">正在采購</el-tag>
+          <el-tag type="wanring" v-if="scope.row.status==2">正在采购</el-tag>
           <el-tag type="success" v-if="scope.row.status==3">已完成</el-tag>
-          <el-tag type="danger" v-if="scope.row.status==4">采購失败</el-tag>
+          <el-tag type="danger" v-if="scope.row.status==4">采购失败</el-tag>
         </template>
       </el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
@@ -76,9 +76,9 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 彈窗, 新增 / 修改 -->
+    <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
-    <el-dialog title="合併到整單" :visible.sync="mergedialogVisible">
+    <el-dialog title="合并到整單" :visible.sync="mergedialogVisible">
       <!-- id  assignee_id  assignee_name  phone   priority status -->
       <el-select v-model="purchaseId" placeholder="請選擇" clearable filterable>
         <el-option
@@ -95,7 +95,7 @@
       </el-select>
       <span slot="footer" class="dialog-footer">
         <el-button @click="mergedialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="mergeItem">確 定</el-button>
+        <el-button type="primary" @click="mergeItem">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -138,10 +138,10 @@ export default {
       });
       if (!this.purchaseId) {
         this.$confirm(
-          "没有選擇任何【采購單】，將自動創建新單進行合併。確認吗？",
+          "没有選擇任何【采购單】，将自动创建新單进行合并。确認吗？",
           "提示",
           {
-            confirmButtonText: "確定",
+            confirmButtonText: "确定",
             cancelButtonText: "取消",
             type: "warning"
           }
@@ -188,8 +188,8 @@ export default {
           this.getUnreceivedPurchase();
           this.mergedialogVisible = true;
         } else {
-          this.$alert("請先選擇需要合併的需求", "提示", {
-            confirmButtonText: "確定",
+          this.$alert("請先選擇需要合并的需求", "提示", {
+            confirmButtonText: "确定",
             callback: action => {}
           });
         }
@@ -207,7 +207,7 @@ export default {
         this.wareList = data.page.list;
       });
     },
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -231,18 +231,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多選
+    // 多选
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -261,10 +261,10 @@ export default {
             return item.id;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
+        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }

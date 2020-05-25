@@ -1,19 +1,19 @@
 <template>
-  <el-dialog title="日誌列表" :close-on-click-modal="false" :visible.sync="visible" width="75%">
+  <el-dialog title="日志列表" :close-on-click-modal="false" :visible.sync="visible" width="75%">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.id" placeholder="任務ID" clearable></el-input>
+        <el-input v-model="dataForm.id" placeholder="任务ID" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查詢</el-button>
+        <el-button @click="getDataList()">查询</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="dataList" border v-loading="dataListLoading" height="460" style="width: 100%;">
-      <el-table-column prop="logId" header-align="center" align="center" width="80" label="日誌ID"></el-table-column>
-      <el-table-column prop="jobId" header-align="center" align="center" width="80" label="任務ID"></el-table-column>
+      <el-table-column prop="logId" header-align="center" align="center" width="80" label="日志ID"></el-table-column>
+      <el-table-column prop="jobId" header-align="center" align="center" width="80" label="任务ID"></el-table-column>
       <el-table-column prop="beanName" header-align="center" align="center" label="bean名稱"></el-table-column>
-      <el-table-column prop="params" header-align="center" align="center" label="参數"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="狀態">
+      <el-table-column prop="params" header-align="center" align="center" label="参数"></el-table-column>
+      <el-table-column prop="status" header-align="center" align="center" label="状态">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.status === 0" size="small">成功</el-tag>
           <el-tag
@@ -25,13 +25,13 @@
           >失败</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="times" header-align="center" align="center" label="耗時(單位: 毫秒)"></el-table-column>
+      <el-table-column prop="times" header-align="center" align="center" label="耗时(單位: 毫秒)"></el-table-column>
       <el-table-column
         prop="createTime"
         header-align="center"
         align="center"
         width="180"
-        label="执行時間"
+        label="执行时间"
       ></el-table-column>
     </el-table>
     <el-pagination
@@ -66,7 +66,7 @@ export default {
       this.visible = true;
       this.getDataList();
     },
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -88,18 +88,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 失败資料
+    // 失败信息
     showErrorInfo(id) {
       this.$http({
         url: this.$http.adornUrl(`/sys/scheduleLog/info/${id}`),

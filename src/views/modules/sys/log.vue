@@ -2,16 +2,16 @@
   <div class="mod-log">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="使用者名／使用者操作" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="用户名／用户操作" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查詢</el-button>
+        <el-button @click="getDataList()">查询</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="dataList" border v-loading="dataListLoading" style="width: 100%">
       <el-table-column prop="id" header-align="center" align="center" width="80" label="ID"></el-table-column>
-      <el-table-column prop="username" header-align="center" align="center" label="使用者名"></el-table-column>
-      <el-table-column prop="operation" header-align="center" align="center" label="使用者操作"></el-table-column>
+      <el-table-column prop="username" header-align="center" align="center" label="用户名"></el-table-column>
+      <el-table-column prop="operation" header-align="center" align="center" label="用户操作"></el-table-column>
       <el-table-column
         prop="method"
         header-align="center"
@@ -26,16 +26,16 @@
         align="center"
         width="150"
         :show-overflow-tooltip="true"
-        label="請求参數"
+        label="請求参数"
       ></el-table-column>
-      <el-table-column prop="time" header-align="center" align="center" label="执行時長(毫秒)"></el-table-column>
+      <el-table-column prop="time" header-align="center" align="center" label="执行时長(毫秒)"></el-table-column>
       <el-table-column prop="ip" header-align="center" align="center" width="150" label="IP地址"></el-table-column>
       <el-table-column
         prop="createDate"
         header-align="center"
         align="center"
         width="180"
-        label="創建時間"
+        label="创建时间"
       ></el-table-column>
     </el-table>
     <el-pagination
@@ -69,7 +69,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -91,13 +91,13 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();

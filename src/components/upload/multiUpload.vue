@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-upload
-      action="http://mall-gateway.oss-cn-shanghai.aliyuncs.com"
+      action="http://cloudmall.oss-cn-hongkong.aliyuncs.com"
       :data="dataObj"
       list-type="picture-card"
       :file-list="fileList"
@@ -25,9 +25,9 @@ import { getUUID } from "@/utils";
 export default {
   name: "multiUpload",
   props: {
-    //圖片屬性陣列
+    //片屬性数組
     value: Array,
-    //最大上傳圖片數量
+    //最大上传圖片数量
     maxCount: {
       type: Number,
       default: 30
@@ -79,10 +79,9 @@ export default {
       return new Promise((resolve, reject) => {
         policy()
           .then(response => {
-            console.log("這是什么${filename}");
             _self.dataObj.policy = response.data.policy;
             _self.dataObj.signature = response.data.signature;
-            _self.dataObj.ossaccessKeyId = response.data.accessid;
+            _self.dataObj.ossaccessKeyId = response.data.accessKeyId;
             _self.dataObj.key =
               response.data.dir + "/" + getUUID() + "_${filename}";
             _self.dataObj.dir = response.data.dir;
@@ -90,7 +89,7 @@ export default {
             resolve(true);
           })
           .catch(err => {
-            console.log("出錯了...", err);
+            console.log("出错了...", err);
             reject(false);
           });
       });
@@ -108,7 +107,7 @@ export default {
     },
     handleExceed(files, fileList) {
       this.$message({
-        message: "最多只能上傳" + this.maxCount + "張圖片",
+        message: "最多只能上传" + this.maxCount + "张圖片",
         type: "warning",
         duration: 1000
       });

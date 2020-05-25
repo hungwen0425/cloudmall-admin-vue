@@ -4,9 +4,9 @@
       <el-col :span="24">
         <el-steps :active="step" finish-status="success">
           <el-step title="基本資料"></el-step>
-          <el-step title="规格参數"></el-step>
+          <el-step title="规格参数"></el-step>
           <el-step title="銷售屬性"></el-step>
-          <el-step title="SKU資料"></el-step>
+          <el-step title="SKU信息"></el-step>
           <el-step title="保存完成"></el-step>
         </el-steps>
       </el-col>
@@ -19,6 +19,7 @@
             <el-form-item label="商品描述" prop="spuDescription">
               <el-input v-model="spu.spuDescription"></el-input>
             </el-form-item>
+
             <el-form-item label="選擇分類" prop="catalogId">
               <category-cascader></category-cascader>
             </el-form-item>
@@ -56,7 +57,7 @@
               <multi-upload v-model="spu.images"></multi-upload>
             </el-form-item>
             <el-form-item>
-              <el-button type="success" @click="collectSpuBaseInfo">下一步：設定基本参數</el-button>
+              <el-button type="success" @click="collectSpuBaseInfo">下一步：設定基本参数</el-button>
             </el-form-item>
           </el-form>
         </el-card>
@@ -69,7 +70,7 @@
               v-for="(group,gidx) in dataResp.attrGroups"
               :key="group.attrGroupId"
             >
-              <!-- 遍厲屬性,每個tab-pane對應一個表單，每個屬性是一個表單項  spu.baseAttrs[0] = [{attrId:xx,val:}]-->
+              <!-- 遍歷屬性,每個tab-pane對應一個表單，每個屬性是一個表單项  spu.baseAttrs[0] = [{attrId:xx,val:}]-->
               <el-form ref="form" :model="spu">
                 <el-form-item
                   :label="attr.attrName"
@@ -156,7 +157,7 @@
               </el-form>
             </div>
             <el-button type="primary" @click="step = 1">上一步</el-button>
-            <el-button type="success" @click="generateSkus">下一步：設定SKU資料</el-button>
+            <el-button type="success" @click="generateSkus">下一步：設定SKU信息</el-button>
           </el-card>
         </el-card>
       </el-col>
@@ -330,7 +331,7 @@
             </el-table-column>
           </el-table>
           <el-button type="primary" @click="step = 2">上一步</el-button>
-          <el-button type="success" @click="submitSkus">下一步：保存商品資料</el-button>
+          <el-button type="success" @click="submitSkus">下一步：保存商品信息</el-button>
         </el-card>
       </el-col>
       <el-col :span="24" v-show="step==4">
@@ -344,13 +345,13 @@
 </template>
 
 <script>
-//這裡可以導入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
-//例如：import 《組件名稱》 from '《組件路徑》';
+//这里可以导入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
+//例如：import 《組件名稱》 from '《組件路径》';
 import CategoryCascader from "../common/category-cascader";
 import BrandSelect from "../common/brand-select";
 import MultiUpload from "@/components/upload/multiUpload";
 export default {
-  //import引入的組件需要注入到物件中才能使用
+  //import引入的組件需要注入到對象中才能使用
   components: { CategoryCascader, BrandSelect, MultiUpload },
   props: {},
   data() {
@@ -362,29 +363,29 @@ export default {
       step: 0,
       //spu_name  spu_description  catalog_id  brand_id  weight  publish_status
       spu: {
-        //要提交的資料
+        //要提交的数据
         spuName: "",
         spuDescription: "",
         catalogId: 0,
         brandId: "",
         weight: "",
         publishStatus: 0,
-        decript: [], //商品詳情
-        images: [], //商品圖集，最後sku也可以新增
+        decript: [], //商品详情
+        images: [], //商品圖集，最后sku也可以新增
         bounds: {
           //積分
           buyBounds: 0,
           growBounds: 0
         },
         baseAttrs: [], //基本屬性
-        skus: [] //所有sku資料
+        skus: [] //所有sku信息
       },
       spuBaseInfoRules: {
         spuName: [
           { required: true, message: "請输入商品名字", trigger: "blur" }
         ],
         spuDescription: [
-          { required: true, message: "請編寫一個簡單描述", trigger: "blur" }
+          { required: true, message: "請编写一個简單描述", trigger: "blur" }
         ],
         catalogId: [
           { required: true, message: "請選擇一個分類", trigger: "blur" }
@@ -393,22 +394,22 @@ export default {
           { required: true, message: "請選擇一個品牌", trigger: "blur" }
         ],
         decript: [
-          { required: false, message: "請上傳商品詳情圖集", trigger: "blur" }
+          { required: false, message: "請上传商品详情圖集", trigger: "blur" }
         ],
         images: [
-          { required: false, message: "請上傳商品圖片集", trigger: "blur" }
+          { required: false, message: "請上传商品圖片集", trigger: "blur" }
         ],
         weight: [
           {
             type: "number",
             required: true,
-            message: "請填寫正確的重量值",
+            message: "請填写正确的重量值",
             trigger: "blur"
           }
         ]
       },
       dataResp: {
-        //後台返回的所有資料
+        //后台返回的所有数据
         attrGroups: [],
         baseAttrs: [],
         saleAttrs: [],
@@ -421,18 +422,18 @@ export default {
       inputValue: []
     };
   },
-  //計算屬性 類似於data概念
+  //计算屬性 類似于data概念
   computed: {},
-  //監控data中的資料變化
+  //监控data中的数据变化
   watch: {
     uploadImages(val) {
-      //擴展每個skus裡面的imgs選項
+      //扩展每個skus里面的imgs选项
       let imgArr = Array.from(new Set(this.spu.images.concat(val)));
 
-      //{imgUrl:"",defaultImg:0} 由於concat每次迭代上次，有很多重複。所以我们必須得到上次+這次的總長
+      //{imgUrl:"",defaultImg:0} 由于concat每次迭代上次，有很多重复。所以我们必须得到上次+这次的总長
 
       this.spu.skus.forEach((item, index) => {
-        let len = imgArr.length - this.spu.skus[index].images.length; //還差這麼多
+        let len = imgArr.length - this.spu.skus[index].images.length; //还差这么多
         if (len > 0) {
           let imgs = new Array(len);
           imgs = imgs.fill({ imgUrl: "", defaultImg: 0 });
@@ -494,10 +495,10 @@ export default {
     },
     checkDefaultImg(row, index, img) {
       console.log("默認圖片", row, index);
-      //這個圖片被選中了，
-      row.images[index].imgUrl = img; //默認選中
-      row.images[index].defaultImg = 1; //修改標誌位;
-      //修改其他人的標誌位
+      //这個圖片被选中了，
+      row.images[index].imgUrl = img; //默認选中
+      row.images[index].defaultImg = 1; //修改標志位;
+      //修改其他人的標志位
       row.images.forEach((item, idx) => {
         if (idx != index) {
           row.images[idx].defaultImg = 0;
@@ -529,15 +530,15 @@ export default {
       });
     },
     generateSaleAttrs() {
-      //把頁面绑定的所有attr處理到spu裡面,這一步都要做
+      //把页面绑定的所有attr处理到spu里面,这一步都要做
       this.spu.baseAttrs = [];
       this.dataResp.baseAttrs.forEach(item => {
         item.forEach(attr => {
           let { attrId, attrValues, showDesc } = attr;
-          //跳過没有入入值的屬性
+          //跳过没有录入值的屬性
           if (attrValues != "") {
             if (attrValues instanceof Array) {
-              //多個值用;隔開
+              //多個值用;隔开
               attrValues = attrValues.join(";");
             }
             this.spu.baseAttrs.push({ attrId, attrValues, showDesc });
@@ -551,7 +552,7 @@ export default {
     generateSkus() {
       this.step = 3;
 
-      //根據笛卡爾積運算進行生成sku
+      //根据笛卡尔積运算进行生成sku
       let selectValues = [];
       this.dataResp.tableAttrColumn = [];
       this.dataResp.tempSaleAttrs.forEach(item => {
@@ -562,9 +563,9 @@ export default {
       });
 
       let descartes = this.descartes(selectValues);
-      //[["黑色","6GB","移動"],["黑色","6GB","聯通"],["黑色","8GB","移動"],["黑色","8GB","聯通"],
-      //["白色","6GB","移動"],["白色","6GB","聯通"],["白色","8GB","移動"],["白色","8GB","聯通"],
-      //["蓝色","6GB","移動"],["蓝色","6GB","聯通"],["蓝色","8GB","移動"],["蓝色","8GB","聯通"]]
+      //[["黑色","6GB","移动"],["黑色","6GB","联通"],["黑色","8GB","移动"],["黑色","8GB","联通"],
+      //["白色","6GB","移动"],["白色","6GB","联通"],["白色","8GB","移动"],["白色","8GB","联通"],
+      //["蓝色","6GB","移动"],["蓝色","6GB","联通"],["蓝色","8GB","移动"],["蓝色","8GB","联通"]]
       console.log("生成的組合", JSON.stringify(descartes));
       //有多少descartes就有多少sku
       let skus = [];
@@ -572,7 +573,7 @@ export default {
       descartes.forEach((descar, descaridx) => {
         let attrArray = []; //sku屬性組
         descar.forEach((de, index) => {
-          //構造saleAttr資料
+          //构造saleAttr信息
           let saleAttrItem = {
             attrId: this.dataResp.tableAttrColumn[index].attrId,
             attrName: this.dataResp.tableAttrColumn[index].attrName,
@@ -580,13 +581,13 @@ export default {
           };
           attrArray.push(saleAttrItem);
         });
-        //先初始化幾個images，後面的上傳還要加
+        //先初始化几個images，后面的上传还要加
         let imgs = [];
         this.spu.images.forEach((img, idx) => {
           imgs.push({ imgUrl: "", defaultImg: 0 });
         });
 
-        //會員價，也必須在循環裡面生成，否則會導致資料绑定問题
+        //會員價，也必须在循环里面生成，否则會导致数据绑定问题
         let memberPrices = [];
         if (this.dataResp.memberLevels.length > 0) {
           for (let i = 0; i < this.dataResp.memberLevels.length; i++) {
@@ -623,9 +624,9 @@ export default {
         }
       });
       this.spu.skus = skus;
-      console.log("結果!!!", this.spu.skus, this.dataResp.tableAttrColumn);
+      console.log("结果!!!", this.spu.skus, this.dataResp.tableAttrColumn);
     },
-    //判断如果包含之前的sku的descar組合，就返回這個sku的詳細資料；
+    //判断如果包含之前的sku的descar組合，就返回这個sku的详细信息；
     hasAndReturnSku(skus, descar) {
       let res = null;
       if (skus.length > 0) {
@@ -638,7 +639,7 @@ export default {
       return res;
     },
     getShowSaleAttr() {
-      //取得當前分類可以使用的銷售屬性
+      //获取当前分類可以使用的銷售屬性
       if (!this.dataResp.steped[1]) {
         this.$http({
           url: this.$http.adornUrl(
@@ -673,7 +674,7 @@ export default {
           method: "get",
           params: this.$http.adornParams({})
         }).then(({ data }) => {
-          //先對表單的baseAttrs進行初始化
+          //先對表單的baseAttrs进行初始化
           data.data.forEach(item => {
             let attrArray = [];
             item.attrs.forEach(attr => {
@@ -693,8 +694,8 @@ export default {
 
     submitSkus() {
       console.log("~~~~~", JSON.stringify(this.spu));
-      this.$confirm("將要提交商品資料，需要一小段時間，是否繼續?", "提示", {
-        confirmButtonText: "確定",
+      this.$confirm("将要提交商品数据，需要一小段时间，是否繼續?", "提示", {
+        confirmButtonText: "确定",
         cancelButtonText: "取消",
         type: "warning"
       })
@@ -726,9 +727,9 @@ export default {
           });
         });
     },
-    //笛卡爾積運算
+    //笛卡尔積运算
     descartes(list) {
-      //parent上一級索引;count指針計數
+      //parent上一级索引;count指针计数
       var point = {};
 
       var result = [];
@@ -736,7 +737,7 @@ export default {
       var tempCount = 0;
       var temp = [];
 
-      //根據参數列生成指針物件
+      //根据参数列生成指针對象
       for (var index in list) {
         if (typeof list[index] == "object") {
           point[index] = { parent: pIndex, count: 0 };
@@ -744,23 +745,23 @@ export default {
         }
       }
 
-      //單維度資料結構直接返回
+      //單维度数据结构直接返回
       if (pIndex == null) {
         return list;
       }
 
-      //動態生成笛卡爾積
+      //动态生成笛卡尔積
       while (true) {
         for (var index in list) {
           tempCount = point[index]["count"];
           temp.push(list[index][tempCount]);
         }
 
-        //壓入結果陣列
+        //压入结果数組
         result.push(temp);
         temp = [];
 
-        //檢查指針最大值問题
+        //检查指针最大值问题
         while (true) {
           if (point[index]["count"] + 1 >= list[index].length) {
             point[index]["count"] = 0;
@@ -769,7 +770,7 @@ export default {
               return result;
             }
 
-            //赋值parent進行再次檢查
+            //赋值parent进行再次检查
             index = pIndex;
           } else {
             point[index]["count"]++;
@@ -779,9 +780,9 @@ export default {
       }
     }
   },
-  //生命週期 - 創建完成（可以訪問當前this實例）
+  //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
-  //生命週期 - 掛載完成（可以訪問DOM元素）
+  //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
     this.catPathSub = PubSub.subscribe("catPath", (msg, val) => {
       this.spu.catalogId = val[val.length - 1];
@@ -791,16 +792,16 @@ export default {
     });
     this.getMemberLevels();
   },
-  beforeCreate() {}, //生命週期 - 創建之前
-  beforeMount() {}, //生命週期 - 掛載之前
-  beforeUpdate() {}, //生命週期 - 更新之前
-  updated() {}, //生命週期 - 更新之後
+  beforeCreate() {}, //生命周期 - 创建之前
+  beforeMount() {}, //生命周期 - 挂载之前
+  beforeUpdate() {}, //生命周期 - 更新之前
+  updated() {}, //生命周期 - 更新之后
   beforeDestroy() {
     PubSub.unsubscribe(this.catPathSub);
     PubSub.unsubscribe(this.brandIdSub);
-  }, //生命週期 - 銷毁之前
-  destroyed() {}, //生命週期 - 銷毁完成
-  activated() {} //如果頁面有keep-alive缓存功能，這個函數會觸發
+  }, //生命周期 - 销毁之前
+  destroyed() {}, //生命周期 - 销毁完成
+  activated() {} //如果页面有keep-alive缓存功能，这個函数會触发
 };
 </script>
 <style scoped>

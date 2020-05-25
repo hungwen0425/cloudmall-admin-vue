@@ -17,25 +17,25 @@
       <el-form-item label="sku_id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="sku_id"></el-input>
       </el-form-item>
-      <el-form-item label="活動場次id" prop="sessionId">
-        <el-input v-model="dataForm.sessionId" placeholder="活動場次id"></el-input>
+      <el-form-item label="活动场次id" prop="sessionId">
+        <el-input v-model="dataForm.sessionId" placeholder="活动场次id"></el-input>
       </el-form-item>
-      <el-form-item label="訂閱時間" prop="subcribeTime">
-        <el-input v-model="dataForm.subcribeTime" placeholder="訂閱時間"></el-input>
+      <el-form-item label="订阅时间" prop="subcribeTime">
+        <el-input v-model="dataForm.subcribeTime" placeholder="订阅时间"></el-input>
       </el-form-item>
-      <el-form-item label="發送時間" prop="sendTime">
-        <el-input v-model="dataForm.sendTime" placeholder="發送時間"></el-input>
+      <el-form-item label="发送时间" prop="sendTime">
+        <el-input v-model="dataForm.sendTime" placeholder="发送时间"></el-input>
       </el-form-item>
       <el-form-item label="通知方式" prop="noticeType">
         <el-select v-model="dataForm.noticeType" placeholder="請選擇">
           <el-option label="短信" :value="0"></el-option>
-          <el-option label="郵件" :value="1"></el-option>
+          <el-option label="邮件" :value="1"></el-option>
         </el-select>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -60,13 +60,13 @@ export default {
         ],
         skuId: [{ required: true, message: "sku_id不能為空", trigger: "blur" }],
         sessionId: [
-          { required: true, message: "活動場次id不能為空", trigger: "blur" }
+          { required: true, message: "活动场次id不能為空", trigger: "blur" }
         ],
         subcribeTime: [
-          { required: true, message: "訂閱時間不能為空", trigger: "blur" }
+          { required: true, message: "订阅时间不能為空", trigger: "blur" }
         ],
         sendTime: [
-          { required: true, message: "發送時間不能為空", trigger: "blur" }
+          { required: true, message: "发送时间不能為空", trigger: "blur" }
         ],
         noticeType: [
           {

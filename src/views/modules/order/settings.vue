@@ -2,10 +2,10 @@
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查詢</el-button>
+        <el-button @click="getDataList()">查询</el-button>
         <el-button
           v-if="isAuth('order:ordersetting:save')"
           type="primary"
@@ -32,37 +32,37 @@
         prop="flashOrderOvertime"
         header-align="center"
         align="center"
-        label="秒殺訂單超時關閉時間(分)"
+        label="秒杀订單超时关闭时间(分)"
       ></el-table-column>
       <el-table-column
         prop="normalOrderOvertime"
         header-align="center"
         align="center"
-        label="正常訂單超時時間(分)"
+        label="正常订單超时时间(分)"
       ></el-table-column>
       <el-table-column
         prop="confirmOvertime"
         header-align="center"
         align="center"
-        label="發貨後自動確認收貨時間（天）"
+        label="发货后自动确認收货时间（天）"
       ></el-table-column>
       <el-table-column
         prop="finishOvertime"
         header-align="center"
         align="center"
-        label="自動完成交易時間，不能申請退貨（天）"
+        label="自动完成交易时间，不能申請退货（天）"
       ></el-table-column>
       <el-table-column
         prop="commentOvertime"
         header-align="center"
         align="center"
-        label="訂單完成後自動好評時間（天）"
+        label="订單完成后自动好评时间（天）"
       ></el-table-column>
       <el-table-column
         prop="memberLevel"
         header-align="center"
         align="center"
-        label="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】"
+        label="會員等级【0-不限會員等级，全部通用；其他-對應的其他會員等级】"
       ></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
@@ -80,7 +80,7 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 彈窗, 新增 / 修改 -->
+    <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
   </div>
 </template>
@@ -109,7 +109,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -131,18 +131,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多選
+    // 多选
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -161,10 +161,10 @@ export default {
             return item.id;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
+        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }

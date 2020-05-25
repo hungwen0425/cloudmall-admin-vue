@@ -2,10 +2,10 @@
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查詢</el-button>
+        <el-button @click="getDataList()">查询</el-button>
         <el-button
           v-if="isAuth('order:orderitem:save')"
           type="primary"
@@ -35,18 +35,18 @@
       <el-table-column prop="spuPic" header-align="center" align="center" label="spu_pic"></el-table-column>
       <el-table-column prop="spuBrand" header-align="center" align="center" label="品牌"></el-table-column>
       <el-table-column prop="categoryId" header-align="center" align="center" label="商品分類id"></el-table-column>
-      <el-table-column prop="skuId" header-align="center" align="center" label="商品sku編號"></el-table-column>
+      <el-table-column prop="skuId" header-align="center" align="center" label="商品sku编号"></el-table-column>
       <el-table-column prop="skuName" header-align="center" align="center" label="商品sku名字"></el-table-column>
       <el-table-column prop="skuPic" header-align="center" align="center" label="商品sku圖片"></el-table-column>
       <el-table-column prop="skuPrice" header-align="center" align="center" label="商品sku價格"></el-table-column>
-      <el-table-column prop="skuQuantity" header-align="center" align="center" label="商品購買的數量"></el-table-column>
+      <el-table-column prop="skuQuantity" header-align="center" align="center" label="商品购买的数量"></el-table-column>
       <el-table-column
         prop="skuAttrsVals"
         header-align="center"
         align="center"
         label="商品銷售屬性組合（JSON）"
       ></el-table-column>
-      <el-table-column prop="promotionAmount" header-align="center" align="center" label="商品促銷分解金额"></el-table-column>
+      <el-table-column prop="promotionAmount" header-align="center" align="center" label="商品促销分解金额"></el-table-column>
       <el-table-column prop="couponAmount" header-align="center" align="center" label="優惠券優惠分解金额"></el-table-column>
       <el-table-column
         prop="integrationAmount"
@@ -54,7 +54,7 @@
         align="center"
         label="積分優惠分解金额"
       ></el-table-column>
-      <el-table-column prop="realAmount" header-align="center" align="center" label="該商品經過優惠後的分解金额"></el-table-column>
+      <el-table-column prop="realAmount" header-align="center" align="center" label="该商品经过優惠后的分解金额"></el-table-column>
       <el-table-column prop="giftIntegration" header-align="center" align="center" label="赠送積分"></el-table-column>
       <el-table-column prop="giftGrowth" header-align="center" align="center" label="赠送成長值"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
@@ -73,7 +73,7 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 彈窗, 新增 / 修改 -->
+    <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
   </div>
 </template>
@@ -102,7 +102,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -124,18 +124,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多選
+    // 多选
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -154,10 +154,10 @@ export default {
             return item.id;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
+        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }

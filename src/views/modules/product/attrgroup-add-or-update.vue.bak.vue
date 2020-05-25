@@ -27,7 +27,7 @@
       <el-form-item label="所屬分類id" prop="catelogId">
         <el-cascader
           v-model="dataForm.catelogIds"
-          placeholder="試試搜索：手機"
+          placeholder="试试搜索：手机"
           filterable
           :options="categorys"
           :props="categoryCascaders"
@@ -36,7 +36,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>

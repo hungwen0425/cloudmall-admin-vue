@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-upload
-      action="http://mall-gateway.oss-cn-shanghai.aliyuncs.com"
+      action="http://cloudmall.oss-cn-hongkong.aliyuncs.com"
       :data="dataObj"
       list-type="picture"
       :multiple="false"
@@ -13,7 +13,7 @@
       :on-preview="handlePreview"
     >
       <el-button size="small" type="primary">點擊上傳</el-button>
-      <div slot="tip" class="el-upload__tip">只能上傳jpg/png文件，且不超過10MB</div>
+      <div slot="tip" class="el-upload__tip">只能上傳 jpg/png 檔案，且不超過10MB</div>
     </el-upload>
     <el-dialog :visible.sync="dialogVisible">
       <img width="100%" :src="fileList[0].url" alt />
@@ -86,11 +86,12 @@ export default {
       return new Promise((resolve, reject) => {
         policy()
           .then(response => {
+            console.log("data: ", response);
             _self.dataObj.policy = response.data.policy;
             _self.dataObj.signature = response.data.signature;
-            _self.dataObj.ossaccessKeyId = response.data.accessid;
+            _self.dataObj.ossaccessKeyId = response.data.accessKeyId;
             _self.dataObj.key =
-              response.data.dir + "/" + getUUID() + "_${filename}";
+              response.data.dir + getUUID() + "_${filename}";
             _self.dataObj.dir = response.data.dir;
             _self.dataObj.host = response.data.host;
             resolve(true);
@@ -106,10 +107,7 @@ export default {
       this.fileList.pop();
       this.fileList.push({
         name: file.name,
-        url:
-          this.dataObj.host +
-          "/" +
-          this.dataObj.key.replace("${filename}", file.name)
+        url: this.dataObj.host + "/" + this.dataObj.key.replace("${filename}", file.name)
       });
       this.emitInput(this.fileList[0].url);
     }

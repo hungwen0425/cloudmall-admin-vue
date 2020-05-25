@@ -11,28 +11,28 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="秒殺訂單超時關閉時間(分)" prop="flashOrderOvertime">
-        <el-input v-model="dataForm.flashOrderOvertime" placeholder="秒殺訂單超時關閉時間(分)"></el-input>
+      <el-form-item label="秒杀订單超时关闭时间(分)" prop="flashOrderOvertime">
+        <el-input v-model="dataForm.flashOrderOvertime" placeholder="秒杀订單超时关闭时间(分)"></el-input>
       </el-form-item>
-      <el-form-item label="正常訂單超時時間(分)" prop="normalOrderOvertime">
-        <el-input v-model="dataForm.normalOrderOvertime" placeholder="正常訂單超時時間(分)"></el-input>
+      <el-form-item label="正常订單超时时间(分)" prop="normalOrderOvertime">
+        <el-input v-model="dataForm.normalOrderOvertime" placeholder="正常订單超时时间(分)"></el-input>
       </el-form-item>
-      <el-form-item label="發貨後自動確認收貨時間（天）" prop="confirmOvertime">
-        <el-input v-model="dataForm.confirmOvertime" placeholder="發貨後自動確認收貨時間（天）"></el-input>
+      <el-form-item label="发货后自动确認收货时间（天）" prop="confirmOvertime">
+        <el-input v-model="dataForm.confirmOvertime" placeholder="发货后自动确認收货时间（天）"></el-input>
       </el-form-item>
-      <el-form-item label="自動完成交易時間，不能申請退貨（天）" prop="finishOvertime">
-        <el-input v-model="dataForm.finishOvertime" placeholder="自動完成交易時間，不能申請退貨（天）"></el-input>
+      <el-form-item label="自动完成交易时间，不能申請退货（天）" prop="finishOvertime">
+        <el-input v-model="dataForm.finishOvertime" placeholder="自动完成交易时间，不能申請退货（天）"></el-input>
       </el-form-item>
-      <el-form-item label="訂單完成後自動好評時間（天）" prop="commentOvertime">
-        <el-input v-model="dataForm.commentOvertime" placeholder="訂單完成後自動好評時間（天）"></el-input>
+      <el-form-item label="订單完成后自动好评时间（天）" prop="commentOvertime">
+        <el-input v-model="dataForm.commentOvertime" placeholder="订單完成后自动好评时间（天）"></el-input>
       </el-form-item>
-      <el-form-item label="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】" prop="memberLevel">
-        <el-input v-model="dataForm.memberLevel" placeholder="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】"></el-input>
+      <el-form-item label="會員等级【0-不限會員等级，全部通用；其他-對應的其他會員等级】" prop="memberLevel">
+        <el-input v-model="dataForm.memberLevel" placeholder="會員等级【0-不限會員等级，全部通用；其他-對應的其他會員等级】"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -55,35 +55,35 @@ export default {
         flashOrderOvertime: [
           {
             required: true,
-            message: "秒殺訂單超時關閉時間(分)不能為空",
+            message: "秒杀订單超时关闭时间(分)不能為空",
             trigger: "blur"
           }
         ],
         normalOrderOvertime: [
           {
             required: true,
-            message: "正常訂單超時時間(分)不能為空",
+            message: "正常订單超时时间(分)不能為空",
             trigger: "blur"
           }
         ],
         confirmOvertime: [
           {
             required: true,
-            message: "發貨後自動確認收貨時間（天）不能為空",
+            message: "发货后自动确認收货时间（天）不能為空",
             trigger: "blur"
           }
         ],
         finishOvertime: [
           {
             required: true,
-            message: "自動完成交易時間，不能申請退貨（天）不能為空",
+            message: "自动完成交易时间，不能申請退货（天）不能為空",
             trigger: "blur"
           }
         ],
         commentOvertime: [
           {
             required: true,
-            message: "訂單完成後自動好評時間（天）不能為空",
+            message: "订單完成后自动好评时间（天）不能為空",
             trigger: "blur"
           }
         ],
@@ -91,7 +91,7 @@ export default {
           {
             required: true,
             message:
-              "會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】不能為空",
+              "會員等级【0-不限會員等级，全部通用；其他-對應的其他會員等级】不能為空",
             trigger: "blur"
           }
         ]

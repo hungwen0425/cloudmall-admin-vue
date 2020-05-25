@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.beanName" placeholder="bean名稱" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查詢</el-button>
+        <el-button @click="getDataList()">查询</el-button>
         <el-button v-if="isAuth('sys:schedule:save')" type="primary" @click="addOrUpdateHandle()">新增</el-button>
         <el-button
           v-if="isAuth('sys:schedule:delete')"
@@ -18,20 +18,20 @@
           type="danger"
           @click="pauseHandle()"
           :disabled="dataListSelections.length <= 0"
-        >批量暫停</el-button>
+        >批量暂停</el-button>
         <el-button
           v-if="isAuth('sys:schedule:resume')"
           type="danger"
           @click="resumeHandle()"
           :disabled="dataListSelections.length <= 0"
-        >批量恢復</el-button>
+        >批量恢复</el-button>
         <el-button
           v-if="isAuth('sys:schedule:run')"
           type="danger"
           @click="runHandle()"
           :disabled="dataListSelections.length <= 0"
         >批量立即执行</el-button>
-        <el-button v-if="isAuth('sys:schedule:log')" type="success" @click="logHandle()">日誌列表</el-button>
+        <el-button v-if="isAuth('sys:schedule:log')" type="success" @click="logHandle()">日志列表</el-button>
       </el-form-item>
     </el-form>
     <el-table
@@ -44,13 +44,13 @@
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="jobId" header-align="center" align="center" width="80" label="ID"></el-table-column>
       <el-table-column prop="beanName" header-align="center" align="center" label="bean名稱"></el-table-column>
-      <el-table-column prop="params" header-align="center" align="center" label="参數"></el-table-column>
-      <el-table-column prop="cronExpression" header-align="center" align="center" label="cron表達式"></el-table-column>
-      <el-table-column prop="remark" header-align="center" align="center" label="備註"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="狀態">
+      <el-table-column prop="params" header-align="center" align="center" label="参数"></el-table-column>
+      <el-table-column prop="cronExpression" header-align="center" align="center" label="cron表达式"></el-table-column>
+      <el-table-column prop="remark" header-align="center" align="center" label="备注"></el-table-column>
+      <el-table-column prop="status" header-align="center" align="center" label="状态">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.status === 0" size="small">正常</el-tag>
-          <el-tag v-else size="small" type="danger">暫停</el-tag>
+          <el-tag v-else size="small" type="danger">暂停</el-tag>
         </template>
       </el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
@@ -72,13 +72,13 @@
             type="text"
             size="small"
             @click="pauseHandle(scope.row.jobId)"
-          >暫停</el-button>
+          >暂停</el-button>
           <el-button
             v-if="isAuth('sys:schedule:resume')"
             type="text"
             size="small"
             @click="resumeHandle(scope.row.jobId)"
-          >恢復</el-button>
+          >恢复</el-button>
           <el-button
             v-if="isAuth('sys:schedule:run')"
             type="text"
@@ -97,9 +97,9 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 彈窗, 新增 / 修改 -->
+    <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
-    <!-- 彈窗, 日誌列表 -->
+    <!-- 弹窗, 日志列表 -->
     <log v-if="logVisible" ref="log"></log>
   </div>
 </template>
@@ -131,7 +131,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -153,18 +153,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多選
+    // 多选
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -183,10 +183,10 @@ export default {
             return item.jobId;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
+        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }
@@ -213,7 +213,7 @@ export default {
         })
         .catch(() => {});
     },
-    // 暫停
+    // 暂停
     pauseHandle(id) {
       var ids = id
         ? [id]
@@ -221,10 +221,10 @@ export default {
             return item.jobId;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "暫停" : "批量暫停"}]操作?`,
+        `确定對[id=${ids.join(",")}]进行[${id ? "暂停" : "批量暂停"}]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }
@@ -251,7 +251,7 @@ export default {
         })
         .catch(() => {});
     },
-    // 恢復
+    // 恢复
     resumeHandle(id) {
       var ids = id
         ? [id]
@@ -259,10 +259,10 @@ export default {
             return item.jobId;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "恢復" : "批量恢復"}]操作?`,
+        `确定對[id=${ids.join(",")}]进行[${id ? "恢复" : "批量恢复"}]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }
@@ -297,12 +297,12 @@ export default {
             return item.jobId;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${
+        `确定對[id=${ids.join(",")}]进行[${
           id ? "立即执行" : "批量立即执行"
         }]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }
@@ -329,7 +329,7 @@ export default {
         })
         .catch(() => {});
     },
-    // 日誌列表
+    // 日志列表
     logHandle() {
       this.logVisible = true;
       this.$nextTick(() => {

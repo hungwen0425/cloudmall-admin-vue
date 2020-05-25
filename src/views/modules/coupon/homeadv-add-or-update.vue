@@ -17,37 +17,37 @@
       <el-form-item label="圖片地址" prop="pic">
         <el-input v-model="dataForm.pic" placeholder="圖片地址"></el-input>
       </el-form-item>
-      <el-form-item label="開始時間" prop="startTime">
-        <el-input v-model="dataForm.startTime" placeholder="開始時間"></el-input>
+      <el-form-item label="开始时间" prop="startTime">
+        <el-input v-model="dataForm.startTime" placeholder="开始时间"></el-input>
       </el-form-item>
-      <el-form-item label="結束時間" prop="endTime">
-        <el-input v-model="dataForm.endTime" placeholder="結束時間"></el-input>
+      <el-form-item label="结束时间" prop="endTime">
+        <el-input v-model="dataForm.endTime" placeholder="结束时间"></el-input>
       </el-form-item>
-      <el-form-item label="狀態" prop="status">
-        <el-input v-model="dataForm.status" placeholder="狀態"></el-input>
+      <el-form-item label="状态" prop="status">
+        <el-input v-model="dataForm.status" placeholder="状态"></el-input>
       </el-form-item>
-      <el-form-item label="點擊數" prop="clickCount">
-        <el-input v-model="dataForm.clickCount" placeholder="點擊數"></el-input>
+      <el-form-item label="点击数" prop="clickCount">
+        <el-input v-model="dataForm.clickCount" placeholder="点击数"></el-input>
       </el-form-item>
-      <el-form-item label="廣告詳情連接地址" prop="url">
-        <el-input v-model="dataForm.url" placeholder="廣告詳情連接地址"></el-input>
+      <el-form-item label="广告详情连接地址" prop="url">
+        <el-input v-model="dataForm.url" placeholder="广告详情连接地址"></el-input>
       </el-form-item>
-      <el-form-item label="備註" prop="note">
-        <el-input v-model="dataForm.note" placeholder="備註"></el-input>
+      <el-form-item label="备注" prop="note">
+        <el-input v-model="dataForm.note" placeholder="备注"></el-input>
       </el-form-item>
       <el-form-item label="排序" prop="sort">
         <el-input v-model="dataForm.sort" placeholder="排序"></el-input>
       </el-form-item>
-      <el-form-item label="發佈者" prop="publisherId">
-        <el-input v-model="dataForm.publisherId" placeholder="發佈者"></el-input>
+      <el-form-item label="发布者" prop="publisherId">
+        <el-input v-model="dataForm.publisherId" placeholder="发布者"></el-input>
       </el-form-item>
-      <el-form-item label="審核者" prop="authId">
-        <el-input v-model="dataForm.authId" placeholder="審核者"></el-input>
+      <el-form-item label="审核者" prop="authId">
+        <el-input v-model="dataForm.authId" placeholder="审核者"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -75,28 +75,28 @@ export default {
         name: [{ required: true, message: "名字不能為空", trigger: "blur" }],
         pic: [{ required: true, message: "圖片地址不能為空", trigger: "blur" }],
         startTime: [
-          { required: true, message: "開始時間不能為空", trigger: "blur" }
+          { required: true, message: "开始时间不能為空", trigger: "blur" }
         ],
         endTime: [
-          { required: true, message: "結束時間不能為空", trigger: "blur" }
+          { required: true, message: "结束时间不能為空", trigger: "blur" }
         ],
-        status: [{ required: true, message: "狀態不能為空", trigger: "blur" }],
+        status: [{ required: true, message: "状态不能為空", trigger: "blur" }],
         clickCount: [
-          { required: true, message: "點擊數不能為空", trigger: "blur" }
+          { required: true, message: "点击数不能為空", trigger: "blur" }
         ],
         url: [
           {
             required: true,
-            message: "廣告詳情連接地址不能為空",
+            message: "广告详情连接地址不能為空",
             trigger: "blur"
           }
         ],
-        note: [{ required: true, message: "備註不能為空", trigger: "blur" }],
+        note: [{ required: true, message: "备注不能為空", trigger: "blur" }],
         sort: [{ required: true, message: "排序不能為空", trigger: "blur" }],
         publisherId: [
-          { required: true, message: "發佈者不能為空", trigger: "blur" }
+          { required: true, message: "发布者不能為空", trigger: "blur" }
         ],
-        authId: [{ required: true, message: "審核者不能為空", trigger: "blur" }]
+        authId: [{ required: true, message: "审核者不能為空", trigger: "blur" }]
       }
     };
   },

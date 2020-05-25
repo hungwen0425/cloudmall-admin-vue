@@ -2,10 +2,10 @@
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查詢</el-button>
+        <el-button @click="getDataList()">查询</el-button>
         <!-- <el-button v-if="isAuth('member:member:save')" type="primary" @click="addOrUpdateHandle()">新增</el-button>
         <el-button v-if="isAuth('member:member:delete')" type="danger" @click="deleteHandle()" :disabled="dataListSelections.length <= 0">批量删除</el-button>-->
       </el-form-item>
@@ -19,21 +19,21 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="levelId" header-align="center" align="center" label="會員等級"></el-table-column>
-      <el-table-column prop="username" header-align="center" align="center" label="使用者名"></el-table-column>
-      <el-table-column prop="nickname" header-align="center" align="center" label="暱稱"></el-table-column>
-      <el-table-column prop="mobile" header-align="center" align="center" label="手機號碼"></el-table-column>
-      <el-table-column prop="email" header-align="center" align="center" label="郵箱"></el-table-column>
-      <el-table-column prop="header" header-align="center" align="center" label="頭像"></el-table-column>
+      <el-table-column prop="levelId" header-align="center" align="center" label="會員等级"></el-table-column>
+      <el-table-column prop="username" header-align="center" align="center" label="用户名"></el-table-column>
+      <el-table-column prop="nickname" header-align="center" align="center" label="昵稱"></el-table-column>
+      <el-table-column prop="mobile" header-align="center" align="center" label="手机号码"></el-table-column>
+      <el-table-column prop="email" header-align="center" align="center" label="邮箱"></el-table-column>
+      <el-table-column prop="header" header-align="center" align="center" label="头像"></el-table-column>
       <el-table-column prop="gender" header-align="center" align="center" label="性别"></el-table-column>
       <el-table-column prop="birth" header-align="center" align="center" label="生日"></el-table-column>
       <el-table-column prop="city" header-align="center" align="center" label="所在城市"></el-table-column>
-      <el-table-column prop="job" header-align="center" align="center" label="職業"></el-table-column>
-      <el-table-column prop="sign" header-align="center" align="center" label="個性簽名"></el-table-column>
-      <el-table-column prop="sourceType" header-align="center" align="center" label="使用者來源"></el-table-column>
+      <el-table-column prop="job" header-align="center" align="center" label="职业"></el-table-column>
+      <el-table-column prop="sign" header-align="center" align="center" label="個性签名"></el-table-column>
+      <el-table-column prop="sourceType" header-align="center" align="center" label="用户来源"></el-table-column>
       <el-table-column prop="integration" header-align="center" align="center" label="積分"></el-table-column>
       <el-table-column prop="growth" header-align="center" align="center" label="成長值"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="啟用狀態">
+      <el-table-column prop="status" header-align="center" align="center" label="启用状态">
         <template slot-scope="scope">
           <el-switch
             v-model="scope.row.status"
@@ -44,11 +44,11 @@
           ></el-switch>
         </template>
       </el-table-column>
-      <el-table-column prop="createTime" header-align="center" align="center" label="註冊時間"></el-table-column>
+      <el-table-column prop="createTime" header-align="center" align="center" label="注册时间"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small">送券</el-button>
-          <el-button type="text" size="small">查訂單</el-button>
+          <el-button type="text" size="small">查订單</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -61,7 +61,7 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 彈窗, 新增 / 修改 -->
+    <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
   </div>
 </template>
@@ -90,7 +90,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -112,18 +112,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多選
+    // 多选
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -139,8 +139,8 @@ export default {
     //     var ids = id ? [id] : this.dataListSelections.map(item => {
     //       return item.id
     //     })
-    //     this.$confirm(`確定對[id=${ids.join(',')}]進行[${id ? '删除' : '批量删除'}]操作?`, '提示', {
-    //       confirmButtonText: '確定',
+    //     this.$confirm(`确定對[id=${ids.join(',')}]进行[${id ? '删除' : '批量删除'}]操作?`, '提示', {
+    //       confirmButtonText: '确定',
     //       cancelButtonText: '取消',
     //       type: 'warning'
     //     }).then(() => {

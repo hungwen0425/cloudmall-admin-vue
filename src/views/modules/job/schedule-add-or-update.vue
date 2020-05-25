@@ -14,19 +14,19 @@
       <el-form-item label="bean名稱" prop="beanName">
         <el-input v-model="dataForm.beanName" placeholder="spring bean名稱, 如: testTask"></el-input>
       </el-form-item>
-      <el-form-item label="参數" prop="params">
-        <el-input v-model="dataForm.params" placeholder="参數"></el-input>
+      <el-form-item label="参数" prop="params">
+        <el-input v-model="dataForm.params" placeholder="参数"></el-input>
       </el-form-item>
-      <el-form-item label="cron表達式" prop="cronExpression">
+      <el-form-item label="cron表达式" prop="cronExpression">
         <el-input v-model="dataForm.cronExpression" placeholder="如: 0 0 12 * * ?"></el-input>
       </el-form-item>
-      <el-form-item label="備註" prop="remark">
-        <el-input v-model="dataForm.remark" placeholder="備註"></el-input>
+      <el-form-item label="备注" prop="remark">
+        <el-input v-model="dataForm.remark" placeholder="备注"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -46,10 +46,10 @@ export default {
       },
       dataRule: {
         beanName: [
-          { required: true, message: "使用者名不能為空", trigger: "blur" }
+          { required: true, message: "用户名不能為空", trigger: "blur" }
         ],
         cronExpression: [
-          { required: true, message: "cron表達式不能為空", trigger: "blur" }
+          { required: true, message: "cron表达式不能為空", trigger: "blur" }
         ]
       }
     };

@@ -13,10 +13,10 @@
     >
       <el-form-item label="優惠卷類型" prop="couponType">
         <el-select v-model="dataForm.couponType" placeholder="請選擇">
-          <el-option label="全場赠券" :value="0"></el-option>
+          <el-option label="全场赠券" :value="0"></el-option>
           <el-option label="會員赠券" :value="1"></el-option>
-          <el-option label="購物赠券" :value="2"></el-option>
-          <el-option label="註冊赠券" :value="3"></el-option>
+          <el-option label="购物赠券" :value="2"></el-option>
+          <el-option label="注册赠券" :value="3"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="優惠券圖片" prop="couponImg">
@@ -25,55 +25,55 @@
       <el-form-item label="優惠卷名字" prop="couponName">
         <el-input v-model="dataForm.couponName" placeholder="優惠卷名字"></el-input>
       </el-form-item>
-      <el-form-item label="數量" prop="num">
+      <el-form-item label="数量" prop="num">
         <el-input-number :min="0" v-model="dataForm.num"></el-input-number>
       </el-form-item>
       <el-form-item label="金额" prop="amount">
         <el-input-number :min="0" v-model="dataForm.amount" :precision="2"></el-input-number>
       </el-form-item>
-      <el-form-item label="每人限領張數" prop="perLimit">
+      <el-form-item label="每人限领张数" prop="perLimit">
         <el-input-number :min="0" v-model="dataForm.perLimit"></el-input-number>
       </el-form-item>
-      <el-form-item label="使用門槛（最小積分）" prop="minPoint">
+      <el-form-item label="使用门槛（最小積分）" prop="minPoint">
         <el-input-number :min="0" v-model="dataForm.minPoint"></el-input-number>
       </el-form-item>
-      <el-form-item label="有效時間" prop="useTimeRange">
+      <el-form-item label="有效时间" prop="useTimeRange">
         <el-date-picker
           v-model="dataForm.useTimeRange"
           type="daterange"
           range-separator="至"
-          start-placeholder="開始時間"
-          end-placeholder="結束時間"
+          start-placeholder="开始时间"
+          end-placeholder="结束时间"
         ></el-date-picker>
       </el-form-item>
       <el-form-item label="使用類型" prop="useType">
         <el-select v-model="dataForm.useType" placeholder="請選擇">
-          <el-option :value="0" label="全場通用"></el-option>
+          <el-option :value="0" label="全场通用"></el-option>
           <el-option :value="1" label="指定分類"></el-option>
           <el-option :value="2" label="指定商品"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="備註" prop="note">
-        <el-input v-model="dataForm.note" placeholder="備註"></el-input>
+      <el-form-item label="备注" prop="note">
+        <el-input v-model="dataForm.note" placeholder="备注"></el-input>
       </el-form-item>
-      <el-form-item label="發行數量" prop="publishCount">
+      <el-form-item label="发行数量" prop="publishCount">
         <el-input-number v-model="dataForm.publishCount" :min="0"></el-input-number>
       </el-form-item>
-      <el-form-item label="領取日期" prop="enableStartTime">
+      <el-form-item label="领取日期" prop="enableStartTime">
         <el-date-picker
           v-model="dataForm.timeRange"
           type="daterange"
           range-separator="至"
-          start-placeholder="開始日期"
-          end-placeholder="結束日期"
+          start-placeholder="开始日期"
+          end-placeholder="结束日期"
         ></el-date-picker>
       </el-form-item>
-      <el-form-item label="優惠碼" prop="code">
-        <el-input v-model="dataForm.code" placeholder="優惠碼"></el-input>
+      <el-form-item label="優惠码" prop="code">
+        <el-input v-model="dataForm.code" placeholder="優惠码"></el-input>
       </el-form-item>
-      <el-form-item label="領取所需等級" prop="memberLevel">
+      <el-form-item label="领取所需等级" prop="memberLevel">
         <el-select v-model="dataForm.memberLevel" placeholder="請選擇">
-          <el-option :value="0" label="不限製"></el-option>
+          <el-option :value="0" label="不限制"></el-option>
           <el-option
             v-for="item in memberLevels"
             :key="item.id"
@@ -85,7 +85,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -136,13 +136,13 @@ export default {
         couponName: [
           { required: true, message: "優惠卷名字不能為空", trigger: "blur" }
         ],
-        num: [{ required: true, message: "數量不能為空", trigger: "blur" }],
+        num: [{ required: true, message: "数量不能為空", trigger: "blur" }],
         amount: [{ required: true, message: "金额不能為空", trigger: "blur" }],
         perLimit: [
-          { required: true, message: "每人限領張數不能為空", trigger: "blur" }
+          { required: true, message: "每人限领张数不能為空", trigger: "blur" }
         ],
         minPoint: [
-          { required: true, message: "使用門槛不能為空", trigger: "blur" }
+          { required: true, message: "使用门槛不能為空", trigger: "blur" }
         ],
         useType: [
           {
@@ -151,29 +151,29 @@ export default {
             trigger: "blur"
           }
         ],
-        note: [{ required: true, message: "備註不能為空", trigger: "blur" }],
+        note: [{ required: true, message: "备注不能為空", trigger: "blur" }],
         publishCount: [
-          { required: true, message: "發行數量不能為空", trigger: "blur" }
+          { required: true, message: "发行数量不能為空", trigger: "blur" }
         ],
         enableStartTime: [
           {
             required: true,
-            message: "可以領取的開始日期不能為空",
+            message: "可以领取的开始日期不能為空",
             trigger: "blur"
           }
         ],
         enableEndTime: [
           {
             required: true,
-            message: "可以領取的結束日期不能為空",
+            message: "可以领取的结束日期不能為空",
             trigger: "blur"
           }
         ],
-        code: [{ required: true, message: "優惠碼不能為空", trigger: "blur" }],
+        code: [{ required: true, message: "優惠码不能為空", trigger: "blur" }],
         memberLevel: [
           {
             required: true,
-            message: "可以領取的會員等級不能為空",
+            message: "可以领取的會員等级不能為空",
             trigger: "blur"
           }
         ]
@@ -185,7 +185,7 @@ export default {
   },
   methods: {
     getMemberLevels() {
-      //取得所有的會員等級
+      //获取所有的會員等级
       this.$http({
         url: this.$http.adornUrl("/member/memberlevel/list"),
         method: "get",

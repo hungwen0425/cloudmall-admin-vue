@@ -17,8 +17,8 @@
       <el-form-item label="sku_name" prop="skuName">
         <el-input v-model="dataForm.skuName" placeholder="sku_name"></el-input>
       </el-form-item>
-      <el-form-item label="購買個數" prop="skuNum">
-        <el-input v-model="dataForm.skuNum" placeholder="購買個數"></el-input>
+      <el-form-item label="购买個数" prop="skuNum">
+        <el-input v-model="dataForm.skuNum" placeholder="购买個数"></el-input>
       </el-form-item>
       <el-form-item label="工作單id" prop="taskId">
         <el-input v-model="dataForm.taskId" placeholder="工作單id"></el-input>
@@ -26,7 +26,7 @@
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
-      <el-button type="primary" @click="dataFormSubmit()">確定</el-button>
+      <el-button type="primary" @click="dataFormSubmit()">确定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -49,7 +49,7 @@ export default {
           { required: true, message: "sku_name不能為空", trigger: "blur" }
         ],
         skuNum: [
-          { required: true, message: "購買個數不能為空", trigger: "blur" }
+          { required: true, message: "购买個数不能為空", trigger: "blur" }
         ],
         taskId: [
           { required: true, message: "工作單id不能為空", trigger: "blur" }

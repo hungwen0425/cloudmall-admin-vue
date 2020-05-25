@@ -2,10 +2,10 @@
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="参数名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查詢</el-button>
+        <el-button @click="getDataList()">查询</el-button>
         <el-button
           v-if="isAuth('member:memberlevel:save')"
           type="primary"
@@ -28,27 +28,27 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="name" header-align="center" align="center" label="等級名稱"></el-table-column>
+      <el-table-column prop="name" header-align="center" align="center" label="等级名稱"></el-table-column>
       <el-table-column prop="growthPoint" header-align="center" align="center" label="所需成長值"></el-table-column>
-      <el-table-column prop="defaultStatus" header-align="center" align="center" label="默認等級">
+      <el-table-column prop="defaultStatus" header-align="center" align="center" label="默認等级">
         <template slot-scope="scope">
           <i class="el-icon-success" v-if="scope.row.defaultStatus==1"></i>
           <i class="el-icon-error" v-else></i>
         </template>
       </el-table-column>
-      <el-table-column prop="freeFreightPoint" header-align="center" align="center" label="免運費標準"></el-table-column>
+      <el-table-column prop="freeFreightPoint" header-align="center" align="center" label="免运费標准"></el-table-column>
       <el-table-column
         prop="commentGrowthPoint"
         header-align="center"
         align="center"
-        label="每次評價取得的成長值"
+        label="每次评價获取的成長值"
       ></el-table-column>
-      <el-table-column label="特權">
+      <el-table-column label="特权">
         <el-table-column
           prop="priviledgeFreeFreight"
           header-align="center"
           align="center"
-          label="免郵特權"
+          label="免邮特权"
         >
           <template slot-scope="scope">
             <i class="el-icon-success" v-if="scope.row.priviledgeFreeFreight==1"></i>
@@ -59,7 +59,7 @@
           prop="priviledgeMemberPrice"
           header-align="center"
           align="center"
-          label="會員價格特權"
+          label="會員價格特权"
         >
           <template slot-scope="scope">
             <i class="el-icon-success" v-if="scope.row.priviledgeMemberPrice==1"></i>
@@ -70,7 +70,7 @@
           prop="priviledgeBirthday"
           header-align="center"
           align="center"
-          label="生日特權"
+          label="生日特权"
         >
           <template slot-scope="scope">
             <i class="el-icon-success" v-if="scope.row.priviledgeBirthday==1"></i>
@@ -78,7 +78,7 @@
           </template>
         </el-table-column>
       </el-table-column>
-      <el-table-column prop="note" header-align="center" align="center" label="備註"></el-table-column>
+      <el-table-column prop="note" header-align="center" align="center" label="备注"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>
@@ -95,7 +95,7 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 彈窗, 新增 / 修改 -->
+    <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
   </div>
 </template>
@@ -124,7 +124,7 @@ export default {
     this.getDataList();
   },
   methods: {
-    // 取得資料列表
+    // 获取数据列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -146,18 +146,18 @@ export default {
         this.dataListLoading = false;
       });
     },
-    // 每頁數
+    // 每页数
     sizeChangeHandle(val) {
       this.pageSize = val;
       this.pageIndex = 1;
       this.getDataList();
     },
-    // 當前頁
+    // 当前页
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
     },
-    // 多選
+    // 多选
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
@@ -176,10 +176,10 @@ export default {
             return item.id;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
+        `确定對[id=${ids.join(",")}]进行[${id ? "删除" : "批量删除"}]操作?`,
         "提示",
         {
-          confirmButtonText: "確定",
+          confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
         }
