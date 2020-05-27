@@ -78,7 +78,7 @@
 
     //,autoClearinitialContent:true //是否自動清除編輯器初始内容，注意：如果focus屬性設定為true,這個也為真，那么編輯器一上來就會觸發導致初始化的内容看不到了
 
-    //,focus:false //初始化時，是否让編輯器取得焦點true或false
+    //,focus:false //初始化時，是否讓編輯器取得焦點true或false
 
     //如果自定義，最好給p標簽如下的行高，要不输入中文時，會有跳動感
     //,initialStyle:'p{line-height:1em}'//編輯器層級的基數,可以用來改變字體等
@@ -112,7 +112,7 @@
     //,retainOnlyLabelPasted: false
 
     //,pasteplain:false  //是否默認為纯文本粘贴。false為不使用纯文本粘贴，true為使用纯文本粘贴
-    //纯文本粘贴模式下的過滤规則
+    //纯文本粘贴模式下的過滤規則
     //'filterTxtRules' : function(){
     //    function transP(node){
     //        node.tagName = 'p';
@@ -182,7 +182,7 @@
     //    { label:'',name:'kaiti',val:'楷體,楷體_GB2312, SimKai'},
     //    { label:'',name:'yahei',val:'微軟雅黑,Microsoft YaHei'},
     //    { label:'',name:'heiti',val:'黑體, SimHei'},
-    //    { label:'',name:'lishu',val:'隶书, SimLi'},
+    //    { label:'',name:'lishu',val:'隶書, SimLi'},
     //    { label:'',name:'andaleMono',val:'andale mono'},
     //    { label:'',name:'arial',val:'arial, helvetica,sans-serif'},
     //    { label:'',name:'arialBlack',val:'arial black,avant garde'},
@@ -308,7 +308,7 @@
     //    removeEmptyline: false,         //去掉空行
     //    textAlign:"left",               //段落的排版方式，可以是 left,right,center,justify 去掉這個屬性表示不執行排版
     //    imageBlockLine: 'center',       //圖片的浮動方式，獨占一行剧中,左右浮動，默認: center,left,right,none 去掉這個屬性表示不執行排版
-    //    pasteFilter: false,             //根據规則過滤没事粘贴進來的内容
+    //    pasteFilter: false,             //根據規則過滤没事粘贴進來的内容
     //    clearFontSize: false,           //去掉所有的内嵌字號，使用編輯器默認的字號
     //    clearFontFamily: false,         //去掉所有的内嵌字體，使用編輯器默認的字體
     //    removeEmptyNode: false,         // 去掉空節點
@@ -344,13 +344,13 @@
     //    'anchor':'~/dialogs/anchor/anchor.html',
     //}
 
-    //allowLinkProtocol 允許的链接地址，有這些前缀的链接地址不會自動添加http
+    //allowLinkProtocol 允許的鏈接地址，有這些前缀的鏈接地址不會自動添加http
     //, allowLinkProtocols: ['http:', 'https:', '#', '/', 'ftp:', 'mailto:', 'tel:', 'git:', 'svn:']
 
     //webAppKey 百度應用的APIkey，每個站長必須首先去百度官網註冊一個key後方能正常使用app功能，註冊介绍，http://app.baidu.com/static/cms/getapikey.html
     //, webAppKey: ""
 
-    //默認過滤规則相關設定專案
+    //默認過滤規則相關設定專案
     //,disabledTableInTable:true  //禁止表格嵌套
     //,allowDivTransToP:true      //允許進入編輯器的div標簽自動變成p標簽
     //,rgb2Hex:true               //默認產出的資料中的color自動從rgb格式變成16進製格式

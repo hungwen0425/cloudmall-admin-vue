@@ -119,7 +119,7 @@ export default {
         return { catIds, catNames };
       })();
 
-      this.$confirm(`確定删除[${catNames}]選單吗?`, "提示", {
+      this.$confirm(`確定删除[${catNames}]選單嗎?`, "提示", {
         confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"
@@ -277,7 +277,7 @@ export default {
       this.dialogType = "edit";
       this.title = "编辑分類";
 
-      //為了严谨从資料库取得值(有可能是 10 分钟前的頁面,其他人已经更改了)
+      //為了严谨从資料庫取得值(有可能是 10 分钟前的頁面,其他人已经更改了)
       this.$http({
         url: this.$http.adornUrl(`/product/category/info/${data.catId}`),
         method: "get"
@@ -350,7 +350,7 @@ export default {
       });
     },
     remove(node, data) {
-      this.$confirm(`確定删除[${data.name}]選單吗?`, "提示", {
+      this.$confirm(`確定删除[${data.name}]選單嗎?`, "提示", {
         confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"

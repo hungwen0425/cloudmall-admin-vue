@@ -71,7 +71,7 @@
               <el-dropdown-item command="reductionSettings">滿減設定</el-dropdown-item>
               <el-dropdown-item command="discountSettings">折扣設定</el-dropdown-item>
               <el-dropdown-item command="memberPriceSettings">會員價格</el-dropdown-item>
-              <el-dropdown-item command="stockSettings">库存管理</el-dropdown-item>
+              <el-dropdown-item command="stockSettings">庫存管理</el-dropdown-item>
               <el-dropdown-item command="couponSettings">優惠劵</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>

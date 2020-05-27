@@ -4,7 +4,7 @@
       <el-col :span="24">
         <el-steps :active="step" finish-status="success">
           <el-step title="基本資料"></el-step>
-          <el-step title="规格参數"></el-step>
+          <el-step title="規格参數"></el-step>
           <el-step title="銷售屬性"></el-step>
           <el-step title="SKU資料"></el-step>
           <el-step title="保存完成"></el-step>
@@ -600,7 +600,7 @@ export default {
             }
           }
         }
-        //;descaridx，判断如果之前有就用之前的值;
+        //;descaridx，判斷如果之前有就用之前的值;
         let res = this.hasAndReturnSku(this.spu.skus, descar);
         if (res === null) {
           skus.push({
@@ -626,7 +626,7 @@ export default {
       this.spu.skus = skus;
       console.log("結果!!!", this.spu.skus, this.dataResp.tableAttrColumn);
     },
-    //判断如果包含之前的sku的descar組合，就返回這個sku的詳细資料；
+    //判斷如果包含之前的sku的descar組合，就返回這個sku的詳细資料；
     hasAndReturnSku(skus, descar) {
       let res = null;
       if (skus.length > 0) {

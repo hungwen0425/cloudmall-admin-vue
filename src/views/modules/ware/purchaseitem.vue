@@ -10,9 +10,9 @@
         <el-select style="width:120px;" v-model="dataForm.status" placeholder="請選擇狀態" clearable>
           <el-option label="新建" :value="0"></el-option>
           <el-option label="已分配" :value="1"></el-option>
-          <el-option label="正在采購" :value="2"></el-option>
+          <el-option label="正在採購" :value="2"></el-option>
           <el-option label="已完成" :value="3"></el-option>
-          <el-option label="采購失败" :value="4"></el-option>
+          <el-option label="採購失败" :value="4"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="關键字">
@@ -46,18 +46,18 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="purchaseId" header-align="center" align="center" label="采購單id"></el-table-column>
-      <el-table-column prop="skuId" header-align="center" align="center" label="采購商品id"></el-table-column>
-      <el-table-column prop="skuNum" header-align="center" align="center" label="采購數量"></el-table-column>
-      <el-table-column prop="skuPrice" header-align="center" align="center" label="采購金額"></el-table-column>
+      <el-table-column prop="purchaseId" header-align="center" align="center" label="採購單id"></el-table-column>
+      <el-table-column prop="skuId" header-align="center" align="center" label="採購商品id"></el-table-column>
+      <el-table-column prop="skuNum" header-align="center" align="center" label="採購數量"></el-table-column>
+      <el-table-column prop="skuPrice" header-align="center" align="center" label="採購金額"></el-table-column>
       <el-table-column prop="wareId" header-align="center" align="center" label="倉庫id"></el-table-column>
       <el-table-column prop="status" header-align="center" align="center" label="狀態">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.status==0">新建</el-tag>
           <el-tag type="info" v-if="scope.row.status==1">已分配</el-tag>
-          <el-tag type="wanring" v-if="scope.row.status==2">正在采購</el-tag>
+          <el-tag type="wanring" v-if="scope.row.status==2">正在採購</el-tag>
           <el-tag type="success" v-if="scope.row.status==3">已完成</el-tag>
-          <el-tag type="danger" v-if="scope.row.status==4">采購失败</el-tag>
+          <el-tag type="danger" v-if="scope.row.status==4">採購失败</el-tag>
         </template>
       </el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
@@ -138,7 +138,7 @@ export default {
       });
       if (!this.purchaseId) {
         this.$confirm(
-          "没有選擇任何【采購單】，將自動創建新單進行合并。確認吗？",
+          "没有選擇任何【採購單】，將自動創建新單進行合并。確認嗎？",
           "提示",
           {
             confirmButtonText: "確定",

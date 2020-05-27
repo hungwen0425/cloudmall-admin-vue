@@ -201,7 +201,7 @@
     }
 
     /**
-     * 數字判断
+     * 數字判斷
      * @param value
      */
     function isNumber(value) {

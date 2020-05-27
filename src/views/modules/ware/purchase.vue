@@ -7,7 +7,7 @@
           <el-option label="已分配" :value="1"></el-option>
           <el-option label="已領取" :value="2"></el-option>
           <el-option label="已完成" :value="3"></el-option>
-          <el-option label="有异常" :value="4"></el-option>
+          <el-option label="有異常" :value="4"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="關键字">
@@ -36,10 +36,10 @@
       style="width: 100%;"
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
-      <el-table-column prop="id" header-align="center" align="center" label="采購單id"></el-table-column>
-      <el-table-column prop="assigneeId" header-align="center" align="center" label="采購人id"></el-table-column>
-      <el-table-column prop="assigneeName" header-align="center" align="center" label="采購人名"></el-table-column>
-      <el-table-column prop="phone" header-align="center" align="center" label="聯系方式"></el-table-column>
+      <el-table-column prop="id" header-align="center" align="center" label="採購單id"></el-table-column>
+      <el-table-column prop="assigneeId" header-align="center" align="center" label="採購人id"></el-table-column>
+      <el-table-column prop="assigneeName" header-align="center" align="center" label="採購人名"></el-table-column>
+      <el-table-column prop="phone" header-align="center" align="center" label="聯繫方式"></el-table-column>
       <el-table-column prop="priority" header-align="center" align="center" label="優先級"></el-table-column>
       <el-table-column prop="status" header-align="center" align="center" label="狀態">
         <template slot-scope="scope">
@@ -47,7 +47,7 @@
           <el-tag type="info" v-if="scope.row.status == 1">已分配</el-tag>
           <el-tag type="warning" v-if="scope.row.status == 2">已領取</el-tag>
           <el-tag type="success" v-if="scope.row.status == 3">已完成</el-tag>
-          <el-tag type="danger" v-if="scope.row.status == 4">有异常</el-tag>
+          <el-tag type="danger" v-if="scope.row.status == 4">有異常</el-tag>
         </template>
       </el-table-column>
       <el-table-column prop="wareId" header-align="center" align="center" label="倉庫id"></el-table-column>
@@ -78,7 +78,7 @@
     ></el-pagination>
     <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
-    <el-dialog title="分配采購人員" :visible.sync="caigoudialogVisible" width="30%">
+    <el-dialog title="分配採購人員" :visible.sync="caigoudialogVisible" width="30%">
       <el-select v-model="userId" filterable placeholder="請選擇">
         <el-option
           v-for="item in userList"

@@ -151,7 +151,7 @@ export default {
         });
       });
 
-      this.$confirm("修改商品规格資料, 是否繼續?", "提示", {
+      this.$confirm("修改商品規格資料, 是否繼續?", "提示", {
         confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"

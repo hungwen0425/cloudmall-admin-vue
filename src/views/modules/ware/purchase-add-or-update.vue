@@ -41,13 +41,13 @@ export default {
       },
       dataRule: {
         assigneeId: [
-          { required: true, message: "采購人id不能為空", trigger: "blur" }
+          { required: true, message: "採購人id不能為空", trigger: "blur" }
         ],
         assigneeName: [
-          { required: true, message: "采購人名不能為空", trigger: "blur" }
+          { required: true, message: "採購人名不能為空", trigger: "blur" }
         ],
         phone: [
-          { required: true, message: "聯系方式不能為空", trigger: "blur" }
+          { required: true, message: "聯繫方式不能為空", trigger: "blur" }
         ],
         priority: [
           { required: true, message: "優先級不能為空", trigger: "blur" }

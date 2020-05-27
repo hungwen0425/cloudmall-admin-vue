@@ -19,14 +19,14 @@
           <el-option :label="w.name" :value="w.id" v-for="w in wareList" :key="w.id"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="库存數" prop="stock">
-        <el-input v-model="dataForm.stock" placeholder="库存數"></el-input>
+      <el-form-item label="庫存數" prop="stock">
+        <el-input v-model="dataForm.stock" placeholder="庫存數"></el-input>
       </el-form-item>
       <el-form-item label="sku_name" prop="skuName">
         <el-input v-model="dataForm.skuName" placeholder="sku_name"></el-input>
       </el-form-item>
-      <el-form-item label="锁定库存" prop="stockLocked">
-        <el-input v-model="dataForm.stockLocked" placeholder="锁定库存"></el-input>
+      <el-form-item label="鎖定庫存" prop="stockLocked">
+        <el-input v-model="dataForm.stockLocked" placeholder="鎖定庫存"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -55,7 +55,7 @@ export default {
         wareId: [
           { required: true, message: "倉庫id不能為空", trigger: "blur" }
         ],
-        stock: [{ required: true, message: "库存數不能為空", trigger: "blur" }],
+        stock: [{ required: true, message: "庫存數不能為空", trigger: "blur" }],
         skuName: [
           { required: true, message: "sku_name不能為空", trigger: "blur" }
         ]

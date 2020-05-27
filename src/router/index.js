@@ -86,7 +86,7 @@ router.beforeEach((to, from, next) => {
 })
 
 /**
- * 判断當前路由類型, global: 全局路由, main: 主入口路由
+ * 判斷當前路由類型, global: 全局路由, main: 主入口路由
  * @param {*} route 當前路由
  */
 function fnCurrentRouteType(route, globalRoutes = []) {

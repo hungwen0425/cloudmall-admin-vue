@@ -2,7 +2,7 @@
 
 
 /**
- * @fileOverview 让内部各個部件的程式碼可以用[amd](https://github.com/amdjs/amdjs-api/wiki/AMD)模塊定義方式組织起來。
+ * @fileOverview 讓内部各個部件的程式碼可以用[amd](https://github.com/amdjs/amdjs-api/wiki/AMD)模塊定義方式組織起來。
  *
  * AMD API 内部的簡單不完全實現，請忽略。只有當WebUploader被合併成一個文件的時候才會引入。
  */
@@ -66,7 +66,7 @@
             return module;
         },
 
-        // 將所有modules，將路徑ids装換成物件。
+        // 將所有modules，將路徑ids裝換成物件。
         exportsTo = function (obj) {
             var key, host, parts, part, last, ucFirst;
 
@@ -168,7 +168,7 @@
     /**
      * Web Uploader内部類的詳細說明，以下提及的功能類，都可以在`WebUploader`這個變量中訪問到。
      *
-     * As you know, Web Uploader的每個文件都是用過[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)规范中的`define`組织起來的, 每個Module都會有個module id.
+     * As you know, Web Uploader的每個文件都是用過[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)規範中的`define`組織起來的, 每個Module都會有個module id.
      * 默認module id該文件的路徑，而此路徑將會轉化成名稱空間存放在WebUploader中。如：
      *
      * * module `base`：WebUploader.Base
@@ -347,7 +347,7 @@
 
                 /* jshint camelcase: false */
 
-                // 让子類的__super__屬性指向父類。
+                // 讓子類的__super__屬性指向父類。
                 child.__super__ = Super.prototype;
 
                 // 構建原型，添加原型方法或屬性。
@@ -562,7 +562,7 @@
              * @param  {String}   name     事件名，支持多個事件用空格隔開
              * @param  {Function} callback 事件處理器
              * @param  {Object}   [context]  事件處理器的上下文。
-             * @return {self} 返回自身，方便链式
+             * @return {self} 返回自身，方便鏈式
              * @chainable
              * @class Mediator
              */
@@ -597,7 +597,7 @@
              * @param  {String}   name     事件名
              * @param  {Function} callback 事件處理器
              * @param  {Object}   [context]  事件處理器的上下文。
-             * @return {self} 返回自身，方便链式
+             * @return {self} 返回自身，方便鏈式
              * @chainable
              */
             once: function (name, callback, context) {
@@ -627,7 +627,7 @@
              * @param  {String}   [name]     事件名
              * @param  {Function} [callback] 事件處理器
              * @param  {Object}   [context]  事件處理器的上下文。
-             * @return {self} 返回自身，方便链式
+             * @return {self} 返回自身，方便鏈式
              * @chainable
              */
             off: function (name, cb, ctx) {
@@ -809,7 +809,7 @@
              * * `uploadFailNum` 上傳失败的文件數
              * * `cancelNum` 被删除的文件數
              * * `invalidNum` 無效的文件數
-             * * `queueNum` 還在队列中的文件數
+             * * `queueNum` 還在隊列中的文件數
              * @method getStats
              * @grammar getStats() => Object
              */
@@ -1189,7 +1189,7 @@
 
             // todo 支持其他類型文件的轉換。
 
-            // 如果有mimetype, 但是文件名裡面没有找出後缀规律
+            // 如果有mimetype, 但是文件名裡面没有找出後缀規律
             if (!ext && this.type) {
                 ext = /\/(jpg|jpeg|png|gif|bmp)$/i.exec(this.type) ?
                     RegExp.$1.toLowerCase() : '';
@@ -1455,13 +1455,13 @@
                     }
                 }
 
-                // 如果有callback，則用异步方式。
+                // 如果有callback，則用異步方式。
                 if (callback || dfds.length) {
                     promise = Base.when.apply(Base, dfds);
                     key = promise.pipe ? 'pipe' : 'then';
 
                     // 很重要不能删除。删除了會死循環。
-                    // 保證執行順序。让callback總是在下一個tick中執行。
+                    // 保證執行順序。讓callback總是在下一個tick中執行。
                     return promise[key](function () {
                         var deferred = Base.Deferred(),
                             args = arguments;
@@ -1861,8 +1861,8 @@
 
 
             /**
-             * 生成縮略圖，此過程為异步，所以需要傳入`callback`。
-             * 通常情况在圖片加入队里後調用此方法來生成預覽圖以增强交互效果。
+             * 生成縮略圖，此過程為異步，所以需要傳入`callback`。
+             * 通常情况在圖片加入隊里後調用此方法來生成預覽圖以增强交互效果。
              *
              * `callback`中可以接收到两個参數。
              * * 第一個為error，如果生成縮略圖有錯誤，此error將為真。
@@ -1992,7 +1992,7 @@
                         file._compressed = true;
                         deferred.resolve();
                     } catch (e) {
-                        // 出錯了直接繼續，让其上傳原始圖片
+                        // 出錯了直接繼續，讓其上傳原始圖片
                         deferred.resolve();
                     }
                 });
@@ -2006,7 +2006,7 @@
         });
     });
     /**
-     * @fileOverview 文件屬性封装
+     * @fileOverview 文件屬性封裝
      */
     define('file', [
         'base',
@@ -2130,7 +2130,7 @@
                      {
                          // 初始化
                         INITED:     0,
-                        // 已入队列
+                        // 已入隊列
                         QUEUED:     1,
                         // 正在上傳
                         PROGRESS:     2,
@@ -2164,12 +2164,12 @@
         /**
          * 文件狀態值，具體包括以下幾種類型：
          * * `inited` 初始狀態
-         * * `queued` 已經進入队列, 等待上傳
+         * * `queued` 已經進入隊列, 等待上傳
          * * `progress` 上傳中
          * * `complete` 上傳完成。
          * * `error` 上傳出錯，可重試
-         * * `interrupt` 上傳中断，可續傳。
-         * * `invalid` 文件不合格，不能重試上傳。會自動從队列中移除。
+         * * `interrupt` 上傳中斷，可續傳。
+         * * `invalid` 文件不合格，不能重試上傳。會自動從隊列中移除。
          * * `cancelled` 文件被移除。
          * @property {Object} Status
          * @namespace File
@@ -2178,12 +2178,12 @@
          */
         WUFile.Status = {
             INITED: 'inited',    // 初始狀態
-            QUEUED: 'queued',    // 已經進入队列, 等待上傳
+            QUEUED: 'queued',    // 已經進入隊列, 等待上傳
             PROGRESS: 'progress',    // 上傳中
             ERROR: 'error',    // 上傳出錯，可重試
             COMPLETE: 'complete',    // 上傳完成。
             CANCELLED: 'cancelled',    // 上傳取消。
-            INTERRUPT: 'interrupt',    // 上傳中断，可續傳。
+            INTERRUPT: 'interrupt',    // 上傳中斷，可續傳。
             INVALID: 'invalid'    // 文件不合格，不能重試上傳。
         };
 
@@ -2191,7 +2191,7 @@
     });
 
     /**
-     * @fileOverview 文件队列
+     * @fileOverview 文件隊列
      */
     define('queue', [
         'base',
@@ -2203,7 +2203,7 @@
             STATUS = WUFile.Status;
 
         /**
-         * 文件队列, 用來存儲各個狀態中的文件。
+         * 文件隊列, 用來存儲各個狀態中的文件。
          * @class Queue
          * @extends Mediator
          */
@@ -2211,7 +2211,7 @@
 
             /**
              * 统計文件數。
-             * * `numOfQueue` 队列中的文件數。
+             * * `numOfQueue` 隊列中的文件數。
              * * `numOfSuccess` 上傳成功的文件數
              * * `numOfCancel` 被移除的文件數
              * * `numOfProgress` 正在上傳中的文件數
@@ -2228,7 +2228,7 @@
                 numOfInvalid: 0
             };
 
-            // 上傳队列，仅包括等待上傳的文件
+            // 上傳隊列，僅包括等待上傳的文件
             this._queue = [];
 
             // 存儲所有文件
@@ -2238,7 +2238,7 @@
         $.extend(Queue.prototype, {
 
             /**
-             * 將新文件加入對队列尾部
+             * 將新文件加入對隊列尾部
              *
              * @method append
              * @param  {File} file   文件物件
@@ -2250,7 +2250,7 @@
             },
 
             /**
-             * 將新文件加入對队列頭部
+             * 將新文件加入對隊列頭部
              *
              * @method prepend
              * @param  {File} file   文件物件
@@ -2276,7 +2276,7 @@
             },
 
             /**
-             * 從队列中取出一個指定狀態的文件。
+             * 從隊列中取出一個指定狀態的文件。
              * @grammar fetch( status ) => File
              * @method fetch
              * @param {String} status [文件狀態值](#WebUploader:File:File.Status)
@@ -2300,7 +2300,7 @@
             },
 
             /**
-             * 對队列進行排序，能够控制文件上傳順序。
+             * 對隊列進行排序，能够控制文件上傳順序。
              * @grammar sort( fn ) => undefined
              * @method sort
              * @param {Function} fn 排序方法
@@ -2407,7 +2407,7 @@
         return Queue;
     });
     /**
-     * @fileOverview 队列
+     * @fileOverview 隊列
      */
     define('widgets/queue', [
         'base',
@@ -2502,7 +2502,7 @@
                 return file;
             },
 
-            // 判断文件是否可以被加入队列
+            // 判斷文件是否可以被加入隊列
             acceptFile: function (file) {
                 var invalid = !file || file.size < 6 || this.accept &&
 
@@ -2516,14 +2516,14 @@
             /**
              * @event beforeFileQueued
              * @param {File} file File物件
-             * @description 當文件被加入队列之前觸發，此事件的handler返回值為`false`，則此文件不會被添加進入队列。
+             * @description 當文件被加入隊列之前觸發，此事件的handler返回值為`false`，則此文件不會被添加進入隊列。
              * @for  Uploader
              */
 
             /**
              * @event fileQueued
              * @param {File} file File物件
-             * @description 當文件被加入队列以後觸發。
+             * @description 當文件被加入隊列以後觸發。
              * @for  Uploader
              */
 
@@ -2532,7 +2532,7 @@
 
                 file = me._wrapFile(file);
 
-                // 不過類型判断允許不允許，先派送 `beforeFileQueued`
+                // 不過類型判斷允許不允許，先派送 `beforeFileQueued`
                 if (!me.owner.trigger('beforeFileQueued', file)) {
                     return;
                 }
@@ -2555,7 +2555,7 @@
             /**
              * @event filesQueued
              * @param {File} files 陣列，内容為原始File(lib/File）物件。
-             * @description 當一批文件添加進队列以後觸發。
+             * @description 當一批文件添加進隊列以後觸發。
              * @for  Uploader
              */
 
@@ -2564,7 +2564,7 @@
              * @grammar addFiles( file ) => undefined
              * @grammar addFiles( [file1, file2 ...] ) => undefined
              * @param {Array of File or File} [files] Files 物件 陣列
-             * @description 添加文件到队列
+             * @description 添加文件到隊列
              * @for  Uploader
              */
             addFiles: function (files) {
@@ -2592,7 +2592,7 @@
             /**
              * @event fileDequeued
              * @param {File} file File物件
-             * @description 當文件被移除队列後觸發。
+             * @description 當文件被移除隊列後觸發。
              * @for  Uploader
              */
 
@@ -2673,7 +2673,7 @@
             /**
              * @method sort
              * @grammar sort( fn ) => undefined
-             * @description 排序队列中的文件，在上傳之前調整可以控制上傳順序。
+             * @description 排序隊列中的文件，在上傳之前調整可以控制上傳順序。
              * @for  Uploader
              */
             sortFiles: function () {
@@ -2683,7 +2683,7 @@
             /**
              * @method reset
              * @grammar reset() => undefined
-             * @description 重置uploader。目前只重置了队列。
+             * @description 重置uploader。目前只重置了隊列。
              * @for  Uploader
              * @example
              * uploader.reset();
@@ -2869,7 +2869,7 @@
 
         });
 
-        // 让Transport具備事件功能。
+        // 讓Transport具備事件功能。
         Mediator.installTo(Transport.prototype);
 
         return Transport;
@@ -2923,7 +2923,7 @@
              * @property {Boolean} [chunkRetry=2]
              * @namespace options
              * @for Uploader
-             * @description 如果某個分片由於網络問題出錯，允許自動重傳多少次？
+             * @description 如果某個分片由於網路問題出錯，允許自動重傳多少次？
              */
             chunkRetry: 2,
 
@@ -3090,7 +3090,7 @@
              */
 
             /**
-             * 暫停上傳。第一個参數為是否中断上傳當前正在上傳的文件。
+             * 暫停上傳。第一個参數為是否中斷上傳當前正在上傳的文件。
              * @grammar stop() => undefined
              * @grammar stop( true ) => undefined
              * @method stop
@@ -3114,7 +3114,7 @@
             },
 
             /**
-             * 判断`Uplaode`r是否正在上傳中。
+             * 判斷`Uplaode`r是否正在上傳中。
              * @grammar isInProgress() => Boolean
              * @method isInProgress
              * @for  Uploader
@@ -3280,7 +3280,7 @@
                 }
             },
 
-            // 让出位置了，可以让其他分片開始上傳
+            // 讓出位置了，可以讓其他分片開始上傳
             _popBlock: function (block) {
                 var idx = $.inArray(block, this.pool);
 
@@ -3303,7 +3303,7 @@
                 block.blob = block.chunks === 1 ? file.source :
                     file.source.slice(block.start, block.end);
 
-                // hook, 每個分片發送之前可能要做些异步的事情。
+                // hook, 每個分片發送之前可能要做些異步的事情。
                 promise = me.request('before-send', block, function () {
 
                     // 有可能文件已經上傳出錯了，所以不需要再傳输了。
@@ -3586,7 +3586,7 @@
          * @property {int} [fileNumLimit=undefined]
          * @namespace options
          * @for Uploader
-         * @description 驗證文件總數量, 超出則不允許加入队列。
+         * @description 驗證文件總數量, 超出則不允許加入隊列。
          */
         api.addValidator('fileNumLimit', function () {
             var uploader = this,
@@ -3630,7 +3630,7 @@
          * @property {int} [fileSizeLimit=undefined]
          * @namespace options
          * @for Uploader
-         * @description 驗證文件總大小是否超出限製, 超出則不允許加入队列。
+         * @description 驗證文件總大小是否超出限製, 超出則不允許加入隊列。
          */
         api.addValidator('fileSizeLimit', function () {
             var uploader = this,
@@ -3674,7 +3674,7 @@
          * @property {int} [fileSingleSizeLimit=undefined]
          * @namespace options
          * @for Uploader
-         * @description 驗證單個文件大小是否超出限製, 超出則不允許加入队列。
+         * @description 驗證單個文件大小是否超出限製, 超出則不允許加入隊列。
          */
         api.addValidator('fileSingleSizeLimit', function () {
             var uploader = this,

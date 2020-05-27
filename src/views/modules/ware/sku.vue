@@ -31,9 +31,9 @@
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="skuId" header-align="center" align="center" label="sku_id"></el-table-column>
       <el-table-column prop="wareId" header-align="center" align="center" label="倉庫id"></el-table-column>
-      <el-table-column prop="stock" header-align="center" align="center" label="库存數"></el-table-column>
+      <el-table-column prop="stock" header-align="center" align="center" label="庫存數"></el-table-column>
       <el-table-column prop="skuName" header-align="center" align="center" label="sku_name"></el-table-column>
-      <el-table-column prop="stockLocked" header-align="center" align="center" label="锁定库存"></el-table-column>
+      <el-table-column prop="stockLocked" header-align="center" align="center" label="鎖定庫存"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>
