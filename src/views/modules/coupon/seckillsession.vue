@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:seckillsession:save')"
           type="primary"
@@ -28,14 +28,14 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="name" header-align="center" align="center" label="场次名稱"></el-table-column>
+      <el-table-column prop="name" header-align="center" align="center" label="場次名稱"></el-table-column>
       <el-table-column prop="startTime" header-align="center" align="center" label="每日開始時間"></el-table-column>
       <el-table-column prop="endTime" header-align="center" align="center" label="每日結束時間"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="启用状泰"></el-table-column>
+      <el-table-column prop="status" header-align="center" align="center" label="啟用狀態"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="創建時間"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
-          <el-button type="text" size="small" @click="relationProduct(scope.row.id)">关聯商品</el-button>
+          <el-button type="text" size="small" @click="relationProduct(scope.row.id)">關聯商品</el-button>
           <br />
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>
           <el-button type="text" size="small" @click="deleteHandle(scope.row.id)">删除</el-button>
@@ -58,7 +58,7 @@
         append-to-body
         :close-on-click-modal="false"
         :visible.sync="visible"
-        title="关聯秒杀商品"
+        title="關聯秒杀商品"
         width="60%"
       >
         <seckillsku-relation ref="seckillskuRelation" :sessionId="currentId"></seckillsku-relation>

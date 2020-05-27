@@ -66,7 +66,7 @@
             return module;
         },
 
-        // 將所有modules，將路徑ids装换成物件。
+        // 將所有modules，將路徑ids装換成物件。
         exportsTo = function (obj) {
             var key, host, parts, part, last, ucFirst;
 
@@ -166,7 +166,7 @@
      */
 
     /**
-     * Web Uploader内部類的詳細说明，以下提及的功能類，都可以在`WebUploader`這個變量中訪問到。
+     * Web Uploader内部類的詳細說明，以下提及的功能類，都可以在`WebUploader`這個變量中訪問到。
      *
      * As you know, Web Uploader的每個文件都是用過[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)规范中的`define`組织起來的, 每個Module都會有個module id.
      * 默認module id該文件的路徑，而此路徑將會轉化成名稱空間存放在WebUploader中。如：
@@ -301,7 +301,7 @@
              * @grammar Base.inherits( super, protos, statics ) => child
              * @param  {Class} super 父類
              * @param  {Object | Function} [protos] 子類或者物件。如果物件中包含constructor，子類將是用此屬性值。
-             * @param  {Function} [protos.constructor] 子類構造器，不指定的話將創建個临時的直接执行父類構造器的方法。
+             * @param  {Function} [protos.constructor] 子類構造器，不指定的話將創建個臨時的直接执行父類構造器的方法。
              * @param  {Object} [statics] 静態屬性或方法。
              * @return {Class} 返回子類。
              * @example
@@ -779,7 +779,7 @@
              *     resize: null;
              * });
              *
-             * // 修改後圖片上傳前，尝試將圖片壓縮到1600 * 1600
+             * // 修改後圖片上傳前，嘗試將圖片壓縮到1600 * 1600
              * uploader.options( 'resize', {
              *     width: 1600,
              *     height: 1600
@@ -1358,7 +1358,7 @@
         Uploader.options.dnd = '';
 
         /**
-         * @property {Selector} [dnd=undefined]  指定Drag And Drop拖拽的容器，如果不指定，則不啟動。
+         * @property {Selector} [dnd=undefined]  指定Drag And Drop托拽的容器，如果不指定，則不啟動。
          * @namespace options
          * @for Uploader
          */
@@ -1548,7 +1548,7 @@
             this.name = file.name || ('untitled' + uid++);
             ext = rExt.exec(file.name) ? RegExp.$1.toLowerCase() : '';
 
-            // todo 支持其他類型文件的轉换。
+            // todo 支持其他類型文件的轉換。
 
             // 如果有mimetype, 但是文件名裡面没有找出後缀规律
             if (!ext && this.type) {
@@ -1991,7 +1991,7 @@
              *     preserveHeaders: false,
              *
              *     // 為空的話則保留原有圖片格式。
-             *     // 否則强製轉换成指定的類型。
+             *     // 否則強制轉換成指定的類型。
              *     type: 'image/jpeg'
              * }
              * ```
@@ -2005,7 +2005,7 @@
                 preserveHeaders: false,
 
                 // 為空的話則保留原有圖片格式。
-                // 否則强製轉换成指定的類型。
+                // 否則強制轉換成指定的類型。
                 // IE 8下面 base64 大小不能超過 32K 否則预覽失败，而非 jpeg 編碼的圖片很可
                 // 能會超過 32k, 所以這裡設定成预覽的時候都是 image/jpeg
                 type: 'image/jpeg'
@@ -2166,7 +2166,7 @@
                     var blob, size;
 
                     // 移動端 UC / qq 瀏覽器的無圖模式下
-                    // ctx.getImageData 處理大圖的時候會报 Exception
+                    // ctx.getImageData 處理大圖的時候會報 Exception
                     // INDEX_SIZE_ERR: DOM Exception 1
                     try {
                         blob = image.getAsBlob(opts.type);
@@ -2273,7 +2273,7 @@
 
 
             /**
-             * 狀態文字说明。在不同的status語境下有不同的用途。
+             * 狀態文字說明。在不同的status語境下有不同的用途。
              * @property statusText
              * @type {string}
              */
@@ -2297,7 +2297,7 @@
              * @method setStatus
              * @grammar setStatus( status[, statusText] );
              * @param {File.Status|String} status [文件狀態值](#WebUploader:File:File.Status)
-             * @param {String} [statusText=''] 狀態说明，常在error時使用，用http, abort,server等來標记是由於什么原因導致文件錯誤。
+             * @param {String} [statusText=''] 狀態說明，常在error時使用，用http, abort,server等來標记是由於什么原因導致文件錯誤。
              */
             setStatus: function (status, text) {
 
@@ -3117,7 +3117,7 @@
              * @property {Boolean} [chunkRetry=2]
              * @namespace options
              * @for Uploader
-             * @description 如果某個分片由於網络問题出錯，允许自動重傳多少次？
+             * @description 如果某個分片由於網络問題出錯，允许自動重傳多少次？
              */
             chunkRetry: 2,
 
@@ -3456,7 +3456,7 @@
                         return me._finishFile(file);
                     });
 
-                    // 如果還在pending中，則替换成文件本身。
+                    // 如果還在pending中，則替換成文件本身。
                     promise.done(function () {
                         var idx = $.inArray(promise, pending);
 
@@ -3635,7 +3635,7 @@
                     return reject;
                 };
 
-                // 尝試重試，然後廣播文件上傳出錯。
+                // 嘗試重試，然後廣播文件上傳出錯。
                 tr.on('error', function (type, flag) {
                     block.retried = block.retried || 0;
 
@@ -3747,8 +3747,8 @@
          * @param {String} type 錯誤類型。
          * @description 當validate不通過時，會以派送錯誤事件的形式通知調用者。通過`upload.on('error', handler)`可以捕獲到此類錯誤，目前有以下錯誤會在特定的情况下派送錯來。
          *
-         * * `Q_EXCEED_NUM_LIMIT` 在設定了`fileNumLimit`且尝試給`uploader`添加的文件數量超出這個值時派送。
-         * * `Q_EXCEED_SIZE_LIMIT` 在設定了`Q_EXCEED_SIZE_LIMIT`且尝試給`uploader`添加的文件總大小超出這個值時派送。
+         * * `Q_EXCEED_NUM_LIMIT` 在設定了`fileNumLimit`且嘗試給`uploader`添加的文件數量超出這個值時派送。
+         * * `Q_EXCEED_SIZE_LIMIT` 在設定了`Q_EXCEED_SIZE_LIMIT`且嘗試給`uploader`添加的文件總大小超出這個值時派送。
          * @for  Uploader
          */
 
@@ -4934,7 +4934,7 @@
             dirOffset = EXIF.parseExifTags(dataView, tiffOffset,
                 tiffOffset + dirOffset, littleEndian, data);
 
-            // 尝試读取縮略圖
+            // 嘗試读取縮略圖
             // if ( dirOffset ) {
             //     thumbnailData = {exif: {}};
             //     dirOffset = EXIF.parseExifTags(
@@ -5129,7 +5129,7 @@
                 // values that require 90 degree rotation
                 if (~[5, 6, 7, 8].indexOf(orientation)) {
 
-                    // 交换width, height的值。
+                    // 交換width, height的值。
                     width ^= height;
                     height ^= width;
                     width ^= height;

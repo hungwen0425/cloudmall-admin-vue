@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('ware:wareinfo:save')"
           type="primary"
@@ -30,7 +30,7 @@
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="name" header-align="center" align="center" label="仓库名"></el-table-column>
       <el-table-column prop="address" header-align="center" align="center" label="仓库地址"></el-table-column>
-      <el-table-column prop="areaCode" header-align="center" align="center" label="区域编码"></el-table-column>
+      <el-table-column prop="areaCode" header-align="center" align="center" label="区域编碼"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>

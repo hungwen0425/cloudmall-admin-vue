@@ -14,11 +14,11 @@
       <el-form-item label="sku_id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="sku_id"></el-input>
       </el-form-item>
-      <el-form-item label="會員等级id" prop="memberLevelId">
-        <el-input v-model="dataForm.memberLevelId" placeholder="會員等级id"></el-input>
+      <el-form-item label="會員等級id" prop="memberLevelId">
+        <el-input v-model="dataForm.memberLevelId" placeholder="會員等級id"></el-input>
       </el-form-item>
-      <el-form-item label="會員等级名" prop="memberLevelName">
-        <el-input v-model="dataForm.memberLevelName" placeholder="會員等级名"></el-input>
+      <el-form-item label="會員等級名" prop="memberLevelName">
+        <el-input v-model="dataForm.memberLevelName" placeholder="會員等級名"></el-input>
       </el-form-item>
       <el-form-item label="會員對應價格" prop="memberPrice">
         <el-input v-model="dataForm.memberPrice" placeholder="會員對應價格"></el-input>
@@ -56,10 +56,10 @@ export default {
       dataRule: {
         skuId: [{ required: true, message: "sku_id不能為空", trigger: "blur" }],
         memberLevelId: [
-          { required: true, message: "會員等级id不能為空", trigger: "blur" }
+          { required: true, message: "會員等級id不能為空", trigger: "blur" }
         ],
         memberLevelName: [
-          { required: true, message: "會員等级名不能為空", trigger: "blur" }
+          { required: true, message: "會員等級名不能為空", trigger: "blur" }
         ],
         memberPrice: [
           { required: true, message: "會員對應價格不能為空", trigger: "blur" }

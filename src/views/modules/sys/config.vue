@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.paramKey" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button type="primary" @click="addOrUpdateHandle()">新增</el-button>
         <el-button
           type="danger"
@@ -25,7 +25,7 @@
       <el-table-column prop="id" header-align="center" align="center" width="80" label="ID"></el-table-column>
       <el-table-column prop="paramKey" header-align="center" align="center" label="参數名"></el-table-column>
       <el-table-column prop="paramValue" header-align="center" align="center" label="参數值"></el-table-column>
-      <el-table-column prop="remark" header-align="center" align="center" label="备注"></el-table-column>
+      <el-table-column prop="remark" header-align="center" align="center" label="備註"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>

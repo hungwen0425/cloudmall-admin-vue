@@ -26,7 +26,7 @@
       </el-form-item>
       <el-form-item label="所屬分類" prop="catelogId">
         <!-- <el-input v-model="dataForm.catelogId" placeholder="所屬分類id"></el-input> @change="handleChange" -->
-        <!-- <el-cascader filterable placeholder="试试搜索：手机" v-model="catelogPath" :options="categorys"  :props="props"></el-cascader> -->
+        <!-- <el-cascader filterable placeholder="試試搜索：手機" v-model="catelogPath" :options="categorys"  :props="props"></el-cascader> -->
         <!-- :catelogPath="catelogPath"自定義绑定的屬性，可以给子組件傳值 -->
         <category-cascader :catelogPath.sync="catelogPath"></category-cascader>
       </el-form-item>

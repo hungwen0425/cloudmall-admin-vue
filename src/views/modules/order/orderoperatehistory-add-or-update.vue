@@ -11,23 +11,23 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="订單id" prop="orderId">
-        <el-input v-model="dataForm.orderId" placeholder="订單id"></el-input>
+      <el-form-item label="訂單id" prop="orderId">
+        <el-input v-model="dataForm.orderId" placeholder="訂單id"></el-input>
       </el-form-item>
-      <el-form-item label="操作人[用户；系统；後台管理員]" prop="operateMan">
-        <el-input v-model="dataForm.operateMan" placeholder="操作人[用户；系统；後台管理員]"></el-input>
+      <el-form-item label="操作人[使用者；系统；後台管理員]" prop="operateMan">
+        <el-input v-model="dataForm.operateMan" placeholder="操作人[使用者；系统；後台管理員]"></el-input>
       </el-form-item>
       <el-form-item label="操作時間" prop="createTime">
         <el-input v-model="dataForm.createTime" placeholder="操作時間"></el-input>
       </el-form-item>
-      <el-form-item label="订單状泰【0->待付款；1->待發货；2->已發货；3->已完成；4->已关闭；5->无效订單】" prop="orderStatus">
+      <el-form-item label="訂單狀態【0->待付款；1->待發货；2->已發货；3->已完成；4->已關閉；5->无效訂單】" prop="orderStatus">
         <el-input
           v-model="dataForm.orderStatus"
-          placeholder="订單状泰【0->待付款；1->待發货；2->已發货；3->已完成；4->已关闭；5->无效订單】"
+          placeholder="訂單狀態【0->待付款；1->待發货；2->已發货；3->已完成；4->已關閉；5->无效訂單】"
         ></el-input>
       </el-form-item>
-      <el-form-item label="备注" prop="note">
-        <el-input v-model="dataForm.note" placeholder="备注"></el-input>
+      <el-form-item label="備註" prop="note">
+        <el-input v-model="dataForm.note" placeholder="備註"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -52,12 +52,12 @@ export default {
       },
       dataRule: {
         orderId: [
-          { required: true, message: "订單id不能為空", trigger: "blur" }
+          { required: true, message: "訂單id不能為空", trigger: "blur" }
         ],
         operateMan: [
           {
             required: true,
-            message: "操作人[用户；系统；後台管理員]不能為空",
+            message: "操作人[使用者；系统；後台管理員]不能為空",
             trigger: "blur"
           }
         ],
@@ -68,11 +68,11 @@ export default {
           {
             required: true,
             message:
-              "订單状泰【0->待付款；1->待發货；2->已發货；3->已完成；4->已关闭；5->无效订單】不能為空",
+              "訂單狀態【0->待付款；1->待發货；2->已發货；3->已完成；4->已關閉；5->无效訂單】不能為空",
             trigger: "blur"
           }
         ],
-        note: [{ required: true, message: "备注不能為空", trigger: "blur" }]
+        note: [{ required: true, message: "備註不能為空", trigger: "blur" }]
       }
     };
   },

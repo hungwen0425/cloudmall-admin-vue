@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:couponspurelation:save')"
           type="primary"

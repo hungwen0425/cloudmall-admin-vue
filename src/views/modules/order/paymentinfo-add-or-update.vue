@@ -11,23 +11,23 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="订單号（對外业务号）" prop="orderSn">
-        <el-input v-model="dataForm.orderSn" placeholder="订單号（對外业务号）"></el-input>
+      <el-form-item label="訂單號（對外业务號）" prop="orderSn">
+        <el-input v-model="dataForm.orderSn" placeholder="訂單號（對外业务號）"></el-input>
       </el-form-item>
-      <el-form-item label="订單id" prop="orderId">
-        <el-input v-model="dataForm.orderId" placeholder="订單id"></el-input>
+      <el-form-item label="訂單id" prop="orderId">
+        <el-input v-model="dataForm.orderId" placeholder="訂單id"></el-input>
       </el-form-item>
-      <el-form-item label="支付宝交易流水号" prop="alipayTradeNo">
-        <el-input v-model="dataForm.alipayTradeNo" placeholder="支付宝交易流水号"></el-input>
+      <el-form-item label="支付宝交易流水號" prop="alipayTradeNo">
+        <el-input v-model="dataForm.alipayTradeNo" placeholder="支付宝交易流水號"></el-input>
       </el-form-item>
-      <el-form-item label="支付總金额" prop="totalAmount">
-        <el-input v-model="dataForm.totalAmount" placeholder="支付總金额"></el-input>
+      <el-form-item label="支付總金額" prop="totalAmount">
+        <el-input v-model="dataForm.totalAmount" placeholder="支付總金額"></el-input>
       </el-form-item>
       <el-form-item label="交易内容" prop="subject">
         <el-input v-model="dataForm.subject" placeholder="交易内容"></el-input>
       </el-form-item>
-      <el-form-item label="支付状泰" prop="paymentStatus">
-        <el-input v-model="dataForm.paymentStatus" placeholder="支付状泰"></el-input>
+      <el-form-item label="支付狀態" prop="paymentStatus">
+        <el-input v-model="dataForm.paymentStatus" placeholder="支付狀態"></el-input>
       </el-form-item>
       <el-form-item label="創建時間" prop="createTime">
         <el-input v-model="dataForm.createTime" placeholder="創建時間"></el-input>
@@ -71,28 +71,28 @@ export default {
         orderSn: [
           {
             required: true,
-            message: "订單号（對外业务号）不能為空",
+            message: "訂單號（對外业务號）不能為空",
             trigger: "blur"
           }
         ],
         orderId: [
-          { required: true, message: "订單id不能為空", trigger: "blur" }
+          { required: true, message: "訂單id不能為空", trigger: "blur" }
         ],
         alipayTradeNo: [
           {
             required: true,
-            message: "支付宝交易流水号不能為空",
+            message: "支付宝交易流水號不能為空",
             trigger: "blur"
           }
         ],
         totalAmount: [
-          { required: true, message: "支付總金额不能為空", trigger: "blur" }
+          { required: true, message: "支付總金額不能為空", trigger: "blur" }
         ],
         subject: [
           { required: true, message: "交易内容不能為空", trigger: "blur" }
         ],
         paymentStatus: [
-          { required: true, message: "支付状泰不能為空", trigger: "blur" }
+          { required: true, message: "支付狀態不能為空", trigger: "blur" }
         ],
         createTime: [
           { required: true, message: "創建時間不能為空", trigger: "blur" }

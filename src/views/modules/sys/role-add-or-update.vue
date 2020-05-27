@@ -14,8 +14,8 @@
       <el-form-item label="角色名稱" prop="roleName">
         <el-input v-model="dataForm.roleName" placeholder="角色名稱"></el-input>
       </el-form-item>
-      <el-form-item label="备注" prop="remark">
-        <el-input v-model="dataForm.remark" placeholder="备注"></el-input>
+      <el-form-item label="備註" prop="remark">
+        <el-input v-model="dataForm.remark" placeholder="備註"></el-input>
       </el-form-item>
       <el-form-item size="mini" label="授权">
         <el-tree
@@ -56,7 +56,7 @@ export default {
           { required: true, message: "角色名稱不能為空", trigger: "blur" }
         ]
       },
-      tempKey: -666666 // 临時key, 用于解决tree半選中状泰項不能傳给後台接口問题. # 待優化
+      tempKey: -666666 // 臨時key, 用於解决tree半選中狀態項不能傳给後台接口問題. # 待優化
     };
   },
   methods: {

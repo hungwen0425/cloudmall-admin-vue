@@ -13,7 +13,7 @@
         header-align="center"
         align="center"
         width="120"
-        label="上级菜單"
+        label="上級菜單"
       ></el-table-column>
       <el-table-column header-align="center" align="center" label="圖標">
         <template slot-scope="scope">
@@ -27,7 +27,7 @@
           <el-tag v-else-if="scope.row.type === 2" size="small" type="info">按钮</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="orderNum" header-align="center" align="center" label="排序号"></el-table-column>
+      <el-table-column prop="orderNum" header-align="center" align="center" label="排序號"></el-table-column>
       <el-table-column
         prop="url"
         header-align="center"

@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('order:orderoperatehistory:save')"
           type="primary"
@@ -28,21 +28,21 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="orderId" header-align="center" align="center" label="订單id"></el-table-column>
+      <el-table-column prop="orderId" header-align="center" align="center" label="訂單id"></el-table-column>
       <el-table-column
         prop="operateMan"
         header-align="center"
         align="center"
-        label="操作人[用户；系统；後台管理員]"
+        label="操作人[使用者；系统；後台管理員]"
       ></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="操作時間"></el-table-column>
       <el-table-column
         prop="orderStatus"
         header-align="center"
         align="center"
-        label="订單状泰【0->待付款；1->待發货；2->已發货；3->已完成；4->已关闭；5->无效订單】"
+        label="訂單狀態【0->待付款；1->待發货；2->已發货；3->已完成；4->已關閉；5->无效訂單】"
       ></el-table-column>
-      <el-table-column prop="note" header-align="center" align="center" label="备注"></el-table-column>
+      <el-table-column prop="note" header-align="center" align="center" label="備註"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>

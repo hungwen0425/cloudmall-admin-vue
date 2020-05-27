@@ -17,7 +17,7 @@
       <i class="el-icon-upload"></i>
       <div class="el-upload__text">
         將文件拖到此處，或
-        <em>点击上傳</em>
+        <em>點擊上傳</em>
       </div>
       <div class="el-upload__tip" slot="tip">只支持jpg、png、gif格式的圖片！</div>
     </el-upload>
@@ -73,7 +73,7 @@ export default {
         this.$message.error(response.msg);
       }
     },
-    // 弹窗关闭時
+    // 弹窗關閉時
     closeHandle() {
       this.fileList = [];
       this.$emit("refreshDataList");

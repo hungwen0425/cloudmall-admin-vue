@@ -17,10 +17,10 @@
       <el-form-item label="成長積分" prop="growBounds">
         <el-input v-model="dataForm.growBounds" placeholder="成長積分"></el-input>
       </el-form-item>
-      <el-form-item label="购物積分" prop="buyBounds">
-        <el-input v-model="dataForm.buyBounds" placeholder="购物積分"></el-input>
+      <el-form-item label="購物積分" prop="buyBounds">
+        <el-input v-model="dataForm.buyBounds" placeholder="購物積分"></el-input>
       </el-form-item>
-      <!-- [1111（四個状泰位，从右到左）;0 - 无優惠，成長積分是否赠送;1 - 无優惠，购物積分是否赠送;2 - 有優惠，成長積分是否赠送;3 - 有優惠，购物積分是否赠送【状泰位0：不赠送，1：赠送】] -->
+      <!-- [1111（四個狀態位，从右到左）;0 - 无優惠，成長積分是否赠送;1 - 无優惠，購物積分是否赠送;2 - 有優惠，成長積分是否赠送;3 - 有優惠，購物積分是否赠送【狀態位0：不赠送，1：赠送】] -->
       <el-form-item label="優惠生效情况" prop="work">
         <el-input v-model="dataForm.work" placeholder="優惠生效情况"></el-input>
       </el-form-item>
@@ -50,13 +50,13 @@ export default {
           { required: true, message: "成長積分不能為空", trigger: "blur" }
         ],
         buyBounds: [
-          { required: true, message: "购物積分不能為空", trigger: "blur" }
+          { required: true, message: "購物積分不能為空", trigger: "blur" }
         ],
         work: [
           {
             required: true,
             message:
-              "優惠生效情况[1111（四個状泰位，从右到左）;0 - 无優惠，成長積分是否赠送;1 - 无優惠，购物積分是否赠送;2 - 有優惠，成長積分是否赠送;3 - 有優惠，购物積分是否赠送【状泰位0：不赠送，1：赠送】]不能為空",
+              "優惠生效情况[1111（四個狀態位，从右到左）;0 - 无優惠，成長積分是否赠送;1 - 无優惠，購物積分是否赠送;2 - 有優惠，成長積分是否赠送;3 - 有優惠，購物積分是否赠送【狀態位0：不赠送，1：赠送】]不能為空",
             trigger: "blur"
           }
         ]

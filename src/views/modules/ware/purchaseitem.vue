@@ -6,20 +6,20 @@
           <el-option :label="w.name" :value="w.id" v-for="w in wareList" :key="w.id"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="状泰">
-        <el-select style="width:120px;" v-model="dataForm.status" placeholder="請選擇状泰" clearable>
+      <el-form-item label="狀態">
+        <el-select style="width:120px;" v-model="dataForm.status" placeholder="請選擇狀態" clearable>
           <el-option label="新建" :value="0"></el-option>
           <el-option label="已分配" :value="1"></el-option>
-          <el-option label="正在采购" :value="2"></el-option>
+          <el-option label="正在采購" :value="2"></el-option>
           <el-option label="已完成" :value="3"></el-option>
-          <el-option label="采购失败" :value="4"></el-option>
+          <el-option label="采購失败" :value="4"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="关键字">
+      <el-form-item label="關键字">
         <el-input style="width:120px;" v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('ware:purchasedetail:save')"
           type="primary"
@@ -46,18 +46,18 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="purchaseId" header-align="center" align="center" label="采购單id"></el-table-column>
-      <el-table-column prop="skuId" header-align="center" align="center" label="采购商品id"></el-table-column>
-      <el-table-column prop="skuNum" header-align="center" align="center" label="采购數量"></el-table-column>
-      <el-table-column prop="skuPrice" header-align="center" align="center" label="采购金额"></el-table-column>
+      <el-table-column prop="purchaseId" header-align="center" align="center" label="采購單id"></el-table-column>
+      <el-table-column prop="skuId" header-align="center" align="center" label="采購商品id"></el-table-column>
+      <el-table-column prop="skuNum" header-align="center" align="center" label="采購數量"></el-table-column>
+      <el-table-column prop="skuPrice" header-align="center" align="center" label="采購金額"></el-table-column>
       <el-table-column prop="wareId" header-align="center" align="center" label="仓库id"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="状泰">
+      <el-table-column prop="status" header-align="center" align="center" label="狀態">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.status==0">新建</el-tag>
           <el-tag type="info" v-if="scope.row.status==1">已分配</el-tag>
-          <el-tag type="wanring" v-if="scope.row.status==2">正在采购</el-tag>
+          <el-tag type="wanring" v-if="scope.row.status==2">正在采購</el-tag>
           <el-tag type="success" v-if="scope.row.status==3">已完成</el-tag>
-          <el-tag type="danger" v-if="scope.row.status==4">采购失败</el-tag>
+          <el-tag type="danger" v-if="scope.row.status==4">采購失败</el-tag>
         </template>
       </el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
@@ -138,7 +138,7 @@ export default {
       });
       if (!this.purchaseId) {
         this.$confirm(
-          "没有選擇任何【采购單】，將自動創建新單進行合并。確認吗？",
+          "没有選擇任何【采購單】，將自動創建新單進行合并。確認吗？",
           "提示",
           {
             confirmButtonText: "確定",

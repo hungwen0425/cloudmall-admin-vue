@@ -11,8 +11,8 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="優先级" prop="priority">
-        <el-input v-model="dataForm.priority" placeholder="優先级"></el-input>
+      <el-form-item label="優先級" prop="priority">
+        <el-input v-model="dataForm.priority" placeholder="優先級"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -41,23 +41,23 @@ export default {
       },
       dataRule: {
         assigneeId: [
-          { required: true, message: "采购人id不能為空", trigger: "blur" }
+          { required: true, message: "采購人id不能為空", trigger: "blur" }
         ],
         assigneeName: [
-          { required: true, message: "采购人名不能為空", trigger: "blur" }
+          { required: true, message: "采購人名不能為空", trigger: "blur" }
         ],
         phone: [
           { required: true, message: "聯系方式不能為空", trigger: "blur" }
         ],
         priority: [
-          { required: true, message: "優先级不能為空", trigger: "blur" }
+          { required: true, message: "優先級不能為空", trigger: "blur" }
         ],
-        status: [{ required: true, message: "状泰不能為空", trigger: "blur" }],
+        status: [{ required: true, message: "狀態不能為空", trigger: "blur" }],
         wareId: [
           { required: true, message: "仓库id不能為空", trigger: "blur" }
         ],
         amount: [
-          { required: true, message: "總金额不能為空", trigger: "blur" }
+          { required: true, message: "總金額不能為空", trigger: "blur" }
         ],
         createTime: [
           { required: true, message: "創建日期不能為空", trigger: "blur" }

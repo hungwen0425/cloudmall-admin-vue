@@ -9,7 +9,7 @@
 //清空上次查選的痕跡
 editor.firstForSR = 0;
 editor.currentRangeForSR = null;
-//給tab註冊切换事件
+//給tab註冊切換事件
 /**
  * tab點擊處理事件
  * @param tabHeads
@@ -37,7 +37,7 @@ function clickHandler(tabHeads, tabBodys, obj) {
 }
 
 /**
- * TAB切换
+ * TAB切換
  * @param tabParentId  tab的父節點ID或者物件本身
  */
 function switchTab(tabParentId) {
@@ -118,7 +118,7 @@ $G("preReplaceBtn").onclick = function (txt, dir, mcase) {
     };
     frCommond(obj);
 };
-//替换
+//替換
 $G("repalceBtn").onclick = function () {
     var findtxt = $G("findtxt1").value.replace(/^\s|\s$/g, ""), obj,
         replacetxt = $G("replacetxt").value.replace(/^\s|\s$/g, "");
@@ -136,7 +136,7 @@ $G("repalceBtn").onclick = function () {
     };
     frCommond(obj);
 };
-//全部替换
+//全部替換
 $G("repalceAllBtn").onclick = function () {
     var findtxt = $G("findtxt1").value.replace(/^\s|\s$/g, ""), obj,
         replacetxt = $G("replacetxt").value.replace(/^\s|\s$/g, "");

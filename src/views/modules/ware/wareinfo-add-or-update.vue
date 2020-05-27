@@ -17,8 +17,8 @@
       <el-form-item label="仓库地址" prop="address">
         <el-input v-model="dataForm.address" placeholder="仓库地址"></el-input>
       </el-form-item>
-      <el-form-item label="区域编码" prop="areaCode">
-        <el-input v-model="dataForm.areaCode" placeholder="区域编码"></el-input>
+      <el-form-item label="区域编碼" prop="areaCode">
+        <el-input v-model="dataForm.areaCode" placeholder="区域编碼"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -45,7 +45,7 @@ export default {
           { required: true, message: "仓库地址不能為空", trigger: "blur" }
         ],
         areaCode: [
-          { required: true, message: "区域编码不能為空", trigger: "blur" }
+          { required: true, message: "区域编碼不能為空", trigger: "blur" }
         ]
       }
     };

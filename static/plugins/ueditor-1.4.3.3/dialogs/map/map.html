@@ -95,7 +95,7 @@
             });
             search.search(document.getElementById('address').value || document.getElementById('city').value);
         }
-        //獲得参數
+        //取得参數
         function getPars(str, par) {
             var reg = new RegExp(par + "=((\\d+|[.,])*)", "g");
             return reg.exec(str)[1];

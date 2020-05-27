@@ -26,20 +26,20 @@
       <el-form-item label="配送地址" prop="deliveryAddress">
         <el-input v-model="dataForm.deliveryAddress" placeholder="配送地址"></el-input>
       </el-form-item>
-      <el-form-item label="订單备注" prop="orderComment">
-        <el-input v-model="dataForm.orderComment" placeholder="订單备注"></el-input>
+      <el-form-item label="訂單備註" prop="orderComment">
+        <el-input v-model="dataForm.orderComment" placeholder="訂單備註"></el-input>
       </el-form-item>
       <el-form-item label="付款方式【 1:在线付款 2:货到付款】" prop="paymentWay">
         <el-input v-model="dataForm.paymentWay" placeholder="付款方式【 1:在线付款 2:货到付款】"></el-input>
       </el-form-item>
-      <el-form-item label="任务状泰" prop="taskStatus">
-        <el-input v-model="dataForm.taskStatus" placeholder="任务状泰"></el-input>
+      <el-form-item label="任务狀態" prop="taskStatus">
+        <el-input v-model="dataForm.taskStatus" placeholder="任务狀態"></el-input>
       </el-form-item>
-      <el-form-item label="订單描述" prop="orderBody">
-        <el-input v-model="dataForm.orderBody" placeholder="订單描述"></el-input>
+      <el-form-item label="訂單描述" prop="orderBody">
+        <el-input v-model="dataForm.orderBody" placeholder="訂單描述"></el-input>
       </el-form-item>
-      <el-form-item label="物流單号" prop="trackingNo">
-        <el-input v-model="dataForm.trackingNo" placeholder="物流單号"></el-input>
+      <el-form-item label="物流單號" prop="trackingNo">
+        <el-input v-model="dataForm.trackingNo" placeholder="物流單號"></el-input>
       </el-form-item>
       <el-form-item label="create_time" prop="createTime">
         <el-input v-model="dataForm.createTime" placeholder="create_time"></el-input>
@@ -47,8 +47,8 @@
       <el-form-item label="仓库id" prop="wareId">
         <el-input v-model="dataForm.wareId" placeholder="仓库id"></el-input>
       </el-form-item>
-      <el-form-item label="工作單备注" prop="taskComment">
-        <el-input v-model="dataForm.taskComment" placeholder="工作單备注"></el-input>
+      <el-form-item label="工作單備註" prop="taskComment">
+        <el-input v-model="dataForm.taskComment" placeholder="工作單備註"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -96,7 +96,7 @@ export default {
           { required: true, message: "配送地址不能為空", trigger: "blur" }
         ],
         orderComment: [
-          { required: true, message: "订單备注不能為空", trigger: "blur" }
+          { required: true, message: "訂單備註不能為空", trigger: "blur" }
         ],
         paymentWay: [
           {
@@ -106,13 +106,13 @@ export default {
           }
         ],
         taskStatus: [
-          { required: true, message: "任务状泰不能為空", trigger: "blur" }
+          { required: true, message: "任务狀態不能為空", trigger: "blur" }
         ],
         orderBody: [
-          { required: true, message: "订單描述不能為空", trigger: "blur" }
+          { required: true, message: "訂單描述不能為空", trigger: "blur" }
         ],
         trackingNo: [
-          { required: true, message: "物流單号不能為空", trigger: "blur" }
+          { required: true, message: "物流單號不能為空", trigger: "blur" }
         ],
         createTime: [
           { required: true, message: "create_time不能為空", trigger: "blur" }
@@ -121,7 +121,7 @@ export default {
           { required: true, message: "仓库id不能為空", trigger: "blur" }
         ],
         taskComment: [
-          { required: true, message: "工作單备注不能為空", trigger: "blur" }
+          { required: true, message: "工作單備註不能為空", trigger: "blur" }
         ]
       }
     };

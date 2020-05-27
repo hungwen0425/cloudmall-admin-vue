@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:homeadv:save')"
           type="primary"
@@ -32,13 +32,13 @@
       <el-table-column prop="pic" header-align="center" align="center" label="圖片地址"></el-table-column>
       <el-table-column prop="startTime" header-align="center" align="center" label="開始時間"></el-table-column>
       <el-table-column prop="endTime" header-align="center" align="center" label="結束時間"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="状泰"></el-table-column>
-      <el-table-column prop="clickCount" header-align="center" align="center" label="点击數"></el-table-column>
-      <el-table-column prop="url" header-align="center" align="center" label="广告詳情连接地址"></el-table-column>
-      <el-table-column prop="note" header-align="center" align="center" label="备注"></el-table-column>
+      <el-table-column prop="status" header-align="center" align="center" label="狀態"></el-table-column>
+      <el-table-column prop="clickCount" header-align="center" align="center" label="點擊數"></el-table-column>
+      <el-table-column prop="url" header-align="center" align="center" label="廣告詳情連接地址"></el-table-column>
+      <el-table-column prop="note" header-align="center" align="center" label="備註"></el-table-column>
       <el-table-column prop="sort" header-align="center" align="center" label="排序"></el-table-column>
-      <el-table-column prop="publisherId" header-align="center" align="center" label="發布者"></el-table-column>
-      <el-table-column prop="authId" header-align="center" align="center" label="审核者"></el-table-column>
+      <el-table-column prop="publisherId" header-align="center" align="center" label="發佈者"></el-table-column>
+      <el-table-column prop="authId" header-align="center" align="center" label="審核者"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>

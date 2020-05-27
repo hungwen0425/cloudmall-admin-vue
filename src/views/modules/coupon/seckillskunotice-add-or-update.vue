@@ -17,19 +17,19 @@
       <el-form-item label="sku_id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="sku_id"></el-input>
       </el-form-item>
-      <el-form-item label="活動场次id" prop="sessionId">
-        <el-input v-model="dataForm.sessionId" placeholder="活動场次id"></el-input>
+      <el-form-item label="活動場次id" prop="sessionId">
+        <el-input v-model="dataForm.sessionId" placeholder="活動場次id"></el-input>
       </el-form-item>
-      <el-form-item label="订阅時間" prop="subcribeTime">
-        <el-input v-model="dataForm.subcribeTime" placeholder="订阅時間"></el-input>
+      <el-form-item label="訂閱時間" prop="subcribeTime">
+        <el-input v-model="dataForm.subcribeTime" placeholder="訂閱時間"></el-input>
       </el-form-item>
       <el-form-item label="發送時間" prop="sendTime">
         <el-input v-model="dataForm.sendTime" placeholder="發送時間"></el-input>
       </el-form-item>
       <el-form-item label="通知方式" prop="noticeType">
         <el-select v-model="dataForm.noticeType" placeholder="請選擇">
-          <el-option label="短信" :value="0"></el-option>
-          <el-option label="邮件" :value="1"></el-option>
+          <el-option label="簡訊" :value="0"></el-option>
+          <el-option label="郵件" :value="1"></el-option>
         </el-select>
       </el-form-item>
     </el-form>
@@ -60,10 +60,10 @@ export default {
         ],
         skuId: [{ required: true, message: "sku_id不能為空", trigger: "blur" }],
         sessionId: [
-          { required: true, message: "活動场次id不能為空", trigger: "blur" }
+          { required: true, message: "活動場次id不能為空", trigger: "blur" }
         ],
         subcribeTime: [
-          { required: true, message: "订阅時間不能為空", trigger: "blur" }
+          { required: true, message: "訂閱時間不能為空", trigger: "blur" }
         ],
         sendTime: [
           { required: true, message: "發送時間不能為空", trigger: "blur" }

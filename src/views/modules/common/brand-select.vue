@@ -59,7 +59,7 @@ export default {
   created() {},
   //生命週期 - 掛載完成（可以訪問DOM元素）
   mounted() {
-    //監听三级分類消息的變化
+    //監听三級分類消息的變化
     this.subscribe = PubSub.subscribe("catPath", (msg, val) => {
       this.catId = val[val.length - 1];
       this.getCatBrands();
@@ -70,7 +70,7 @@ export default {
   beforeUpdate() {}, //生命週期 - 更新之前
   updated() {}, //生命週期 - 更新之後
   beforeDestroy() {
-    PubSub.unsubscribe(this.subscribe); //銷毁订阅
+    PubSub.unsubscribe(this.subscribe); //銷毁訂閱
   }, //生命週期 - 銷毁之前
   destroyed() {}, //生命週期 - 銷毁完成
   activated() {} //如果頁面有keep-alive緩存功能，這個函數會觸發

@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.beanName" placeholder="bean名稱" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button v-if="isAuth('sys:schedule:save')" type="primary" @click="addOrUpdateHandle()">新增</el-button>
         <el-button
           v-if="isAuth('sys:schedule:delete')"
@@ -45,9 +45,9 @@
       <el-table-column prop="jobId" header-align="center" align="center" width="80" label="ID"></el-table-column>
       <el-table-column prop="beanName" header-align="center" align="center" label="bean名稱"></el-table-column>
       <el-table-column prop="params" header-align="center" align="center" label="参數"></el-table-column>
-      <el-table-column prop="cronExpression" header-align="center" align="center" label="cron表达式"></el-table-column>
-      <el-table-column prop="remark" header-align="center" align="center" label="备注"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="状泰">
+      <el-table-column prop="cronExpression" header-align="center" align="center" label="cron表達式"></el-table-column>
+      <el-table-column prop="remark" header-align="center" align="center" label="備註"></el-table-column>
+      <el-table-column prop="status" header-align="center" align="center" label="狀態">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.status === 0" size="small">正常</el-tag>
           <el-tag v-else size="small" type="danger">暂停</el-tag>

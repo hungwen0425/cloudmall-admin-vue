@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('order:ordersetting:save')"
           type="primary"
@@ -32,13 +32,13 @@
         prop="flashOrderOvertime"
         header-align="center"
         align="center"
-        label="秒杀订單超時关闭時間(分)"
+        label="秒杀訂單超時關閉時間(分)"
       ></el-table-column>
       <el-table-column
         prop="normalOrderOvertime"
         header-align="center"
         align="center"
-        label="正常订單超時時間(分)"
+        label="正常訂單超時時間(分)"
       ></el-table-column>
       <el-table-column
         prop="confirmOvertime"
@@ -56,13 +56,13 @@
         prop="commentOvertime"
         header-align="center"
         align="center"
-        label="订單完成後自動好评時間（天）"
+        label="訂單完成後自動好评時間（天）"
       ></el-table-column>
       <el-table-column
         prop="memberLevel"
         header-align="center"
         align="center"
-        label="會員等级【0-不限會員等级，全部通用；其他-對應的其他會員等级】"
+        label="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】"
       ></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">

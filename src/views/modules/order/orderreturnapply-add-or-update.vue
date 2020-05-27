@@ -17,17 +17,17 @@
       <el-form-item label="退货商品id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="退货商品id"></el-input>
       </el-form-item>
-      <el-form-item label="订單编号" prop="orderSn">
-        <el-input v-model="dataForm.orderSn" placeholder="订單编号"></el-input>
+      <el-form-item label="訂單编號" prop="orderSn">
+        <el-input v-model="dataForm.orderSn" placeholder="訂單编號"></el-input>
       </el-form-item>
       <el-form-item label="申請時間" prop="createTime">
         <el-input v-model="dataForm.createTime" placeholder="申請時間"></el-input>
       </el-form-item>
-      <el-form-item label="會員用户名" prop="memberUsername">
-        <el-input v-model="dataForm.memberUsername" placeholder="會員用户名"></el-input>
+      <el-form-item label="會員使用者名稱" prop="memberUsername">
+        <el-input v-model="dataForm.memberUsername" placeholder="會員使用者名稱"></el-input>
       </el-form-item>
-      <el-form-item label="退款金额" prop="returnAmount">
-        <el-input v-model="dataForm.returnAmount" placeholder="退款金额"></el-input>
+      <el-form-item label="退款金額" prop="returnAmount">
+        <el-input v-model="dataForm.returnAmount" placeholder="退款金額"></el-input>
       </el-form-item>
       <el-form-item label="退货人姓名" prop="returnName">
         <el-input v-model="dataForm.returnName" placeholder="退货人姓名"></el-input>
@@ -35,8 +35,8 @@
       <el-form-item label="退货人电话" prop="returnPhone">
         <el-input v-model="dataForm.returnPhone" placeholder="退货人电话"></el-input>
       </el-form-item>
-      <el-form-item label="申請状泰[0->待處理；1->退货中；2->已完成；3->已拒绝]" prop="status">
-        <el-input v-model="dataForm.status" placeholder="申請状泰[0->待處理；1->退货中；2->已完成；3->已拒绝]"></el-input>
+      <el-form-item label="申請狀態[0->待處理；1->退货中；2->已完成；3->已拒绝]" prop="status">
+        <el-input v-model="dataForm.status" placeholder="申請狀態[0->待處理；1->退货中；2->已完成；3->已拒绝]"></el-input>
       </el-form-item>
       <el-form-item label="處理時間" prop="handleTime">
         <el-input v-model="dataForm.handleTime" placeholder="處理時間"></el-input>
@@ -68,11 +68,11 @@
       <el-form-item label="描述" prop="description述">
         <el-input v-model="dataForm.description述" placeholder="描述"></el-input>
       </el-form-item>
-      <el-form-item label="凭证圖片，以逗号隔開" prop="descPics">
-        <el-input v-model="dataForm.descPics" placeholder="凭证圖片，以逗号隔開"></el-input>
+      <el-form-item label="凭证圖片，以逗號隔開" prop="descPics">
+        <el-input v-model="dataForm.descPics" placeholder="凭证圖片，以逗號隔開"></el-input>
       </el-form-item>
-      <el-form-item label="處理备注" prop="handleNote">
-        <el-input v-model="dataForm.handleNote" placeholder="處理备注"></el-input>
+      <el-form-item label="處理備註" prop="handleNote">
+        <el-input v-model="dataForm.handleNote" placeholder="處理備註"></el-input>
       </el-form-item>
       <el-form-item label="處理人員" prop="handleMan">
         <el-input v-model="dataForm.handleMan" placeholder="處理人員"></el-input>
@@ -83,8 +83,8 @@
       <el-form-item label="收货時間" prop="receiveTime">
         <el-input v-model="dataForm.receiveTime" placeholder="收货時間"></el-input>
       </el-form-item>
-      <el-form-item label="收货备注" prop="receiveNote">
-        <el-input v-model="dataForm.receiveNote" placeholder="收货备注"></el-input>
+      <el-form-item label="收货備註" prop="receiveNote">
+        <el-input v-model="dataForm.receiveNote" placeholder="收货備註"></el-input>
       </el-form-item>
       <el-form-item label="收货电话" prop="receivePhone">
         <el-input v-model="dataForm.receivePhone" placeholder="收货电话"></el-input>
@@ -143,16 +143,16 @@ export default {
           { required: true, message: "退货商品id不能為空", trigger: "blur" }
         ],
         orderSn: [
-          { required: true, message: "订單编号不能為空", trigger: "blur" }
+          { required: true, message: "訂單编號不能為空", trigger: "blur" }
         ],
         createTime: [
           { required: true, message: "申請時間不能為空", trigger: "blur" }
         ],
         memberUsername: [
-          { required: true, message: "會員用户名不能為空", trigger: "blur" }
+          { required: true, message: "會員使用者名稱不能為空", trigger: "blur" }
         ],
         returnAmount: [
-          { required: true, message: "退款金额不能為空", trigger: "blur" }
+          { required: true, message: "退款金額不能為空", trigger: "blur" }
         ],
         returnName: [
           { required: true, message: "退货人姓名不能為空", trigger: "blur" }
@@ -164,7 +164,7 @@ export default {
           {
             required: true,
             message:
-              "申請状泰[0->待處理；1->退货中；2->已完成；3->已拒绝]不能為空",
+              "申請狀態[0->待處理；1->退货中；2->已完成；3->已拒绝]不能為空",
             trigger: "blur"
           }
         ],
@@ -207,12 +207,12 @@ export default {
         descPics: [
           {
             required: true,
-            message: "凭证圖片，以逗号隔開不能為空",
+            message: "凭证圖片，以逗號隔開不能為空",
             trigger: "blur"
           }
         ],
         handleNote: [
-          { required: true, message: "處理备注不能為空", trigger: "blur" }
+          { required: true, message: "處理備註不能為空", trigger: "blur" }
         ],
         handleMan: [
           { required: true, message: "處理人員不能為空", trigger: "blur" }
@@ -224,7 +224,7 @@ export default {
           { required: true, message: "收货時間不能為空", trigger: "blur" }
         ],
         receiveNote: [
-          { required: true, message: "收货备注不能為空", trigger: "blur" }
+          { required: true, message: "收货備註不能為空", trigger: "blur" }
         ],
         receivePhone: [
           { required: true, message: "收货电话不能為空", trigger: "blur" }

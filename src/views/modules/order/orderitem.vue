@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('order:orderitem:save')"
           type="primary"
@@ -35,26 +35,26 @@
       <el-table-column prop="spuPic" header-align="center" align="center" label="spu_pic"></el-table-column>
       <el-table-column prop="spuBrand" header-align="center" align="center" label="品牌"></el-table-column>
       <el-table-column prop="categoryId" header-align="center" align="center" label="商品分類id"></el-table-column>
-      <el-table-column prop="skuId" header-align="center" align="center" label="商品sku编号"></el-table-column>
+      <el-table-column prop="skuId" header-align="center" align="center" label="商品sku编號"></el-table-column>
       <el-table-column prop="skuName" header-align="center" align="center" label="商品sku名稱"></el-table-column>
       <el-table-column prop="skuPic" header-align="center" align="center" label="商品sku圖片"></el-table-column>
       <el-table-column prop="skuPrice" header-align="center" align="center" label="商品sku價格"></el-table-column>
-      <el-table-column prop="skuQuantity" header-align="center" align="center" label="商品购买的數量"></el-table-column>
+      <el-table-column prop="skuQuantity" header-align="center" align="center" label="商品購买的數量"></el-table-column>
       <el-table-column
         prop="skuAttrsVals"
         header-align="center"
         align="center"
         label="商品銷售屬性組合（JSON）"
       ></el-table-column>
-      <el-table-column prop="promotionAmount" header-align="center" align="center" label="商品促銷分解金额"></el-table-column>
-      <el-table-column prop="couponAmount" header-align="center" align="center" label="優惠券優惠分解金额"></el-table-column>
+      <el-table-column prop="promotionAmount" header-align="center" align="center" label="商品促銷分解金額"></el-table-column>
+      <el-table-column prop="couponAmount" header-align="center" align="center" label="優惠券優惠分解金額"></el-table-column>
       <el-table-column
         prop="integrationAmount"
         header-align="center"
         align="center"
-        label="積分優惠分解金额"
+        label="積分優惠分解金額"
       ></el-table-column>
-      <el-table-column prop="realAmount" header-align="center" align="center" label="该商品经过優惠後的分解金额"></el-table-column>
+      <el-table-column prop="realAmount" header-align="center" align="center" label="該商品经過優惠後的分解金額"></el-table-column>
       <el-table-column prop="giftIntegration" header-align="center" align="center" label="赠送積分"></el-table-column>
       <el-table-column prop="giftGrowth" header-align="center" align="center" label="赠送成長值"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">

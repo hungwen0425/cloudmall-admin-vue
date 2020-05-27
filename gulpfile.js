@@ -29,14 +29,14 @@ gulp.task('create:versionCatalog', ['build'], function () {
     .pipe(gulp.dest(`${versionPath}/static/`))
 });
 
-// 替换${versionPath}/static/js/manifest.js window.SITE_CONFIG.cdnUrl占位變量
+// 替換${versionPath}/static/js/manifest.js window.SITE_CONFIG.cdnUrl占位變量
 gulp.task('replace:cdnUrl', ['create:versionCatalog'], function () {
   return gulp.src(`${versionPath}/static/js/manifest.js`)
     .pipe($.replace(new RegExp(`"${require('./config').build.assetsPublicPath}"`, 'g'), 'window.SITE_CONFIG.cdnUrl + "/"'))
     .pipe(gulp.dest(`${versionPath}/static/js/`))
 });
 
-// 替换${versionPath}/static/config/index-${env}.js window.SITE_CONFIG['version']設定變量
+// 替換${versionPath}/static/config/index-${env}.js window.SITE_CONFIG['version']設定變量
 gulp.task('replace:version', ['create:versionCatalog'], function () {
   return gulp.src(`${versionPath}/static/config/index-${env}.js`)
     .pipe($.replace(/window.SITE_CONFIG\['version'\] = '.*'/g, `window.SITE_CONFIG['version'] = '${version}'`))

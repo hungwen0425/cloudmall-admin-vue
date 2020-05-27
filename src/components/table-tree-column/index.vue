@@ -52,7 +52,7 @@ export default {
         (isArray(row[this.childKey]) && row[this.childKey].length >= 1) || false
       );
     },
-    // 切换處理
+    // 切換處理
     toggleHandle(index, row) {
       if (this.hasChild(row)) {
         var data = this.$parent.store.states.data.slice(0);

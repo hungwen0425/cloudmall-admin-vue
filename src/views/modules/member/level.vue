@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('member:memberlevel:save')"
           type="primary"
@@ -28,15 +28,15 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="name" header-align="center" align="center" label="等级名稱"></el-table-column>
+      <el-table-column prop="name" header-align="center" align="center" label="等級名稱"></el-table-column>
       <el-table-column prop="growthPoint" header-align="center" align="center" label="所需成長值"></el-table-column>
-      <el-table-column prop="defaultStatus" header-align="center" align="center" label="默認等级">
+      <el-table-column prop="defaultStatus" header-align="center" align="center" label="默認等級">
         <template slot-scope="scope">
           <i class="el-icon-success" v-if="scope.row.defaultStatus==1"></i>
           <i class="el-icon-error" v-else></i>
         </template>
       </el-table-column>
-      <el-table-column prop="freeFreightPoint" header-align="center" align="center" label="免運费標准"></el-table-column>
+      <el-table-column prop="freeFreightPoint" header-align="center" align="center" label="免運費標準"></el-table-column>
       <el-table-column
         prop="commentGrowthPoint"
         header-align="center"
@@ -48,7 +48,7 @@
           prop="priviledgeFreeFreight"
           header-align="center"
           align="center"
-          label="免邮特权"
+          label="免郵特权"
         >
           <template slot-scope="scope">
             <i class="el-icon-success" v-if="scope.row.priviledgeFreeFreight==1"></i>
@@ -78,7 +78,7 @@
           </template>
         </el-table-column>
       </el-table-column>
-      <el-table-column prop="note" header-align="center" align="center" label="备注"></el-table-column>
+      <el-table-column prop="note" header-align="center" align="center" label="備註"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>

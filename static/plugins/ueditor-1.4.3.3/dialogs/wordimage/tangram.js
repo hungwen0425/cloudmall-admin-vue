@@ -290,8 +290,8 @@ baidu.encodeHTML = baidu.string.encodeHTML;
  * @param {string} 	options.ver 				最低需要的flash player版本號
  * @param {string} 	options.width 				flash的宽度
  * @param {string} 	options.height 				flash的高度
- * @param {string} 	options.align 				flash的對齐方式，允许值：middle/left/right/top/bottom
- * @param {string} 	options.base 				設定用于解析swf文件中的所有相對路徑語句的基本目入或URL
+ * @param {string} 	options.align 				flash的對齊方式，允许值：middle/left/right/top/bottom
+ * @param {string} 	options.base 				設定用於解析swf文件中的所有相對路徑語句的基本目入或URL
  * @param {string} 	options.bgcolor 			swf文件的背景色
  * @param {string} 	options.salign 				設定縮放的swf文件在由width和height設定定義的區域内的位置。允许值：l/r/t/b/tl/tr/bl/br
  * @param {boolean} options.menu 				是否顯示右键選單，允许值：true/false
@@ -433,8 +433,8 @@ baidu.swf.createHTML = function (options) {
  * @param {string} 	options.ver 				最低需要的flash player版本號
  * @param {string} 	options.width 				flash的宽度
  * @param {string} 	options.height 				flash的高度
- * @param {string} 	options.align 				flash的對齐方式，允许值：middle/left/right/top/bottom
- * @param {string} 	options.base 				設定用于解析swf文件中的所有相對路徑語句的基本目入或URL
+ * @param {string} 	options.align 				flash的對齊方式，允许值：middle/left/right/top/bottom
+ * @param {string} 	options.base 				設定用於解析swf文件中的所有相對路徑語句的基本目入或URL
  * @param {string} 	options.bgcolor 			swf文件的背景色
  * @param {string} 	options.salign 				設定縮放的swf文件在由width和height設定定義的區域内的位置。允许值：l/r/t/b/tl/tr/bl/br
  * @param {boolean} options.menu 				是否顯示右键選單，允许值：true/false
@@ -516,14 +516,14 @@ baidu.lang.isArray = function (source) {
 
 
 /**
- * 將一個變量轉换成array
+ * 將一個變量轉換成array
  * @name baidu.lang.toArray
  * @function
  * @grammar baidu.lang.toArray(source)
- * @param {mix} source 需要轉换成array的變量
+ * @param {mix} source 需要轉換成array的變量
  * @version 1.3
  * @meta standard
- * @returns {array} 轉换後的array
+ * @returns {array} 轉換後的array
  */
 baidu.lang.toArray = function (source) {
     if (source === null || source === undefined)
@@ -544,7 +544,7 @@ baidu.lang.toArray = function (source) {
 };
 
 /**
- * 獲得flash物件的實例
+ * 取得flash物件的實例
  * @name baidu.swf.getMovie
  * @function
  * @grammar baidu.swf.getMovie(name)
@@ -1063,7 +1063,7 @@ baidu.sio._createScriptTag = function (scr, url, charset) {
 };
 
 /**
- * 删除script的屬性，再删除script標簽，以解决修復内存泄漏的問题
+ * 删除script的屬性，再删除script標簽，以解决修復内存泄漏的問題
  *
  * @param {HTMLElement} src script節點
  */
@@ -1153,7 +1153,7 @@ baidu.sio.callByBrowser = function (url, opt_callback, opt_options) {
  * @config {Integer} [timeOut] 超時時間(單位：ms)，超過這個時間將不再響應本請求，並觸發onfailure函數
  * @config {Function} [onfailure] timeOut設定後才生效，到達超時時間時觸發本函數
  * @remark
- * 如果url中已經包含key為“options['queryField']”的query項，將會被替换成callback中参數傳递或自動生成的函數名。
+ * 如果url中已經包含key為“options['queryField']”的query項，將會被替換成callback中参數傳递或自動生成的函數名。
  * @meta standard
  * @see baidu.sio.callByBrowser
  */
@@ -1192,7 +1192,7 @@ baidu.sio.callByServer = /**@function*/function (url, callback, opt_options) {
     baidu.sio._createScriptTag(scr, url, charset);
 
     /*
-     * 返回一個函數，用于立即（掛在window上）或者超時（掛在setTimeout中）時执行
+     * 返回一個函數，用於立即（掛在window上）或者超時（掛在setTimeout中）時执行
      */
     function getCallBack(onTimeOut) {
         /*global callbackName, callback, scr, options;*/

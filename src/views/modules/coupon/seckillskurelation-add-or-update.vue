@@ -12,8 +12,8 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="活動场次id" prop="promotionSessionId">
-        <el-input v-model="sessionId" placeholder="活動场次id" :disabled="true"></el-input>
+      <el-form-item label="活動場次id" prop="promotionSessionId">
+        <el-input v-model="sessionId" placeholder="活動場次id" :disabled="true"></el-input>
       </el-form-item>
       <el-form-item label="商品id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="商品id"></el-input>
@@ -24,8 +24,8 @@
       <el-form-item label="秒杀總量" prop="seckillCount">
         <el-input-number v-model="dataForm.seckillCount" :min="1" label="秒杀總量"></el-input-number>
       </el-form-item>
-      <el-form-item label="每人限购數量" prop="seckillLimit">
-        <el-input-number v-model="dataForm.seckillLimit" :min="1" label="每人限购數量"></el-input-number>
+      <el-form-item label="每人限購數量" prop="seckillLimit">
+        <el-input-number v-model="dataForm.seckillLimit" :min="1" label="每人限購數量"></el-input-number>
       </el-form-item>
       <el-form-item label="排序" prop="seckillSort">
         <el-input v-model="dataForm.seckillSort" placeholder="排序"></el-input>
@@ -55,7 +55,7 @@ export default {
       },
       dataRule: {
         sessionId: [
-          { required: true, message: "活動场次id不能為空", trigger: "blur" }
+          { required: true, message: "活動場次id不能為空", trigger: "blur" }
         ],
         skuId: [{ required: true, message: "商品id不能為空", trigger: "blur" }],
         seckillPrice: [
@@ -65,7 +65,7 @@ export default {
           { required: true, message: "秒杀總量不能為空", trigger: "blur" }
         ],
         seckillLimit: [
-          { required: true, message: "每人限购數量不能為空", trigger: "blur" }
+          { required: true, message: "每人限購數量不能為空", trigger: "blur" }
         ],
         seckillSort: [
           { required: true, message: "排序不能為空", trigger: "blur" }

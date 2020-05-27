@@ -180,12 +180,12 @@
                 <el-input v-model="scope.row.skuName"></el-input>
               </template>
             </el-table-column>
-            <el-table-column label="標题" prop="skuTitle">
+            <el-table-column label="標題" prop="skuTitle">
               <template slot-scope="scope">
                 <el-input v-model="scope.row.skuTitle"></el-input>
               </template>
             </el-table-column>
-            <el-table-column label="副標题" prop="skuSubtitle">
+            <el-table-column label="副標題" prop="skuSubtitle">
               <template slot-scope="scope">
                 <el-input v-model="scope.row.skuSubtitle"></el-input>
               </template>
@@ -535,7 +535,7 @@ export default {
       this.dataResp.baseAttrs.forEach(item => {
         item.forEach(attr => {
           let { attrId, attrValues, showDesc } = attr;
-          //跳过没有录入值的屬性
+          //跳過没有录入值的屬性
           if (attrValues != "") {
             if (attrValues instanceof Array) {
               //多個值用;隔開
@@ -587,7 +587,7 @@ export default {
           imgs.push({ imgUrl: "", defaultImg: 0 });
         });
 
-        //會員價，也必須在循環裡面生成，否则會導致資料绑定問题
+        //會員價，也必須在循環裡面生成，否则會導致資料绑定問題
         let memberPrices = [];
         if (this.dataResp.memberLevels.length > 0) {
           for (let i = 0; i < this.dataResp.memberLevels.length; i++) {
@@ -729,7 +729,7 @@ export default {
     },
     //笛卡爾積運算
     descartes(list) {
-      //parent上一级索引;count指針計數
+      //parent上一級索引;count指針計數
       var point = {};
 
       var result = [];
@@ -761,7 +761,7 @@ export default {
         result.push(temp);
         temp = [];
 
-        //檢查指針最大值問题
+        //檢查指針最大值問題
         while (true) {
           if (point[index]["count"] + 1 >= list[index].length) {
             point[index]["count"] = 0;

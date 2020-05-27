@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('order:orderreturnreason:save')"
           type="primary"
@@ -30,7 +30,7 @@
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="name" header-align="center" align="center" label="退货原因名"></el-table-column>
       <el-table-column prop="sort" header-align="center" align="center" label="排序"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="启用状泰"></el-table-column>
+      <el-table-column prop="status" header-align="center" align="center" label="啟用狀態"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="create_time"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">

@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:seckillskunotice:save')"
           type="primary"
@@ -30,14 +30,14 @@
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="memberId" header-align="center" align="center" label="member_id"></el-table-column>
       <el-table-column prop="skuId" header-align="center" align="center" label="sku_id"></el-table-column>
-      <el-table-column prop="sessionId" header-align="center" align="center" label="活動场次id"></el-table-column>
-      <el-table-column prop="subcribeTime" header-align="center" align="center" label="订阅時間"></el-table-column>
+      <el-table-column prop="sessionId" header-align="center" align="center" label="活動場次id"></el-table-column>
+      <el-table-column prop="subcribeTime" header-align="center" align="center" label="訂閱時間"></el-table-column>
       <el-table-column prop="sendTime" header-align="center" align="center" label="發送時間"></el-table-column>
       <el-table-column
         prop="noticeType"
         header-align="center"
         align="center"
-        label="通知方式[0-短信，1-邮件]"
+        label="通知方式[0-簡訊，1-郵件]"
       ></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">

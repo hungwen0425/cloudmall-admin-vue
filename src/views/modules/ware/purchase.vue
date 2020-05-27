@@ -1,20 +1,20 @@
 <template>
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
-      <el-form-item label="状泰">
-        <el-select style="width:120px;" v-model="dataForm.status" placeholder="請選擇状泰" clearable>
+      <el-form-item label="狀態">
+        <el-select style="width:120px;" v-model="dataForm.status" placeholder="請選擇狀態" clearable>
           <el-option label="新建" :value="0"></el-option>
           <el-option label="已分配" :value="1"></el-option>
-          <el-option label="已领取" :value="2"></el-option>
+          <el-option label="已領取" :value="2"></el-option>
           <el-option label="已完成" :value="3"></el-option>
           <el-option label="有异常" :value="4"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="关键字">
+      <el-form-item label="關键字">
         <el-input style="width:120px;" v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('ware:purchase:save')"
           type="primary"
@@ -36,22 +36,22 @@
       style="width: 100%;"
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
-      <el-table-column prop="id" header-align="center" align="center" label="采购單id"></el-table-column>
-      <el-table-column prop="assigneeId" header-align="center" align="center" label="采购人id"></el-table-column>
-      <el-table-column prop="assigneeName" header-align="center" align="center" label="采购人名"></el-table-column>
+      <el-table-column prop="id" header-align="center" align="center" label="采購單id"></el-table-column>
+      <el-table-column prop="assigneeId" header-align="center" align="center" label="采購人id"></el-table-column>
+      <el-table-column prop="assigneeName" header-align="center" align="center" label="采購人名"></el-table-column>
       <el-table-column prop="phone" header-align="center" align="center" label="聯系方式"></el-table-column>
-      <el-table-column prop="priority" header-align="center" align="center" label="優先级"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="状泰">
+      <el-table-column prop="priority" header-align="center" align="center" label="優先級"></el-table-column>
+      <el-table-column prop="status" header-align="center" align="center" label="狀態">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.status == 0">新建</el-tag>
           <el-tag type="info" v-if="scope.row.status == 1">已分配</el-tag>
-          <el-tag type="warning" v-if="scope.row.status == 2">已领取</el-tag>
+          <el-tag type="warning" v-if="scope.row.status == 2">已領取</el-tag>
           <el-tag type="success" v-if="scope.row.status == 3">已完成</el-tag>
           <el-tag type="danger" v-if="scope.row.status == 4">有异常</el-tag>
         </template>
       </el-table-column>
       <el-table-column prop="wareId" header-align="center" align="center" label="仓库id"></el-table-column>
-      <el-table-column prop="amount" header-align="center" align="center" label="總金额"></el-table-column>
+      <el-table-column prop="amount" header-align="center" align="center" label="總金額"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="創建日期"></el-table-column>
       <el-table-column prop="updateTime" header-align="center" align="center" label="更新日期"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
@@ -78,7 +78,7 @@
     ></el-pagination>
     <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
-    <el-dialog title="分配采购人員" :visible.sync="caigoudialogVisible" width="30%">
+    <el-dialog title="分配采購人員" :visible.sync="caigoudialogVisible" width="30%">
       <el-select v-model="userId" filterable placeholder="請選擇">
         <el-option
           v-for="item in userList"

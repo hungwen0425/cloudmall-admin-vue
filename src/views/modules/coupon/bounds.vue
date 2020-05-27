@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:spubounds:save')"
           type="primary"
@@ -30,9 +30,9 @@
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="spuId" header-align="center" align="center" label></el-table-column>
       <el-table-column prop="growBounds" header-align="center" align="center" label="成長積分"></el-table-column>
-      <el-table-column prop="buyBounds" header-align="center" align="center" label="购物積分"></el-table-column>
+      <el-table-column prop="buyBounds" header-align="center" align="center" label="購物積分"></el-table-column>
       <el-table-column prop="work" header-align="center" align="center" label="優惠生效情况">
-        <!-- [1111（四個状泰位，从右到左）;0 - 无優惠，成長積分是否赠送;1 - 无優惠，购物積分是否赠送;2 - 有優惠，成長積分是否赠送;3 - 有優惠，购物積分是否赠送【状泰位0：不赠送，1：赠送】] -->
+        <!-- [1111（四個狀態位，从右到左）;0 - 无優惠，成長積分是否赠送;1 - 无優惠，購物積分是否赠送;2 - 有優惠，成長積分是否赠送;3 - 有優惠，購物積分是否赠送【狀態位0：不赠送，1：赠送】] -->
       </el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">

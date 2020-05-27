@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-input placeholder="输入关键字進行过滤" v-model="filterText"></el-input>
+    <el-input placeholder="输入關键字進行過濾" v-model="filterText"></el-input>
     <el-tree
       :data="menus"
       :props="defaultProps"
@@ -43,7 +43,7 @@ export default {
   },
   //方法集合
   methods: {
-    //树节点过滤
+    //树节點過濾
     filterNode(value, data) {
       if (!value) return true;
       return data.name.indexOf(value) !== -1;
@@ -57,7 +57,7 @@ export default {
       });
     },
     nodeclick(data, node, component) {
-      console.log("子組件category的节点被点击", data, node, component);
+      console.log("子組件category的节點被點擊", data, node, component);
       //向父組件發送事件；
       this.$emit("tree-node-click", data, node, component);
     }

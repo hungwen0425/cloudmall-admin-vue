@@ -72,7 +72,7 @@
           :inactive-value="0"
         ></el-switch>
       </el-form-item>
-      <el-form-item label="启用状泰" prop="enable">
+      <el-form-item label="啟用狀態" prop="enable">
         <el-switch
           v-model="dataForm.enable"
           active-color="#13ce66"
@@ -141,14 +141,14 @@ export default {
         enable: [
           {
             required: true,
-            message: "启用状泰不能為空",
+            message: "啟用狀態不能為空",
             trigger: "blur"
           }
         ],
         catelogId: [
           {
             required: true,
-            message: "需要選擇正確的三级分類資料",
+            message: "需要選擇正確的三級分類資料",
             trigger: "blur"
           }
         ],
@@ -170,7 +170,7 @@ export default {
   },
   watch: {
     catelogPath(path) {
-      //監听到路徑變化需要查出這個三级分類的分組資料
+      //監听到路徑變化需要查出這個三級分類的分組資料
       console.log("路徑變了", path);
       this.attrGroups = [];
       this.dataForm.attrGroupId = "";

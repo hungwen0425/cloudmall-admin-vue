@@ -21,8 +21,8 @@
       <el-form-item label="介绍" prop="descript">
         <el-input v-model="dataForm.descript" placeholder="介绍"></el-input>
       </el-form-item>
-      <el-form-item label="显示状泰" prop="showStatus">
-        <!-- <el-input v-model="dataForm.showStatus" placeholder="显示状泰"></el-input> -->
+      <el-form-item label="顯示狀態" prop="showStatus">
+        <!-- <el-input v-model="dataForm.showStatus" placeholder="顯示狀態"></el-input> -->
         <el-switch
           v-model="dataForm.showStatus"
           active-color="#13ce66"
@@ -73,7 +73,7 @@ export default {
         showStatus: [
           {
             required: true,
-            message: "显示状泰[0-不显示；1-显示]不能為空",
+            message: "顯示狀態[0-不顯示；1-顯示]不能為空",
             trigger: "blur"
           }
         ],
@@ -97,7 +97,7 @@ export default {
               if (value == "") {
                 callback(new Error("排序字段必須填寫"));
               } else if (!Number.isInteger(value) || value < 0) {
-                callback(new Error("排序必須是一個大于等于0的整數"));
+                callback(new Error("排序必須是一個大於等於0的整數"));
               } else {
                 callback();
               }

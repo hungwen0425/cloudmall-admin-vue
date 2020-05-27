@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:homesubject:save')"
           type="primary"
@@ -28,13 +28,13 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="name" header-align="center" align="center" label="专题名稱"></el-table-column>
-      <el-table-column prop="title" header-align="center" align="center" label="专题標题"></el-table-column>
-      <el-table-column prop="subTitle" header-align="center" align="center" label="专题副標题"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="显示状泰"></el-table-column>
-      <el-table-column prop="url" header-align="center" align="center" label="詳情连接"></el-table-column>
+      <el-table-column prop="name" header-align="center" align="center" label="專題名稱"></el-table-column>
+      <el-table-column prop="title" header-align="center" align="center" label="專題標題"></el-table-column>
+      <el-table-column prop="subTitle" header-align="center" align="center" label="專題副標題"></el-table-column>
+      <el-table-column prop="status" header-align="center" align="center" label="顯示狀態"></el-table-column>
+      <el-table-column prop="url" header-align="center" align="center" label="詳情連接"></el-table-column>
       <el-table-column prop="sort" header-align="center" align="center" label="排序"></el-table-column>
-      <el-table-column prop="img" header-align="center" align="center" label="专题圖片地址"></el-table-column>
+      <el-table-column prop="img" header-align="center" align="center" label="專題圖片地址"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>

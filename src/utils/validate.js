@@ -1,5 +1,5 @@
 /**
- * 郵箱
+ * 電子信箱
  * @param {*} s
  */
 export function isEmail(s) {

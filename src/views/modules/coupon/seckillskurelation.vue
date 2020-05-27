@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:seckillskurelation:save')"
           type="primary"
@@ -28,11 +28,11 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="promotionSessionId" header-align="center" align="center" label="场次id"></el-table-column>
+      <el-table-column prop="promotionSessionId" header-align="center" align="center" label="場次id"></el-table-column>
       <el-table-column prop="skuId" header-align="center" align="center" label="商品id"></el-table-column>
       <el-table-column prop="seckillPrice" header-align="center" align="center" label="秒杀價格"></el-table-column>
       <el-table-column prop="seckillCount" header-align="center" align="center" label="秒杀總量"></el-table-column>
-      <el-table-column prop="seckillLimit" header-align="center" align="center" label="每人限购數量"></el-table-column>
+      <el-table-column prop="seckillLimit" header-align="center" align="center" label="每人限購數量"></el-table-column>
       <el-table-column prop="seckillSort" header-align="center" align="center" label="排序"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">

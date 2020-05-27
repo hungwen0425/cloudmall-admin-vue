@@ -27,7 +27,7 @@
       <el-form-item label="所屬分類id" prop="catelogId">
         <el-cascader
           v-model="dataForm.catelogIds"
-          placeholder="试试搜索：手机"
+          placeholder="試試搜索：手機"
           filterable
           :options="categorys"
           :props="categoryCascaders"

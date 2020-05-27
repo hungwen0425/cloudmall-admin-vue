@@ -11,25 +11,25 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="采购商品id" prop="skuId">
-        <el-input v-model="dataForm.skuId" placeholder="采购商品id"></el-input>
+      <el-form-item label="采購商品id" prop="skuId">
+        <el-input v-model="dataForm.skuId" placeholder="采購商品id"></el-input>
       </el-form-item>
-      <el-form-item label="采购數量" prop="skuNum">
-        <el-input v-model="dataForm.skuNum" placeholder="采购數量"></el-input>
+      <el-form-item label="采購數量" prop="skuNum">
+        <el-input v-model="dataForm.skuNum" placeholder="采購數量"></el-input>
       </el-form-item>
       <el-form-item label="仓库" prop="wareId">
         <el-select v-model="dataForm.wareId" placeholder="請選擇仓库" clearable>
           <el-option :label="w.name" :value="w.id" v-for="w in wareList" :key="w.id"></el-option>
         </el-select>
       </el-form-item>
-      <!-- [0新建，1已分配，2正在采购，3已完成，4采购失败] -->
-      <!-- <el-form-item label="状泰" prop="status">
-        <el-select v-model="dataForm.status" placeholder="請選擇状泰" clearable>
+      <!-- [0新建，1已分配，2正在采購，3已完成，4采購失败] -->
+      <!-- <el-form-item label="狀態" prop="status">
+        <el-select v-model="dataForm.status" placeholder="請選擇狀態" clearable>
           <el-option label="新建" :value="0"></el-option>
           <el-option label="已分配" :value="1"></el-option>
-          <el-option label="正在采购" :value="2"></el-option>
+          <el-option label="正在采購" :value="2"></el-option>
           <el-option label="已完成" :value="3"></el-option>
-          <el-option label="采购失败" :value="4"></el-option>
+          <el-option label="采購失败" :value="4"></el-option>
         </el-select>
       </el-form-item>-->
     </el-form>
@@ -57,10 +57,10 @@ export default {
       },
       dataRule: {
         skuId: [
-          { required: true, message: "采购商品id不能為空", trigger: "blur" }
+          { required: true, message: "采購商品id不能為空", trigger: "blur" }
         ],
         skuNum: [
-          { required: true, message: "采购數量不能為空", trigger: "blur" }
+          { required: true, message: "采購數量不能為空", trigger: "blur" }
         ],
         wareId: [{ required: true, message: "仓库id不能為空", trigger: "blur" }]
       }

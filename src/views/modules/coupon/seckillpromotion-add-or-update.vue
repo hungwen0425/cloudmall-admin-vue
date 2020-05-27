@@ -11,8 +11,8 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="活動標题" prop="title">
-        <el-input v-model="dataForm.title" placeholder="活動標题"></el-input>
+      <el-form-item label="活動標題" prop="title">
+        <el-input v-model="dataForm.title" placeholder="活動標題"></el-input>
       </el-form-item>
       <el-form-item label="生效日期" prop="enableStartTime">
         <el-date-picker
@@ -23,8 +23,8 @@
           end-placeholder="結束日期"
         ></el-date-picker>
       </el-form-item>
-      <el-form-item label="上下线状泰" prop="status">
-        <el-select v-model="dataForm.status" placeholder="上下线状泰">
+      <el-form-item label="上下线狀態" prop="status">
+        <el-select v-model="dataForm.status" placeholder="上下线狀態">
           <el-option :value="1" label="上线"></el-option>
           <el-option :value="0" label="下线"></el-option>
         </el-select>
@@ -57,7 +57,7 @@ export default {
       },
       dataRule: {
         title: [
-          { required: true, message: "活動標题不能為空", trigger: "blur" }
+          { required: true, message: "活動標題不能為空", trigger: "blur" }
         ]
       }
     };

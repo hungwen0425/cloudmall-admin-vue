@@ -17,11 +17,11 @@
       <el-form-item label="参數" prop="params">
         <el-input v-model="dataForm.params" placeholder="参數"></el-input>
       </el-form-item>
-      <el-form-item label="cron表达式" prop="cronExpression">
+      <el-form-item label="cron表達式" prop="cronExpression">
         <el-input v-model="dataForm.cronExpression" placeholder="如: 0 0 12 * * ?"></el-input>
       </el-form-item>
-      <el-form-item label="备注" prop="remark">
-        <el-input v-model="dataForm.remark" placeholder="备注"></el-input>
+      <el-form-item label="備註" prop="remark">
+        <el-input v-model="dataForm.remark" placeholder="備註"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -46,10 +46,10 @@ export default {
       },
       dataRule: {
         beanName: [
-          { required: true, message: "用户名不能為空", trigger: "blur" }
+          { required: true, message: "使用者名稱不能為空", trigger: "blur" }
         ],
         cronExpression: [
-          { required: true, message: "cron表达式不能為空", trigger: "blur" }
+          { required: true, message: "cron表達式不能為空", trigger: "blur" }
         ]
       }
     };

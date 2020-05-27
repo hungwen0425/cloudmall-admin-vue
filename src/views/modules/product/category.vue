@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-switch v-model="draggable" active-text="開启拖拽" inactive-text="关闭拖拽"></el-switch>
+    <el-switch v-model="draggable" active-text="開啟托拽" inactive-text="關閉托拽"></el-switch>
     <el-button v-if="draggable" @click="batchSave">批量保存</el-button>
     <el-button type="danger" @click="batchDelete">批量删除</el-button>
     <el-tree
@@ -158,7 +158,7 @@ export default {
     },
     handleDrop(draggingNode, dropNode, dropType, ev) {
       console.log("handleDrop: ", draggingNode, dropNode, dropType);
-      //1、當前节点最新的父节点id
+      //1、當前节點最新的父节點id
       let pCid = 0;
       let siblings = null;
       if (dropType == "before" || dropType == "after") {
@@ -173,15 +173,15 @@ export default {
       }
       this.pCid.push(pCid);
 
-      //2、當前拖拽节点的最新顺序，
+      //2、當前托拽节點的最新顺序，
       for (let i = 0; i < siblings.length; i++) {
         if (siblings[i].data.catId == draggingNode.data.catId) {
-          //如果遍歷的是當前正在拖拽的节点
+          //如果遍歷的是當前正在托拽的节點
           let catLevel = draggingNode.level;
           if (siblings[i].level != draggingNode.level) {
-            //當前节点的层级發生變化
+            //當前节點的层級發生變化
             catLevel = siblings[i].level;
-            //修改他子节点的层级
+            //修改他子节點的层級
             this.updateChildNodeLevel(siblings[i]);
           }
           this.updateNodes.push({
@@ -195,7 +195,7 @@ export default {
         }
       }
 
-      //3、當前拖拽节点的最新层级
+      //3、當前托拽节點的最新层級
       console.log("updateNodes", this.updateNodes);
     },
     updateChildNodeLevel(node) {
@@ -211,13 +211,13 @@ export default {
       }
     },
     allowDrop(draggingNode, dropNode, type) {
-      //1、被拖動的當前节点以及所在的父节点總层數不能大于3
+      //1、被拖動的當前节點以及所在的父节點總层數不能大於3
 
-      //1）、被拖動的當前节点總层數
+      //1）、被拖動的當前节點總层數
       console.log("allowDrop:", draggingNode, dropNode, type);
       //
       this.countNodeLevel(draggingNode);
-      //當前正在拖動的节点+父节点所在的深度不大于3即可
+      //當前正在拖動的节點+父节點所在的深度不大於3即可
       let deep = Math.abs(this.maxLevel - draggingNode.level) + 1;
       console.log("深度：", deep);
 
@@ -232,7 +232,7 @@ export default {
       }
     },
     countNodeLevel(node) {
-      //找到所有子节点，求出最大深度
+      //找到所有子节點，求出最大深度
       if (node.childNodes != null && node.childNodes.length > 0) {
         for (let i = 0; i < node.childNodes.length; i++) {
           if (node.childNodes[i].level > this.maxLevel) {
@@ -248,13 +248,13 @@ export default {
       this.title = "修改分類";
       this.dialogVisible = true;
 
-      //發送請求取得當前节点最新的資料
+      //發送請求取得當前节點最新的資料
       this.$http({
         url: this.$http.adornUrl(`/product/category/info/${data.catId}`),
         method: "get"
       }).then(({ data }) => {
         //請求成功
-        console.log("要回显的資料", data);
+        console.log("要回顯的資料", data);
         this.category.name = data.data.name;
         this.category.catId = data.data.catId;
         this.category.icon = data.data.icon;
@@ -294,7 +294,7 @@ export default {
         this.editCategory();
       }
     },
-    //修改三级分類資料
+    //修改三級分類資料
     editCategory() {
       var { catId, name, icon, productUnit } = this.category;
       this.$http({
@@ -306,7 +306,7 @@ export default {
           message: "菜單修改成功",
           type: "success"
         });
-        //关闭對话框
+        //關閉對话框
         this.dialogVisible = false;
         //刷新出新的菜單
         this.getMenus();
@@ -314,9 +314,9 @@ export default {
         this.expandedKey = [this.category.parentCid];
       });
     },
-    //添加三级分類
+    //添加三級分類
     addCategory() {
-      console.log("提交的三级分類資料", this.category);
+      console.log("提交的三級分類資料", this.category);
       this.$http({
         url: this.$http.adornUrl("/product/category/save"),
         method: "post",
@@ -326,7 +326,7 @@ export default {
           message: "菜單保存成功",
           type: "success"
         });
-        //关闭對话框
+        //關閉對话框
         this.dialogVisible = false;
         //刷新出新的菜單
         this.getMenus();

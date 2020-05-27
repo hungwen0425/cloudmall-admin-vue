@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('order:refundinfo:save')"
           type="primary"
@@ -28,10 +28,10 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="orderReturnId" header-align="center" align="center" label="退款的订單"></el-table-column>
-      <el-table-column prop="refund" header-align="center" align="center" label="退款金额"></el-table-column>
-      <el-table-column prop="refundSn" header-align="center" align="center" label="退款交易流水号"></el-table-column>
-      <el-table-column prop="refundStatus" header-align="center" align="center" label="退款状泰"></el-table-column>
+      <el-table-column prop="orderReturnId" header-align="center" align="center" label="退款的訂單"></el-table-column>
+      <el-table-column prop="refund" header-align="center" align="center" label="退款金額"></el-table-column>
+      <el-table-column prop="refundSn" header-align="center" align="center" label="退款交易流水號"></el-table-column>
+      <el-table-column prop="refundStatus" header-align="center" align="center" label="退款狀態"></el-table-column>
       <el-table-column
         prop="refundChannel"
         header-align="center"

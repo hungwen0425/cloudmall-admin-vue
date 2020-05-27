@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('order:paymentinfo:save')"
           type="primary"
@@ -28,12 +28,12 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="orderSn" header-align="center" align="center" label="订單号（對外业务号）"></el-table-column>
-      <el-table-column prop="orderId" header-align="center" align="center" label="订單id"></el-table-column>
-      <el-table-column prop="alipayTradeNo" header-align="center" align="center" label="支付宝交易流水号"></el-table-column>
-      <el-table-column prop="totalAmount" header-align="center" align="center" label="支付總金额"></el-table-column>
+      <el-table-column prop="orderSn" header-align="center" align="center" label="訂單號（對外业务號）"></el-table-column>
+      <el-table-column prop="orderId" header-align="center" align="center" label="訂單id"></el-table-column>
+      <el-table-column prop="alipayTradeNo" header-align="center" align="center" label="支付宝交易流水號"></el-table-column>
+      <el-table-column prop="totalAmount" header-align="center" align="center" label="支付總金額"></el-table-column>
       <el-table-column prop="subject" header-align="center" align="center" label="交易内容"></el-table-column>
-      <el-table-column prop="paymentStatus" header-align="center" align="center" label="支付状泰"></el-table-column>
+      <el-table-column prop="paymentStatus" header-align="center" align="center" label="支付狀態"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="創建時間"></el-table-column>
       <el-table-column prop="confirmTime" header-align="center" align="center" label="確認時間"></el-table-column>
       <el-table-column prop="callbackContent" header-align="center" align="center" label="回调内容"></el-table-column>

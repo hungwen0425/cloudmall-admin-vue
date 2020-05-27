@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:homesubjectspu:save')"
           type="primary"
@@ -28,8 +28,8 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="name" header-align="center" align="center" label="专题名稱"></el-table-column>
-      <el-table-column prop="subjectId" header-align="center" align="center" label="专题id"></el-table-column>
+      <el-table-column prop="name" header-align="center" align="center" label="專題名稱"></el-table-column>
+      <el-table-column prop="subjectId" header-align="center" align="center" label="專題id"></el-table-column>
       <el-table-column prop="spuId" header-align="center" align="center" label="spu_id"></el-table-column>
       <el-table-column prop="sort" header-align="center" align="center" label="排序"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">

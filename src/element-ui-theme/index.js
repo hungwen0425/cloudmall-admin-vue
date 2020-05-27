@@ -1,11 +1,11 @@
 /**
- * element-ui組件主题
+ * element-ui組件主題
  *
  * tips:
- *  1. 此處只包含element-ui組件主题
- *  2. 要達到整站主题修改效果, 請確保[import './element-[#17B3A3]/index.css']當前主题色與[/src/assets/scss/_variables.scss]文件中[$--color-primary]屬性值一致
+ *  1. 此處只包含element-ui組件主題
+ *  2. 要達到整站主題修改效果, 請確保[import './element-[#17B3A3]/index.css']當前主題色與[/src/assets/scss/_variables.scss]文件中[$--color-primary]屬性值一致
  */
-import './element-#17B3A3/index.css' // 當前主题色
+import './element-#17B3A3/index.css' // 當前主題色
 export default {
   list: [
     '#0BB2D4', // 青色

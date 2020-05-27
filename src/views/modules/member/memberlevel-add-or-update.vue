@@ -11,22 +11,22 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="等级名稱" prop="name">
-        <el-input v-model="dataForm.name" placeholder="等级名稱"></el-input>
+      <el-form-item label="等級名稱" prop="name">
+        <el-input v-model="dataForm.name" placeholder="等級名稱"></el-input>
       </el-form-item>
       <el-form-item label="所需成長值" prop="growthPoint">
         <el-input-number v-model="dataForm.growthPoint" :min="0"></el-input-number>
       </el-form-item>
-      <el-form-item label="默認等级" prop="defaultStatus">
+      <el-form-item label="默認等級" prop="defaultStatus">
         <el-checkbox v-model="dataForm.defaultStatus" :true-label="1" :false-label="0"></el-checkbox>
       </el-form-item>
-      <el-form-item label="免運费標准" prop="freeFreightPoint">
+      <el-form-item label="免運費標準" prop="freeFreightPoint">
         <el-input-number :min="0" v-model="dataForm.freeFreightPoint"></el-input-number>
       </el-form-item>
       <el-form-item label="每次评價取得的成長值" prop="commentGrowthPoint">
         <el-input-number :min="0" v-model="dataForm.commentGrowthPoint"></el-input-number>
       </el-form-item>
-      <el-form-item label="是否有免邮特权" prop="priviledgeFreeFreight">
+      <el-form-item label="是否有免郵特权" prop="priviledgeFreeFreight">
         <el-checkbox v-model="dataForm.priviledgeFreeFreight" :true-label="1" :false-label="0"></el-checkbox>
       </el-form-item>
       <el-form-item label="是否有會員價格特权" prop="priviledgeMemberPrice">
@@ -35,8 +35,8 @@
       <el-form-item label="是否有生日特权" prop="priviledgeBirthday">
         <el-checkbox v-model="dataForm.priviledgeBirthday" :true-label="1" :false-label="0"></el-checkbox>
       </el-form-item>
-      <el-form-item label="备注" prop="note">
-        <el-input v-model="dataForm.note" placeholder="备注"></el-input>
+      <el-form-item label="備註" prop="note">
+        <el-input v-model="dataForm.note" placeholder="備註"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -65,24 +65,24 @@ export default {
       },
       dataRule: {
         name: [
-          { required: true, message: "等级名稱不能為空", trigger: "blur" }
+          { required: true, message: "等級名稱不能為空", trigger: "blur" }
         ],
         growthPoint: [
           {
             required: true,
-            message: "等级需要的成長值不能為空",
+            message: "等級需要的成長值不能為空",
             trigger: "blur"
           }
         ],
         defaultStatus: [
           {
             required: true,
-            message: "是否為默認等级[0->不是；1->是]不能為空",
+            message: "是否為默認等級[0->不是；1->是]不能為空",
             trigger: "blur"
           }
         ],
         freeFreightPoint: [
-          { required: true, message: "免運费標准不能為空", trigger: "blur" }
+          { required: true, message: "免運費標準不能為空", trigger: "blur" }
         ],
         commentGrowthPoint: [
           {
@@ -92,7 +92,7 @@ export default {
           }
         ],
         priviledgeFreeFreight: [
-          { required: true, message: "是否有免邮特权不能為空", trigger: "blur" }
+          { required: true, message: "是否有免郵特权不能為空", trigger: "blur" }
         ],
         priviledgeMemberPrice: [
           {
@@ -104,7 +104,7 @@ export default {
         priviledgeBirthday: [
           { required: true, message: "是否有生日特权不能為空", trigger: "blur" }
         ],
-        note: [{ required: true, message: "备注不能為空", trigger: "blur" }]
+        note: [{ required: true, message: "備註不能為空", trigger: "blur" }]
       }
     };
   },

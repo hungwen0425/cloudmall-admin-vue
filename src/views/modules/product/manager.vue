@@ -16,7 +16,7 @@
           <el-input style="width:160px" v-model="dataForm.key" clearable></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="searchSkuInfo">查询</el-button>
+          <el-button type="primary" @click="searchSkuInfo">查詢</el-button>
         </el-form-item>
       </el-form>
     </el-form>
@@ -30,9 +30,9 @@
     >
       <el-table-column type="expand">
         <template slot-scope="scope">
-          商品標题：{{scope.row.skuTitle}}
+          商品標題：{{scope.row.skuTitle}}
           <br />
-          商品副標题：{{scope.row.skuSubtitle}}
+          商品副標題：{{scope.row.skuSubtitle}}
           <br />
           商品描述：{{scope.row.skuDesc}}
           <br />
@@ -126,7 +126,7 @@ export default {
   },
   methods: {
     getSkuDetails(row, expand) {
-      //sku詳情查询
+      //sku詳情查詢
       console.log("展開某行...", row, expand);
     },
     //處理更多指令

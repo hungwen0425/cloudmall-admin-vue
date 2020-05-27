@@ -83,7 +83,7 @@ function showLocalPath(id) {
 function createFlashUploader(opt, callbacks) {
 	//由於lang.flashI18n是静態屬性，不可以直接進行修改，否則會影响到後續内容
 	var i18n = utils.extend({}, lang.flashI18n);
-	//處理圖片資源地址的編碼，补全等問题
+	//處理圖片資源地址的編碼，补全等問題
 	for (var i in i18n) {
 		if (!(i in { "lang": 1, "uploadingTF": 1, "imageTF": 1, "textEncoding": 1 }) && i18n[i]) {
 			i18n[i] = encodeURIComponent(editor.options.langPath + editor.options.lang + "/images/" + i18n[i]);

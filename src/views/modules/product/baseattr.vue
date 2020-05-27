@@ -10,8 +10,8 @@
             <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button @click="getDataList()">查询</el-button>
-            <el-button type="success" @click="getAllDataList()">查询全部</el-button>
+            <el-button @click="getDataList()">查詢</el-button>
+            <el-button type="success" @click="getAllDataList()">查詢全部</el-button>
             <el-button
               v-if="isAuth('product:attr:save')"
               type="primary"
@@ -67,7 +67,7 @@
               </el-tooltip>
             </template>
           </el-table-column>
-          <el-table-column prop="enable" header-align="center" align="center" label="启用">
+          <el-table-column prop="enable" header-align="center" align="center" label="啟用">
             <template slot-scope="scope">
               <i class="el-icon-success" v-if="scope.row.enable==1"></i>
               <i class="el-icon-error" v-else></i>
@@ -161,11 +161,11 @@ export default {
     this.getDataList();
   },
   methods: {
-    //感知树节点被点击
+    //感知树节點被點擊
     treenodeclick(data, node, component) {
       if (node.level == 3) {
         this.catId = data.catId;
-        this.getDataList(); //重新查询
+        this.getDataList(); //重新查詢
       }
     },
     getAllDataList() {

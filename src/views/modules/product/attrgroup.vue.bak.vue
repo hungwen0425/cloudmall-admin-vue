@@ -12,7 +12,7 @@
               <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button @click="getDataList()" type="success">查询</el-button>
+              <el-button @click="getDataList()" type="success">查詢</el-button>
               <el-button
                 v-if="isAuth('product:attrgroup:save')"
                 type="primary"
@@ -77,7 +77,7 @@
 <script>
 /**
  * 父子組件傳递資料
- * 1)、子組件给父組件傳递資料，事件机制；
+ * 1)、子組件给父組件傳递資料，事件機制；
  *    子組件给父組件發送一個事件，携带上資料。
  * // this.$emit("事件名",携带的資料...)
  */

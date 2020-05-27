@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:seckillpromotion:save')"
           type="primary"
@@ -28,10 +28,10 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="title" header-align="center" align="center" label="活動標题"></el-table-column>
+      <el-table-column prop="title" header-align="center" align="center" label="活動標題"></el-table-column>
       <el-table-column prop="startTime" header-align="center" align="center" label="開始日期"></el-table-column>
       <el-table-column prop="endTime" header-align="center" align="center" label="結束日期"></el-table-column>
-      <el-table-column prop="status" header-align="center" align="center" label="上下线状泰"></el-table-column>
+      <el-table-column prop="status" header-align="center" align="center" label="上下线狀態"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="創建時間"></el-table-column>
       <el-table-column prop="userId" header-align="center" align="center" label="創建人"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">

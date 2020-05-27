@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.roleName" placeholder="角色名稱" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button v-if="isAuth('sys:role:save')" type="primary" @click="addOrUpdateHandle()">新增</el-button>
         <el-button
           v-if="isAuth('sys:role:delete')"
@@ -25,7 +25,7 @@
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="roleId" header-align="center" align="center" width="80" label="ID"></el-table-column>
       <el-table-column prop="roleName" header-align="center" align="center" label="角色名稱"></el-table-column>
-      <el-table-column prop="remark" header-align="center" align="center" label="备注"></el-table-column>
+      <el-table-column prop="remark" header-align="center" align="center" label="備註"></el-table-column>
       <el-table-column
         prop="createTime"
         header-align="center"

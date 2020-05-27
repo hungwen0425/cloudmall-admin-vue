@@ -11,26 +11,26 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="會員等级id" prop="levelId">
-        <el-input v-model="dataForm.levelId" placeholder="會員等级id"></el-input>
+      <el-form-item label="會員等級id" prop="levelId">
+        <el-input v-model="dataForm.levelId" placeholder="會員等級id"></el-input>
       </el-form-item>
-      <el-form-item label="用户名" prop="username">
-        <el-input v-model="dataForm.username" placeholder="用户名"></el-input>
+      <el-form-item label="使用者名稱" prop="username">
+        <el-input v-model="dataForm.username" placeholder="使用者名稱"></el-input>
       </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input v-model="dataForm.password" placeholder="密码"></el-input>
+      <el-form-item label="密碼" prop="password">
+        <el-input v-model="dataForm.password" placeholder="密碼"></el-input>
       </el-form-item>
-      <el-form-item label="昵稱" prop="nickname">
-        <el-input v-model="dataForm.nickname" placeholder="昵稱"></el-input>
+      <el-form-item label="暱稱" prop="nickname">
+        <el-input v-model="dataForm.nickname" placeholder="暱稱"></el-input>
       </el-form-item>
-      <el-form-item label="手机号码" prop="mobile">
-        <el-input v-model="dataForm.mobile" placeholder="手机号码"></el-input>
+      <el-form-item label="手機號碼" prop="mobile">
+        <el-input v-model="dataForm.mobile" placeholder="手機號碼"></el-input>
       </el-form-item>
-      <el-form-item label="邮箱" prop="email">
-        <el-input v-model="dataForm.email" placeholder="邮箱"></el-input>
+      <el-form-item label="電子信箱" prop="email">
+        <el-input v-model="dataForm.email" placeholder="電子信箱"></el-input>
       </el-form-item>
-      <el-form-item label="头像" prop="header">
-        <el-input v-model="dataForm.header" placeholder="头像"></el-input>
+      <el-form-item label="頭像" prop="header">
+        <el-input v-model="dataForm.header" placeholder="頭像"></el-input>
       </el-form-item>
       <el-form-item label="性别" prop="gender">
         <el-input v-model="dataForm.gender" placeholder="性别"></el-input>
@@ -44,11 +44,11 @@
       <el-form-item label="职业" prop="job">
         <el-input v-model="dataForm.job" placeholder="职业"></el-input>
       </el-form-item>
-      <el-form-item label="個性签名" prop="sign">
-        <el-input v-model="dataForm.sign" placeholder="個性签名"></el-input>
+      <el-form-item label="個性簽名" prop="sign">
+        <el-input v-model="dataForm.sign" placeholder="個性簽名"></el-input>
       </el-form-item>
-      <el-form-item label="用户来源" prop="sourceType">
-        <el-input v-model="dataForm.sourceType" placeholder="用户来源"></el-input>
+      <el-form-item label="使用者来源" prop="sourceType">
+        <el-input v-model="dataForm.sourceType" placeholder="使用者来源"></el-input>
       </el-form-item>
       <el-form-item label="積分" prop="integration">
         <el-input v-model="dataForm.integration" placeholder="積分"></el-input>
@@ -56,8 +56,8 @@
       <el-form-item label="成長值" prop="growth">
         <el-input v-model="dataForm.growth" placeholder="成長值"></el-input>
       </el-form-item>
-      <el-form-item label="启用状泰" prop="status">
-        <el-input v-model="dataForm.status" placeholder="启用状泰"></el-input>
+      <el-form-item label="啟用狀態" prop="status">
+        <el-input v-model="dataForm.status" placeholder="啟用狀態"></el-input>
       </el-form-item>
       <el-form-item label="注册時間" prop="createTime">
         <el-input v-model="dataForm.createTime" placeholder="注册時間"></el-input>
@@ -97,22 +97,24 @@ export default {
       },
       dataRule: {
         levelId: [
-          { required: true, message: "會員等级id不能為空", trigger: "blur" }
+          { required: true, message: "會員等級id不能為空", trigger: "blur" }
         ],
         username: [
-          { required: true, message: "用户名不能為空", trigger: "blur" }
+          { required: true, message: "使用者名稱不能為空", trigger: "blur" }
         ],
         password: [
-          { required: true, message: "密码不能為空", trigger: "blur" }
+          { required: true, message: "密碼不能為空", trigger: "blur" }
         ],
         nickname: [
-          { required: true, message: "昵稱不能為空", trigger: "blur" }
+          { required: true, message: "暱稱不能為空", trigger: "blur" }
         ],
         mobile: [
-          { required: true, message: "手机号码不能為空", trigger: "blur" }
+          { required: true, message: "手機號碼不能為空", trigger: "blur" }
         ],
-        email: [{ required: true, message: "邮箱不能為空", trigger: "blur" }],
-        header: [{ required: true, message: "头像不能為空", trigger: "blur" }],
+        email: [
+          { required: true, message: "電子信箱不能為空", trigger: "blur" }
+        ],
+        header: [{ required: true, message: "頭像不能為空", trigger: "blur" }],
         gender: [{ required: true, message: "性别不能為空", trigger: "blur" }],
         birth: [{ required: true, message: "生日不能為空", trigger: "blur" }],
         city: [
@@ -120,10 +122,10 @@ export default {
         ],
         job: [{ required: true, message: "职业不能為空", trigger: "blur" }],
         sign: [
-          { required: true, message: "個性签名不能為空", trigger: "blur" }
+          { required: true, message: "個性簽名不能為空", trigger: "blur" }
         ],
         sourceType: [
-          { required: true, message: "用户来源不能為空", trigger: "blur" }
+          { required: true, message: "使用者来源不能為空", trigger: "blur" }
         ],
         integration: [
           { required: true, message: "積分不能為空", trigger: "blur" }
@@ -132,7 +134,7 @@ export default {
           { required: true, message: "成長值不能為空", trigger: "blur" }
         ],
         status: [
-          { required: true, message: "启用状泰不能為空", trigger: "blur" }
+          { required: true, message: "啟用狀態不能為空", trigger: "blur" }
         ],
         createTime: [
           { required: true, message: "注册時間不能為空", trigger: "blur" }

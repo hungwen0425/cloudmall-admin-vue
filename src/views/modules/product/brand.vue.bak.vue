@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('product:brand:save')"
           type="primary"
@@ -39,7 +39,7 @@
         </template>
       </el-table-column>
       <el-table-column prop="descript" header-align="center" align="center" label="介绍"></el-table-column>
-      <el-table-column prop="showStatus" header-align="center" align="center" label="显示状泰">
+      <el-table-column prop="showStatus" header-align="center" align="center" label="顯示狀態">
         <template slot-scope="scope">
           <el-switch
             v-model="scope.row.showStatus"
@@ -102,7 +102,7 @@ export default {
     updateBrandStatus(data) {
       console.log("最新資料", data);
       let { brandId, showStatus } = data;
-      //發送請求修改状泰
+      //發送請求修改狀態
       this.$http({
         url: this.$http.adornUrl("/product/brand/update/status"),
         method: "post",
@@ -110,7 +110,7 @@ export default {
       }).then(({ data }) => {
         this.$message({
           type: "success",
-          message: "状泰更新成功"
+          message: "狀態更新成功"
         });
       });
     },

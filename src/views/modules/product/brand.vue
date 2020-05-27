@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('product:brand:save')"
           type="primary"
@@ -39,7 +39,7 @@
         </template>
       </el-table-column>
       <el-table-column prop="descript" header-align="center" align="center" label="介绍"></el-table-column>
-      <el-table-column prop="showStatus" header-align="center" align="center" label="显示状泰">
+      <el-table-column prop="showStatus" header-align="center" align="center" label="顯示狀態">
         <template slot-scope="scope">
           <el-switch
             v-model="scope.row.showStatus"
@@ -55,7 +55,7 @@
       <el-table-column prop="sort" header-align="center" align="center" label="排序"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="250" label="操作">
         <template slot-scope="scope">
-          <el-button type="text" size="small" @click="updateCatelogHandle(scope.row.brandId)">关聯分類</el-button>
+          <el-button type="text" size="small" @click="updateCatelogHandle(scope.row.brandId)">關聯分類</el-button>
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.brandId)">修改</el-button>
           <el-button type="text" size="small" @click="deleteHandle(scope.row.brandId)">删除</el-button>
         </template>
@@ -73,14 +73,14 @@
     <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
 
-    <el-dialog title="关聯分類" :visible.sync="cateRelationDialogVisible" width="30%">
+    <el-dialog title="關聯分類" :visible.sync="cateRelationDialogVisible" width="30%">
       <el-popover placement="right-end" v-model="popCatelogSelectVisible">
         <category-cascader :catelogPath.sync="catelogPath"></category-cascader>
         <div style="text-align: right; margin: 0">
           <el-button size="mini" type="text" @click="popCatelogSelectVisible = false">取消</el-button>
           <el-button type="primary" size="mini" @click="addCatelogSelect">確定</el-button>
         </div>
-        <el-button slot="reference">新增关聯</el-button>
+        <el-button slot="reference">新增關聯</el-button>
       </el-popover>
       <el-table :data="cateRelationTableData" style="width: 100%">
         <el-table-column prop="id" label="#"></el-table-column>
@@ -202,7 +202,7 @@ export default {
     updateBrandStatus(data) {
       console.log("最新資料", data);
       let { brandId, showStatus } = data;
-      //發送請求修改状泰
+      //發送請求修改狀態
       this.$http({
         url: this.$http.adornUrl("/product/brand/update/status"),
         method: "post",
@@ -210,7 +210,7 @@ export default {
       }).then(({ data }) => {
         this.$message({
           type: "success",
-          message: "状泰更新成功"
+          message: "狀態更新成功"
         });
       });
     },

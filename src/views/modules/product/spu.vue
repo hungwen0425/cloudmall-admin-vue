@@ -9,7 +9,7 @@
           <el-form-item label="品牌">
             <brand-select style="width:160px"></brand-select>
           </el-form-item>
-          <el-form-item label="状泰">
+          <el-form-item label="狀態">
             <el-select style="width:160px" v-model="dataForm.status" clearable>
               <el-option label="新建" :value="0"></el-option>
               <el-option label="上架" :value="1"></el-option>
@@ -20,7 +20,7 @@
             <el-input style="width:160px" v-model="dataForm.key" clearable></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="searchSpuInfo">查询</el-button>
+            <el-button type="primary" @click="searchSpuInfo">查詢</el-button>
           </el-form-item>
         </el-form>
       </el-col>

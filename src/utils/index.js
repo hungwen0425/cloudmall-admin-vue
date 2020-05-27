@@ -21,7 +21,7 @@ export function isAuth(key) {
 }
 
 /**
- * 樹形資料轉换
+ * 樹形資料轉換
  * @param {*} data
  * @param {*} id
  * @param {*} pid

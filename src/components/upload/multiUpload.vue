@@ -89,7 +89,7 @@ export default {
             resolve(true);
           })
           .catch(err => {
-            console.log("出错了...", err);
+            console.log("出錯了...", err);
             reject(false);
           });
       });
@@ -97,7 +97,7 @@ export default {
     handleUploadSuccess(res, file) {
       this.fileList.push({
         name: file.name,
-        // url: this.dataObj.host + "/" + this.dataObj.dir + "/" + file.name； 替换${filename}為真正的文件名
+        // url: this.dataObj.host + "/" + this.dataObj.dir + "/" + file.name； 替換${filename}為真正的文件名
         url:
           this.dataObj.host +
           "/" +
@@ -107,7 +107,7 @@ export default {
     },
     handleExceed(files, fileList) {
       this.$message({
-        message: "最多只能上傳" + this.maxCount + "张圖片",
+        message: "最多只能上傳" + this.maxCount + "張圖片",
         type: "warning",
         duration: 1000
       });

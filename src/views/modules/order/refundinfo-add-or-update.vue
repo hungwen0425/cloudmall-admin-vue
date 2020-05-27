@@ -11,17 +11,17 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="退款的订單" prop="orderReturnId">
-        <el-input v-model="dataForm.orderReturnId" placeholder="退款的订單"></el-input>
+      <el-form-item label="退款的訂單" prop="orderReturnId">
+        <el-input v-model="dataForm.orderReturnId" placeholder="退款的訂單"></el-input>
       </el-form-item>
-      <el-form-item label="退款金额" prop="refund">
-        <el-input v-model="dataForm.refund" placeholder="退款金额"></el-input>
+      <el-form-item label="退款金額" prop="refund">
+        <el-input v-model="dataForm.refund" placeholder="退款金額"></el-input>
       </el-form-item>
-      <el-form-item label="退款交易流水号" prop="refundSn">
-        <el-input v-model="dataForm.refundSn" placeholder="退款交易流水号"></el-input>
+      <el-form-item label="退款交易流水號" prop="refundSn">
+        <el-input v-model="dataForm.refundSn" placeholder="退款交易流水號"></el-input>
       </el-form-item>
-      <el-form-item label="退款状泰" prop="refundStatus">
-        <el-input v-model="dataForm.refundStatus" placeholder="退款状泰"></el-input>
+      <el-form-item label="退款狀態" prop="refundStatus">
+        <el-input v-model="dataForm.refundStatus" placeholder="退款狀態"></el-input>
       </el-form-item>
       <el-form-item label="退款渠道[1-支付宝，2-微信，3-银聯，4-汇款]" prop="refundChannel">
         <el-input v-model="dataForm.refundChannel" placeholder="退款渠道[1-支付宝，2-微信，3-银聯，4-汇款]"></el-input>
@@ -53,16 +53,16 @@ export default {
       },
       dataRule: {
         orderReturnId: [
-          { required: true, message: "退款的订單不能為空", trigger: "blur" }
+          { required: true, message: "退款的訂單不能為空", trigger: "blur" }
         ],
         refund: [
-          { required: true, message: "退款金额不能為空", trigger: "blur" }
+          { required: true, message: "退款金額不能為空", trigger: "blur" }
         ],
         refundSn: [
-          { required: true, message: "退款交易流水号不能為空", trigger: "blur" }
+          { required: true, message: "退款交易流水號不能為空", trigger: "blur" }
         ],
         refundStatus: [
-          { required: true, message: "退款状泰不能為空", trigger: "blur" }
+          { required: true, message: "退款狀態不能為空", trigger: "blur" }
         ],
         refundChannel: [
           {

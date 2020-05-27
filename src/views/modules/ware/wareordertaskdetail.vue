@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('ware:wareordertaskdetail:save')"
           type="primary"
@@ -30,7 +30,7 @@
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="skuId" header-align="center" align="center" label="sku_id"></el-table-column>
       <el-table-column prop="skuName" header-align="center" align="center" label="sku_name"></el-table-column>
-      <el-table-column prop="skuNum" header-align="center" align="center" label="购买個數"></el-table-column>
+      <el-table-column prop="skuNum" header-align="center" align="center" label="購买個數"></el-table-column>
       <el-table-column prop="taskId" header-align="center" align="center" label="工作單id"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">

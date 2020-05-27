@@ -8,7 +8,7 @@
               <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button @click="getDataList()">查询</el-button>
+              <el-button @click="getDataList()">查詢</el-button>
             </el-form-item>
           </el-form>
           <el-table
@@ -41,7 +41,7 @@
       </el-dialog>
       <el-row>
         <el-col :span="24">
-          <el-button type="primary" @click="addRelation">新建关聯</el-button>
+          <el-button type="primary" @click="addRelation">新建關聯</el-button>
           <el-button
             type="danger"
             @click="batchDeleteRelation"
@@ -143,7 +143,7 @@ export default {
         }
       });
     },
-    //移除关聯
+    //移除關聯
     relationRemove(attrId) {
       let data = [];
       data.push({ attrId, attrGroupId: this.attrGroupId });
@@ -162,8 +162,8 @@ export default {
     },
     submitAddRealtion() {
       this.innerVisible = false;
-      //准备資料
-      console.log("准备新增的資料", this.innerdataListSelections);
+      //準備資料
+      console.log("準備新增的資料", this.innerdataListSelections);
       if (this.innerdataListSelections.length > 0) {
         let postData = [];
         this.innerdataListSelections.forEach(item => {
@@ -175,7 +175,7 @@ export default {
           data: this.$http.adornData(postData, false)
         }).then(({ data }) => {
           if (data.code == 0) {
-            this.$message({ type: "success", message: "新增关聯成功" });
+            this.$message({ type: "success", message: "新增關聯成功" });
           }
           this.$emit("refreshData");
           this.init(this.attrGroupId);

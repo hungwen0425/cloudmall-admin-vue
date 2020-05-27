@@ -80,7 +80,7 @@
         });
 
         //全局變量
-        var imageUrls = [],          //用于保存從服務器返回的圖片資料陣列
+        var imageUrls = [],          //用於保存從服務器返回的圖片資料陣列
             selectedImageCount = 0,  //當前已選擇的但未上傳的圖片數量
             optImageUrl = editor.getActionUrl(editor.getOpt('imageActionName')),
             optImageFieldName = editor.getOpt('imageFieldName'),
@@ -88,7 +88,7 @@
             maxSize = editor.getOpt('imageMaxSize') / 1024,
             extension = editor.getOpt('imageAllowFiles').join(';').replace(/\./g, '*.');
 
-        /* 添加额外的GET参數 */
+        /* 添加額外的GET参數 */
         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
             urlWidthParams = optImageUrl + (optImageUrl.indexOf('?') == -1 ? '?' : '&') + params;
 

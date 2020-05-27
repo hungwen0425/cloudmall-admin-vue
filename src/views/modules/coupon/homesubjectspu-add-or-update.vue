@@ -11,11 +11,11 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="专题名稱" prop="name">
-        <el-input v-model="dataForm.name" placeholder="专题名稱"></el-input>
+      <el-form-item label="專題名稱" prop="name">
+        <el-input v-model="dataForm.name" placeholder="專題名稱"></el-input>
       </el-form-item>
-      <el-form-item label="专题id" prop="subjectId">
-        <el-input v-model="dataForm.subjectId" placeholder="专题id"></el-input>
+      <el-form-item label="專題id" prop="subjectId">
+        <el-input v-model="dataForm.subjectId" placeholder="專題id"></el-input>
       </el-form-item>
       <el-form-item label="spu_id" prop="spuId">
         <el-input v-model="dataForm.spuId" placeholder="spu_id"></el-input>
@@ -45,10 +45,10 @@ export default {
       },
       dataRule: {
         name: [
-          { required: true, message: "专题名稱不能為空", trigger: "blur" }
+          { required: true, message: "專題名稱不能為空", trigger: "blur" }
         ],
         subjectId: [
-          { required: true, message: "专题id不能為空", trigger: "blur" }
+          { required: true, message: "專題id不能為空", trigger: "blur" }
         ],
         spuId: [{ required: true, message: "spu_id不能為空", trigger: "blur" }],
         sort: [{ required: true, message: "排序不能為空", trigger: "blur" }]

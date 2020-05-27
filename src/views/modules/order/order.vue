@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button v-if="isAuth('order:order:save')" type="primary" @click="addOrUpdateHandle()">新增</el-button>
         <el-button
           v-if="isAuth('order:order:delete')"
@@ -25,26 +25,26 @@
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="memberId" header-align="center" align="center" label="member_id"></el-table-column>
-      <el-table-column prop="orderSn" header-align="center" align="center" label="订單号"></el-table-column>
+      <el-table-column prop="orderSn" header-align="center" align="center" label="訂單號"></el-table-column>
       <el-table-column prop="couponId" header-align="center" align="center" label="使用的優惠券"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="create_time"></el-table-column>
-      <el-table-column prop="memberUsername" header-align="center" align="center" label="用户名"></el-table-column>
-      <el-table-column prop="totalAmount" header-align="center" align="center" label="订單總额"></el-table-column>
-      <el-table-column prop="payAmount" header-align="center" align="center" label="应付總额"></el-table-column>
-      <el-table-column prop="freightAmount" header-align="center" align="center" label="運费金额"></el-table-column>
+      <el-table-column prop="memberUsername" header-align="center" align="center" label="使用者名稱"></el-table-column>
+      <el-table-column prop="totalAmount" header-align="center" align="center" label="訂單總額"></el-table-column>
+      <el-table-column prop="payAmount" header-align="center" align="center" label="應付總額"></el-table-column>
+      <el-table-column prop="freightAmount" header-align="center" align="center" label="運費金額"></el-table-column>
       <el-table-column
         prop="promotionAmount"
         header-align="center"
         align="center"
-        label="促銷優化金额（促銷價、滿減、阶梯價）"
+        label="促銷優化金額（促銷價、滿減、阶梯價）"
       ></el-table-column>
-      <el-table-column prop="integrationAmount" header-align="center" align="center" label="積分抵扣金额"></el-table-column>
-      <el-table-column prop="couponAmount" header-align="center" align="center" label="優惠券抵扣金额"></el-table-column>
+      <el-table-column prop="integrationAmount" header-align="center" align="center" label="積分抵扣金額"></el-table-column>
+      <el-table-column prop="couponAmount" header-align="center" align="center" label="優惠券抵扣金額"></el-table-column>
       <el-table-column
         prop="discountAmount"
         header-align="center"
         align="center"
-        label="後台调整订單使用的折扣金额"
+        label="後台调整訂單使用的折扣金額"
       ></el-table-column>
       <el-table-column
         prop="payType"
@@ -56,13 +56,13 @@
         prop="sourceType"
         header-align="center"
         align="center"
-        label="订單来源[0->PC订單；1->app订單]"
+        label="訂單来源[0->PC訂單；1->app訂單]"
       ></el-table-column>
       <el-table-column
         prop="status"
         header-align="center"
         align="center"
-        label="订單状泰【0->待付款；1->待發货；2->已發货；3->已完成；4->已关闭；5->无效订單】"
+        label="訂單狀態【0->待付款；1->待發货；2->已發货；3->已完成；4->已關閉；5->无效訂單】"
       ></el-table-column>
       <el-table-column
         prop="deliveryCompany"
@@ -70,7 +70,7 @@
         align="center"
         label="物流公司(配送方式)"
       ></el-table-column>
-      <el-table-column prop="deliverySn" header-align="center" align="center" label="物流單号"></el-table-column>
+      <el-table-column prop="deliverySn" header-align="center" align="center" label="物流單號"></el-table-column>
       <el-table-column prop="autoConfirmDay" header-align="center" align="center" label="自動確認時間（天）"></el-table-column>
       <el-table-column prop="integration" header-align="center" align="center" label="可以获得的積分"></el-table-column>
       <el-table-column prop="growth" header-align="center" align="center" label="可以获得的成長值"></el-table-column>
@@ -80,13 +80,18 @@
         align="center"
         label="發票類型[0->不開發票；1->电子發票；2->纸质發票]"
       ></el-table-column>
-      <el-table-column prop="billHeader" header-align="center" align="center" label="發票抬头"></el-table-column>
+      <el-table-column prop="billHeader" header-align="center" align="center" label="發票抬頭"></el-table-column>
       <el-table-column prop="billContent" header-align="center" align="center" label="發票内容"></el-table-column>
       <el-table-column prop="billReceiverPhone" header-align="center" align="center" label="收票人电话"></el-table-column>
-      <el-table-column prop="billReceiverEmail" header-align="center" align="center" label="收票人邮箱"></el-table-column>
+      <el-table-column
+        prop="billReceiverEmail"
+        header-align="center"
+        align="center"
+        label="收票人電子信箱"
+      ></el-table-column>
       <el-table-column prop="receiverName" header-align="center" align="center" label="收货人姓名"></el-table-column>
       <el-table-column prop="receiverPhone" header-align="center" align="center" label="收货人电话"></el-table-column>
-      <el-table-column prop="receiverPostCode" header-align="center" align="center" label="收货人邮编"></el-table-column>
+      <el-table-column prop="receiverPostCode" header-align="center" align="center" label="收货人郵编"></el-table-column>
       <el-table-column prop="receiverProvince" header-align="center" align="center" label="省份/直辖市"></el-table-column>
       <el-table-column prop="receiverCity" header-align="center" align="center" label="城市"></el-table-column>
       <el-table-column prop="receiverRegion" header-align="center" align="center" label="区"></el-table-column>
@@ -96,18 +101,18 @@
         align="center"
         label="詳细地址"
       ></el-table-column>
-      <el-table-column prop="note" header-align="center" align="center" label="订單备注"></el-table-column>
+      <el-table-column prop="note" header-align="center" align="center" label="訂單備註"></el-table-column>
       <el-table-column
         prop="confirmStatus"
         header-align="center"
         align="center"
-        label="確認收货状泰[0->未確認；1->已確認]"
+        label="確認收货狀態[0->未確認；1->已確認]"
       ></el-table-column>
       <el-table-column
         prop="deleteStatus"
         header-align="center"
         align="center"
-        label="删除状泰【0->未删除；1->已删除】"
+        label="删除狀態【0->未删除；1->已删除】"
       ></el-table-column>
       <el-table-column prop="useIntegration" header-align="center" align="center" label="下單時使用的積分"></el-table-column>
       <el-table-column prop="paymentTime" header-align="center" align="center" label="支付時間"></el-table-column>

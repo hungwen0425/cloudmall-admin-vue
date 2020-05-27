@@ -11,20 +11,20 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="80px"
     >
-      <el-form-item label="用户名" prop="userName">
-        <el-input v-model="dataForm.userName" placeholder="登录帐号"></el-input>
+      <el-form-item label="使用者名稱" prop="userName">
+        <el-input v-model="dataForm.userName" placeholder="登录帐號"></el-input>
       </el-form-item>
-      <el-form-item label="密码" prop="password" :class="{ 'is-required': !dataForm.id }">
-        <el-input v-model="dataForm.password" type="password" placeholder="密码"></el-input>
+      <el-form-item label="密碼" prop="password" :class="{ 'is-required': !dataForm.id }">
+        <el-input v-model="dataForm.password" type="password" placeholder="密碼"></el-input>
       </el-form-item>
-      <el-form-item label="確認密码" prop="comfirmPassword" :class="{ 'is-required': !dataForm.id }">
-        <el-input v-model="dataForm.comfirmPassword" type="password" placeholder="確認密码"></el-input>
+      <el-form-item label="確認密碼" prop="comfirmPassword" :class="{ 'is-required': !dataForm.id }">
+        <el-input v-model="dataForm.comfirmPassword" type="password" placeholder="確認密碼"></el-input>
       </el-form-item>
-      <el-form-item label="邮箱" prop="email">
-        <el-input v-model="dataForm.email" placeholder="邮箱"></el-input>
+      <el-form-item label="電子信箱" prop="email">
+        <el-input v-model="dataForm.email" placeholder="電子信箱"></el-input>
       </el-form-item>
-      <el-form-item label="手机号" prop="mobile">
-        <el-input v-model="dataForm.mobile" placeholder="手机号"></el-input>
+      <el-form-item label="手機號" prop="mobile">
+        <el-input v-model="dataForm.mobile" placeholder="手機號"></el-input>
       </el-form-item>
       <el-form-item label="角色" size="mini" prop="roleIdList">
         <el-checkbox-group v-model="dataForm.roleIdList">
@@ -35,7 +35,7 @@
           >{{ role.roleName }}</el-checkbox>
         </el-checkbox-group>
       </el-form-item>
-      <el-form-item label="状泰" size="mini" prop="status">
+      <el-form-item label="狀態" size="mini" prop="status">
         <el-radio-group v-model="dataForm.status">
           <el-radio :label="0">禁用</el-radio>
           <el-radio :label="1">正常</el-radio>
@@ -55,30 +55,30 @@ export default {
   data() {
     var validatePassword = (rule, value, callback) => {
       if (!this.dataForm.id && !/\S/.test(value)) {
-        callback(new Error("密码不能為空"));
+        callback(new Error("密碼不能為空"));
       } else {
         callback();
       }
     };
     var validateComfirmPassword = (rule, value, callback) => {
       if (!this.dataForm.id && !/\S/.test(value)) {
-        callback(new Error("確認密码不能為空"));
+        callback(new Error("確認密碼不能為空"));
       } else if (this.dataForm.password !== value) {
-        callback(new Error("確認密码与密码输入不一致"));
+        callback(new Error("確認密碼与密碼输入不一致"));
       } else {
         callback();
       }
     };
     var validateEmail = (rule, value, callback) => {
       if (!isEmail(value)) {
-        callback(new Error("邮箱格式错误"));
+        callback(new Error("電子信箱格式錯誤"));
       } else {
         callback();
       }
     };
     var validateMobile = (rule, value, callback) => {
       if (!isMobile(value)) {
-        callback(new Error("手机号格式错误"));
+        callback(new Error("手機號格式錯誤"));
       } else {
         callback();
       }
@@ -99,18 +99,18 @@ export default {
       },
       dataRule: {
         userName: [
-          { required: true, message: "用户名不能為空", trigger: "blur" }
+          { required: true, message: "使用者名稱不能為空", trigger: "blur" }
         ],
         password: [{ validator: validatePassword, trigger: "blur" }],
         comfirmPassword: [
           { validator: validateComfirmPassword, trigger: "blur" }
         ],
         email: [
-          { required: true, message: "邮箱不能為空", trigger: "blur" },
+          { required: true, message: "電子信箱不能為空", trigger: "blur" },
           { validator: validateEmail, trigger: "blur" }
         ],
         mobile: [
-          { required: true, message: "手机号不能為空", trigger: "blur" },
+          { required: true, message: "手機號不能為空", trigger: "blur" },
           { validator: validateMobile, trigger: "blur" }
         ]
       }

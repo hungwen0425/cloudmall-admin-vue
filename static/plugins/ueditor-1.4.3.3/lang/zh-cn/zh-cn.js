@@ -14,16 +14,16 @@ UE.I18N['zh-cn'] = {
         'horizontal': '分隔線', 'removeformat': '清除格式', 'time': '時間', 'date': '日期',
         'unlink': '取消链接', 'insertrow': '前插入行', 'insertcol': '前插入列', 'mergeright': '右合併單元格', 'mergedown': '下合併單元格',
         'deleterow': '删除行', 'deletecol': '删除列', 'splittorows': '拆分成行',
-        'splittocols': '拆分成列', 'splittocells': '完全拆分單元格', 'deletecaption': '删除表格標题', 'inserttitle': '插入標题',
+        'splittocols': '拆分成列', 'splittocells': '完全拆分單元格', 'deletecaption': '删除表格標題', 'inserttitle': '插入標題',
         'mergecells': '合併多個單元格', 'deletetable': '删除表格', 'cleardoc': '清空文件', 'insertparagraphbeforetable': "表格前插入行", 'insertcode': '程式碼語言',
         'fontfamily': '字體', 'fontsize': '字號', 'paragraph': '段落格式', 'simpleupload': '單圖上傳', 'insertimage': '多圖上傳', 'edittable': '表格屬性', 'edittd': '單元格屬性', 'link': '超链接',
-        'emotion': '表情', 'spechars': '特殊字符', 'searchreplace': '查詢替换', 'map': 'Baidu地圖', 'gmap': 'Google地圖',
-        'insertvideo': '視频', 'help': '幫助', 'justifyleft': '居左對齐', 'justifyright': '居右對齐', 'justifycenter': '居中對齐',
-        'justifyjustify': '两端對齐', 'forecolor': '字體颜色', 'backcolor': '背景色', 'insertorderedlist': '有序列表',
+        'emotion': '表情', 'spechars': '特殊字符', 'searchreplace': '查詢替換', 'map': 'Baidu地圖', 'gmap': 'Google地圖',
+        'insertvideo': '視频', 'help': '幫助', 'justifyleft': '居左對齊', 'justifyright': '居右對齊', 'justifycenter': '居中對齊',
+        'justifyjustify': '两端對齊', 'forecolor': '字體颜色', 'backcolor': '背景色', 'insertorderedlist': '有序列表',
         'insertunorderedlist': '無序列表', 'fullscreen': '全屏', 'directionalityltr': '從左向右输入', 'directionalityrtl': '從右向左输入',
         'rowspacingtop': '段前距', 'rowspacingbottom': '段後距', 'pagebreak': '分頁', 'insertframe': '插入Iframe', 'imagenone': '默認',
         'imageleft': '左浮動', 'imageright': '右浮動', 'attachment': '附件', 'imagecenter': '居中', 'wordimage': '圖片轉存',
-        'lineheight': '行間距', 'edittip': '編輯提示', 'customstyle': '自定義標题', 'autotypeset': '自動排版',
+        'lineheight': '行間距', 'edittip': '編輯提示', 'customstyle': '自定義標題', 'autotypeset': '自動排版',
         'webapp': '百度應用', 'touppercase': '字母大寫', 'tolowercase': '字母小寫', 'background': '背景', 'template': '模板', 'scrawl': '涂鸦',
         'music': '音乐', 'inserttable': '插入表格', 'drafts': '從草稿箱加載', 'charts': '圖表'
     },
@@ -47,7 +47,7 @@ UE.I18N['zh-cn'] = {
         'dash': '— 破折號',
         'dot': ' 。 小圆圈'
     },
-    'paragraph': { 'p': '段落', 'h1': '標题 1', 'h2': '標题 2', 'h3': '標题 3', 'h4': '標题 4', 'h5': '標题 5', 'h6': '標题 6' },
+    'paragraph': { 'p': '段落', 'h1': '標題 1', 'h2': '標題 2', 'h3': '標題 3', 'h4': '標題 4', 'h5': '標題 5', 'h6': '標題 6' },
     'fontfamily': {
         'songti': '宋體',
         'kaiti': '楷體',
@@ -62,8 +62,8 @@ UE.I18N['zh-cn'] = {
         'timesNewRoman': 'times new roman'
     },
     'customstyle': {
-        'tc': '標题居中',
-        'tl': '標题居左',
+        'tc': '標題居中',
+        'tl': '標題居左',
         'im': '强調',
         'hi': '明顯强調'
     },
@@ -136,17 +136,17 @@ UE.I18N['zh-cn'] = {
         'unlink': "删除超链接",
         'paragraph': "段落格式",
         'edittable': "表格屬性",
-        'aligntd': "單元格對齐方式",
-        'aligntable': '表格對齐方式',
+        'aligntd': "單元格對齊方式",
+        'aligntable': '表格對齊方式',
         'tableleft': '左浮動',
         'tablecenter': '居中顯示',
         'tableright': '右浮動',
         'edittd': "單元格屬性",
         'setbordervisible': '設定表格邊線可见',
-        'justifyleft': '左對齐',
-        'justifyright': '右對齐',
-        'justifycenter': '居中對齐',
-        'justifyjustify': '两端對齐',
+        'justifyleft': '左對齊',
+        'justifyright': '右對齊',
+        'justifycenter': '居中對齊',
+        'justifyjustify': '两端對齊',
         'table': "表格",
         'inserttable': '插入表格',
         'deletetable': "删除表格",
@@ -160,10 +160,10 @@ UE.I18N['zh-cn'] = {
         'insertcolnext': '右插入列',
         'insertcaption': '插入表格名稱',
         'deletecaption': '删除表格名稱',
-        'inserttitle': '插入表格標题行',
-        'deletetitle': '删除表格標题行',
-        'inserttitlecol': '插入表格標题列',
-        'deletetitlecol': '删除表格標题列',
+        'inserttitle': '插入表格標題行',
+        'deletetitle': '删除表格標題行',
+        'inserttitlecol': '插入表格標題列',
+        'deletetitlecol': '删除表格標題列',
         'averageDiseRow': '平均分布各行',
         'averageDisCol': '平均分布各列',
         'mergeright': "向右合併",
@@ -198,12 +198,12 @@ UE.I18N['zh-cn'] = {
     'anthorMsg': "链接",
     'clearColor': '清空颜色',
     'standardColor': '標準颜色',
-    'themeColor': '主题颜色',
+    'themeColor': '主題颜色',
     'property': '屬性',
     'default': '默認',
     'modify': '修改',
-    'justifyleft': '左對齐',
-    'justifyright': '右對齐',
+    'justifyleft': '左對齊',
+    'justifyright': '右對齊',
     'justifycenter': '居中',
     'justify': '默認',
     'clear': '清除',
@@ -223,14 +223,14 @@ UE.I18N['zh-cn'] = {
         'delLine': "清除空行",
         'removeFormat': "清除格式",
         'indent': "首行縮進",
-        'alignment': "對齐方式",
+        'alignment': "對齊方式",
         'imageFloat': "圖片浮動",
         'removeFontsize': "清除字號",
         'removeFontFamily': "清除字體",
         'removeHtml': "清除冗余HTML程式碼",
         'pasteFilter': "粘贴過滤",
         'run': "执行",
-        'symbol': '符號轉换',
+        'symbol': '符號轉換',
         'bdc2sb': '全角轉半角',
         'tobdc': '半角轉全角'
     },
@@ -244,13 +244,13 @@ UE.I18N['zh-cn'] = {
             'lang_background_colored': '有背景色',
             'lang_background_color': '颜色設定',
             'lang_background_netimg': '網络圖片',
-            'lang_background_align': '對齐方式',
+            'lang_background_align': '對齊方式',
             'lang_background_position': '精確定位',
             'repeatType': { 'options': ["居中", "横向重複", "纵向重複", "平铺", "自定義"] }
 
         },
         'noUploadImage': "當前未上傳過任何圖片！",
-        'toggleSelect': "單击可切换選中狀態\n原圖尺寸: "
+        'toggleSelect': "單击可切換選中狀態\n原圖尺寸: "
     },
     //===============dialog i18N=======================
     'insertimage': {
@@ -294,7 +294,7 @@ UE.I18N['zh-cn'] = {
         'updateStatusConfirm': '已成功上傳_張照片，_張照片上傳失败',
         'updateStatusFinish': '共_張（_KB），_張上傳成功',
         'updateStatusError': '，_張上傳失败。',
-        'errorNotSupport': 'WebUploader 不支持您的瀏覽器！如果你使用的是IE瀏覽器，請尝試升級 flash 播放器。',
+        'errorNotSupport': 'WebUploader 不支持您的瀏覽器！如果你使用的是IE瀏覽器，請嘗試升級 flash 播放器。',
         'errorLoadConfig': '後端設定項没有正常加載，上傳插件不能正常使用！',
         'errorExceedSize': '文件大小超出',
         'errorFileType': '文件格式不允许',
@@ -331,7 +331,7 @@ UE.I18N['zh-cn'] = {
         'updateStatusConfirm': '已成功上傳_個文件，_個文件上傳失败',
         'updateStatusFinish': '共_個（_KB），_個上傳成功',
         'updateStatusError': '，_張上傳失败。',
-        'errorNotSupport': 'WebUploader 不支持您的瀏覽器！如果你使用的是IE瀏覽器，請尝試升級 flash 播放器。',
+        'errorNotSupport': 'WebUploader 不支持您的瀏覽器！如果你使用的是IE瀏覽器，請嘗試升級 flash 播放器。',
         'errorLoadConfig': '後端設定項没有正常加載，上傳插件不能正常使用！',
         'errorExceedSize': '文件大小超出',
         'errorFileType': '文件格式不允许',
@@ -349,7 +349,7 @@ UE.I18N['zh-cn'] = {
             'lang_video_size': "視频尺寸",
             'lang_videoW': "宽度",
             'lang_videoH': "高度",
-            'lang_alignment': "對齐方式",
+            'lang_alignment': "對齊方式",
             'videoSearchTxt': { 'value': "請输入搜索關键字！" },
             'videoType': { 'options': ["全部", "熱門", "娱乐", "搞笑", "體育", "科技", "综艺"] },
             'videoSearchBtn': { 'value': "百度一下" },
@@ -361,7 +361,7 @@ UE.I18N['zh-cn'] = {
             'lang_upload_size': "視频尺寸",
             'lang_upload_width': "宽度",
             'lang_upload_height': "高度",
-            'lang_upload_alignment': "對齐方式",
+            'lang_upload_alignment': "對齊方式",
             'lang_format_advice': "建議使用mp4格式."
 
         },
@@ -417,7 +417,7 @@ UE.I18N['zh-cn'] = {
         'updateStatusConfirm': '成功上傳_個，_個失败',
         'updateStatusFinish': '共_個(_KB)，_個成功上傳',
         'updateStatusError': '，_張上傳失败。',
-        'errorNotSupport': 'WebUploader 不支持您的瀏覽器！如果你使用的是IE瀏覽器，請尝試升級 flash 播放器。',
+        'errorNotSupport': 'WebUploader 不支持您的瀏覽器！如果你使用的是IE瀏覽器，請嘗試升級 flash 播放器。',
         'errorLoadConfig': '後端設定項没有正常加載，上傳插件不能正常使用！',
         'errorExceedSize': '文件大小超出',
         'errorFileType': '文件格式不允许',
@@ -428,7 +428,7 @@ UE.I18N['zh-cn'] = {
     },
     'webapp': {
         'tip1': "本功能由百度APP提供，如看到此頁面，請各位站長首先申請百度APPKey!",
-        'tip2': "申請完成之後請至ueditor.config.js中設定獲得的appkey! ",
+        'tip2': "申請完成之後請至ueditor.config.js中設定取得的appkey! ",
         'applyFor': "點此申請",
         'anthorApi': "百度API"
     },
@@ -467,7 +467,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_tips': "输入歌手/歌曲/專辑，搜索您感兴趣的音乐！",
             'J_searchBtn': { value: '搜索歌曲' }
         },
-        'emptyTxt': '未搜索到相關音乐結果，請换一個關键词試試。',
+        'emptyTxt': '未搜索到相關音乐結果，請換一個關键词試試。',
         'chapter': '歌曲',
         'singer': '歌手',
         'special': '專辑',
@@ -482,14 +482,14 @@ UE.I18N['zh-cn'] = {
         'static': {
             'lang_data_source': '資料源：',
             'lang_chart_format': '圖表格式：',
-            'lang_data_align': '資料對齐方式',
+            'lang_data_align': '資料對齊方式',
             'lang_chart_align_same': '資料源與圖表X轴Y轴一致',
             'lang_chart_align_reverse': '資料源與圖表X轴Y轴相反',
-            'lang_chart_title': '圖表標题',
-            'lang_chart_main_title': '主標题：',
-            'lang_chart_sub_title': '子標题：',
-            'lang_chart_x_title': 'X轴標题：',
-            'lang_chart_y_title': 'Y轴標题：',
+            'lang_chart_title': '圖表標題',
+            'lang_chart_main_title': '主標題：',
+            'lang_chart_sub_title': '子標題：',
+            'lang_chart_x_title': 'X轴標題：',
+            'lang_chart_y_title': 'Y轴標題：',
             'lang_chart_tip': '提示文字',
             'lang_cahrt_tip_prefix': '提示文字前缀：',
             'lang_cahrt_tip_description': '仅餅圖有效， 當鼠標移動到餅圖中相應的塊上時，提示框内的文字的前缀',
@@ -547,8 +547,8 @@ UE.I18N['zh-cn'] = {
             'lang_input_height': '高度：',
             'lang_input_isScroll': '允许滚動條：',
             'lang_input_frameborder': '顯示框架邊框：',
-            'lang_input_alignMode': '對齐方式：',
-            'align': { title: "對齐方式", options: ["默認", "左對齐", "右對齐", "居中"] }
+            'lang_input_alignMode': '對齊方式：',
+            'align': { title: "對齊方式", options: ["默認", "左對齊", "右對齊", "居中"] }
         },
         'enterAddress': '請输入地址!'
     },
@@ -556,7 +556,7 @@ UE.I18N['zh-cn'] = {
         'static': {
             'lang_input_text': '文本内容：',
             'lang_input_url': '链接地址：',
-            'lang_input_title': '標题：',
+            'lang_input_title': '標題：',
             'lang_input_target': '是否在新窗口打開：'
         },
         'validLink': '只支持選中一個链接時生效',
@@ -576,10 +576,10 @@ UE.I18N['zh-cn'] = {
     'searchreplace': {
         'static': {
             lang_tab_search: "查找",
-            lang_tab_replace: "替换",
+            lang_tab_replace: "替換",
             lang_search1: "查找",
             lang_search2: "查找",
-            lang_replace: "替换",
+            lang_replace: "替換",
             lang_searchReg: '支持正則表達式，添加前後斜杠標示為正則表達式，例如“/表達式/”',
             lang_searchReg1: '支持正則表達式，添加前後斜杠標示為正則表達式，例如“/表達式/”',
             lang_case_sensitive1: "區分大小寫",
@@ -588,12 +588,12 @@ UE.I18N['zh-cn'] = {
             preFindBtn: { value: "上一個" },
             nextReplaceBtn: { value: "下一個" },
             preReplaceBtn: { value: "上一個" },
-            repalceBtn: { value: "替换" },
-            repalceAllBtn: { value: "全部替换" }
+            repalceBtn: { value: "替換" },
+            repalceAllBtn: { value: "全部替換" }
         },
         getEnd: "已經搜索到文章末尾！",
         getStart: "已經搜索到文章頭部",
-        countMsg: "總共替换了{#count}處！"
+        countMsg: "總共替換了{#count}處！"
     },
     'snapscreen': {
         'static': {
@@ -619,8 +619,8 @@ UE.I18N['zh-cn'] = {
         'static': {
             'lang_tableStyle': '表格樣式',
             'lang_insertCaption': '添加表格名稱行',
-            'lang_insertTitle': '添加表格標题行',
-            'lang_insertTitleCol': '添加表格標题列',
+            'lang_insertTitle': '添加表格標題行',
+            'lang_insertTitleCol': '添加表格標題列',
             'lang_orderbycontent': "使表格内容可排序",
             'lang_tableSize': '自動調整表格尺寸',
             'lang_autoSizeContent': '按表格文字自適應',
@@ -630,7 +630,7 @@ UE.I18N['zh-cn'] = {
             'lang_color': '颜色:'
         },
         captionName: '表格名稱',
-        titleName: '標题',
+        titleName: '標題',
         cellsName: '内容',
         errorMsg: '有合併單元格，不可排序'
     },

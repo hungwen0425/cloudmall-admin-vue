@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:memberprice:save')"
           type="primary"
@@ -29,8 +29,8 @@
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="skuId" header-align="center" align="center" label="sku_id"></el-table-column>
-      <el-table-column prop="memberLevelId" header-align="center" align="center" label="會員等级id"></el-table-column>
-      <el-table-column prop="memberLevelName" header-align="center" align="center" label="會員等级名"></el-table-column>
+      <el-table-column prop="memberLevelId" header-align="center" align="center" label="會員等級id"></el-table-column>
+      <el-table-column prop="memberLevelName" header-align="center" align="center" label="會員等級名"></el-table-column>
       <el-table-column prop="memberPrice" header-align="center" align="center" label="會員對應價格"></el-table-column>
       <el-table-column prop="addOther" header-align="center" align="center" label="可否疊加其他優惠">
         <template slot-scope="scope">

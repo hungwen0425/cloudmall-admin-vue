@@ -23,7 +23,7 @@
       <el-form-item :label="dataForm.typeList[dataForm.type] + '名稱'" prop="name">
         <el-input v-model="dataForm.name" :placeholder="dataForm.typeList[dataForm.type] + '名稱'"></el-input>
       </el-form-item>
-      <el-form-item label="上级菜單" prop="parentName">
+      <el-form-item label="上級菜單" prop="parentName">
         <el-popover ref="menuListPopover" placement="bottom-start" trigger="click">
           <el-tree
             :data="menuList"
@@ -40,7 +40,7 @@
           v-model="dataForm.parentName"
           v-popover:menuListPopover
           :readonly="true"
-          placeholder="点击選擇上级菜單"
+          placeholder="點擊選擇上級菜單"
           class="menu-list__input"
         ></el-input>
       </el-form-item>
@@ -48,10 +48,10 @@
         <el-input v-model="dataForm.url" placeholder="菜單路由"></el-input>
       </el-form-item>
       <el-form-item v-if="dataForm.type !== 0" label="授权標识" prop="perms">
-        <el-input v-model="dataForm.perms" placeholder="多個用逗号分隔, 如: user:list,user:create"></el-input>
+        <el-input v-model="dataForm.perms" placeholder="多個用逗號分隔, 如: user:list,user:create"></el-input>
       </el-form-item>
-      <el-form-item v-if="dataForm.type !== 2" label="排序号" prop="orderNum">
-        <el-input-number v-model="dataForm.orderNum" controls-position="right" :min="0" label="排序号"></el-input-number>
+      <el-form-item v-if="dataForm.type !== 2" label="排序號" prop="orderNum">
+        <el-input-number v-model="dataForm.orderNum" controls-position="right" :min="0" label="排序號"></el-input-number>
       </el-form-item>
       <el-form-item v-if="dataForm.type !== 2" label="菜單圖標" prop="icon">
         <el-row>
@@ -137,7 +137,7 @@ export default {
           { required: true, message: "菜單名稱不能為空", trigger: "blur" }
         ],
         parentName: [
-          { required: true, message: "上级菜單不能為空", trigger: "change" }
+          { required: true, message: "上級菜單不能為空", trigger: "change" }
         ],
         url: [{ validator: validateUrl, trigger: "blur" }]
       },
@@ -197,7 +197,7 @@ export default {
       this.dataForm.parentId = data.menuId;
       this.dataForm.parentName = data.name;
     },
-    // 菜單树設定當前選中节点
+    // 菜單树設定當前選中节點
     menuListTreeSetCurrentNode() {
       this.$refs.menuListTree.setCurrentKey(this.dataForm.parentId);
       this.dataForm.parentName = (this.$refs.menuListTree.getCurrentNode() ||

@@ -11,11 +11,11 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="秒杀订單超時关闭時間(分)" prop="flashOrderOvertime">
-        <el-input v-model="dataForm.flashOrderOvertime" placeholder="秒杀订單超時关闭時間(分)"></el-input>
+      <el-form-item label="秒杀訂單超時關閉時間(分)" prop="flashOrderOvertime">
+        <el-input v-model="dataForm.flashOrderOvertime" placeholder="秒杀訂單超時關閉時間(分)"></el-input>
       </el-form-item>
-      <el-form-item label="正常订單超時時間(分)" prop="normalOrderOvertime">
-        <el-input v-model="dataForm.normalOrderOvertime" placeholder="正常订單超時時間(分)"></el-input>
+      <el-form-item label="正常訂單超時時間(分)" prop="normalOrderOvertime">
+        <el-input v-model="dataForm.normalOrderOvertime" placeholder="正常訂單超時時間(分)"></el-input>
       </el-form-item>
       <el-form-item label="發货後自動確認收货時間（天）" prop="confirmOvertime">
         <el-input v-model="dataForm.confirmOvertime" placeholder="發货後自動確認收货時間（天）"></el-input>
@@ -23,11 +23,11 @@
       <el-form-item label="自動完成交易時間，不能申請退货（天）" prop="finishOvertime">
         <el-input v-model="dataForm.finishOvertime" placeholder="自動完成交易時間，不能申請退货（天）"></el-input>
       </el-form-item>
-      <el-form-item label="订單完成後自動好评時間（天）" prop="commentOvertime">
-        <el-input v-model="dataForm.commentOvertime" placeholder="订單完成後自動好评時間（天）"></el-input>
+      <el-form-item label="訂單完成後自動好评時間（天）" prop="commentOvertime">
+        <el-input v-model="dataForm.commentOvertime" placeholder="訂單完成後自動好评時間（天）"></el-input>
       </el-form-item>
-      <el-form-item label="會員等级【0-不限會員等级，全部通用；其他-對應的其他會員等级】" prop="memberLevel">
-        <el-input v-model="dataForm.memberLevel" placeholder="會員等级【0-不限會員等级，全部通用；其他-對應的其他會員等级】"></el-input>
+      <el-form-item label="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】" prop="memberLevel">
+        <el-input v-model="dataForm.memberLevel" placeholder="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -55,14 +55,14 @@ export default {
         flashOrderOvertime: [
           {
             required: true,
-            message: "秒杀订單超時关闭時間(分)不能為空",
+            message: "秒杀訂單超時關閉時間(分)不能為空",
             trigger: "blur"
           }
         ],
         normalOrderOvertime: [
           {
             required: true,
-            message: "正常订單超時時間(分)不能為空",
+            message: "正常訂單超時時間(分)不能為空",
             trigger: "blur"
           }
         ],
@@ -83,7 +83,7 @@ export default {
         commentOvertime: [
           {
             required: true,
-            message: "订單完成後自動好评時間（天）不能為空",
+            message: "訂單完成後自動好评時間（天）不能為空",
             trigger: "blur"
           }
         ],
@@ -91,7 +91,7 @@ export default {
           {
             required: true,
             message:
-              "會員等级【0-不限會員等级，全部通用；其他-對應的其他會員等级】不能為空",
+              "會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】不能為空",
             trigger: "blur"
           }
         ]

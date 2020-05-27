@@ -35,7 +35,7 @@ function clickHandler(tabHeads, tabBodys, obj) {
 }
 
 /**
- * TAB切换
+ * TAB切換
  * @param tabParentId  tab的父節點ID或者物件本身
  */
 function switchTab(tabParentId) {

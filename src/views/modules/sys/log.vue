@@ -2,16 +2,16 @@
   <div class="mod-log">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="用户名／用户操作" clearable></el-input>
+        <el-input v-model="dataForm.key" placeholder="使用者名稱／使用者操作" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="dataList" border v-loading="dataListLoading" style="width: 100%">
       <el-table-column prop="id" header-align="center" align="center" width="80" label="ID"></el-table-column>
-      <el-table-column prop="username" header-align="center" align="center" label="用户名"></el-table-column>
-      <el-table-column prop="operation" header-align="center" align="center" label="用户操作"></el-table-column>
+      <el-table-column prop="username" header-align="center" align="center" label="使用者名稱"></el-table-column>
+      <el-table-column prop="operation" header-align="center" align="center" label="使用者操作"></el-table-column>
       <el-table-column
         prop="method"
         header-align="center"

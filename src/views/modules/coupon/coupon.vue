@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
         <el-button
           v-if="isAuth('coupon:coupon:save')"
           type="primary"
@@ -30,46 +30,46 @@
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="couponType" header-align="center" align="center" label="優惠卷類型">
         <template slot-scope="scope">
-          <el-tag v-if="scope.row.couponType==0">全场赠券</el-tag>
+          <el-tag v-if="scope.row.couponType==0">全場赠券</el-tag>
           <el-tag type="info" v-if="scope.row.couponType==1">會員赠券</el-tag>
-          <el-tag type="success" v-if="scope.row.couponType==2">购物赠券</el-tag>
+          <el-tag type="success" v-if="scope.row.couponType==2">購物赠券</el-tag>
           <el-tag type="warning" v-if="scope.row.couponType==3">注册赠券</el-tag>
         </template>
       </el-table-column>
       <el-table-column prop="couponImg" header-align="center" align="center" label="優惠券圖片"></el-table-column>
       <el-table-column prop="couponName" header-align="center" align="center" label="優惠卷名稱"></el-table-column>
       <el-table-column prop="num" header-align="center" align="center" label="數量"></el-table-column>
-      <el-table-column prop="amount" header-align="center" align="center" label="金额"></el-table-column>
-      <el-table-column prop="perLimit" header-align="center" align="center" label="每人限领张數"></el-table-column>
-      <el-table-column prop="minPoint" header-align="center" align="center" label="使用门槛"></el-table-column>
+      <el-table-column prop="amount" header-align="center" align="center" label="金額"></el-table-column>
+      <el-table-column prop="perLimit" header-align="center" align="center" label="每人限領張數"></el-table-column>
+      <el-table-column prop="minPoint" header-align="center" align="center" label="使用門槛"></el-table-column>
       <el-table-column prop="startTime" header-align="center" align="center" label="開始時間"></el-table-column>
       <el-table-column prop="endTime" header-align="center" align="center" label="結束時間"></el-table-column>
       <el-table-column prop="useType" header-align="center" align="center" label="使用類型">
         <template slot-scope="scope">
-          <el-tag v-if="scope.row.useType==0">全场通用</el-tag>
+          <el-tag v-if="scope.row.useType==0">全場通用</el-tag>
           <el-tag type="info" v-if="scope.row.useType==1">指定分類</el-tag>
           <el-tag type="success" v-if="scope.row.useType==2">指定商品</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="note" header-align="center" align="center" label="备注"></el-table-column>
+      <el-table-column prop="note" header-align="center" align="center" label="備註"></el-table-column>
       <el-table-column prop="publishCount" header-align="center" align="center" label="發行數量"></el-table-column>
       <el-table-column prop="useCount" header-align="center" align="center" label="已使用數量"></el-table-column>
-      <el-table-column prop="receiveCount" header-align="center" align="center" label="领取數量"></el-table-column>
-      <el-table-column label="可以领取的日期">
+      <el-table-column prop="receiveCount" header-align="center" align="center" label="領取數量"></el-table-column>
+      <el-table-column label="可以領取的日期">
         <el-table-column prop="enableStartTime" header-align="center" align="center" label="開始日期"></el-table-column>
         <el-table-column prop="enableEndTime" header-align="center" align="center" label="結束日期"></el-table-column>
       </el-table-column>
-      <el-table-column prop="code" header-align="center" align="center" label="優惠码"></el-table-column>
-      <el-table-column prop="memberLevel" header-align="center" align="center" label="领取所需等级">
+      <el-table-column prop="code" header-align="center" align="center" label="優惠碼"></el-table-column>
+      <el-table-column prop="memberLevel" header-align="center" align="center" label="領取所需等級">
         <template slot-scope="scope">
-          <el-tag v-if="scope.row.memberLevel==0">不限等级</el-tag>
+          <el-tag v-if="scope.row.memberLevel==0">不限等級</el-tag>
           <el-tag type="info" v-else>{{getLevel(scope.row.memberLevel)}}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="publish" header-align="center" align="center" label="發布状泰">
+      <el-table-column prop="publish" header-align="center" align="center" label="發佈狀態">
         <template slot-scope="scope">
-          <el-tag v-if="scope.row.publish==0">未發布</el-tag>
-          <el-tag type="success" v-else>已發布</el-tag>
+          <el-tag v-if="scope.row.publish==0">未發佈</el-tag>
+          <el-tag type="success" v-else>已發佈</el-tag>
         </template>
       </el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
@@ -128,7 +128,7 @@ export default {
       }
     },
     getMemberLevels() {
-      //取得所有的會員等级
+      //取得所有的會員等級
       this.$http({
         url: this.$http.adornUrl("/member/memberlevel/list"),
         method: "get",

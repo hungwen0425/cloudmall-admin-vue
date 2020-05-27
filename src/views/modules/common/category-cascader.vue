@@ -1,17 +1,17 @@
 <template>
   <!--
-使用说明：
+使用說明：
 1）、引入category-cascader.vue
-2）、语法：<category-cascader :catelogPath.sync="catelogPath"></category-cascader>
+2）、語法：<category-cascader :catelogPath.sync="catelogPath"></category-cascader>
     解释：
-      catelogPath：指定的值是cascader初始化需要显示的值，应该和父組件的catelogPath绑定;
-          由於有sync修饰符，所以cascader路徑變化以後自動會修改父的catelogPath，這是結合子組件this.$emit("update:catelogPath",v);做的
+      catelogPath：指定的值是cascader初始化需要顯示的值，應該和父組件的catelogPath绑定;
+          由於有sync修飾符，所以cascader路徑變化以後自動會修改父的catelogPath，這是結合子組件this.$emit("update:catelogPath",v);做的
   -->
   <div>
     <el-cascader
       filterable
       clearable
-      placeholder="试试搜索：手机"
+      placeholder="試試搜索：手機"
       v-model="paths"
       :options="categorys"
       :props="setting"

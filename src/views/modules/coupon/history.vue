@@ -5,7 +5,7 @@
         <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getDataList()">查询</el-button>
+        <el-button @click="getDataList()">查詢</el-button>
       </el-form-item>
     </el-form>
     <el-table
@@ -23,20 +23,20 @@
       <el-table-column prop="getType" header-align="center" align="center" label="取得方式">
         <template slot-scope="scope">
           <el-tag type="primary" v-if="scope.row.getType==0">後台赠送</el-tag>
-          <el-tag type="success" v-else>主動领取</el-tag>
+          <el-tag type="success" v-else>主動領取</el-tag>
         </template>
       </el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="創建時間"></el-table-column>
-      <el-table-column prop="useType" header-align="center" align="center" label="使用状泰">
+      <el-table-column prop="useType" header-align="center" align="center" label="使用狀態">
         <template slot-scope="scope">
           <el-tag type="primary" v-if="scope.row.useType==0">未使用</el-tag>
           <el-tag type="success" v-if="scope.row.useType==1">已使用</el-tag>
-          <el-tag type="warning" v-if="scope.row.useType==2">已过期</el-tag>
+          <el-tag type="warning" v-if="scope.row.useType==2">已過期</el-tag>
         </template>
       </el-table-column>
       <el-table-column prop="useTime" header-align="center" align="center" label="使用時間"></el-table-column>
-      <el-table-column prop="orderId" header-align="center" align="center" label="订單id"></el-table-column>
-      <el-table-column prop="orderSn" header-align="center" align="center" label="订單号"></el-table-column>
+      <el-table-column prop="orderId" header-align="center" align="center" label="訂單id"></el-table-column>
+      <el-table-column prop="orderSn" header-align="center" align="center" label="訂單號"></el-table-column>
     </el-table>
     <el-pagination
       @size-change="sizeChangeHandle"

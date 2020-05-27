@@ -10,8 +10,8 @@
             <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button @click="getDataList()">查询</el-button>
-            <el-button type="success" @click="getAllDataList()">查询全部</el-button>
+            <el-button @click="getDataList()">查詢</el-button>
+            <el-button type="success" @click="getAllDataList()">查詢全部</el-button>
             <el-button
               v-if="isAuth('product:attrgroup:save')"
               type="primary"
@@ -47,7 +47,7 @@
             label="操作"
           >
             <template slot-scope="scope">
-              <el-button type="text" size="small" @click="relationHandle(scope.row.attrGroupId)">关聯</el-button>
+              <el-button type="text" size="small" @click="relationHandle(scope.row.attrGroupId)">關聯</el-button>
               <el-button
                 type="text"
                 size="small"
@@ -69,7 +69,7 @@
         <!-- 弹窗, 新增 / 修改 -->
         <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
 
-        <!-- 修改关聯关系 -->
+        <!-- 修改關聯關系 -->
         <relation-update v-if="relationVisible" ref="relationUpdate" @refreshData="getDataList"></relation-update>
       </div>
     </el-col>
@@ -79,7 +79,7 @@
 <script>
 /**
  * 父子組件傳递資料
- * 1)、子組件给父組件傳递資料，事件机制；
+ * 1)、子組件给父組件傳递資料，事件機制；
  *    子組件给父組件發送一個事件，携带上資料。
  * // this.$emit("事件名",携带的資料...)
  */
@@ -112,18 +112,18 @@ export default {
     this.getDataList();
   },
   methods: {
-    //處理分組与屬性的关聯
+    //處理分組与屬性的關聯
     relationHandle(groupId) {
       this.relationVisible = true;
       this.$nextTick(() => {
         this.$refs.relationUpdate.init(groupId);
       });
     },
-    //感知树节点被点击
+    //感知树节點被點擊
     treenodeclick(data, node, component) {
       if (node.level == 3) {
         this.catId = data.catId;
-        this.getDataList(); //重新查询
+        this.getDataList(); //重新查詢
       }
     },
     getAllDataList() {
