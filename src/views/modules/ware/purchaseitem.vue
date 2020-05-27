@@ -1,8 +1,8 @@
 <template>
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
-      <el-form-item label="仓库">
-        <el-select style="width:120px;" v-model="dataForm.wareId" placeholder="請選擇仓库" clearable>
+      <el-form-item label="倉庫">
+        <el-select style="width:120px;" v-model="dataForm.wareId" placeholder="請選擇倉庫" clearable>
           <el-option :label="w.name" :value="w.id" v-for="w in wareList" :key="w.id"></el-option>
         </el-select>
       </el-form-item>
@@ -50,7 +50,7 @@
       <el-table-column prop="skuId" header-align="center" align="center" label="采購商品id"></el-table-column>
       <el-table-column prop="skuNum" header-align="center" align="center" label="采購數量"></el-table-column>
       <el-table-column prop="skuPrice" header-align="center" align="center" label="采購金額"></el-table-column>
-      <el-table-column prop="wareId" header-align="center" align="center" label="仓库id"></el-table-column>
+      <el-table-column prop="wareId" header-align="center" align="center" label="倉庫id"></el-table-column>
       <el-table-column prop="status" header-align="center" align="center" label="狀態">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.status==0">新建</el-tag>

@@ -50,7 +50,7 @@
           <el-tag type="danger" v-if="scope.row.status == 4">有异常</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="wareId" header-align="center" align="center" label="仓库id"></el-table-column>
+      <el-table-column prop="wareId" header-align="center" align="center" label="倉庫id"></el-table-column>
       <el-table-column prop="amount" header-align="center" align="center" label="總金額"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="創建日期"></el-table-column>
       <el-table-column prop="updateTime" header-align="center" align="center" label="更新日期"></el-table-column>

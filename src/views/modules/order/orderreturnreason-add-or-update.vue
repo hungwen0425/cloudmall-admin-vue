@@ -11,8 +11,8 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="退货原因名" prop="name">
-        <el-input v-model="dataForm.name" placeholder="退货原因名"></el-input>
+      <el-form-item label="退貨原因名" prop="name">
+        <el-input v-model="dataForm.name" placeholder="退貨原因名"></el-input>
       </el-form-item>
       <el-form-item label="排序" prop="sort">
         <el-input v-model="dataForm.sort" placeholder="排序"></el-input>
@@ -45,7 +45,7 @@ export default {
       },
       dataRule: {
         name: [
-          { required: true, message: "退货原因名不能為空", trigger: "blur" }
+          { required: true, message: "退貨原因名不能為空", trigger: "blur" }
         ],
         sort: [{ required: true, message: "排序不能為空", trigger: "blur" }],
         status: [

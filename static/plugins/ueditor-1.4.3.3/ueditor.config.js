@@ -12,9 +12,9 @@
 (function () {
 
   /**
-   * 編輯器資源文件根路徑。它所表示的含義是：以編輯器實例化頁面為當前路徑，指向編輯器資源文件（即dialog等文件夹）的路徑。
-   * 鑑於很多同學在使用編輯器的時候出現的種種路徑問題，此處强烈建議大家使用"相對于網站根目入的相對路徑"進行設定。
-   * "相對于網站根目入的相對路徑"也就是以斜杠開頭的形如"/myProject/ueditor/"這樣的路徑。
+   * 編輯器資源文件根路徑。它所表示的含義是：以編輯器實例化頁面為當前路徑，指向編輯器資源文件（即dialog等文件夾）的路徑。
+   * 鑑於很多同學在使用編輯器的時候出現的種種路徑問題，此處强烈建議大家使用"相對於網站根目錄的相對路徑"進行設定。
+   * "相對於網站根目錄的相對路徑"也就是以斜杠開頭的形如"/myProject/ueditor/"這樣的路徑。
    * 如果站點中有多個不在同一層級的頁面需要實例化編輯器，且引用了同一UEditor的時候，此處的URL可能不適用於每個頁面的編輯器。
    * 因此，UEditor提供了針對不同頁面的編輯器可單獨設定的根路徑，具體來說，在需要實例化編輯器的頁面最顶部寫上如下程式碼即可。當然，需要令此處的URL等於對應的設定。
    * window.UEDITOR_HOME_URL = "/xxxx/xxxx/";
@@ -32,7 +32,7 @@
     // 服務器统一請求接口路徑
     , serverUrl: URL + "jsp/controller.jsp"
 
-    //工具欄上的所有的功能按钮和下拉框，可以在new編輯器的實例時選擇自己需要的重新定義
+    //工具欄上的所有的功能按鈕和下拉框，可以在new編輯器的實例時選擇自己需要的重新定義
     , toolbars: [[
       'fullscreen', 'source', '|', 'undo', 'redo', '|',
       'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
@@ -51,12 +51,12 @@
     //    'anchor':'', 'undo':''
     //}
 
-    //語言設定項,默認是zh-cn。有需要的話也可以使用如下這樣的方式來自動多語言切換，當然，前提條件是lang文件夹下存在對應的語言文件：
+    //語言設定項,默認是zh-cn。有需要的話也可以使用如下這樣的方式來自動多語言切換，當然，前提條件是lang文件夾下存在對應的語言文件：
     //lang值也可以通過自動取得 (navigator.language||navigator.browserLanguage ||navigator.userLanguage).toLowerCase()
     //,lang:"zh-cn"
     //,langPath:URL +"lang/"
 
-    //主題設定項,默認是default。有需要的話也可以使用如下這樣的方式來自動多主題切換，當然，前提條件是themes文件夹下存在對應的主題文件：
+    //主題設定項,默認是default。有需要的話也可以使用如下這樣的方式來自動多主題切換，當然，前提條件是themes文件夾下存在對應的主題文件：
     //現有如下皮膚:default
     //,theme:'default'
     //,themePath:URL +"themes/"
@@ -89,10 +89,10 @@
     //首行縮進距離,默認是2em
     //,indentValue:'2em'
 
-    //,initialFrameWidth:1000  //初始化編輯器宽度,默認1000
+    //,initialFrameWidth:1000  //初始化編輯器寬度,默認1000
     //,initialFrameHeight:320  //初始化編輯器高度,默認320
 
-    //,readonly : false //編輯器初始化結束後,編輯區域是否是只读的，默認是false
+    //,readonly : false //編輯器初始化結束後,編輯區域是否是只讀的，默認是false
 
     //,autoClearEmptyNode : true //getContent時，是否删除空的inlineElement節點（包括嵌套的情况）
 
@@ -106,7 +106,7 @@
     //,imagePopup:true      //圖片操作的浮層開關，默認打開
 
     //,autoSyncData:true //自動同步編輯器要提交的資料
-    //,emotionLocalization:false //是否開啟表情本地化，默認關閉。若要開啟請確保emotion文件夹下包含官網提供的images表情文件夹
+    //,emotionLocalization:false //是否開啟表情本地化，默認關閉。若要開啟請確保emotion文件夾下包含官網提供的images表情文件夾
 
     //粘贴只保留標簽，去除標簽所有屬性
     //,retainOnlyLabelPasted: false
@@ -233,8 +233,8 @@
     //,contextMenu:[
     //    {
     //        label:'',       //顯示的名稱
-    //        cmdName:'selectall',//执行的command命令，當點擊這個右键選單時
-    //        //exec可選，有了exec就會在點擊時执行這個function，優先級高于cmdName
+    //        cmdName:'selectall',//執行的command命令，當點擊這個右键選單時
+    //        //exec可選，有了exec就會在點擊時執行這個function，優先級高于cmdName
     //        exec:function () {
     //            //this是當前編輯器的實例
     //            //this.ui._dialogs['inserttableDialog'].open();
@@ -251,11 +251,11 @@
 
     //wordCount
     //,wordCount:true          //是否開啟字數统計
-    //,maximumWords:10000       //允许的最大字符數
+    //,maximumWords:10000       //允許的最大字符數
     //字數统計提示，{#count}代表當前字數，{#leave}代表還可以输入多少字符數,留空支持多語言自動切換，否則按此設定顯示
     //,wordCountMsg:''   //當前已输入 {#count} 個字符，您還可以输入{#leave} 個字符
     //超出字數限製提示  留空支持多語言自動切換，否則按此設定顯示
-    //,wordOverFlowMsg:''    //<span style="color:red;">你输入的字符個數已經超出最大允许值，服務器可能會拒绝保存！</span>
+    //,wordOverFlowMsg:''    //<span style="color:red;">你输入的字符個數已經超出最大允許值，服務器可能會拒绝保存！</span>
 
     //tab
     //點擊tab键時移動的距離,tabSize倍數，tabNode什么字符做為單位
@@ -282,7 +282,7 @@
     //scaleEnabled
     //是否可以拉伸長高,默認true(當開啟時，自動長高失效)
     //,scaleEnabled:false
-    //,minFrameWidth:800    //編輯器拖動時最小宽度,默認800
+    //,minFrameWidth:800    //編輯器拖動時最小寬度,默認800
     //,minFrameHeight:220  //編輯器拖動時最小高度,默認220
 
     //autoFloatEnabled
@@ -306,8 +306,8 @@
     //    mergeEmptyline: true,           //合併空行
     //    removeClass: true,              //去掉冗余的class
     //    removeEmptyline: false,         //去掉空行
-    //    textAlign:"left",               //段落的排版方式，可以是 left,right,center,justify 去掉這個屬性表示不执行排版
-    //    imageBlockLine: 'center',       //圖片的浮動方式，獨占一行剧中,左右浮動，默認: center,left,right,none 去掉這個屬性表示不执行排版
+    //    textAlign:"left",               //段落的排版方式，可以是 left,right,center,justify 去掉這個屬性表示不執行排版
+    //    imageBlockLine: 'center',       //圖片的浮動方式，獨占一行剧中,左右浮動，默認: center,left,right,none 去掉這個屬性表示不執行排版
     //    pasteFilter: false,             //根據规則過滤没事粘贴進來的内容
     //    clearFontSize: false,           //去掉所有的内嵌字號，使用編輯器默認的字號
     //    clearFontFamily: false,         //去掉所有的内嵌字體，使用編輯器默認的字體
@@ -344,7 +344,7 @@
     //    'anchor':'~/dialogs/anchor/anchor.html',
     //}
 
-    //allowLinkProtocol 允许的链接地址，有這些前缀的链接地址不會自動添加http
+    //allowLinkProtocol 允許的链接地址，有這些前缀的链接地址不會自動添加http
     //, allowLinkProtocols: ['http:', 'https:', '#', '/', 'ftp:', 'mailto:', 'tel:', 'git:', 'svn:']
 
     //webAppKey 百度應用的APIkey，每個站長必須首先去百度官網註冊一個key後方能正常使用app功能，註冊介绍，http://app.baidu.com/static/cms/getapikey.html
@@ -352,7 +352,7 @@
 
     //默認過滤规則相關設定專案
     //,disabledTableInTable:true  //禁止表格嵌套
-    //,allowDivTransToP:true      //允许進入編輯器的div標簽自動變成p標簽
+    //,allowDivTransToP:true      //允許進入編輯器的div標簽自動變成p標簽
     //,rgb2Hex:true               //默認產出的資料中的color自動從rgb格式變成16進製格式
 
     // xss 過滤是否開啟,inserthtml等操作

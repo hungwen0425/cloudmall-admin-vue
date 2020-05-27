@@ -14,8 +14,8 @@
       <el-form-item label="order_id" prop="orderId">
         <el-input v-model="dataForm.orderId" placeholder="order_id"></el-input>
       </el-form-item>
-      <el-form-item label="退货商品id" prop="skuId">
-        <el-input v-model="dataForm.skuId" placeholder="退货商品id"></el-input>
+      <el-form-item label="退貨商品id" prop="skuId">
+        <el-input v-model="dataForm.skuId" placeholder="退貨商品id"></el-input>
       </el-form-item>
       <el-form-item label="訂單编號" prop="orderSn">
         <el-input v-model="dataForm.orderSn" placeholder="訂單编號"></el-input>
@@ -29,14 +29,14 @@
       <el-form-item label="退款金額" prop="returnAmount">
         <el-input v-model="dataForm.returnAmount" placeholder="退款金額"></el-input>
       </el-form-item>
-      <el-form-item label="退货人姓名" prop="returnName">
-        <el-input v-model="dataForm.returnName" placeholder="退货人姓名"></el-input>
+      <el-form-item label="退貨人姓名" prop="returnName">
+        <el-input v-model="dataForm.returnName" placeholder="退貨人姓名"></el-input>
       </el-form-item>
-      <el-form-item label="退货人电话" prop="returnPhone">
-        <el-input v-model="dataForm.returnPhone" placeholder="退货人电话"></el-input>
+      <el-form-item label="退貨人電話" prop="returnPhone">
+        <el-input v-model="dataForm.returnPhone" placeholder="退貨人電話"></el-input>
       </el-form-item>
-      <el-form-item label="申請狀態[0->待處理；1->退货中；2->已完成；3->已拒绝]" prop="status">
-        <el-input v-model="dataForm.status" placeholder="申請狀態[0->待處理；1->退货中；2->已完成；3->已拒绝]"></el-input>
+      <el-form-item label="申請狀態[0->待處理；1->退貨中；2->已完成；3->已拒绝]" prop="status">
+        <el-input v-model="dataForm.status" placeholder="申請狀態[0->待處理；1->退貨中；2->已完成；3->已拒绝]"></el-input>
       </el-form-item>
       <el-form-item label="處理時間" prop="handleTime">
         <el-input v-model="dataForm.handleTime" placeholder="處理時間"></el-input>
@@ -53,8 +53,8 @@
       <el-form-item label="商品銷售屬性(JSON)" prop="skuAttrsVals">
         <el-input v-model="dataForm.skuAttrsVals" placeholder="商品銷售屬性(JSON)"></el-input>
       </el-form-item>
-      <el-form-item label="退货數量" prop="skuCount">
-        <el-input v-model="dataForm.skuCount" placeholder="退货數量"></el-input>
+      <el-form-item label="退貨數量" prop="skuCount">
+        <el-input v-model="dataForm.skuCount" placeholder="退貨數量"></el-input>
       </el-form-item>
       <el-form-item label="商品單價" prop="skuPrice">
         <el-input v-model="dataForm.skuPrice" placeholder="商品單價"></el-input>
@@ -77,20 +77,20 @@
       <el-form-item label="處理人員" prop="handleMan">
         <el-input v-model="dataForm.handleMan" placeholder="處理人員"></el-input>
       </el-form-item>
-      <el-form-item label="收货人" prop="receiveMan">
-        <el-input v-model="dataForm.receiveMan" placeholder="收货人"></el-input>
+      <el-form-item label="收貨人" prop="receiveMan">
+        <el-input v-model="dataForm.receiveMan" placeholder="收貨人"></el-input>
       </el-form-item>
-      <el-form-item label="收货時間" prop="receiveTime">
-        <el-input v-model="dataForm.receiveTime" placeholder="收货時間"></el-input>
+      <el-form-item label="收貨時間" prop="receiveTime">
+        <el-input v-model="dataForm.receiveTime" placeholder="收貨時間"></el-input>
       </el-form-item>
-      <el-form-item label="收货備註" prop="receiveNote">
-        <el-input v-model="dataForm.receiveNote" placeholder="收货備註"></el-input>
+      <el-form-item label="收貨備註" prop="receiveNote">
+        <el-input v-model="dataForm.receiveNote" placeholder="收貨備註"></el-input>
       </el-form-item>
-      <el-form-item label="收货电话" prop="receivePhone">
-        <el-input v-model="dataForm.receivePhone" placeholder="收货电话"></el-input>
+      <el-form-item label="收貨電話" prop="receivePhone">
+        <el-input v-model="dataForm.receivePhone" placeholder="收貨電話"></el-input>
       </el-form-item>
-      <el-form-item label="公司收货地址" prop="companyAddress">
-        <el-input v-model="dataForm.companyAddress" placeholder="公司收货地址"></el-input>
+      <el-form-item label="公司收貨地址" prop="companyAddress">
+        <el-input v-model="dataForm.companyAddress" placeholder="公司收貨地址"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -140,7 +140,7 @@ export default {
           { required: true, message: "order_id不能為空", trigger: "blur" }
         ],
         skuId: [
-          { required: true, message: "退货商品id不能為空", trigger: "blur" }
+          { required: true, message: "退貨商品id不能為空", trigger: "blur" }
         ],
         orderSn: [
           { required: true, message: "訂單编號不能為空", trigger: "blur" }
@@ -155,16 +155,16 @@ export default {
           { required: true, message: "退款金額不能為空", trigger: "blur" }
         ],
         returnName: [
-          { required: true, message: "退货人姓名不能為空", trigger: "blur" }
+          { required: true, message: "退貨人姓名不能為空", trigger: "blur" }
         ],
         returnPhone: [
-          { required: true, message: "退货人电话不能為空", trigger: "blur" }
+          { required: true, message: "退貨人電話不能為空", trigger: "blur" }
         ],
         status: [
           {
             required: true,
             message:
-              "申請狀態[0->待處理；1->退货中；2->已完成；3->已拒绝]不能為空",
+              "申請狀態[0->待處理；1->退貨中；2->已完成；3->已拒绝]不能為空",
             trigger: "blur"
           }
         ],
@@ -188,7 +188,7 @@ export default {
           }
         ],
         skuCount: [
-          { required: true, message: "退货數量不能為空", trigger: "blur" }
+          { required: true, message: "退貨數量不能為空", trigger: "blur" }
         ],
         skuPrice: [
           { required: true, message: "商品單價不能為空", trigger: "blur" }
@@ -218,19 +218,19 @@ export default {
           { required: true, message: "處理人員不能為空", trigger: "blur" }
         ],
         receiveMan: [
-          { required: true, message: "收货人不能為空", trigger: "blur" }
+          { required: true, message: "收貨人不能為空", trigger: "blur" }
         ],
         receiveTime: [
-          { required: true, message: "收货時間不能為空", trigger: "blur" }
+          { required: true, message: "收貨時間不能為空", trigger: "blur" }
         ],
         receiveNote: [
-          { required: true, message: "收货備註不能為空", trigger: "blur" }
+          { required: true, message: "收貨備註不能為空", trigger: "blur" }
         ],
         receivePhone: [
-          { required: true, message: "收货电话不能為空", trigger: "blur" }
+          { required: true, message: "收貨電話不能為空", trigger: "blur" }
         ],
         companyAddress: [
-          { required: true, message: "公司收货地址不能為空", trigger: "blur" }
+          { required: true, message: "公司收貨地址不能為空", trigger: "blur" }
         ]
       }
     };

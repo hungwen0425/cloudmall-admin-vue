@@ -13,7 +13,7 @@
         header-align="center"
         align="center"
         width="120"
-        label="上級菜單"
+        label="上級選單"
       ></el-table-column>
       <el-table-column header-align="center" align="center" label="圖標">
         <template slot-scope="scope">
@@ -23,8 +23,8 @@
       <el-table-column prop="type" header-align="center" align="center" label="類型">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.type === 0" size="small">目录</el-tag>
-          <el-tag v-else-if="scope.row.type === 1" size="small" type="success">菜單</el-tag>
-          <el-tag v-else-if="scope.row.type === 2" size="small" type="info">按钮</el-tag>
+          <el-tag v-else-if="scope.row.type === 1" size="small" type="success">選單</el-tag>
+          <el-tag v-else-if="scope.row.type === 2" size="small" type="info">按鈕</el-tag>
         </template>
       </el-table-column>
       <el-table-column prop="orderNum" header-align="center" align="center" label="排序號"></el-table-column>
@@ -34,7 +34,7 @@
         align="center"
         width="150"
         :show-overflow-tooltip="true"
-        label="菜單URL"
+        label="選單URL"
       ></el-table-column>
       <el-table-column
         prop="perms"
@@ -42,7 +42,7 @@
         align="center"
         width="150"
         :show-overflow-tooltip="true"
-        label="授权標识"
+        label="授權標识"
       ></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">

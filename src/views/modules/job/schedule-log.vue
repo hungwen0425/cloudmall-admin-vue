@@ -31,7 +31,7 @@
         header-align="center"
         align="center"
         width="180"
-        label="执行時間"
+        label="執行時間"
       ></el-table-column>
     </el-table>
     <el-pagination

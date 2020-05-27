@@ -30,21 +30,21 @@
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="orderId" header-align="center" align="center" label="order_id"></el-table-column>
       <el-table-column prop="orderSn" header-align="center" align="center" label="order_sn"></el-table-column>
-      <el-table-column prop="consignee" header-align="center" align="center" label="收货人"></el-table-column>
-      <el-table-column prop="consigneeTel" header-align="center" align="center" label="收货人电话"></el-table-column>
+      <el-table-column prop="consignee" header-align="center" align="center" label="收貨人"></el-table-column>
+      <el-table-column prop="consigneeTel" header-align="center" align="center" label="收貨人電話"></el-table-column>
       <el-table-column prop="deliveryAddress" header-align="center" align="center" label="配送地址"></el-table-column>
       <el-table-column prop="orderComment" header-align="center" align="center" label="訂單備註"></el-table-column>
       <el-table-column prop="paymentWay" header-align="center" align="center" label="付款方式">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.payment==1">在线付款</el-tag>
-          <el-tag v-if="scope.row.payment==2">货到付款</el-tag>
+          <el-tag v-if="scope.row.payment==2">貨到付款</el-tag>
         </template>
       </el-table-column>
       <el-table-column prop="taskStatus" header-align="center" align="center" label="任务狀態"></el-table-column>
       <el-table-column prop="orderBody" header-align="center" align="center" label="訂單描述"></el-table-column>
       <el-table-column prop="trackingNo" header-align="center" align="center" label="物流單號"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="create_time"></el-table-column>
-      <el-table-column prop="wareId" header-align="center" align="center" label="仓库id"></el-table-column>
+      <el-table-column prop="wareId" header-align="center" align="center" label="倉庫id"></el-table-column>
       <el-table-column prop="taskComment" header-align="center" align="center" label="工作單備註"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">

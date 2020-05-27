@@ -28,7 +28,7 @@
         :show-overflow-tooltip="true"
         label="請求参數"
       ></el-table-column>
-      <el-table-column prop="time" header-align="center" align="center" label="执行時長(毫秒)"></el-table-column>
+      <el-table-column prop="time" header-align="center" align="center" label="執行時長(毫秒)"></el-table-column>
       <el-table-column prop="ip" header-align="center" align="center" width="150" label="IP地址"></el-table-column>
       <el-table-column
         prop="createDate"

@@ -41,14 +41,14 @@
         prop="commentGrowthPoint"
         header-align="center"
         align="center"
-        label="每次评價取得的成長值"
+        label="每次評價取得的成長值"
       ></el-table-column>
-      <el-table-column label="特权">
+      <el-table-column label="特權">
         <el-table-column
           prop="priviledgeFreeFreight"
           header-align="center"
           align="center"
-          label="免郵特权"
+          label="免郵特權"
         >
           <template slot-scope="scope">
             <i class="el-icon-success" v-if="scope.row.priviledgeFreeFreight==1"></i>
@@ -59,7 +59,7 @@
           prop="priviledgeMemberPrice"
           header-align="center"
           align="center"
-          label="會員價格特权"
+          label="會員價格特權"
         >
           <template slot-scope="scope">
             <i class="el-icon-success" v-if="scope.row.priviledgeMemberPrice==1"></i>
@@ -70,7 +70,7 @@
           prop="priviledgeBirthday"
           header-align="center"
           align="center"
-          label="生日特权"
+          label="生日特權"
         >
           <template slot-scope="scope">
             <i class="el-icon-success" v-if="scope.row.priviledgeBirthday==1"></i>

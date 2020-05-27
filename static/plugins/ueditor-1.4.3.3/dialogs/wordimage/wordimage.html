@@ -100,18 +100,18 @@
                 ext: editor.queryCommandValue('serverParam') || {},                                 //可向服務器提交的自定義参數列表
                 fileType: '{"description":"' + lang.fileType + '", "extension":"' + extension + '"}',     //上傳文件格式限製
                 flashUrl: 'imageUploader.swf',                                                  //上傳用的flash組件地址
-                width: 600,          //flash的宽度
+                width: 600,          //flash的寬度
                 height: 272,         //flash的高度
-                gridWidth: 120,     // 每一個预覽圖片所占的宽度
-                gridHeight: 120,    // 每一個预覽圖片所占的高度
-                picWidth: 100,      // 單張预覽圖片的宽度
-                picHeight: 100,     // 單張预覽圖片的高度
+                gridWidth: 120,     // 每一個預覽圖片所占的寬度
+                gridHeight: 120,    // 每一個預覽圖片所占的高度
+                picWidth: 100,      // 單張預覽圖片的寬度
+                picHeight: 100,     // 單張預覽圖片的高度
                 uploadDataFieldName: optImageFieldName,    // POST請求中圖片資料的key
                 picDescFieldName: 'pictitle',      // POST請求中圖片描述的key
                 maxSize: maxSize,                         // 文件的最大體積,單位M
                 compressSize: 1,                   // 上傳前如果圖片體積超過該值，會先壓縮,單位M
                 maxNum: 32,                         // 單次最大可上傳多少個文件
-                compressSide: 0,                 //等比壓縮的基準，0為按照最長邊，1為按照宽度，2為按照高度
+                compressSide: 0,                 //等比壓縮的基準，0為按照最長邊，1為按照寬度，2為按照高度
                 compressLength: optImageCompressBorder        //能接受的最大邊長，超過該值Flash會自動等比壓縮
             };
             //回調函數集合，支持傳递函數名的字符串、函數句柄以及函數本身三種類型
@@ -119,13 +119,13 @@
                 selectFileCallback: function (selectFiles) {                // 選擇文件的回調
                     selectedImageCount += selectFiles.length;
                     if (selectedImageCount) baidu.g("upload").style.display = "";
-                    dialog.buttons[0].setDisabled(true); //初始化時置灰確定按钮
+                    dialog.buttons[0].setDisabled(true); //初始化時置灰確定按鈕
                 },
                 deleteFileCallback: function (delFiles) {                 // 删除文件的回調
                     selectedImageCount -= delFiles.length;
                     if (!selectedImageCount) {
                         baidu.g("upload").style.display = "none";
-                        dialog.buttons[0].setDisabled(false);         //没有選擇圖片時重新點亮按钮
+                        dialog.buttons[0].setDisabled(false);         //没有選擇圖片時重新點亮按鈕
                     }
                 },
                 uploadCompleteCallback: function (data) {               // 單個文件上傳完成的回調
@@ -139,7 +139,7 @@
                     console && console.log(data);
                 },
                 allCompleteCallback: function () {              // 全部上傳完成時的回調
-                    dialog.buttons[0].setDisabled(false);    //上傳完毕後點亮按钮
+                    dialog.buttons[0].setDisabled(false);    //上傳完毕後點亮按鈕
                 }
                 //exceedFileCallback: 'exceedFileCallback',   // 文件超出限製的最大體積時的回調
                 //startUploadCallback: startUploadCallback    // 開始上傳某個文件時的回調

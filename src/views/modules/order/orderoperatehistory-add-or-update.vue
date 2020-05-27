@@ -20,10 +20,10 @@
       <el-form-item label="操作時間" prop="createTime">
         <el-input v-model="dataForm.createTime" placeholder="操作時間"></el-input>
       </el-form-item>
-      <el-form-item label="訂單狀態【0->待付款；1->待發货；2->已發货；3->已完成；4->已關閉；5->无效訂單】" prop="orderStatus">
+      <el-form-item label="訂單狀態【0->待付款；1->待發貨；2->已發貨；3->已完成；4->已關閉；5->無效訂單】" prop="orderStatus">
         <el-input
           v-model="dataForm.orderStatus"
-          placeholder="訂單狀態【0->待付款；1->待發货；2->已發货；3->已完成；4->已關閉；5->无效訂單】"
+          placeholder="訂單狀態【0->待付款；1->待發貨；2->已發貨；3->已完成；4->已關閉；5->無效訂單】"
         ></el-input>
       </el-form-item>
       <el-form-item label="備註" prop="note">
@@ -68,7 +68,7 @@ export default {
           {
             required: true,
             message:
-              "訂單狀態【0->待付款；1->待發货；2->已發货；3->已完成；4->已關閉；5->无效訂單】不能為空",
+              "訂單狀態【0->待付款；1->待發貨；2->已發貨；3->已完成；4->已關閉；5->無效訂單】不能為空",
             trigger: "blur"
           }
         ],

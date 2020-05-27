@@ -11,14 +11,14 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="仓库名" prop="name">
-        <el-input v-model="dataForm.name" placeholder="仓库名"></el-input>
+      <el-form-item label="倉庫名稱" prop="name">
+        <el-input v-model="dataForm.name" placeholder="倉庫名稱"></el-input>
       </el-form-item>
-      <el-form-item label="仓库地址" prop="address">
-        <el-input v-model="dataForm.address" placeholder="仓库地址"></el-input>
+      <el-form-item label="倉庫地址" prop="address">
+        <el-input v-model="dataForm.address" placeholder="倉庫地址"></el-input>
       </el-form-item>
-      <el-form-item label="区域编碼" prop="areaCode">
-        <el-input v-model="dataForm.areaCode" placeholder="区域编碼"></el-input>
+      <el-form-item label="郵遞區號" prop="areacode">
+        <el-input v-model="dataForm.areacode" placeholder="郵遞區號"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -37,15 +37,17 @@ export default {
         id: 0,
         name: "",
         address: "",
-        areaCode: ""
+        areacode: ""
       },
       dataRule: {
-        name: [{ required: true, message: "仓库名不能為空", trigger: "blur" }],
-        address: [
-          { required: true, message: "仓库地址不能為空", trigger: "blur" }
+        name: [
+          { required: true, message: "倉庫名稱不能為空", trigger: "blur" }
         ],
-        areaCode: [
-          { required: true, message: "区域编碼不能為空", trigger: "blur" }
+        address: [
+          { required: true, message: "倉庫地址不能為空", trigger: "blur" }
+        ],
+        areacode: [
+          { required: true, message: "郵遞區號不能為空", trigger: "blur" }
         ]
       }
     };
@@ -62,10 +64,11 @@ export default {
             method: "get",
             params: this.$http.adornParams()
           }).then(({ data }) => {
+            console.log("data: ", data)
             if (data && data.code === 0) {
               this.dataForm.name = data.wareInfo.name;
               this.dataForm.address = data.wareInfo.address;
-              this.dataForm.areaCode = data.wareInfo.areaCode;
+              this.dataForm.areacode = data.wareInfo.areacode;
             }
           });
         }
@@ -84,7 +87,7 @@ export default {
               id: this.dataForm.id || undefined,
               name: this.dataForm.name,
               address: this.dataForm.address,
-              areaCode: this.dataForm.areaCode
+              areacode: this.dataForm.areacode
             })
           }).then(({ data }) => {
             if (data && data.code === 0) {

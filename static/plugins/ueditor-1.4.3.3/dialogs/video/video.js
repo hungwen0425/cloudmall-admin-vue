@@ -68,7 +68,7 @@
     }
 
     /**
-     * 監听確認和取消两個按钮事件，使用者执行插入或者清空正在播放的視频實例操作
+     * 監听確認和取消两個按鈕事件，使用者執行插入或者清空正在播放的視频實例操作
      */
     function addOkListener() {
         dialog.onok = function () {
@@ -92,7 +92,7 @@
     }
 
     /**
-     * 依據傳入的align值更新按钮資料
+     * 依據傳入的align值更新按鈕資料
      * @param align
      */
     function updateAlignButton(align) {
@@ -184,7 +184,7 @@
     }
 
     /**
-      * 檢测傳入的所有input框中输入的長宽是否是正數
+      * 檢测傳入的所有input框中输入的長寬是否是正數
       * @param nodes input框集合，
       */
     function checkNum(nodes) {
@@ -209,7 +209,7 @@
     }
 
     /**
-      * 創建圖片浮動選擇按钮
+      * 創建圖片浮動選擇按鈕
       * @param ids
       */
     function createAlignButton(ids) {
@@ -262,7 +262,7 @@
     }
 
     /**
-     * 根據url生成視频预覽
+     * 根據url生成視频預覽
      * @param url
      */
     function createPreviewVideo(url) {
@@ -335,15 +335,15 @@
                 $wrap = _this.$wrap,
                 // 圖片容器
                 $queue = $wrap.find('.filelist'),
-                // 狀態欄，包括進度和控制按钮
+                // 狀態欄，包括進度和控制按鈕
                 $statusBar = $wrap.find('.statusBar'),
                 // 文件總體選擇資料。
                 $info = $statusBar.find('.info'),
-                // 上傳按钮
+                // 上傳按鈕
                 $upload = $wrap.find('.uploadBtn'),
-                // 上傳按钮
+                // 上傳按鈕
                 $filePickerBtn = $wrap.find('.filePickerBtn'),
-                // 上傳按钮
+                // 上傳按鈕
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
                 // 没選擇文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
@@ -408,7 +408,7 @@
 
             setState('pedding');
 
-            // 當有文件添加進來時执行，负责view的創建
+            // 當有文件添加進來時執行，負責view的創建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                     '<p class="title">' + file.name + '</p>' +
@@ -543,7 +543,7 @@
                 $li.insertBefore($filePickerBlock);
             }
 
-            // 负责view的銷毁
+            // 負責view的銷毁
             function removeFile(file) {
                 var $li = $('#' + file.id);
                 delete percentages[file.id];

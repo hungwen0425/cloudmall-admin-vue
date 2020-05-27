@@ -14,8 +14,8 @@
       <el-form-item label="sku_id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="sku_id"></el-input>
       </el-form-item>
-      <el-form-item label="仓库" prop="wareId">
-        <el-select v-model="dataForm.wareId" placeholder="請選擇仓库" clearable>
+      <el-form-item label="倉庫" prop="wareId">
+        <el-select v-model="dataForm.wareId" placeholder="請選擇倉庫" clearable>
           <el-option :label="w.name" :value="w.id" v-for="w in wareList" :key="w.id"></el-option>
         </el-select>
       </el-form-item>
@@ -53,7 +53,7 @@ export default {
       dataRule: {
         skuId: [{ required: true, message: "sku_id不能為空", trigger: "blur" }],
         wareId: [
-          { required: true, message: "仓库id不能為空", trigger: "blur" }
+          { required: true, message: "倉庫id不能為空", trigger: "blur" }
         ],
         stock: [{ required: true, message: "库存數不能為空", trigger: "blur" }],
         skuName: [

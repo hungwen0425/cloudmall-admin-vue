@@ -23,16 +23,16 @@
       <el-form-item label="免運費標準" prop="freeFreightPoint">
         <el-input-number :min="0" v-model="dataForm.freeFreightPoint"></el-input-number>
       </el-form-item>
-      <el-form-item label="每次评價取得的成長值" prop="commentGrowthPoint">
+      <el-form-item label="每次評價取得的成長值" prop="commentGrowthPoint">
         <el-input-number :min="0" v-model="dataForm.commentGrowthPoint"></el-input-number>
       </el-form-item>
-      <el-form-item label="是否有免郵特权" prop="priviledgeFreeFreight">
+      <el-form-item label="是否有免郵特權" prop="priviledgeFreeFreight">
         <el-checkbox v-model="dataForm.priviledgeFreeFreight" :true-label="1" :false-label="0"></el-checkbox>
       </el-form-item>
-      <el-form-item label="是否有會員價格特权" prop="priviledgeMemberPrice">
+      <el-form-item label="是否有會員價格特權" prop="priviledgeMemberPrice">
         <el-checkbox v-model="dataForm.priviledgeMemberPrice" :true-label="1" :false-label="0"></el-checkbox>
       </el-form-item>
-      <el-form-item label="是否有生日特权" prop="priviledgeBirthday">
+      <el-form-item label="是否有生日特權" prop="priviledgeBirthday">
         <el-checkbox v-model="dataForm.priviledgeBirthday" :true-label="1" :false-label="0"></el-checkbox>
       </el-form-item>
       <el-form-item label="備註" prop="note">
@@ -87,22 +87,22 @@ export default {
         commentGrowthPoint: [
           {
             required: true,
-            message: "每次评價取得的成長值不能為空",
+            message: "每次評價取得的成長值不能為空",
             trigger: "blur"
           }
         ],
         priviledgeFreeFreight: [
-          { required: true, message: "是否有免郵特权不能為空", trigger: "blur" }
+          { required: true, message: "是否有免郵特權不能為空", trigger: "blur" }
         ],
         priviledgeMemberPrice: [
           {
             required: true,
-            message: "是否有會員價格特权不能為空",
+            message: "是否有會員價格特權不能為空",
             trigger: "blur"
           }
         ],
         priviledgeBirthday: [
-          { required: true, message: "是否有生日特权不能為空", trigger: "blur" }
+          { required: true, message: "是否有生日特權不能為空", trigger: "blur" }
         ],
         note: [{ required: true, message: "備註不能為空", trigger: "blur" }]
       }

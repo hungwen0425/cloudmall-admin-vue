@@ -17,7 +17,7 @@
       <el-form-item label="備註" prop="remark">
         <el-input v-model="dataForm.remark" placeholder="備註"></el-input>
       </el-form-item>
-      <el-form-item size="mini" label="授权">
+      <el-form-item size="mini" label="授權">
         <el-tree
           :data="menuList"
           :props="menuListTreeProps"

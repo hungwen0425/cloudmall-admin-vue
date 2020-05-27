@@ -23,7 +23,7 @@ var env = ''; // 運行環境
 // 編譯
 gulp.task('build', $.shell.task(['node build/build.js']));
 
-// 創建版本號目入
+// 創建版本號目錄
 gulp.task('create:versionCatalog', ['build'], function () {
   return gulp.src(`${distPath}/static/**/*`)
     .pipe(gulp.dest(`${versionPath}/static/`))

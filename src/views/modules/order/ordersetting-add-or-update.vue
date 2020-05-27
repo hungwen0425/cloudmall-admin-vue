@@ -17,14 +17,14 @@
       <el-form-item label="正常訂單超時時間(分)" prop="normalOrderOvertime">
         <el-input v-model="dataForm.normalOrderOvertime" placeholder="正常訂單超時時間(分)"></el-input>
       </el-form-item>
-      <el-form-item label="發货後自動確認收货時間（天）" prop="confirmOvertime">
-        <el-input v-model="dataForm.confirmOvertime" placeholder="發货後自動確認收货時間（天）"></el-input>
+      <el-form-item label="發貨後自動確認收貨時間（天）" prop="confirmOvertime">
+        <el-input v-model="dataForm.confirmOvertime" placeholder="發貨後自動確認收貨時間（天）"></el-input>
       </el-form-item>
-      <el-form-item label="自動完成交易時間，不能申請退货（天）" prop="finishOvertime">
-        <el-input v-model="dataForm.finishOvertime" placeholder="自動完成交易時間，不能申請退货（天）"></el-input>
+      <el-form-item label="自動完成交易時間，不能申請退貨（天）" prop="finishOvertime">
+        <el-input v-model="dataForm.finishOvertime" placeholder="自動完成交易時間，不能申請退貨（天）"></el-input>
       </el-form-item>
-      <el-form-item label="訂單完成後自動好评時間（天）" prop="commentOvertime">
-        <el-input v-model="dataForm.commentOvertime" placeholder="訂單完成後自動好评時間（天）"></el-input>
+      <el-form-item label="訂單完成後自動好評時間（天）" prop="commentOvertime">
+        <el-input v-model="dataForm.commentOvertime" placeholder="訂單完成後自動好評時間（天）"></el-input>
       </el-form-item>
       <el-form-item label="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】" prop="memberLevel">
         <el-input v-model="dataForm.memberLevel" placeholder="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】"></el-input>
@@ -69,21 +69,21 @@ export default {
         confirmOvertime: [
           {
             required: true,
-            message: "發货後自動確認收货時間（天）不能為空",
+            message: "發貨後自動確認收貨時間（天）不能為空",
             trigger: "blur"
           }
         ],
         finishOvertime: [
           {
             required: true,
-            message: "自動完成交易時間，不能申請退货（天）不能為空",
+            message: "自動完成交易時間，不能申請退貨（天）不能為空",
             trigger: "blur"
           }
         ],
         commentOvertime: [
           {
             required: true,
-            message: "訂單完成後自動好评時間（天）不能為空",
+            message: "訂單完成後自動好評時間（天）不能為空",
             trigger: "blur"
           }
         ],

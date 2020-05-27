@@ -44,19 +44,19 @@
         prop="confirmOvertime"
         header-align="center"
         align="center"
-        label="發货後自動確認收货時間（天）"
+        label="發貨後自動確認收貨時間（天）"
       ></el-table-column>
       <el-table-column
         prop="finishOvertime"
         header-align="center"
         align="center"
-        label="自動完成交易時間，不能申請退货（天）"
+        label="自動完成交易時間，不能申請退貨（天）"
       ></el-table-column>
       <el-table-column
         prop="commentOvertime"
         header-align="center"
         align="center"
-        label="訂單完成後自動好评時間（天）"
+        label="訂單完成後自動好評時間（天）"
       ></el-table-column>
       <el-table-column
         prop="memberLevel"

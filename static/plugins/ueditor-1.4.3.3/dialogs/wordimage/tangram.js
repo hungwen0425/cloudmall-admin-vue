@@ -177,9 +177,9 @@ baidu.browser.opera = /opera(\/| )(\d+(\.\d+)?)(.+?(version\/(\d+(\.\d+)?)))?/i.
  * @param {string} html 要插入的html
  * @remark
  *
- * 對于position参數，大小寫不敏感<br>
+ * 對於position参數，大小寫不敏感<br>
  * 参數的意思：beforeBegin&lt;span&gt;afterBegin   this is span! beforeEnd&lt;/span&gt; afterEnd <br />
- * 此外，如果使用本函數插入带有script標簽的HTML字符串，script標簽對應的脚本將不會被执行。
+ * 此外，如果使用本函數插入带有script標簽的HTML字符串，script標簽對應的脚本將不會被執行。
  *
  * @shortcut insertHTML
  * @meta standard
@@ -288,24 +288,24 @@ baidu.encodeHTML = baidu.string.encodeHTML;
  * @param {string} 	options.url 				flash文件的url
  * @param {String} 	options.errorMessage 		未安装flash player或flash player版本號過低時的提示
  * @param {string} 	options.ver 				最低需要的flash player版本號
- * @param {string} 	options.width 				flash的宽度
+ * @param {string} 	options.width 				flash的寬度
  * @param {string} 	options.height 				flash的高度
- * @param {string} 	options.align 				flash的對齊方式，允许值：middle/left/right/top/bottom
- * @param {string} 	options.base 				設定用於解析swf文件中的所有相對路徑語句的基本目入或URL
+ * @param {string} 	options.align 				flash的對齊方式，允許值：middle/left/right/top/bottom
+ * @param {string} 	options.base 				設定用於解析swf文件中的所有相對路徑語句的基本目錄或URL
  * @param {string} 	options.bgcolor 			swf文件的背景色
- * @param {string} 	options.salign 				設定縮放的swf文件在由width和height設定定義的區域内的位置。允许值：l/r/t/b/tl/tr/bl/br
- * @param {boolean} options.menu 				是否顯示右键選單，允许值：true/false
- * @param {boolean} options.loop 				播放到最後一帧時是否重新播放，允许值： true/false
- * @param {boolean} options.play 				flash是否在瀏覽器加載時就開始播放。允许值：true/false
- * @param {string} 	options.quality 			設定flash播放的畫質，允许值：low/medium/high/autolow/autohigh/best
- * @param {string} 	options.scale 				設定flash内容如何縮放來適應設定的宽高。允许值：showall/noborder/exactfit
- * @param {string} 	options.wmode 				設定flash的顯示模式。允许值：window/opaque/transparent
- * @param {string} 	options.allowscriptaccess 	設定flash與頁面的通信權限。允许值：always/never/sameDomain
- * @param {string} 	options.allownetworking 	設定swf文件中允许使用的網络API。允许值：all/internal/none
- * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
- * @param {boolean} options.seamlesstabbing 	允许設定执行無缝跳格，從而使使用者能跳出flash應用程序。該参數只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
- * @param {boolean} options.devicefont 			設定静態文本物件是否以設備字體呈現。允许值：true/false
- * @param {boolean} options.swliveconnect 		第一次加載flash時瀏覽器是否應啟動Java。允许值：true/false
+ * @param {string} 	options.salign 				設定縮放的swf文件在由width和height設定定義的區域内的位置。允許值：l/r/t/b/tl/tr/bl/br
+ * @param {boolean} options.menu 				是否顯示右键選單，允許值：true/false
+ * @param {boolean} options.loop 				播放到最後一帧時是否重新播放，允許值： true/false
+ * @param {boolean} options.play 				flash是否在瀏覽器加載時就開始播放。允許值：true/false
+ * @param {string} 	options.quality 			設定flash播放的畫質，允許值：low/medium/high/autolow/autohigh/best
+ * @param {string} 	options.scale 				設定flash内容如何縮放來適應設定的寬高。允許值：showall/noborder/exactfit
+ * @param {string} 	options.wmode 				設定flash的顯示模式。允許值：window/opaque/transparent
+ * @param {string} 	options.allowscriptaccess 	設定flash與頁面的通信權限。允許值：always/never/sameDomain
+ * @param {string} 	options.allownetworking 	設定swf文件中允許使用的網络API。允許值：all/internal/none
+ * @param {boolean} options.allowfullscreen 	是否允許flash全屏。允許值：true/false
+ * @param {boolean} options.seamlesstabbing 	允許設定執行無缝跳格，從而使使用者能跳出flash應用程序。該参數只能在安装Flash7及更高版本的Windows中使用。允許值：true/false
+ * @param {boolean} options.devicefont 			設定静態文本物件是否以設備字體呈現。允許值：true/false
+ * @param {boolean} options.swliveconnect 		第一次加載flash時瀏覽器是否應啟動Java。允許值：true/false
  * @param {Object} 	options.vars 				要傳递給flash的参數，支持JSON或string類型。
  *
  * @see baidu.swf.create
@@ -431,24 +431,24 @@ baidu.swf.createHTML = function (options) {
  * @param {string} 	options.url 				flash文件的url
  * @param {String} 	options.errorMessage 		未安装flash player或flash player版本號過低時的提示
  * @param {string} 	options.ver 				最低需要的flash player版本號
- * @param {string} 	options.width 				flash的宽度
+ * @param {string} 	options.width 				flash的寬度
  * @param {string} 	options.height 				flash的高度
- * @param {string} 	options.align 				flash的對齊方式，允许值：middle/left/right/top/bottom
- * @param {string} 	options.base 				設定用於解析swf文件中的所有相對路徑語句的基本目入或URL
+ * @param {string} 	options.align 				flash的對齊方式，允許值：middle/left/right/top/bottom
+ * @param {string} 	options.base 				設定用於解析swf文件中的所有相對路徑語句的基本目錄或URL
  * @param {string} 	options.bgcolor 			swf文件的背景色
- * @param {string} 	options.salign 				設定縮放的swf文件在由width和height設定定義的區域内的位置。允许值：l/r/t/b/tl/tr/bl/br
- * @param {boolean} options.menu 				是否顯示右键選單，允许值：true/false
- * @param {boolean} options.loop 				播放到最後一帧時是否重新播放，允许值： true/false
- * @param {boolean} options.play 				flash是否在瀏覽器加載時就開始播放。允许值：true/false
- * @param {string} 	options.quality 			設定flash播放的畫質，允许值：low/medium/high/autolow/autohigh/best
- * @param {string} 	options.scale 				設定flash内容如何縮放來適應設定的宽高。允许值：showall/noborder/exactfit
- * @param {string} 	options.wmode 				設定flash的顯示模式。允许值：window/opaque/transparent
- * @param {string} 	options.allowscriptaccess 	設定flash與頁面的通信權限。允许值：always/never/sameDomain
- * @param {string} 	options.allownetworking 	設定swf文件中允许使用的網络API。允许值：all/internal/none
- * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
- * @param {boolean} options.seamlesstabbing 	允许設定执行無缝跳格，從而使使用者能跳出flash應用程序。該参數只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
- * @param {boolean} options.devicefont 			設定静態文本物件是否以設備字體呈現。允许值：true/false
- * @param {boolean} options.swliveconnect 		第一次加載flash時瀏覽器是否應啟動Java。允许值：true/false
+ * @param {string} 	options.salign 				設定縮放的swf文件在由width和height設定定義的區域内的位置。允許值：l/r/t/b/tl/tr/bl/br
+ * @param {boolean} options.menu 				是否顯示右键選單，允許值：true/false
+ * @param {boolean} options.loop 				播放到最後一帧時是否重新播放，允許值： true/false
+ * @param {boolean} options.play 				flash是否在瀏覽器加載時就開始播放。允許值：true/false
+ * @param {string} 	options.quality 			設定flash播放的畫質，允許值：low/medium/high/autolow/autohigh/best
+ * @param {string} 	options.scale 				設定flash内容如何縮放來適應設定的寬高。允許值：showall/noborder/exactfit
+ * @param {string} 	options.wmode 				設定flash的顯示模式。允許值：window/opaque/transparent
+ * @param {string} 	options.allowscriptaccess 	設定flash與頁面的通信權限。允許值：always/never/sameDomain
+ * @param {string} 	options.allownetworking 	設定swf文件中允許使用的網络API。允許值：all/internal/none
+ * @param {boolean} options.allowfullscreen 	是否允許flash全屏。允許值：true/false
+ * @param {boolean} options.seamlesstabbing 	允許設定執行無缝跳格，從而使使用者能跳出flash應用程序。該参數只能在安装Flash7及更高版本的Windows中使用。允許值：true/false
+ * @param {boolean} options.devicefont 			設定静態文本物件是否以設備字體呈現。允許值：true/false
+ * @param {boolean} options.swliveconnect 		第一次加載flash時瀏覽器是否應啟動Java。允許值：true/false
  * @param {Object} 	options.vars 				要傳递給flash的参數，支持JSON或string類型。
  *
  * @param {HTMLElement|string} [container] 		flash物件的父容器元素，不傳递該参數時在當前程式碼位置創建flash物件。
@@ -686,7 +686,7 @@ baidu.flash._Base = (function () {
         /**
          * 調用flash接口的统一入口
          * @param {String} fnName 調用的函數名
-         * @param {Array} params 傳入的参陣列成的陣列,若不许要参數，需傳入空陣列
+         * @param {Array} params 傳入的参陣列成的陣列,若不許要参數，需傳入空陣列
          * @param {Function} [callBack] 异步調用後將返回值作為参數的調用回調函數，如無返回值，可以不傳入此参數
          * @return {Null}
         */
@@ -757,10 +757,10 @@ baidu.flash._Base = (function () {
  * @grammar baidu.flash.imageUploader(options)
  * @param {Object} createOptions 創建flash時需要的参數，請参照baidu.swf.create文件
  * @config {Object} vars 創建imageUploader時所需要的参數
- * @config {Number} vars.gridWidth 每一個预覽圖片所占的宽度，應該為flash寛的整除
- * @config {Number} vars.gridHeight 每一個预覽圖片所占的高度，應該為flash高的整除
- * @config {Number} vars.picWidth 單張预覽圖片的宽度
- * @config {Number} vars.picHeight 單張预覽圖片的高度
+ * @config {Number} vars.gridWidth 每一個預覽圖片所占的寬度，應該為flash寛的整除
+ * @config {Number} vars.gridHeight 每一個預覽圖片所占的高度，應該為flash高的整除
+ * @config {Number} vars.picWidth 單張預覽圖片的寬度
+ * @config {Number} vars.picHeight 單張預覽圖片的高度
  * @config {String} vars.uploadDataFieldName POST請求中圖片資料的key,默認值'picdata'
  * @config {String} vars.picDescFieldName POST請求中圖片描述的key,默認值'picDesc'
  * @config {Number} vars.maxSize 文件的最大體積,單位'MB'
@@ -772,7 +772,7 @@ baidu.flash._Base = (function () {
  * @see baidu.swf.createHTML
  * @param {String} backgroundUrl 背景圖片路徑
  * @param {String} listBacgroundkUrl 布局控件背景
- * @param {String} buttonUrl 按钮圖片不背景
+ * @param {String} buttonUrl 按鈕圖片不背景
  * @param {String|Function} selectFileCallback 選擇文件的回調
  * @param {String|Function} exceedFileCallback文件超出限製的最大體積時的回調
  * @param {String|Function} deleteFileCallback 删除文件的回調
@@ -915,7 +915,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function (options) {
     };
 
     /**
-     * 执行上傳操作
+     * 執行上傳操作
      * @param {String} url 上傳的url
      * @param {String} fieldName 上傳的表單字段名
      * @param {Object} postData 键值對，上傳的POST資料
@@ -1192,7 +1192,7 @@ baidu.sio.callByServer = /**@function*/function (url, callback, opt_options) {
     baidu.sio._createScriptTag(scr, url, charset);
 
     /*
-     * 返回一個函數，用於立即（掛在window上）或者超時（掛在setTimeout中）時执行
+     * 返回一個函數，用於立即（掛在window上）或者超時（掛在setTimeout中）時執行
      */
     function getCallBack(onTimeOut) {
         /*global callbackName, callback, scr, options;*/

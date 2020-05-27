@@ -28,9 +28,9 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="name" header-align="center" align="center" label="仓库名"></el-table-column>
-      <el-table-column prop="address" header-align="center" align="center" label="仓库地址"></el-table-column>
-      <el-table-column prop="areaCode" header-align="center" align="center" label="区域编碼"></el-table-column>
+      <el-table-column prop="name" header-align="center" align="center" label="倉庫名稱"></el-table-column>
+      <el-table-column prop="address" header-align="center" align="center" label="倉庫地址"></el-table-column>
+      <el-table-column prop="areacode" header-align="center" align="center" label="郵遞區號"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>

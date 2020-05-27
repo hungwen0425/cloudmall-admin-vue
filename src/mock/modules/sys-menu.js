@@ -160,7 +160,7 @@ var dataList = [
     'menuId': 13,
     'parentId': 6,
     'parentName': '定時任務',
-    'name': '立即执行',
+    'name': '立即執行',
     'url': null,
     'perms': 'sys:schedule:run',
     'type': 2,

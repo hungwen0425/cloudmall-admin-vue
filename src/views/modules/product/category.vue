@@ -107,7 +107,7 @@ export default {
         url: this.$http.adornUrl("/product/category/list/tree"),
         method: "get"
       }).then(({ data }) => {
-        console.log("成功取得到菜單資料...", data.data);
+        console.log("成功取得到選單資料...", data.data);
         this.menus = data.data;
       });
     },
@@ -117,7 +117,7 @@ export default {
       for (let i = 0; i < checkedNodes.length; i++) {
         catIds.push(checkedNodes[i].catId);
       }
-      this.$confirm(`是否批量删除【${catIds}】菜單?`, "提示", {
+      this.$confirm(`是否批量删除【${catIds}】選單?`, "提示", {
         confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"
@@ -129,7 +129,7 @@ export default {
             data: this.$http.adornData(catIds, false)
           }).then(({ data }) => {
             this.$message({
-              message: "菜單批量删除成功",
+              message: "選單批量删除成功",
               type: "success"
             });
             this.getMenus();
@@ -144,12 +144,12 @@ export default {
         data: this.$http.adornData(this.updateNodes, false)
       }).then(({ data }) => {
         this.$message({
-          message: "菜單顺序等修改成功",
+          message: "選單顺序等修改成功",
           type: "success"
         });
-        //刷新出新的菜單
+        //刷新出新的選單
         this.getMenus();
-        //設定需要默認展開的菜單
+        //設定需要默認展開的選單
         this.expandedKey = this.pCid;
         this.updateNodes = [];
         this.maxLevel = 0;
@@ -303,14 +303,14 @@ export default {
         data: this.$http.adornData({ catId, name, icon, productUnit }, false)
       }).then(({ data }) => {
         this.$message({
-          message: "菜單修改成功",
+          message: "選單修改成功",
           type: "success"
         });
-        //關閉對话框
+        //關閉對話框
         this.dialogVisible = false;
-        //刷新出新的菜單
+        //刷新出新的選單
         this.getMenus();
-        //設定需要默認展開的菜單
+        //設定需要默認展開的選單
         this.expandedKey = [this.category.parentCid];
       });
     },
@@ -323,21 +323,21 @@ export default {
         data: this.$http.adornData(this.category, false)
       }).then(({ data }) => {
         this.$message({
-          message: "菜單保存成功",
+          message: "選單保存成功",
           type: "success"
         });
-        //關閉對话框
+        //關閉對話框
         this.dialogVisible = false;
-        //刷新出新的菜單
+        //刷新出新的選單
         this.getMenus();
-        //設定需要默認展開的菜單
+        //設定需要默認展開的選單
         this.expandedKey = [this.category.parentCid];
       });
     },
 
     remove(node, data) {
       var ids = [data.catId];
-      this.$confirm(`是否删除【${data.name}】菜單?`, "提示", {
+      this.$confirm(`是否删除【${data.name}】選單?`, "提示", {
         confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"
@@ -349,12 +349,12 @@ export default {
             data: this.$http.adornData(ids, false)
           }).then(({ data }) => {
             this.$message({
-              message: "菜單删除成功",
+              message: "選單删除成功",
               type: "success"
             });
-            //刷新出新的菜單
+            //刷新出新的選單
             this.getMenus();
-            //設定需要默認展開的菜單
+            //設定需要默認展開的選單
             this.expandedKey = [node.parent.data.catId];
           });
         })

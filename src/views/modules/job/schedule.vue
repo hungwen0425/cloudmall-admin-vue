@@ -18,7 +18,7 @@
           type="danger"
           @click="pauseHandle()"
           :disabled="dataListSelections.length <= 0"
-        >批量暂停</el-button>
+        >批量暫停</el-button>
         <el-button
           v-if="isAuth('sys:schedule:resume')"
           type="danger"
@@ -30,7 +30,7 @@
           type="danger"
           @click="runHandle()"
           :disabled="dataListSelections.length <= 0"
-        >批量立即执行</el-button>
+        >批量立即執行</el-button>
         <el-button v-if="isAuth('sys:schedule:log')" type="success" @click="logHandle()">日志列表</el-button>
       </el-form-item>
     </el-form>
@@ -50,7 +50,7 @@
       <el-table-column prop="status" header-align="center" align="center" label="狀態">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.status === 0" size="small">正常</el-tag>
-          <el-tag v-else size="small" type="danger">暂停</el-tag>
+          <el-tag v-else size="small" type="danger">暫停</el-tag>
         </template>
       </el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
@@ -72,7 +72,7 @@
             type="text"
             size="small"
             @click="pauseHandle(scope.row.jobId)"
-          >暂停</el-button>
+          >暫停</el-button>
           <el-button
             v-if="isAuth('sys:schedule:resume')"
             type="text"
@@ -84,7 +84,7 @@
             type="text"
             size="small"
             @click="runHandle(scope.row.jobId)"
-          >立即执行</el-button>
+          >立即執行</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -213,7 +213,7 @@ export default {
         })
         .catch(() => {});
     },
-    // 暂停
+    // 暫停
     pauseHandle(id) {
       var ids = id
         ? [id]
@@ -221,7 +221,7 @@ export default {
             return item.jobId;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "暂停" : "批量暂停"}]操作?`,
+        `確定對[id=${ids.join(",")}]進行[${id ? "暫停" : "批量暫停"}]操作?`,
         "提示",
         {
           confirmButtonText: "確定",
@@ -289,7 +289,7 @@ export default {
         })
         .catch(() => {});
     },
-    // 立即执行
+    // 立即執行
     runHandle(id) {
       var ids = id
         ? [id]
@@ -298,7 +298,7 @@ export default {
           });
       this.$confirm(
         `確定對[id=${ids.join(",")}]進行[${
-          id ? "立即执行" : "批量立即执行"
+          id ? "立即執行" : "批量立即執行"
         }]操作?`,
         "提示",
         {

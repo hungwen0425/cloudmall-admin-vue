@@ -119,7 +119,7 @@ export default {
         return { catIds, catNames };
       })();
 
-      this.$confirm(`確定删除[${catNames}]菜單吗?`, "提示", {
+      this.$confirm(`確定删除[${catNames}]選單吗?`, "提示", {
         confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"
@@ -132,7 +132,7 @@ export default {
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
-                message: "删除菜單成功",
+                message: "删除選單成功",
                 type: "success"
               });
               //定義成功事件
@@ -158,12 +158,12 @@ export default {
         data: this.$http.adornData(this.updateNodes, false)
       }).then(({ data }) => {
         this.$message({
-          message: "菜單顺序等修改成功",
+          message: "選單顺序等修改成功",
           type: "success"
         });
-        //刷新出新的菜單
+        //刷新出新的選單
         this.getMenus();
-        //設定需要默認展開的菜單
+        //設定需要默認展開的選單
         this.expandedKey = this.pCid;
         this.updateNodes = [];
         this.maxLevel = 0;
@@ -301,14 +301,14 @@ export default {
         data: this.$http.adornData({ catId, name, icon, productUnit }, false)
       }).then(({ data }) => {
         this.$message({
-          message: "菜單修改成功",
+          message: "選單修改成功",
           type: "success"
         });
-        //關閉對话框
+        //關閉對話框
         this.dialogVisible = false;
-        //刷新出新的菜單
+        //刷新出新的選單
         this.getMenus();
-        //設定需要默認展開的菜單
+        //設定需要默認展開的選單
         this.expandedKey = [this.category.parentCid];
       });
     },
@@ -350,7 +350,7 @@ export default {
       });
     },
     remove(node, data) {
-      this.$confirm(`確定删除[${data.name}]菜單吗?`, "提示", {
+      this.$confirm(`確定删除[${data.name}]選單吗?`, "提示", {
         confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning"

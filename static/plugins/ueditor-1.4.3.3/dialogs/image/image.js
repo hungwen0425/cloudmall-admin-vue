@@ -310,15 +310,15 @@
                 $wrap = _this.$wrap,
                 // 圖片容器
                 $queue = $wrap.find('.filelist'),
-                // 狀態欄，包括進度和控制按钮
+                // 狀態欄，包括進度和控制按鈕
                 $statusBar = $wrap.find('.statusBar'),
                 // 文件總體選擇資料。
                 $info = $statusBar.find('.info'),
-                // 上傳按钮
+                // 上傳按鈕
                 $upload = $wrap.find('.uploadBtn'),
-                // 上傳按钮
+                // 上傳按鈕
                 $filePickerBtn = $wrap.find('.filePickerBtn'),
-                // 上傳按钮
+                // 上傳按鈕
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
                 // 没選擇文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
@@ -382,9 +382,9 @@
                     height: imageCompressBorder,
                     // 圖片質量，只有type為`image/jpeg`的時候才有效。
                     quality: 90,
-                    // 是否允许放大，如果想要生成小圖的時候不失真，此選項應該設定為false.
+                    // 是否允許放大，如果想要生成小圖的時候不失真，此選項應該設定為false.
                     allowMagnify: false,
-                    // 是否允许裁剪。
+                    // 是否允許裁剪。
                     crop: false,
                     // 是否保留頭部meta資料。
                     preserveHeaders: true
@@ -400,7 +400,7 @@
 
             setState('pedding');
 
-            // 當有文件添加進來時执行，负责view的創建
+            // 當有文件添加進來時執行，負責view的創建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                     '<p class="title">' + file.name + '</p>' +
@@ -530,7 +530,7 @@
                 $li.insertBefore($filePickerBlock);
             }
 
-            // 负责view的銷毁
+            // 負責view的銷毁
             function removeFile(file) {
                 var $li = $('#' + file.id);
                 delete percentages[file.id];
@@ -978,7 +978,7 @@
         initEvents: function () {
             var _this = this;
 
-            /* 點擊搜索按钮 */
+            /* 點擊搜索按鈕 */
             domUtils.on($G('searchBtn'), 'click', function () {
                 var key = $G('searchTxt').value;
                 if (key && key != lang.searchRemind) {

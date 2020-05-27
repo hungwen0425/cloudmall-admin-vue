@@ -50,7 +50,7 @@
         prop="payType"
         header-align="center"
         align="center"
-        label="支付方式【1->支付宝；2->微信；3->银聯； 4->货到付款；】"
+        label="支付方式【1->支付宝；2->微信；3->银聯； 4->貨到付款；】"
       ></el-table-column>
       <el-table-column
         prop="sourceType"
@@ -62,7 +62,7 @@
         prop="status"
         header-align="center"
         align="center"
-        label="訂單狀態【0->待付款；1->待發货；2->已發货；3->已完成；4->已關閉；5->无效訂單】"
+        label="訂單狀態【0->待付款；1->待發貨；2->已發貨；3->已完成；4->已關閉；5->無效訂單】"
       ></el-table-column>
       <el-table-column
         prop="deliveryCompany"
@@ -78,23 +78,23 @@
         prop="billType"
         header-align="center"
         align="center"
-        label="發票類型[0->不開發票；1->电子發票；2->纸质發票]"
+        label="發票類型[0->不開發票；1->電子發票；2->纸质發票]"
       ></el-table-column>
       <el-table-column prop="billHeader" header-align="center" align="center" label="發票抬頭"></el-table-column>
       <el-table-column prop="billContent" header-align="center" align="center" label="發票内容"></el-table-column>
-      <el-table-column prop="billReceiverPhone" header-align="center" align="center" label="收票人电话"></el-table-column>
+      <el-table-column prop="billReceiverPhone" header-align="center" align="center" label="收票人電話"></el-table-column>
       <el-table-column
         prop="billReceiverEmail"
         header-align="center"
         align="center"
         label="收票人電子信箱"
       ></el-table-column>
-      <el-table-column prop="receiverName" header-align="center" align="center" label="收货人姓名"></el-table-column>
-      <el-table-column prop="receiverPhone" header-align="center" align="center" label="收货人电话"></el-table-column>
-      <el-table-column prop="receiverPostCode" header-align="center" align="center" label="收货人郵编"></el-table-column>
+      <el-table-column prop="receiverName" header-align="center" align="center" label="收貨人姓名"></el-table-column>
+      <el-table-column prop="receiverPhone" header-align="center" align="center" label="收貨人電話"></el-table-column>
+      <el-table-column prop="receiverPostCode" header-align="center" align="center" label="收貨人郵遞區號"></el-table-column>
       <el-table-column prop="receiverProvince" header-align="center" align="center" label="省份/直辖市"></el-table-column>
       <el-table-column prop="receiverCity" header-align="center" align="center" label="城市"></el-table-column>
-      <el-table-column prop="receiverRegion" header-align="center" align="center" label="区"></el-table-column>
+      <el-table-column prop="receiverRegion" header-align="center" align="center" label="區"></el-table-column>
       <el-table-column
         prop="receiverDetailAddress"
         header-align="center"
@@ -106,7 +106,7 @@
         prop="confirmStatus"
         header-align="center"
         align="center"
-        label="確認收货狀態[0->未確認；1->已確認]"
+        label="確認收貨狀態[0->未確認；1->已確認]"
       ></el-table-column>
       <el-table-column
         prop="deleteStatus"
@@ -116,9 +116,9 @@
       ></el-table-column>
       <el-table-column prop="useIntegration" header-align="center" align="center" label="下單時使用的積分"></el-table-column>
       <el-table-column prop="paymentTime" header-align="center" align="center" label="支付時間"></el-table-column>
-      <el-table-column prop="deliveryTime" header-align="center" align="center" label="發货時間"></el-table-column>
-      <el-table-column prop="receiveTime" header-align="center" align="center" label="確認收货時間"></el-table-column>
-      <el-table-column prop="commentTime" header-align="center" align="center" label="评價時間"></el-table-column>
+      <el-table-column prop="deliveryTime" header-align="center" align="center" label="發貨時間"></el-table-column>
+      <el-table-column prop="receiveTime" header-align="center" align="center" label="確認收貨時間"></el-table-column>
+      <el-table-column prop="commentTime" header-align="center" align="center" label="評價時間"></el-table-column>
       <el-table-column prop="modifyTime" header-align="center" align="center" label="修改時間"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">

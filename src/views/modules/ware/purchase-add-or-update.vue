@@ -54,7 +54,7 @@ export default {
         ],
         status: [{ required: true, message: "狀態不能為空", trigger: "blur" }],
         wareId: [
-          { required: true, message: "仓库id不能為空", trigger: "blur" }
+          { required: true, message: "倉庫id不能為空", trigger: "blur" }
         ],
         amount: [
           { required: true, message: "總金額不能為空", trigger: "blur" }

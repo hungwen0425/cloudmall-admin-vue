@@ -73,7 +73,7 @@
         <el-form-item label="BucketName">
           <el-input v-model="dataForm.qcloudBucketName" placeholder="腾讯云BucketName"></el-input>
         </el-form-item>
-        <el-form-item label="Bucket所屬地区">
+        <el-form-item label="Bucket所屬地區">
           <el-input v-model="dataForm.qcloudRegion" placeholder="如：sh（可選值 ，华南：gz 华北：tj 华东：sh）"></el-input>
         </el-form-item>
       </template>

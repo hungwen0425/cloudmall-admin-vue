@@ -301,7 +301,7 @@
              * @grammar Base.inherits( super, protos, statics ) => child
              * @param  {Class} super 父類
              * @param  {Object | Function} [protos] 子類或者物件。如果物件中包含constructor，子類將是用此屬性值。
-             * @param  {Function} [protos.constructor] 子類構造器，不指定的話將創建個臨時的直接执行父類構造器的方法。
+             * @param  {Function} [protos.constructor] 子類構造器，不指定的話將創建個臨時的直接執行父類構造器的方法。
              * @param  {Object} [statics] 静態屬性或方法。
              * @return {Class} 返回子類。
              * @example
@@ -318,7 +318,7 @@
              *     }
              * });
              *
-             * // 因為没有指定構造器，父類的構造器將會执行。
+             * // 因為没有指定構造器，父類的構造器將會執行。
              * var instance = new Manager();    // => Super
              *
              * // 繼承子父類的方法
@@ -365,7 +365,7 @@
             noop: noop,
 
             /**
-             * 返回一個新的方法，此方法將已指定的`context`來执行。
+             * 返回一個新的方法，此方法將已指定的`context`來執行。
              * @grammar Base.bindFn( fn, context ) => Function
              * @method bindFn
              * @example
@@ -532,7 +532,7 @@
             /**
              * 绑定事件。
              *
-             * `callback`方法在执行時，arguments將會來源于trigger的時候携带的参數。如
+             * `callback`方法在執行時，arguments將會來源于trigger的時候携带的参數。如
              * ```javascript
              * var obj = {};
              *
@@ -546,11 +546,11 @@
              * obj.trigger( 'testa', 'arg1', 'arg2' );
              * ```
              *
-             * 如果`callback`中，某一個方法`return false`了，則後續的其他`callback`都不會被执行到。
+             * 如果`callback`中，某一個方法`return false`了，則後續的其他`callback`都不會被執行到。
              * 切會影响到`trigger`方法的返回值，為`false`。
              *
              * `on`還可以用來添加一個特殊事件`all`, 這樣所有的事件觸發都會響應到。同時此類`callback`中的arguments有一個不同處，
-             * 就是第一個参數為`type`，记入當前是什么事件在觸發。此類`callback`的優先級比脚低，會再正常`callback`执行完後觸發。
+             * 就是第一個参數為`type`，记入當前是什么事件在觸發。此類`callback`的優先級比脚低，會再正常`callback`執行完後觸發。
              * ```javascript
              * obj.on( 'all', function( type, arg1, arg2 ) {
              *     console.log( type, arg1, arg2 ); // => 'testa', 'arg1', 'arg2'
@@ -591,7 +591,7 @@
             },
 
             /**
-             * 绑定事件，且當handler执行完後，自動解除绑定。
+             * 绑定事件，且當handler執行完後，自動解除绑定。
              * @method once
              * @grammar once( name, callback[, context] ) => self
              * @param  {String}   name     事件名
@@ -677,7 +677,7 @@
 
         /**
          * 中介者，它本身是個單例，但可以通過[installTo](#WebUploader:Mediator:installTo)方法，使任何物件具備事件行為。
-         * 主要目的是负责模塊與模塊之間的合作，降低耦合度。
+         * 主要目的是負責模塊與模塊之間的合作，降低耦合度。
          *
          * @class Mediator
          */
@@ -879,7 +879,7 @@
         return Uploader;
     });
     /**
-     * @fileOverview Runtime管理器，负责Runtime的選擇, 連接
+     * @fileOverview Runtime管理器，負責Runtime的選擇, 連接
      */
     define('runtime/runtime', [
         'base',
@@ -990,7 +990,7 @@
     });
 
     /**
-     * @fileOverview Runtime管理器，负责Runtime的選擇, 連接
+     * @fileOverview Runtime管理器，負責Runtime的選擇, 連接
      */
     define('runtime/client', [
         'base',
@@ -1039,7 +1039,7 @@
 
             this.uid = Base.guid('client_');
 
-            // 允许runtime没有初始化之前，註冊一些方法在初始化後执行。
+            // 允許runtime没有初始化之前，註冊一些方法在初始化後執行。
             this.runtimeReady = function (cb) {
                 return deferred.done(cb);
             };
@@ -1226,7 +1226,7 @@
             opts.container = $(opts.id);
 
             if (!opts.container.length) {
-                throw new Error('按钮指定錯誤');
+                throw new Error('按鈕指定錯誤');
             }
 
             opts.innerHTML = opts.innerHTML || opts.label ||
@@ -1461,7 +1461,7 @@
                     key = promise.pipe ? 'pipe' : 'then';
 
                     // 很重要不能删除。删除了會死循環。
-                    // 保證执行順序。让callback總是在下一個tick中执行。
+                    // 保證執行順序。让callback總是在下一個tick中執行。
                     return promise[key](function () {
                         var deferred = Base.Deferred(),
                             args = arguments;
@@ -1526,11 +1526,11 @@
              * @property {Selector | Object} [pick=undefined]
              * @namespace options
              * @for Uploader
-             * @description 指定選擇文件的按钮容器，不指定則不創建按钮。
+             * @description 指定選擇文件的按鈕容器，不指定則不創建按鈕。
              *
-             * * `id` {Seletor} 指定選擇文件的按钮容器，不指定則不創建按钮。
+             * * `id` {Seletor} 指定選擇文件的按鈕容器，不指定則不創建按鈕。
              * * `label` {String} 請采用 `innerHTML` 代替
-             * * `innerHTML` {String} 指定按钮文字。不指定時優先從指定的容器中看是否自带文字。
+             * * `innerHTML` {String} 指定按鈕文字。不指定時優先從指定的容器中看是否自带文字。
              * * `multiple` {Boolean} 是否開起同時選擇多個文件能力。
              */
             pick: null,
@@ -1542,7 +1542,7 @@
              * @description 指定接受哪些類型的文件。 由於目前還有ext轉mimeType表，所以這裡需要分開指定。
              *
              * * `title` {String} 文字描述
-             * * `extensions` {String} 允许的文件後缀，不带點，多個用逗號分割。
+             * * `extensions` {String} 允許的文件後缀，不带點，多個用逗號分割。
              * * `mimeTypes` {String} 多個用逗號分割。
              *
              * 如：
@@ -1585,7 +1585,7 @@
              * @for Uploader
              * @grammar addButton( pick ) => Promise
              * @description
-             * 添加文件選擇按钮，如果一個按钮不够，需要調用此方法來添加。参數跟[options.pick](#WebUploader:Uploader:options)一致。
+             * 添加文件選擇按鈕，如果一個按鈕不够，需要調用此方法來添加。参數跟[options.pick](#WebUploader:Uploader:options)一致。
              * @example
              * uploader.addButton({
              *     id: '#btnContainer',
@@ -1672,7 +1672,7 @@
             // 是否保留頭部資料
             preserveHeaders: true,
 
-            // 是否允许放大。
+            // 是否允許放大。
             allowMagnify: true
         };
 
@@ -1733,7 +1733,7 @@
         return Image;
     });
     /**
-     * @fileOverview 圖片操作, 负责预覽圖片和上傳前壓縮圖片
+     * @fileOverview 圖片操作, 負責預覽圖片和上傳前壓縮圖片
      */
     define('widgets/image', [
         'base',
@@ -1787,10 +1787,10 @@
              *     // 圖片質量，只有type為`image/jpeg`的時候才有效。
              *     quality: 70,
              *
-             *     // 是否允许放大，如果想要生成小圖的時候不失真，此選項應該設定為false.
+             *     // 是否允許放大，如果想要生成小圖的時候不失真，此選項應該設定為false.
              *     allowMagnify: true,
              *
-             *     // 是否允许裁剪。
+             *     // 是否允許裁剪。
              *     crop: true,
              *
              *     // 是否保留頭部meta資料。
@@ -1812,8 +1812,8 @@
 
                 // 為空的話則保留原有圖片格式。
                 // 否則強制轉換成指定的類型。
-                // IE 8下面 base64 大小不能超過 32K 否則预覽失败，而非 jpeg 編碼的圖片很可
-                // 能會超過 32k, 所以這裡設定成预覽的時候都是 image/jpeg
+                // IE 8下面 base64 大小不能超過 32K 否則預覽失败，而非 jpeg 編碼的圖片很可
+                // 能會超過 32k, 所以這裡設定成預覽的時候都是 image/jpeg
                 type: 'image/jpeg'
             },
 
@@ -1833,10 +1833,10 @@
              *     // 圖片質量，只有type為`image/jpeg`的時候才有效。
              *     quality: 90,
              *
-             *     // 是否允许放大，如果想要生成小圖的時候不失真，此選項應該設定為false.
+             *     // 是否允許放大，如果想要生成小圖的時候不失真，此選項應該設定為false.
              *     allowMagnify: false,
              *
-             *     // 是否允许裁剪。
+             *     // 是否允許裁剪。
              *     crop: false,
              *
              *     // 是否保留頭部meta資料。
@@ -1862,14 +1862,14 @@
 
             /**
              * 生成縮略圖，此過程為异步，所以需要傳入`callback`。
-             * 通常情况在圖片加入队里後調用此方法來生成预覽圖以增强交互效果。
+             * 通常情况在圖片加入队里後調用此方法來生成預覽圖以增强交互效果。
              *
              * `callback`中可以接收到两個参數。
              * * 第一個為error，如果生成縮略圖有錯誤，此error將為真。
              * * 第二個為ret, 縮略圖的Data URL值。
              *
              * **注意**
-             * Date URL在IE6/7中不支持，所以不用調用此方法了，直接顯示一張暫不支持预覽圖片好了。
+             * Date URL在IE6/7中不支持，所以不用調用此方法了，直接顯示一張暫不支持預覽圖片好了。
              *
              *
              * @method makeThumb
@@ -1883,7 +1883,7 @@
              *
              *     uploader.makeThumb( file, function( error, ret ) {
              *         if ( error ) {
-             *             $li.text('预覽錯誤');
+             *             $li.text('預覽錯誤');
              *         } else {
              *             $li.append('<img alt="" src="' + ret + '" />');
              *         }
@@ -1896,7 +1896,7 @@
 
                 file = this.request('get-file', file);
 
-                // 只预覽圖片格式。
+                // 只預覽圖片格式。
                 if (!file.type.match(/^image/)) {
                     cb(true);
                     return;
@@ -1945,7 +1945,7 @@
 
                 file = this.request('get-file', file);
 
-                // 只预覽圖片格式。
+                // 只預覽圖片格式。
                 if (!opts || !~'image/jpeg,image/jpg'.indexOf(file.type) ||
                     file.size < compressSize ||
                     file._compressed) {
@@ -2466,7 +2466,7 @@
                 me.stats = me.queue.stats;
 
                 // 如果當前不是html5運行時，那就算了。
-                // 不执行後續操作
+                // 不執行後續操作
                 if (this.request('predict-runtime-type') !== 'html5') {
                     return;
                 }
@@ -2532,7 +2532,7 @@
 
                 file = me._wrapFile(file);
 
-                // 不過類型判断允许不允许，先派送 `beforeFileQueued`
+                // 不過類型判断允許不允許，先派送 `beforeFileQueued`
                 if (!me.owner.trigger('beforeFileQueued', file)) {
                     return;
                 }
@@ -2719,7 +2719,7 @@
             },
 
             /**
-             * 预测Uploader將采用哪個`Runtime`
+             * 預测Uploader將采用哪個`Runtime`
              * @grammar predictRuntmeType() => String
              * @method predictRuntmeType
              * @for  Uploader
@@ -2776,7 +2776,7 @@
             server: '',
             method: 'POST',
 
-            // 跨域時，是否允许携带cookie, 只有html5 runtime才有效
+            // 跨域時，是否允許携带cookie, 只有html5 runtime才有效
             withCredentials: false,
             fileVal: 'file',
             timeout: 2 * 60 * 1000,    // 2分钟
@@ -2875,7 +2875,7 @@
         return Transport;
     });
     /**
-     * @fileOverview 负责文件上傳相關。
+     * @fileOverview 負責文件上傳相關。
      */
     define('widgets/upload', [
         'base',
@@ -2897,8 +2897,8 @@
              * @property {Boolean} [prepareNextFile=false]
              * @namespace options
              * @for Uploader
-             * @description 是否允许在文件傳输時提前把下一個文件準備好。
-             * 對于一個文件的準備工作比较耗時，比如圖片壓縮，md5序列化。
+             * @description 是否允許在文件傳输時提前把下一個文件準備好。
+             * 對於一個文件的準備工作比較耗時，比如圖片壓縮，md5序列化。
              * 如果能提前在當前文件傳输期處理，可以節省總體耗時。
              */
             prepareNextFile: false,
@@ -2923,7 +2923,7 @@
              * @property {Boolean} [chunkRetry=2]
              * @namespace options
              * @for Uploader
-             * @description 如果某個分片由於網络問題出錯，允许自動重傳多少次？
+             * @description 如果某個分片由於網络問題出錯，允許自動重傳多少次？
              */
             chunkRetry: 2,
 
@@ -2931,7 +2931,7 @@
              * @property {Boolean} [threads=3]
              * @namespace options
              * @for Uploader
-             * @description 上傳並發數。允许同時最大上傳進程數。
+             * @description 上傳並發數。允許同時最大上傳進程數。
              */
             threads: 3,
 
@@ -2967,7 +2967,7 @@
              */
         });
 
-        // 负责將文件切片。
+        // 負責將文件切片。
         function CuteFile(file, chunkSize) {
             var pending = [],
                 blob = file.source,
@@ -3163,7 +3163,7 @@
                     opts = me.options,
                     fn, val;
 
-                // 上一個promise還没有結束，則等待完成後再执行。
+                // 上一個promise還没有結束，則等待完成後再執行。
                 if (me._promise) {
                     return me._promise.always(me.__tick);
                 }
@@ -3405,7 +3405,7 @@
                     var totalPercent = 0,
                         uploaded = 0;
 
-                    // 可能没有abort掉，progress還是执行進來了。
+                    // 可能没有abort掉，progress還是執行進來了。
                     // if ( !file.blocks ) {
                     //     return;
                     // }
@@ -3469,7 +3469,7 @@
                 tr.on('load', function () {
                     var reason;
 
-                    // 如果非预期，轉向上傳出錯。
+                    // 如果非預期，轉向上傳出錯。
                     if ((reason = requestAccept())) {
                         tr.trigger('error', reason, true);
                         return;
@@ -3586,7 +3586,7 @@
          * @property {int} [fileNumLimit=undefined]
          * @namespace options
          * @for Uploader
-         * @description 驗證文件總數量, 超出則不允许加入队列。
+         * @description 驗證文件總數量, 超出則不允許加入队列。
          */
         api.addValidator('fileNumLimit', function () {
             var uploader = this,
@@ -3630,7 +3630,7 @@
          * @property {int} [fileSizeLimit=undefined]
          * @namespace options
          * @for Uploader
-         * @description 驗證文件總大小是否超出限製, 超出則不允许加入队列。
+         * @description 驗證文件總大小是否超出限製, 超出則不允許加入队列。
          */
         api.addValidator('fileSizeLimit', function () {
             var uploader = this,
@@ -3674,7 +3674,7 @@
          * @property {int} [fileSingleSizeLimit=undefined]
          * @namespace options
          * @for Uploader
-         * @description 驗證單個文件大小是否超出限製, 超出則不允许加入队列。
+         * @description 驗證單個文件大小是否超出限製, 超出則不允許加入队列。
          */
         api.addValidator('fileSingleSizeLimit', function () {
             var uploader = this,
@@ -3754,7 +3754,7 @@
     });
 
     /**
-     * @fileOverview Runtime管理器，负责Runtime的選擇, 連接
+     * @fileOverview Runtime管理器，負責Runtime的選擇, 連接
      */
     define('runtime/compbase', [], function () {
 

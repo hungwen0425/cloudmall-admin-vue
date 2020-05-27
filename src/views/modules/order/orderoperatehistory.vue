@@ -40,7 +40,7 @@
         prop="orderStatus"
         header-align="center"
         align="center"
-        label="訂單狀態【0->待付款；1->待發货；2->已發货；3->已完成；4->已關閉；5->无效訂單】"
+        label="訂單狀態【0->待付款；1->待發貨；2->已發貨；3->已完成；4->已關閉；5->無效訂單】"
       ></el-table-column>
       <el-table-column prop="note" header-align="center" align="center" label="備註"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">

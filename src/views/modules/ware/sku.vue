@@ -1,8 +1,8 @@
 <template>
   <div class="mod-config">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
-      <el-form-item label="仓库">
-        <el-select style="width:160px;" v-model="dataForm.wareId" placeholder="請選擇仓库" clearable>
+      <el-form-item label="倉庫">
+        <el-select style="width:160px;" v-model="dataForm.wareId" placeholder="請選擇倉庫" clearable>
           <el-option :label="w.name" :value="w.id" v-for="w in wareList" :key="w.id"></el-option>
         </el-select>
       </el-form-item>
@@ -30,7 +30,7 @@
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="skuId" header-align="center" align="center" label="sku_id"></el-table-column>
-      <el-table-column prop="wareId" header-align="center" align="center" label="仓库id"></el-table-column>
+      <el-table-column prop="wareId" header-align="center" align="center" label="倉庫id"></el-table-column>
       <el-table-column prop="stock" header-align="center" align="center" label="库存數"></el-table-column>
       <el-table-column prop="skuName" header-align="center" align="center" label="sku_name"></el-table-column>
       <el-table-column prop="stockLocked" header-align="center" align="center" label="锁定库存"></el-table-column>

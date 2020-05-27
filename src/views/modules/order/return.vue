@@ -29,18 +29,18 @@
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="orderId" header-align="center" align="center" label="order_id"></el-table-column>
-      <el-table-column prop="skuId" header-align="center" align="center" label="退货商品id"></el-table-column>
+      <el-table-column prop="skuId" header-align="center" align="center" label="退貨商品id"></el-table-column>
       <el-table-column prop="orderSn" header-align="center" align="center" label="訂單编號"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="申請時間"></el-table-column>
       <el-table-column prop="memberUsername" header-align="center" align="center" label="會員使用者名稱"></el-table-column>
       <el-table-column prop="returnAmount" header-align="center" align="center" label="退款金額"></el-table-column>
-      <el-table-column prop="returnName" header-align="center" align="center" label="退货人姓名"></el-table-column>
-      <el-table-column prop="returnPhone" header-align="center" align="center" label="退货人电话"></el-table-column>
+      <el-table-column prop="returnName" header-align="center" align="center" label="退貨人姓名"></el-table-column>
+      <el-table-column prop="returnPhone" header-align="center" align="center" label="退貨人電話"></el-table-column>
       <el-table-column
         prop="status"
         header-align="center"
         align="center"
-        label="申請狀態[0->待處理；1->退货中；2->已完成；3->已拒绝]"
+        label="申請狀態[0->待處理；1->退貨中；2->已完成；3->已拒绝]"
       ></el-table-column>
       <el-table-column prop="handleTime" header-align="center" align="center" label="處理時間"></el-table-column>
       <el-table-column prop="skuImg" header-align="center" align="center" label="商品圖片"></el-table-column>
@@ -52,7 +52,7 @@
         align="center"
         label="商品銷售屬性(JSON)"
       ></el-table-column>
-      <el-table-column prop="skuCount" header-align="center" align="center" label="退货數量"></el-table-column>
+      <el-table-column prop="skuCount" header-align="center" align="center" label="退貨數量"></el-table-column>
       <el-table-column prop="skuPrice" header-align="center" align="center" label="商品單價"></el-table-column>
       <el-table-column prop="skuRealPrice" header-align="center" align="center" label="商品實际支付單價"></el-table-column>
       <el-table-column prop="reason" header-align="center" align="center" label="原因"></el-table-column>
@@ -60,11 +60,11 @@
       <el-table-column prop="descPics" header-align="center" align="center" label="凭证圖片，以逗號隔開"></el-table-column>
       <el-table-column prop="handleNote" header-align="center" align="center" label="處理備註"></el-table-column>
       <el-table-column prop="handleMan" header-align="center" align="center" label="處理人員"></el-table-column>
-      <el-table-column prop="receiveMan" header-align="center" align="center" label="收货人"></el-table-column>
-      <el-table-column prop="receiveTime" header-align="center" align="center" label="收货時間"></el-table-column>
-      <el-table-column prop="receiveNote" header-align="center" align="center" label="收货備註"></el-table-column>
-      <el-table-column prop="receivePhone" header-align="center" align="center" label="收货电话"></el-table-column>
-      <el-table-column prop="companyAddress" header-align="center" align="center" label="公司收货地址"></el-table-column>
+      <el-table-column prop="receiveMan" header-align="center" align="center" label="收貨人"></el-table-column>
+      <el-table-column prop="receiveTime" header-align="center" align="center" label="收貨時間"></el-table-column>
+      <el-table-column prop="receiveNote" header-align="center" align="center" label="收貨備註"></el-table-column>
+      <el-table-column prop="receivePhone" header-align="center" align="center" label="收貨電話"></el-table-column>
+      <el-table-column prop="companyAddress" header-align="center" align="center" label="公司收貨地址"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>

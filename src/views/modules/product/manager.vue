@@ -56,8 +56,8 @@
       <el-table-column prop="saleCount" header-align="center" align="center" label="銷量"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
-          <el-button type="text" size="small" @click="previewHandle(scope.row.skuId)">预览</el-button>
-          <el-button type="text" size="small" @click="commentHandle(scope.row.skuId)">评论</el-button>
+          <el-button type="text" size="small" @click="previewHandle(scope.row.skuId)">預覽</el-button>
+          <el-button type="text" size="small" @click="commentHandle(scope.row.skuId)">評論</el-button>
           <el-dropdown
             @command="handleCommand(scope.row,$event)"
             size="small"

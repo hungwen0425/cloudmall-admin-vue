@@ -63,7 +63,7 @@ export default {
   //方法集合
   methods: {
     searchSpuInfo() {
-      console.log("搜索条件", this.dataForm);
+      console.log("搜索條件", this.dataForm);
       this.PubSub.publish("dataForm", this.dataForm);
     }
   },

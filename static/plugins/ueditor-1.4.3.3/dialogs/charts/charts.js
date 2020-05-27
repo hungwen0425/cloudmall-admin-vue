@@ -494,7 +494,7 @@ dialog.onok = function () {
   //同步表格資料到編輯器
   syncTableData();
 
-  //执行圖表命令
+  //執行圖表命令
   editor.execCommand('charts', info);
 
 };

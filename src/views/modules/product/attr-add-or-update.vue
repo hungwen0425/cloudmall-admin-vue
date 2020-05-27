@@ -20,7 +20,7 @@
       <el-form-item label="值類型" prop="valueType">
         <el-switch
           v-model="dataForm.valueType"
-          active-text="允许多個值"
+          active-text="允許多個值"
           inactive-text="只能單個值"
           active-color="#13ce66"
           inactive-color="#ff4949"

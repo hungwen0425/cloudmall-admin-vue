@@ -28,7 +28,7 @@
     >
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="name" header-align="center" align="center" label="退货原因名"></el-table-column>
+      <el-table-column prop="name" header-align="center" align="center" label="退貨原因名"></el-table-column>
       <el-table-column prop="sort" header-align="center" align="center" label="排序"></el-table-column>
       <el-table-column prop="status" header-align="center" align="center" label="啟用狀態"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="create_time"></el-table-column>
