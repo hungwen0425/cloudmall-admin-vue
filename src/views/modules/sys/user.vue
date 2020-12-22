@@ -66,7 +66,7 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 弹窗, 新增 / 修改 -->
+    <!-- 彈窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
   </div>
 </template>
@@ -77,7 +77,7 @@ export default {
   data() {
     return {
       dataForm: {
-        userName: ""
+        userName: "",
       },
       dataList: [],
       pageIndex: 1,
@@ -85,11 +85,11 @@ export default {
       totalPage: 0,
       dataListLoading: false,
       dataListSelections: [],
-      addOrUpdateVisible: false
+      addOrUpdateVisible: false,
     };
   },
   components: {
-    AddOrUpdate
+    AddOrUpdate,
   },
   activated() {
     this.getDataList();
@@ -104,8 +104,8 @@ export default {
         params: this.$http.adornParams({
           page: this.pageIndex,
           limit: this.pageSize,
-          username: this.dataForm.userName
-        })
+          username: this.dataForm.userName,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -143,7 +143,7 @@ export default {
     deleteHandle(id) {
       var userIds = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.userId;
           });
       this.$confirm(
@@ -152,14 +152,14 @@ export default {
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       )
         .then(() => {
           this.$http({
             url: this.$http.adornUrl("/sys/user/delete"),
             method: "post",
-            data: this.$http.adornData(userIds, false)
+            data: this.$http.adornData(userIds, false),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -168,7 +168,7 @@ export default {
                 duration: 1500,
                 onClose: () => {
                   this.getDataList();
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -176,7 +176,7 @@ export default {
           });
         })
         .catch(() => {});
-    }
-  }
+    },
+  },
 };
 </script>

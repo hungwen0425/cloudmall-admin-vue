@@ -28,18 +28,18 @@ export default {
         this.$nextTick(() => {
           this.$store.commit("common/updateContentIsNeedRefresh", false);
         });
-      }
+      },
     };
   },
   data() {
     return {
-      loading: true
+      loading: true,
     };
   },
   components: {
     MainNavbar,
     MainSidebar,
-    MainContent
+    MainContent,
   },
   computed: {
     documentClientHeight: {
@@ -48,12 +48,12 @@ export default {
       },
       set(val) {
         this.$store.commit("common/updateDocumentClientHeight", val);
-      }
+      },
     },
     sidebarFold: {
       get() {
         return this.$store.state.common.sidebarFold;
-      }
+      },
     },
     userId: {
       get() {
@@ -61,7 +61,7 @@ export default {
       },
       set(val) {
         this.$store.commit("user/updateId", val);
-      }
+      },
     },
     userName: {
       get() {
@@ -69,8 +69,8 @@ export default {
       },
       set(val) {
         this.$store.commit("user/updateName", val);
-      }
-    }
+      },
+    },
   },
   created() {
     this.getUserInfo();
@@ -91,7 +91,7 @@ export default {
       this.$http({
         url: this.$http.adornUrl("/sys/user/info"),
         method: "get",
-        params: this.$http.adornParams()
+        params: this.$http.adornParams(),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.loading = false;
@@ -99,7 +99,7 @@ export default {
           this.userName = data.user.username;
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>

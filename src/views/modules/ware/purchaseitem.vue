@@ -85,8 +85,7 @@
           v-for="item in purchasetableData"
           :key="item.id"
           :label="item.id"
-          :value="item.id"
-        >
+          :value="item.id">
           <span style="float: left">{{ item.id }}</span>
           <span
             style="float: right; color: #8492a6; font-size: 13px"
@@ -132,6 +131,7 @@ export default {
     this.getWares();
   },
   methods: {
+    // 合併採購需求
     mergeItem() {
       let items = this.dataListSelections.map(item => {
         return item.id;
@@ -145,8 +145,7 @@ export default {
             cancelButtonText: "取消",
             type: "warning"
           }
-        )
-          .then(() => {
+        ).then(() => {
             this.$http({
               url: this.$http.adornUrl("/ware/purchase/merge"),
               method: "post",
@@ -170,6 +169,7 @@ export default {
       }
       this.mergedialogVisible = false;
     },
+    // 查詢未領取的采購單
     getUnreceivedPurchase() {
       this.$http({
         url: this.$http.adornUrl("/ware/purchase/unreceive/list"),

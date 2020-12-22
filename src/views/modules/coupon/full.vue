@@ -31,7 +31,7 @@
       <el-table-column prop="skuId" header-align="center" align="center" label="spu_id"></el-table-column>
       <el-table-column prop="fullPrice" header-align="center" align="center" label="滿多少"></el-table-column>
       <el-table-column prop="reducePrice" header-align="center" align="center" label="減多少"></el-table-column>
-      <el-table-column prop="addOther" header-align="center" align="center" label="是否参与其他優惠"></el-table-column>
+      <el-table-column prop="addOther" header-align="center" align="center" label="是否参與其他優惠"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>
@@ -59,7 +59,7 @@ export default {
   data() {
     return {
       dataForm: {
-        key: ""
+        key: "",
       },
       dataList: [],
       pageIndex: 1,
@@ -67,11 +67,11 @@ export default {
       totalPage: 0,
       dataListLoading: false,
       dataListSelections: [],
-      addOrUpdateVisible: false
+      addOrUpdateVisible: false,
     };
   },
   components: {
-    AddOrUpdate
+    AddOrUpdate,
   },
   activated() {
     this.getDataList();
@@ -86,8 +86,8 @@ export default {
         params: this.$http.adornParams({
           page: this.pageIndex,
           limit: this.pageSize,
-          key: this.dataForm.key
-        })
+          key: this.dataForm.key,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -125,7 +125,7 @@ export default {
     deleteHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.id;
           });
       this.$confirm(
@@ -134,13 +134,13 @@ export default {
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       ).then(() => {
         this.$http({
           url: this.$http.adornUrl("/coupon/skufullreduction/delete"),
           method: "post",
-          data: this.$http.adornData(ids, false)
+          data: this.$http.adornData(ids, false),
         }).then(({ data }) => {
           if (data && data.code === 0) {
             this.$message({
@@ -149,14 +149,14 @@ export default {
               duration: 1500,
               onClose: () => {
                 this.getDataList();
-              }
+              },
             });
           } else {
             this.$message.error(data.msg);
           }
         });
       });
-    }
-  }
+    },
+  },
 };
 </script>

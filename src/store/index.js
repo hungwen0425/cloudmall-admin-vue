@@ -12,7 +12,7 @@ export default new Vuex.Store({
     user
   },
   mutations: {
-    // 重置vuex本地儲存狀態
+    // 重置vuex本地储存狀態
     resetStore(state) {
       Object.keys(state).forEach((key) => {
         state[key] = cloneDeep(window.SITE_CONFIG['storeState'][key])

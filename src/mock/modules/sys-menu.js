@@ -17,7 +17,7 @@ var dataList = [
     'menuId': 2,
     'parentId': 1,
     'parentName': '系统管理',
-    'name': '管理員列表',
+    'name': '管理员列表',
     'url': 'sys/user',
     'perms': null,
     'type': 1,
@@ -43,7 +43,7 @@ var dataList = [
     'menuId': 4,
     'parentId': 1,
     'parentName': '系统管理',
-    'name': '選單管理',
+    'name': '菜单管理',
     'url': 'sys/menu',
     'perms': null,
     'type': 1,
@@ -56,7 +56,7 @@ var dataList = [
     'menuId': 5,
     'parentId': 1,
     'parentName': '系统管理',
-    'name': 'SQL監控',
+    'name': 'SQL监控',
     'url': 'http://localhost:8080/renren-fast/druid/sql.html',
     'perms': null,
     'type': 1,
@@ -160,7 +160,7 @@ var dataList = [
     'menuId': 13,
     'parentId': 6,
     'parentName': '定時任務',
-    'name': '立即執行',
+    'name': '立即执行',
     'url': null,
     'perms': 'sys:schedule:run',
     'type': 2,
@@ -185,7 +185,7 @@ var dataList = [
   {
     'menuId': 15,
     'parentId': 2,
-    'parentName': '管理員列表',
+    'parentName': '管理员列表',
     'name': '查看',
     'url': null,
     'perms': 'sys:user:list,sys:user:info',
@@ -198,7 +198,7 @@ var dataList = [
   {
     'menuId': 16,
     'parentId': 2,
-    'parentName': '管理員列表',
+    'parentName': '管理员列表',
     'name': '新增',
     'url': null,
     'perms': 'sys:user:save,sys:role:select',
@@ -211,7 +211,7 @@ var dataList = [
   {
     'menuId': 17,
     'parentId': 2,
-    'parentName': '管理員列表',
+    'parentName': '管理员列表',
     'name': '修改',
     'url': null,
     'perms': 'sys:user:update,sys:role:select',
@@ -224,7 +224,7 @@ var dataList = [
   {
     'menuId': 18,
     'parentId': 2,
-    'parentName': '管理員列表',
+    'parentName': '管理员列表',
     'name': '删除',
     'url': null,
     'perms': 'sys:user:delete',
@@ -289,7 +289,7 @@ var dataList = [
   {
     'menuId': 23,
     'parentId': 4,
-    'parentName': '選單管理',
+    'parentName': '菜单管理',
     'name': '查看',
     'url': null,
     'perms': 'sys:menu:list,sys:menu:info',
@@ -302,7 +302,7 @@ var dataList = [
   {
     'menuId': 24,
     'parentId': 4,
-    'parentName': '選單管理',
+    'parentName': '菜单管理',
     'name': '新增',
     'url': null,
     'perms': 'sys:menu:save,sys:menu:select',
@@ -315,7 +315,7 @@ var dataList = [
   {
     'menuId': 25,
     'parentId': 4,
-    'parentName': '選單管理',
+    'parentName': '菜单管理',
     'name': '修改',
     'url': null,
     'perms': 'sys:menu:update,sys:menu:select',
@@ -328,7 +328,7 @@ var dataList = [
   {
     'menuId': 26,
     'parentId': 4,
-    'parentName': '選單管理',
+    'parentName': '菜单管理',
     'name': '删除',
     'url': null,
     'perms': 'sys:menu:delete',
@@ -368,7 +368,7 @@ var dataList = [
     'menuId': 30,
     'parentId': 1,
     'parentName': '系统管理',
-    'name': '文件上傳',
+    'name': '檔案上傳',
     'url': 'oss/oss',
     'perms': 'sys:oss:all',
     'type': 1,
@@ -395,7 +395,7 @@ var navDataList = [
         'menuId': 2,
         'parentId': 1,
         'parentName': null,
-        'name': '管理員列表',
+        'name': '管理员列表',
         'url': 'sys/user',
         'perms': null,
         'type': 1,
@@ -421,7 +421,7 @@ var navDataList = [
         'menuId': 4,
         'parentId': 1,
         'parentName': null,
-        'name': '選單管理',
+        'name': '菜单管理',
         'url': 'sys/menu',
         'perms': null,
         'type': 1,
@@ -434,7 +434,7 @@ var navDataList = [
         'menuId': 5,
         'parentId': 1,
         'parentName': null,
-        'name': 'SQL監控',
+        'name': 'SQL监控',
         'url': 'http://localhost:8080/renren-fast/druid/sql.html',
         'perms': null,
         'type': 1,
@@ -473,7 +473,7 @@ var navDataList = [
         'menuId': 30,
         'parentId': 1,
         'parentName': null,
-        'name': '文件上傳',
+        'name': '檔案上傳',
         'url': 'oss/oss',
         'perms': 'sys:oss:all',
         'type': 1,
@@ -499,7 +499,7 @@ var navDataList = [
   }
 ]
 
-// 取得導航選單列表 / 權限
+// 取得导航菜单列表 / 权限
 export function nav() {
   return {
     // isOpen: false,
@@ -548,7 +548,7 @@ export function nav() {
   }
 }
 
-// 取得選單列表
+// 取得菜单列表
 export function list() {
   return {
     // isOpen: false,
@@ -558,7 +558,7 @@ export function list() {
   }
 }
 
-// 取得上級選單
+// 取得上级菜单
 export function select() {
   let dataList = JSON.parse(JSON.stringify(navDataList))
   dataList = dataList.concat(dataList[0].list)
@@ -574,7 +574,7 @@ export function select() {
   }
 }
 
-// 取得選單資料
+// 取得菜单信息
 export function info() {
   return {
     // isOpen: false,
@@ -588,7 +588,7 @@ export function info() {
   }
 }
 
-// 添加選單
+// 添加菜单
 export function add() {
   return {
     // isOpen: false,
@@ -601,7 +601,7 @@ export function add() {
   }
 }
 
-// 修改選單
+// 修改菜单
 export function update() {
   return {
     // isOpen: false,
@@ -614,7 +614,7 @@ export function update() {
   }
 }
 
-// 删除選單
+// 删除菜单
 export function del() {
   return {
     // isOpen: false,

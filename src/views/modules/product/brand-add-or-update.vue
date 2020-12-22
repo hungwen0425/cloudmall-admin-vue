@@ -2,15 +2,13 @@
   <el-dialog
     :title="!dataForm.id ? '新增' : '修改'"
     :close-on-click-modal="false"
-    :visible.sync="visible"
-  >
+    :visible.sync="visible">
     <el-form
       :model="dataForm"
       :rules="dataRule"
       ref="dataForm"
       @keyup.enter.native="dataFormSubmit()"
-      label-width="140px"
-    >
+      label-width="140px">
       <el-form-item label="品牌名" prop="name">
         <el-input v-model="dataForm.name" placeholder="品牌名"></el-input>
       </el-form-item>
@@ -71,17 +69,17 @@ export default {
         showStatus: [
           {
             required: true,
-            message: "顯示狀態[0-不顯示；1-顯示]不能為空",
+            message: "顯示狀態 [0-不顯示；1-顯示] 不能為空",
             trigger: "blur"
           }
         ],
         firstLetter: [
           {
-            validator: (rule, value, callback) => {
+            validnpnator: (rule, value, callback) => {
               if (value == "") {
                 callback(new Error("首字母必須填寫"));
               } else if (!/^[a-zA-Z]$/.test(value)) {
-                callback(new Error("首字母必須a-z或者A-Z之間"));
+                callback(new Error("首字母必須 a-z 或者 A-Z 之間"));
               } else {
                 callback();
               }
@@ -95,7 +93,7 @@ export default {
               if (value == "") {
                 callback(new Error("排序字段必須填寫"));
               } else if (!Number.isInteger(value) || value < 0) {
-                callback(new Error("排序必須是一個大於等於0的整數"));
+                callback(new Error("排序必須是一個大於等於 0 的整數"));
               } else {
                 callback();
               }

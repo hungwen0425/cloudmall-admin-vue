@@ -33,7 +33,7 @@ export function list() {
   }
 }
 
-// 取得角色列表, 根據當前使用者
+// 取得角色列表, 根据当前用户
 export function select() {
   return {
     // isOpen: false,
@@ -47,7 +47,7 @@ export function select() {
   }
 }
 
-// 取得角色資料
+// 取得角色信息
 export function info() {
   return {
     // isOpen: false,

@@ -15,7 +15,7 @@ for (let i = 0; i < Math.floor(Math.random() * 10 + 1); i++) {
   }))
 }
 
-// 取得使用者列表
+// 取得用户列表
 export function list() {
   return {
     // isOpen: false,
@@ -35,7 +35,7 @@ export function list() {
   }
 }
 
-// 取得使用者資料
+// 取得用户信息
 export function info() {
   return {
     // isOpen: false,
@@ -49,7 +49,7 @@ export function info() {
   }
 }
 
-// 修改密碼
+// 修改密码
 export function updatePassword() {
   return {
     // isOpen: false,
@@ -62,7 +62,7 @@ export function updatePassword() {
   }
 }
 
-// 添加使用者
+// 添加用户
 export function add() {
   return {
     // isOpen: false,
@@ -75,7 +75,7 @@ export function add() {
   }
 }
 
-// 修改使用者
+// 修改用户
 export function update() {
   return {
     // isOpen: false,
@@ -88,7 +88,7 @@ export function update() {
   }
 }
 
-// 删除使用者
+// 删除用户
 export function del() {
   return {
     // isOpen: false,

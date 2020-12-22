@@ -47,8 +47,8 @@
       <el-form-item label="個性簽名" prop="sign">
         <el-input v-model="dataForm.sign" placeholder="個性簽名"></el-input>
       </el-form-item>
-      <el-form-item label="使用者来源" prop="sourceType">
-        <el-input v-model="dataForm.sourceType" placeholder="使用者来源"></el-input>
+      <el-form-item label="使用者來源" prop="sourceType">
+        <el-input v-model="dataForm.sourceType" placeholder="使用者來源"></el-input>
       </el-form-item>
       <el-form-item label="積分" prop="integration">
         <el-input v-model="dataForm.integration" placeholder="積分"></el-input>
@@ -93,53 +93,53 @@ export default {
         integration: "",
         growth: "",
         status: "",
-        createTime: ""
+        createTime: "",
       },
       dataRule: {
         levelId: [
-          { required: true, message: "會員等級id不能為空", trigger: "blur" }
+          { required: true, message: "會員等級id不能為空", trigger: "blur" },
         ],
         username: [
-          { required: true, message: "使用者名稱不能為空", trigger: "blur" }
+          { required: true, message: "使用者名稱不能為空", trigger: "blur" },
         ],
         password: [
-          { required: true, message: "密碼不能為空", trigger: "blur" }
+          { required: true, message: "密碼不能為空", trigger: "blur" },
         ],
         nickname: [
-          { required: true, message: "暱稱不能為空", trigger: "blur" }
+          { required: true, message: "暱稱不能為空", trigger: "blur" },
         ],
         mobile: [
-          { required: true, message: "手機號碼不能為空", trigger: "blur" }
+          { required: true, message: "手機號碼不能為空", trigger: "blur" },
         ],
         email: [
-          { required: true, message: "電子信箱不能為空", trigger: "blur" }
+          { required: true, message: "電子信箱不能為空", trigger: "blur" },
         ],
         header: [{ required: true, message: "頭像不能為空", trigger: "blur" }],
         gender: [{ required: true, message: "性别不能為空", trigger: "blur" }],
         birth: [{ required: true, message: "生日不能為空", trigger: "blur" }],
         city: [
-          { required: true, message: "所在城市不能為空", trigger: "blur" }
+          { required: true, message: "所在城市不能為空", trigger: "blur" },
         ],
         job: [{ required: true, message: "职业不能為空", trigger: "blur" }],
         sign: [
-          { required: true, message: "個性簽名不能為空", trigger: "blur" }
+          { required: true, message: "個性簽名不能為空", trigger: "blur" },
         ],
         sourceType: [
-          { required: true, message: "使用者来源不能為空", trigger: "blur" }
+          { required: true, message: "使用者來源不能為空", trigger: "blur" },
         ],
         integration: [
-          { required: true, message: "積分不能為空", trigger: "blur" }
+          { required: true, message: "積分不能為空", trigger: "blur" },
         ],
         growth: [
-          { required: true, message: "成長值不能為空", trigger: "blur" }
+          { required: true, message: "成長值不能為空", trigger: "blur" },
         ],
         status: [
-          { required: true, message: "啟用狀態不能為空", trigger: "blur" }
+          { required: true, message: "啟用狀態不能為空", trigger: "blur" },
         ],
         createTime: [
-          { required: true, message: "注册時間不能為空", trigger: "blur" }
-        ]
-      }
+          { required: true, message: "注册時間不能為空", trigger: "blur" },
+        ],
+      },
     };
   },
   methods: {
@@ -152,7 +152,7 @@ export default {
           this.$http({
             url: this.$http.adornUrl(`/member/member/info/${this.dataForm.id}`),
             method: "get",
-            params: this.$http.adornParams()
+            params: this.$http.adornParams(),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.dataForm.levelId = data.member.levelId;
@@ -179,7 +179,7 @@ export default {
     },
     // 表單提交
     dataFormSubmit() {
-      this.$refs["dataForm"].validate(valid => {
+      this.$refs["dataForm"].validate((valid) => {
         if (valid) {
           this.$http({
             url: this.$http.adornUrl(
@@ -204,8 +204,8 @@ export default {
               integration: this.dataForm.integration,
               growth: this.dataForm.growth,
               status: this.dataForm.status,
-              createTime: this.dataForm.createTime
-            })
+              createTime: this.dataForm.createTime,
+            }),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -215,7 +215,7 @@ export default {
                 onClose: () => {
                   this.visible = false;
                   this.$emit("refreshDataList");
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -223,7 +223,7 @@ export default {
           });
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>

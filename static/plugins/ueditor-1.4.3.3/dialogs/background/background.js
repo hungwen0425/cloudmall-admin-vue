@@ -8,7 +8,7 @@
         initColorSelector();
     };
 
-    /* 初始化tab標簽 */
+    /* 初始化tab標签 */
     function initTabs() {
         var tabs = $G('tabHeads').children;
         for (var i = 0; i < tabs.length; i++) {
@@ -31,7 +31,7 @@
         }
     }
 
-    /* 初始化颜色設定 */
+    /* 初始化颜色设置 */
     function initColorSelector() {
         var obj = editor.queryCommandValue('background');
         if (obj) {
@@ -73,12 +73,12 @@
         initColorPicker();
     }
 
-    /* 初始化颜色選擇器 */
+    /* 初始化颜色选择器 */
     function initColorPicker() {
         var me = editor,
             cp = $G("colorPicker");
 
-        /* 生成颜色選擇器ui物件 */
+        /* 生成颜色选择器ui物件 */
         var popup = new UE.ui.Popup({
             content: new UE.ui.ColorPicker({
                 noColorText: me.getLang("clearColor"),
@@ -99,7 +99,7 @@
             }
         });
 
-        /* 設定颜色選擇器 */
+        /* 设置颜色选择器 */
         domUtils.on(cp, "click", function () {
             popup.showAnchor(this);
         });
@@ -112,12 +112,12 @@
         });
     }
 
-    /* 初始化在線圖片列表 */
+    /* 初始化在线圖片列表 */
     function initImagePanel() {
         onlineImage = onlineImage || new OnlineImage('imageList');
     }
 
-    /* 更新背景色設定面板 */
+    /* 更新背景色设置面板 */
     function updateFormState(radio, color, url, align, x, y) {
         var nocolorRadio = $G('nocolorRadio'),
             coloredRadio = $G('coloredRadio');
@@ -180,7 +180,7 @@
     }
 
 
-    /* 在線圖片 */
+    /* 在线圖片 */
     function OnlineImage(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
@@ -214,7 +214,7 @@
                     _this.getImageData();
                 }
             });
-            /* 選中圖片 */
+            /* 选中圖片 */
             domUtils.on(this.container, 'click', function (e) {
                 var target = e.target || e.srcElement,
                     li = target.parentNode,
@@ -320,7 +320,7 @@
                 }
             }
         },
-        /* 改變圖片大小 */
+        /* 改变圖片大小 */
         scale: function (img, w, h, type) {
             var ow = img.width,
                 oh = img.height;

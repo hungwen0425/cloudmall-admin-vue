@@ -6,18 +6,18 @@
  * To change this template use File | Settings | File Templates.
  */
 
-//清空上次查選的痕跡
+//清空上次查选的痕迹
 editor.firstForSR = 0;
 editor.currentRangeForSR = null;
-//給tab註冊切換事件
+//给tab注册切换事件
 /**
- * tab點擊處理事件
+ * tab点击處理事件
  * @param tabHeads
  * @param tabBodys
  * @param obj
  */
 function clickHandler(tabHeads, tabBodys, obj) {
-    //head樣式更改
+    //head样式更改
     for (var k = 0, len = tabHeads.length; k < len; k++) {
         tabHeads[k].className = "";
     }
@@ -37,8 +37,8 @@ function clickHandler(tabHeads, tabBodys, obj) {
 }
 
 /**
- * TAB切換
- * @param tabParentId  tab的父節點ID或者物件本身
+ * TAB切换
+ * @param tabParentId  tab的父節点ID或者物件本身
  */
 function switchTab(tabParentId) {
     var tabElements = $G(tabParentId).children,
@@ -57,7 +57,7 @@ $G('searchtab').onmousedown = function () {
     $G('search-msg').innerHTML = '';
     $G('replace-msg').innerHTML = ''
 }
-//是否區分大小寫
+//是否区分大小写
 function getMatchCase(id) {
     return $G(id).checked ? true : false;
 }
@@ -118,7 +118,7 @@ $G("preReplaceBtn").onclick = function (txt, dir, mcase) {
     };
     frCommond(obj);
 };
-//替換
+//替换
 $G("repalceBtn").onclick = function () {
     var findtxt = $G("findtxt1").value.replace(/^\s|\s$/g, ""), obj,
         replacetxt = $G("replacetxt").value.replace(/^\s|\s$/g, "");
@@ -136,7 +136,7 @@ $G("repalceBtn").onclick = function () {
     };
     frCommond(obj);
 };
-//全部替換
+//全部替换
 $G("repalceAllBtn").onclick = function () {
     var findtxt = $G("findtxt1").value.replace(/^\s|\s$/g, ""), obj,
         replacetxt = $G("replacetxt").value.replace(/^\s|\s$/g, "");
@@ -157,7 +157,7 @@ $G("repalceAllBtn").onclick = function () {
         $G('replace-msg').innerHTML = lang.countMsg.replace("{#count}", num);
     }
 };
-//執行
+//执行
 var frCommond = function (obj) {
     return editor.execCommand("searchreplace", obj);
 };

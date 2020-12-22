@@ -14,7 +14,7 @@
 <script>
 //這裡可以導入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
 //例如：import 《組件名稱》 from '《組件路徑》';
-
+import PubSub from 'pubsub-js'
 export default {
   //import引入的組件需要注入到物件中才能使用
   components: {},
@@ -38,7 +38,7 @@ export default {
   //監控data中的資料變化
   watch: {
     brandId(val) {
-      this.PubSub.publish("brandId", val);
+      PubSub.publish("brandId", val);
     }
   },
   //方法集合

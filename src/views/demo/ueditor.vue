@@ -4,7 +4,7 @@
       <div slot-scope="description">
         <p
           class="el-alert__description"
-        >1. 此Demo只提供UEditor官方使用文件，入門部署和體驗功能。具體使用請参考：http://fex.baidu.com/ueditor/</p>
+        >1. 此Demo只提供UEditor官方使用檔案，入門部署和體驗功能。具體使用請参考：http://fex.baidu.com/ueditor/</p>
         <p
           class="el-alert__description"
         >2. 瀏覽器控制台報錯“請求後台設定項http錯誤，上傳功能將不能正常使用！”，此錯需要後台提供上傳接口方法（賦值給serverUrl屬性）</p>
@@ -36,13 +36,13 @@ export default {
       ue: null,
       ueId: `J_ueditorBox_${new Date().getTime()}`,
       ueContent: "",
-      dialogVisible: false
+      dialogVisible: false,
     };
   },
   mounted() {
     this.ue = ueditor.getEditor(this.ueId, {
       // serverUrl: '', // 服務器统一請求接口路徑
-      zIndex: 3000
+      zIndex: 3000,
     });
   },
   methods: {
@@ -51,8 +51,8 @@ export default {
       this.ue.ready(() => {
         this.ueContent = this.ue.getContent();
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

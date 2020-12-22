@@ -4,7 +4,7 @@
       <div slot-scope="description">
         <p
           class="el-alert__description"
-        >1. 此Demo只提供ECharts官方使用文件，入門部署和體驗功能。具體使用請参考：http://echarts.baidu.com/index.html</p>
+        >1. 此Demo只提供ECharts官方使用檔案，入門部署和體驗功能。具體使用請参考：http://echarts.baidu.com/index.html</p>
       </div>
     </el-alert>
 
@@ -41,7 +41,7 @@ export default {
       chartLine: null,
       chartBar: null,
       chartPie: null,
-      chartScatter: null
+      chartScatter: null,
     };
   },
   mounted() {
@@ -70,65 +70,65 @@ export default {
     initChartLine() {
       var option = {
         title: {
-          text: "折線圖堆疊"
+          text: "折線圖堆疊",
         },
         tooltip: {
-          trigger: "axis"
+          trigger: "axis",
         },
         legend: {
-          data: ["郵件营銷", "聯盟廣告", "視频廣告", "直接訪問", "搜索引擎"]
+          data: ["郵件营銷", "聯盟廣告", "視频廣告", "直接訪問", "搜索引擎"],
         },
         grid: {
           left: "3%",
           right: "4%",
           bottom: "3%",
-          containLabel: true
+          containLabel: true,
         },
         toolbox: {
           feature: {
-            saveAsImage: {}
-          }
+            saveAsImage: {},
+          },
         },
         xAxis: {
           type: "category",
           boundaryGap: false,
-          data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+          data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
         },
         yAxis: {
-          type: "value"
+          type: "value",
         },
         series: [
           {
             name: "郵件营銷",
             type: "line",
             stack: "總量",
-            data: [120, 132, 101, 134, 90, 230, 210]
+            data: [120, 132, 101, 134, 90, 230, 210],
           },
           {
             name: "聯盟廣告",
             type: "line",
             stack: "總量",
-            data: [220, 182, 191, 234, 290, 330, 310]
+            data: [220, 182, 191, 234, 290, 330, 310],
           },
           {
             name: "視频廣告",
             type: "line",
             stack: "總量",
-            data: [150, 232, 201, 154, 190, 330, 410]
+            data: [150, 232, 201, 154, 190, 330, 410],
           },
           {
             name: "直接訪問",
             type: "line",
             stack: "總量",
-            data: [320, 332, 301, 334, 390, 330, 320]
+            data: [320, 332, 301, 334, 390, 330, 320],
           },
           {
             name: "搜索引擎",
             type: "line",
             stack: "總量",
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
-          }
-        ]
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+          },
+        ],
       };
       this.chartLine = echarts.init(document.getElementById("J_chartLineBox"));
       this.chartLine.setOption(option);
@@ -136,14 +136,14 @@ export default {
         this.chartLine.resize();
       });
     },
-    // 柱状圖
+    // 柱狀圖
     initChartBar() {
       var option = {
         tooltip: {
           trigger: "axis",
           axisPointer: {
-            type: "shadow"
-          }
+            type: "shadow",
+          },
         },
         legend: {
           data: [
@@ -155,49 +155,49 @@ export default {
             "百度",
             "谷歌",
             "必應",
-            "其他"
-          ]
+            "其他",
+          ],
         },
         grid: {
           left: "3%",
           right: "4%",
           bottom: "3%",
-          containLabel: true
+          containLabel: true,
         },
         xAxis: [
           {
             type: "category",
-            data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
-          }
+            data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          },
         ],
         yAxis: [
           {
-            type: "value"
-          }
+            type: "value",
+          },
         ],
         series: [
           {
             name: "直接訪問",
             type: "bar",
-            data: [320, 332, 301, 334, 390, 330, 320]
+            data: [320, 332, 301, 334, 390, 330, 320],
           },
           {
             name: "郵件营銷",
             type: "bar",
             stack: "廣告",
-            data: [120, 132, 101, 134, 90, 230, 210]
+            data: [120, 132, 101, 134, 90, 230, 210],
           },
           {
             name: "聯盟廣告",
             type: "bar",
             stack: "廣告",
-            data: [220, 182, 191, 234, 290, 330, 310]
+            data: [220, 182, 191, 234, 290, 330, 310],
           },
           {
             name: "視频廣告",
             type: "bar",
             stack: "廣告",
-            data: [150, 232, 201, 154, 190, 330, 410]
+            data: [150, 232, 201, 154, 190, 330, 410],
           },
           {
             name: "搜索引擎",
@@ -206,38 +206,38 @@ export default {
             markLine: {
               lineStyle: {
                 normal: {
-                  type: "dashed"
-                }
+                  type: "dashed",
+                },
               },
-              data: [[{ type: "min" }, { type: "max" }]]
-            }
+              data: [[{ type: "min" }, { type: "max" }]],
+            },
           },
           {
             name: "百度",
             type: "bar",
             barWidth: 5,
             stack: "搜索引擎",
-            data: [620, 732, 701, 734, 1090, 1130, 1120]
+            data: [620, 732, 701, 734, 1090, 1130, 1120],
           },
           {
             name: "谷歌",
             type: "bar",
             stack: "搜索引擎",
-            data: [120, 132, 101, 134, 290, 230, 220]
+            data: [120, 132, 101, 134, 290, 230, 220],
           },
           {
             name: "必應",
             type: "bar",
             stack: "搜索引擎",
-            data: [60, 72, 71, 74, 190, 130, 110]
+            data: [60, 72, 71, 74, 190, 130, 110],
           },
           {
             name: "其他",
             type: "bar",
             stack: "搜索引擎",
-            data: [62, 82, 91, 84, 109, 110, 120]
-          }
-        ]
+            data: [62, 82, 91, 84, 109, 110, 120],
+          },
+        ],
       };
       this.chartBar = echarts.init(document.getElementById("J_chartBarBox"));
       this.chartBar.setOption(option);
@@ -245,7 +245,7 @@ export default {
         this.chartBar.resize();
       });
     },
-    // 餅状圖
+    // 餅狀圖
     initChartPie() {
       var option = {
         backgroundColor: "#2c343c",
@@ -254,20 +254,20 @@ export default {
           left: "center",
           top: 20,
           textStyle: {
-            color: "#ccc"
-          }
+            color: "#ccc",
+          },
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b} : {c} ({d}%)"
+          formatter: "{a} <br/>{b} : {c} ({d}%)",
         },
         visualMap: {
           show: false,
           min: 80,
           max: 600,
           inRange: {
-            colorLightness: [0, 1]
-          }
+            colorLightness: [0, 1],
+          },
         },
         series: [
           {
@@ -280,42 +280,42 @@ export default {
               { value: 310, name: "郵件营銷" },
               { value: 274, name: "聯盟廣告" },
               { value: 235, name: "視频廣告" },
-              { value: 400, name: "搜索引擎" }
-            ].sort(function(a, b) {
+              { value: 400, name: "搜索引擎" },
+            ].sort(function (a, b) {
               return a.value - b.value;
             }),
             roseType: "radius",
             label: {
               normal: {
                 textStyle: {
-                  color: "rgba(255, 255, 255, 0.3)"
-                }
-              }
+                  color: "rgba(255, 255, 255, 0.3)",
+                },
+              },
             },
             labelLine: {
               normal: {
                 lineStyle: {
-                  color: "rgba(255, 255, 255, 0.3)"
+                  color: "rgba(255, 255, 255, 0.3)",
                 },
                 smooth: 0.2,
                 length: 10,
-                length2: 20
-              }
+                length2: 20,
+              },
             },
             itemStyle: {
               normal: {
                 color: "#c23531",
                 shadowBlur: 200,
-                shadowColor: "rgba(0, 0, 0, 0.5)"
-              }
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+              },
             },
             animationType: "scale",
             animationEasing: "elasticOut",
-            animationDelay: function(idx) {
+            animationDelay: function (idx) {
               return Math.random() * 200;
-            }
-          }
-        ]
+            },
+          },
+        ],
       };
       this.chartPie = echarts.init(document.getElementById("J_chartPieBox"));
       this.chartPie.setOption(option);
@@ -328,29 +328,29 @@ export default {
       var option = {
         backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [
           { offset: 0, color: "#f7f8fa" },
-          { offset: 1, color: "#cdd0d5" }
+          { offset: 1, color: "#cdd0d5" },
         ]),
         title: {
-          text: "1990 與 2015 年各國家人均壽命與 GDP"
+          text: "1990 與 2015 年各國家人均壽命與 GDP",
         },
         legend: {
           right: 10,
-          data: ["1990", "2015"]
+          data: ["1990", "2015"],
         },
         xAxis: {
           splitLine: {
             lineStyle: {
-              type: "dashed"
-            }
-          }
+              type: "dashed",
+            },
+          },
         },
         yAxis: {
           splitLine: {
             lineStyle: {
-              type: "dashed"
-            }
+              type: "dashed",
+            },
           },
-          scale: true
+          scale: true,
         },
         series: [
           {
@@ -374,20 +374,20 @@ export default {
               [19349, 69.6, 147568552, "Russia", 1990],
               [10670, 67.3, 53994605, "Turkey", 1990],
               [26424, 75.7, 57110117, "United Kingdom", 1990],
-              [37062, 75.4, 252847810, "United States", 1990]
+              [37062, 75.4, 252847810, "United States", 1990],
             ],
             type: "scatter",
-            symbolSize: function(data) {
+            symbolSize: function (data) {
               return Math.sqrt(data[2]) / 5e2;
             },
             label: {
               emphasis: {
                 show: true,
-                formatter: function(param) {
+                formatter: function (param) {
                   return param.data[3];
                 },
-                position: "top"
-              }
+                position: "top",
+              },
             },
             itemStyle: {
               normal: {
@@ -396,10 +396,10 @@ export default {
                 shadowOffsetY: 5,
                 color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [
                   { offset: 0, color: "rgb(251, 118, 123)" },
-                  { offset: 1, color: "rgb(204, 46, 72)" }
-                ])
-              }
-            }
+                  { offset: 1, color: "rgb(204, 46, 72)" },
+                ]),
+              },
+            },
           },
           {
             name: "2015",
@@ -422,20 +422,20 @@ export default {
               [23038, 73.13, 143456918, "Russia", 2015],
               [19360, 76.5, 78665830, "Turkey", 2015],
               [38225, 81.4, 64715810, "United Kingdom", 2015],
-              [53354, 79.1, 321773631, "United States", 2015]
+              [53354, 79.1, 321773631, "United States", 2015],
             ],
             type: "scatter",
-            symbolSize: function(data) {
+            symbolSize: function (data) {
               return Math.sqrt(data[2]) / 5e2;
             },
             label: {
               emphasis: {
                 show: true,
-                formatter: function(param) {
+                formatter: function (param) {
                   return param.data[3];
                 },
-                position: "top"
-              }
+                position: "top",
+              },
             },
             itemStyle: {
               normal: {
@@ -444,12 +444,12 @@ export default {
                 shadowOffsetY: 5,
                 color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [
                   { offset: 0, color: "rgb(129, 227, 238)" },
-                  { offset: 1, color: "rgb(25, 183, 207)" }
-                ])
-              }
-            }
-          }
-        ]
+                  { offset: 1, color: "rgb(25, 183, 207)" },
+                ]),
+              },
+            },
+          },
+        ],
       };
       this.chartPie = echarts.init(
         document.getElementById("J_chartScatterBox")
@@ -458,8 +458,8 @@ export default {
       window.addEventListener("resize", () => {
         this.chartPie.resize();
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

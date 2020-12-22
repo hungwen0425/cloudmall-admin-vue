@@ -20,7 +20,7 @@
         initUpload();
     };
 
-    /* 初始化tab標簽 */
+    /* 初始化tab標签 */
     function initTabs() {
         var tabs = $G('tabHeads').children;
         for (var i = 0; i < tabs.length; i++) {
@@ -45,7 +45,7 @@
         addUrlChangeListener($G("videoUrl"));
         addOkListener();
 
-        //編輯視频時初始化相關資料
+        //编辑视频時初始化相關信息
         (function () {
             var img = editor.selection.getRange().getClosedNode(), url;
             if (img && img.className) {
@@ -68,7 +68,7 @@
     }
 
     /**
-     * 監听確認和取消两個按鈕事件，使用者執行插入或者清空正在播放的視频實例操作
+     * 监听确认和取消兩個按钮事件，用户执行插入或者清空正在播放的视频實例操作
      */
     function addOkListener() {
         dialog.onok = function () {
@@ -92,7 +92,7 @@
     }
 
     /**
-     * 依據傳入的align值更新按鈕資料
+     * 依据傳入的align值更新按钮信息
      * @param align
      */
     function updateAlignButton(align) {
@@ -111,7 +111,7 @@
     }
 
     /**
-     * 將單個視频資料插入編輯器中
+     * 將单個视频信息插入编辑器中
      */
     function insertSingle() {
         var width = $G("videoWidth"),
@@ -129,7 +129,7 @@
     }
 
     /**
-     * 將元素id下的所有代表視频的圖片插入編輯器中
+     * 將元素id下的所有代表视频的圖片插入编辑器中
      * @param id
      */
     function insertSearch(id) {
@@ -149,7 +149,7 @@
     }
 
     /**
-     * 找到id下具有focus類的節點並返回該節點下的某個屬性
+     * 找到id下具有focus類的節点并返回该節点下的某個屬性
      * @param id
      * @param returnProperty
      */
@@ -184,7 +184,7 @@
     }
 
     /**
-      * 檢测傳入的所有input框中输入的長寬是否是正數
+      * 检测傳入的所有input框中输入的长宽是否是正數
       * @param nodes input框集合，
       */
     function checkNum(nodes) {
@@ -201,7 +201,7 @@
     }
 
     /**
-     * 數字判斷
+     * 數字判断
      * @param value
      */
     function isNumber(value) {
@@ -209,7 +209,7 @@
     }
 
     /**
-      * 創建圖片浮動選擇按鈕
+      * 创建圖片浮動选择按钮
       * @param ids
       */
     function createAlignButton(ids) {
@@ -229,7 +229,7 @@
     }
 
     /**
-     * 選擇切換
+     * 选择切换
      * @param selectParentId
      */
     function switchSelect(selectParentId) {
@@ -246,7 +246,7 @@
     }
 
     /**
-     * 監听url改變事件
+     * 监听url改变事件
      * @param url
      */
     function addUrlChangeListener(url) {
@@ -262,7 +262,7 @@
     }
 
     /**
-     * 根據url生成視频預覽
+     * 根据url生成视频預覽
      * @param url
      */
     function createPreviewVideo(url) {
@@ -282,7 +282,7 @@
     }
 
 
-    /* 插入上傳視频 */
+    /* 插入上傳视频 */
     function insertUpload() {
         var videoObjs = [],
             uploadDir = editor.getOpt('videoUrlPrefix'),
@@ -301,14 +301,14 @@
 
         var count = uploadFile.getQueueCount();
         if (count) {
-            $('.info', '#queueList').html('<span style="color:red;">' + '還有2個未上傳文件'.replace(/[\d]/, count) + '</span>');
+            $('.info', '#queueList').html('<span style="color:red;">' + '還有2個未上傳檔案'.replace(/[\d]/, count) + '</span>');
             return false;
         } else {
             editor.execCommand('insertvideo', videoObjs, 'upload');
         }
     }
 
-    /*初始化上傳標簽*/
+    /*初始化上傳標签*/
     function initUpload() {
         uploadFile = new UploadFile('queueList');
     }
@@ -335,32 +335,32 @@
                 $wrap = _this.$wrap,
                 // 圖片容器
                 $queue = $wrap.find('.filelist'),
-                // 狀態欄，包括進度和控制按鈕
+                // 狀態栏，包括进度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
-                // 文件總體選擇資料。
+                // 檔案总體选择信息。
                 $info = $statusBar.find('.info'),
-                // 上傳按鈕
+                // 上傳按钮
                 $upload = $wrap.find('.uploadBtn'),
-                // 上傳按鈕
+                // 上傳按钮
                 $filePickerBtn = $wrap.find('.filePickerBtn'),
-                // 上傳按鈕
+                // 上傳按钮
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
-                // 没選擇文件之前的内容。
+                // 没选择檔案之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
-                // 總體進度條
+                // 总體进度条
                 $progress = $statusBar.find('.progress').hide(),
-                // 添加的文件數量
+                // 添加的檔案數量
                 fileCount = 0,
-                // 添加的文件總大小
+                // 添加的檔案总大小
                 fileSize = 0,
-                // 優化retina, 在retina下這個值是2
+                // 优化retina, 在retina下这個值是2
                 ratio = window.devicePixelRatio || 1,
                 // 縮略圖大小
                 thumbnailWidth = 113 * ratio,
                 thumbnailHeight = 113 * ratio,
                 // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-                // 所有文件的進度資料，key為file id
+                // 所有檔案的进度信息，key為file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -408,7 +408,7 @@
 
             setState('pedding');
 
-            // 當有文件添加進來時執行，負責view的創建
+            // 当有檔案添加进來時执行，负责view的创建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                     '<p class="title">' + file.name + '</p>' +
@@ -472,7 +472,7 @@
                     percentages[file.id] = [file.size, 0];
                     file.rotation = 0;
 
-                    /* 檢查文件格式 */
+                    /* 检查檔案格式 */
                     if (!file.ext || acceptExtensions.indexOf(file.ext.toLowerCase()) == -1) {
                         showError('not_allow_type');
                         uploader.removeFile(file);
@@ -543,7 +543,7 @@
                 $li.insertBefore($filePickerBlock);
             }
 
-            // 負責view的銷毁
+            // 负责view的销毁
             function removeFile(file) {
                 var $li = $('#' + file.id);
                 delete percentages[file.id];
@@ -580,7 +580,7 @@
 
                     switch (val) {
 
-                        /* 未選擇文件 */
+                        /* 未选择檔案 */
                         case 'pedding':
                             $queue.addClass('element-invisible');
                             $statusBar.addClass('element-invisible');
@@ -589,7 +589,7 @@
                             uploader.refresh();
                             break;
 
-                        /* 可以開始上傳 */
+                        /* 可以开始上傳 */
                         case 'ready':
                             $placeHolder.addClass('element-invisible');
                             $queue.removeClass('element-invisible');
@@ -702,7 +702,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 添加額外的GET参數 */
+                        /* 添加额外的GET参數 */
                         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
                             url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?' : '&') + 'encode=utf-8&' + params);
                         uploader.option('server', url);
@@ -715,7 +715,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //這裡可以通過data物件添加POST参數
+                //这里可以通過data物件添加POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 

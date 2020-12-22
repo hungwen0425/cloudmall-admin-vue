@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* dialog樣式 */
+/* dialog样式 */
 .wrapper {
     zoom: 1;
     width: 630px;
@@ -11,7 +11,7 @@
     font-family: sans-serif;
 }
 
-/*tab樣式框大小*/
+/*tab样式框大小*/
 .tabhead {
     float:left;
 }
@@ -37,7 +37,7 @@
     display: block;
 }
 
-/* 圖片對齊方式 */
+/* 圖片對齐方式 */
 .alignBar{
     float:right;
     margin-top: 5px;
@@ -94,7 +94,7 @@
 
 
 
-/* 远程圖片樣式 */
+/* 远程圖片样式 */
 #remote {
     z-index: 200;
 }
@@ -632,7 +632,7 @@
 
 
 
-/* 圖片管理樣式 */
+/* 圖片管理样式 */
 #online {
     width: 100%;
     height: 336px;
@@ -706,7 +706,7 @@
 }
 
 
-/* 圖片搜索樣式 */
+/* 圖片搜索样式 */
 #search .searchBar {
     width: 100%;
     height: 30px;

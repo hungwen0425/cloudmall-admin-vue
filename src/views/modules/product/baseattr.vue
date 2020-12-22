@@ -86,8 +86,7 @@
             prop="showDesc"
             header-align="center"
             align="center"
-            label="快速展示"
-          >
+            label="快速展示">
             <template slot-scope="scope">
               <i class="el-icon-success" v-if="scope.row.showDesc==1"></i>
               <i class="el-icon-error" v-else></i>
@@ -138,15 +137,15 @@ export default {
   props: {
     attrtype: {
       type: Number,
-      default: 1
-    }
+      default: 1,
+    },
   },
   data() {
     return {
       catId: 0,
       type: 1,
       dataForm: {
-        key: ""
+        key: "",
       },
       dataList: [],
       pageIndex: 1,
@@ -154,14 +153,14 @@ export default {
       totalPage: 0,
       dataListLoading: false,
       dataListSelections: [],
-      addOrUpdateVisible: false
+      addOrUpdateVisible: false,
     };
   },
   activated() {
     this.getDataList();
   },
   methods: {
-    //感知树节點被點擊
+    //感知樹節點被點擊
     treenodeclick(data, node, component) {
       if (node.level == 3) {
         this.catId = data.catId;
@@ -182,8 +181,8 @@ export default {
         params: this.$http.adornParams({
           page: this.pageIndex,
           limit: this.pageSize,
-          key: this.dataForm.key
-        })
+          key: this.dataForm.key,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -221,7 +220,7 @@ export default {
     deleteHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.attrId;
           });
       this.$confirm(
@@ -230,13 +229,13 @@ export default {
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       ).then(() => {
         this.$http({
           url: this.$http.adornUrl("/product/attr/delete"),
           method: "post",
-          data: this.$http.adornData(ids, false)
+          data: this.$http.adornData(ids, false),
         }).then(({ data }) => {
           if (data && data.code === 0) {
             this.$message({
@@ -245,15 +244,15 @@ export default {
               duration: 1500,
               onClose: () => {
                 this.getDataList();
-              }
+              },
             });
           } else {
             this.$message.error(data.msg);
           }
         });
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

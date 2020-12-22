@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* dialog樣式 */
+/* dialog样式 */
 .wrapper {
     zoom: 1;
     width: 630px;
@@ -11,7 +11,7 @@
     font-family: sans-serif;
 }
 
-/*tab樣式框大小*/
+/*tab样式框大小*/
 .tabhead {
     float:left;
 }
@@ -485,7 +485,7 @@
 
 
 
-/* 圖片管理樣式 */
+/* 圖片管理样式 */
 #online {
     width: 100%;
     height: 336px;
@@ -582,7 +582,7 @@
 }
 
 
-/* 在線文件的文件預覽圖標 */
+/* 在线檔案的檔案預覽圖標 */
 i.file-preview {
     display: block;
     margin: 10px auto;

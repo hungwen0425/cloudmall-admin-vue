@@ -15,10 +15,10 @@
         <el-input v-model="dataForm.name" placeholder="場次名稱"></el-input>
       </el-form-item>
       <el-form-item label="每日開始時間" prop="startTime">
-        <el-date-picker type="datetime" placeholder="每日開始時間" v-model="dataForm.startTime"></el-date-picker>
+        <el-date-picker type="datetime" placeholder="每日開始時間" value-format="yyyy-MM-dd HH:mm:ss" v-model="dataForm.startTime"></el-date-picker>
       </el-form-item>
       <el-form-item label="每日結束時間" prop="endTime">
-        <el-date-picker type="datetime" placeholder="每日結束時間" v-model="dataForm.endTime"></el-date-picker>
+        <el-date-picker type="datetime" placeholder="每日結束時間" value-format="yyyy-MM-dd HH:mm:ss" v-model="dataForm.endTime"></el-date-picker>
       </el-form-item>
       <el-form-item label="啟用狀態" prop="status">
         <el-input v-model="dataForm.status" placeholder="啟用狀態"></el-input>
@@ -76,10 +76,10 @@ export default {
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.dataForm.name = data.seckillSession.name;
-              this.dataForm.startTime = data.seckillSession.startTime;
+              this.dataForm.startTime = data.seckillSession.startTime.format;
               this.dataForm.endTime = data.seckillSession.endTime;
               this.dataForm.status = data.seckillSession.status;
-              this.dataForm.createTime = data.seckillSession.createTime;
+              this.dataForm.createTime =  data.seckillSession.createTime;
             }
           });
         }
@@ -99,8 +99,7 @@ export default {
               name: this.dataForm.name,
               startTime: this.dataForm.startTime,
               endTime: this.dataForm.endTime,
-              status: this.dataForm.status,
-              createTime: new Date()
+              status: this.dataForm.status
             })
           }).then(({ data }) => {
             if (data && data.code === 0) {

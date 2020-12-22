@@ -2,8 +2,8 @@
   <div class="mod-oss">
     <el-form :inline="true" :model="dataForm">
       <el-form-item>
-        <el-button type="primary" @click="configHandle()">云存储配置</el-button>
-        <el-button type="primary" @click="uploadHandle()">上傳文件</el-button>
+        <el-button type="primary" @click="configHandle()">雲端存储配置</el-button>
+        <el-button type="primary" @click="uploadHandle()">上傳檔案</el-button>
         <el-button
           type="danger"
           @click="deleteHandle()"
@@ -43,9 +43,9 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 弹窗, 云存储配置 -->
+    <!-- 彈窗, 雲端存储配置 -->
     <config v-if="configVisible" ref="config"></config>
-    <!-- 弹窗, 上傳文件 -->
+    <!-- 彈窗, 上傳檔案 -->
     <upload v-if="uploadVisible" ref="upload" @refreshDataList="getDataList"></upload>
   </div>
 </template>
@@ -64,12 +64,12 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       configVisible: false,
-      uploadVisible: false
+      uploadVisible: false,
     };
   },
   components: {
     Config,
-    Upload
+    Upload,
   },
   activated() {
     this.getDataList();
@@ -83,8 +83,8 @@ export default {
         method: "get",
         params: this.$http.adornParams({
           page: this.pageIndex,
-          limit: this.pageSize
-        })
+          limit: this.pageSize,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -111,14 +111,14 @@ export default {
     selectionChangeHandle(val) {
       this.dataListSelections = val;
     },
-    // 云存储配置
+    // 雲端存储配置
     configHandle() {
       this.configVisible = true;
       this.$nextTick(() => {
         this.$refs.config.init();
       });
     },
-    // 上傳文件
+    // 上傳檔案
     uploadHandle() {
       this.uploadVisible = true;
       this.$nextTick(() => {
@@ -129,7 +129,7 @@ export default {
     deleteHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.id;
           });
       this.$confirm(
@@ -138,14 +138,14 @@ export default {
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       )
         .then(() => {
           this.$http({
             url: this.$http.adornUrl("/sys/oss/delete"),
             method: "post",
-            data: this.$http.adornData(ids, false)
+            data: this.$http.adornData(ids, false),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -154,7 +154,7 @@ export default {
                 duration: 1500,
                 onClose: () => {
                   this.getDataList();
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -162,7 +162,7 @@ export default {
           });
         })
         .catch(() => {});
-    }
-  }
+    },
+  },
 };
 </script>

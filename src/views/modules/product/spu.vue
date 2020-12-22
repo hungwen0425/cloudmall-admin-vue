@@ -37,8 +37,9 @@
 import CategoryCascader from "../common/category-cascader";
 import BrandSelect from "../common/brand-select";
 import Spuinfo from "./spuinfo";
+import PubSub from 'pubsub-js';
 export default {
-  //import引入的組件需要注入到物件中才能使用
+  // import 引入的組件需要注入到物件中才能使用
   components: { CategoryCascader, Spuinfo, BrandSelect },
   props: {},
   data() {
@@ -56,15 +57,15 @@ export default {
       brandIdSub: null
     };
   },
-  //計算屬性 類似於data概念
+  // 計算屬性 類似於 data 概念
   computed: {},
-  //監控data中的資料變化
+  // 監控data中的資料變化
   watch: {},
-  //方法集合
+  // 方法集合
   methods: {
     searchSpuInfo() {
       console.log("搜索條件", this.dataForm);
-      this.PubSub.publish("dataForm", this.dataForm);
+      PubSub.publish("dataForm", this.dataForm);
     }
   },
   //生命週期 - 創建完成（可以訪問當前this實例）

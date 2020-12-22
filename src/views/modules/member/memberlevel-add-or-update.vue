@@ -2,15 +2,13 @@
   <el-dialog
     :title="!dataForm.id ? '新增' : '修改'"
     :close-on-click-modal="false"
-    :visible.sync="visible"
-  >
+    :visible.sync="visible">
     <el-form
       :model="dataForm"
       :rules="dataRule"
       ref="dataForm"
       @keyup.enter.native="dataFormSubmit()"
-      label-width="120px"
-    >
+      label-width="170px">
       <el-form-item label="等級名稱" prop="name">
         <el-input v-model="dataForm.name" placeholder="等級名稱"></el-input>
       </el-form-item>
@@ -77,7 +75,7 @@ export default {
         defaultStatus: [
           {
             required: true,
-            message: "是否為默認等級[0->不是；1->是]不能為空",
+            message: "是否為默認等級 [0->不是；1->是] 不能為空",
             trigger: "blur"
           }
         ],
@@ -116,9 +114,7 @@ export default {
         this.$refs["dataForm"].resetFields();
         if (this.dataForm.id) {
           this.$http({
-            url: this.$http.adornUrl(
-              `/member/memberlevel/info/${this.dataForm.id}`
-            ),
+            url: this.$http.adornUrl(`/member/memberlevel/info/${this.dataForm.id}`),
             method: "get",
             params: this.$http.adornParams()
           }).then(({ data }) => {
@@ -147,9 +143,7 @@ export default {
       this.$refs["dataForm"].validate(valid => {
         if (valid) {
           this.$http({
-            url: this.$http.adornUrl(
-              `/member/memberlevel/${!this.dataForm.id ? "save" : "update"}`
-            ),
+            url: this.$http.adornUrl(`/member/memberlevel/${!this.dataForm.id ? "save" : "update"}`),
             method: "post",
             data: this.$http.adornData({
               id: this.dataForm.id || undefined,

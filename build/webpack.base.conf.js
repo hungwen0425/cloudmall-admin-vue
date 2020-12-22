@@ -40,7 +40,7 @@ module.exports = {
   },
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
+      //...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -95,7 +95,7 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty'
   },
-  // 引入外部庫, 無需webpack打包處理
+  // 引入外部库, 無需webpack打包處理
   externals: {
     mockjs: 'Mock',
     echarts: 'echarts',

@@ -9,14 +9,16 @@
         <el-button
           v-if="isAuth('member:memberlevel:save')"
           type="primary"
-          @click="addOrUpdateHandle()"
-        >新增</el-button>
+          @click="addOrUpdateHandle()">
+          新增
+        </el-button>
         <el-button
           v-if="isAuth('member:memberlevel:delete')"
           type="danger"
           @click="deleteHandle()"
-          :disabled="dataListSelections.length <= 0"
-        >批量删除</el-button>
+          :disabled="dataListSelections.length <= 0">
+          批量删除
+        </el-button>
       </el-form-item>
     </el-form>
     <el-table
@@ -24,8 +26,7 @@
       border
       v-loading="dataListLoading"
       @selection-change="selectionChangeHandle"
-      style="width: 100%;"
-    >
+      style="width: 100%;">
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
       <el-table-column prop="name" header-align="center" align="center" label="等級名稱"></el-table-column>
@@ -48,8 +49,7 @@
           prop="priviledgeFreeFreight"
           header-align="center"
           align="center"
-          label="免郵特權"
-        >
+          label="免郵特權">
           <template slot-scope="scope">
             <i class="el-icon-success" v-if="scope.row.priviledgeFreeFreight==1"></i>
             <i class="el-icon-error" v-else></i>
@@ -59,8 +59,7 @@
           prop="priviledgeMemberPrice"
           header-align="center"
           align="center"
-          label="會員價格特權"
-        >
+          label="會員價格特權">
           <template slot-scope="scope">
             <i class="el-icon-success" v-if="scope.row.priviledgeMemberPrice==1"></i>
             <i class="el-icon-error" v-else></i>
@@ -70,8 +69,7 @@
           prop="priviledgeBirthday"
           header-align="center"
           align="center"
-          label="生日特權"
-        >
+          label="生日特權">
           <template slot-scope="scope">
             <i class="el-icon-success" v-if="scope.row.priviledgeBirthday==1"></i>
             <i class="el-icon-error" v-else></i>

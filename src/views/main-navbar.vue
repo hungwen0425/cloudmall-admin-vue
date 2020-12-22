@@ -45,17 +45,17 @@ import { clearLoginInfo } from "@/utils";
 export default {
   data() {
     return {
-      updatePassowrdVisible: false
+      updatePassowrdVisible: false,
     };
   },
   components: {
-    UpdatePassword
+    UpdatePassword,
   },
   computed: {
     navbarLayoutType: {
       get() {
         return this.$store.state.common.navbarLayoutType;
-      }
+      },
     },
     sidebarFold: {
       get() {
@@ -63,7 +63,7 @@ export default {
       },
       set(val) {
         this.$store.commit("common/updateSidebarFold", val);
-      }
+      },
     },
     mainTabs: {
       get() {
@@ -71,13 +71,13 @@ export default {
       },
       set(val) {
         this.$store.commit("common/updateMainTabs", val);
-      }
+      },
     },
     userName: {
       get() {
         return this.$store.state.user.name;
-      }
-    }
+      },
+    },
   },
   methods: {
     // 修改密碼
@@ -92,13 +92,13 @@ export default {
       this.$confirm(`確定進行[退出]操作?`, "提示", {
         confirmButtonText: "確定",
         cancelButtonText: "取消",
-        type: "warning"
+        type: "warning",
       })
         .then(() => {
           this.$http({
             url: this.$http.adornUrl("/sys/logout"),
             method: "post",
-            data: this.$http.adornData()
+            data: this.$http.adornData(),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               clearLoginInfo();
@@ -107,7 +107,7 @@ export default {
           });
         })
         .catch(() => {});
-    }
-  }
+    },
+  },
 };
 </script>

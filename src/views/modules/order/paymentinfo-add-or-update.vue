@@ -35,11 +35,11 @@
       <el-form-item label="確認時間" prop="confirmTime">
         <el-input v-model="dataForm.confirmTime" placeholder="確認時間"></el-input>
       </el-form-item>
-      <el-form-item label="回调内容" prop="callbackContent">
-        <el-input v-model="dataForm.callbackContent" placeholder="回调内容"></el-input>
+      <el-form-item label="回調内容" prop="callbackContent">
+        <el-input v-model="dataForm.callbackContent" placeholder="回調内容"></el-input>
       </el-form-item>
-      <el-form-item label="回调時間" prop="callbackTime">
-        <el-input v-model="dataForm.callbackTime" placeholder="回调時間"></el-input>
+      <el-form-item label="回調時間" prop="callbackTime">
+        <el-input v-model="dataForm.callbackTime" placeholder="回調時間"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -65,48 +65,48 @@ export default {
         createTime: "",
         confirmTime: "",
         callbackContent: "",
-        callbackTime: ""
+        callbackTime: "",
       },
       dataRule: {
         orderSn: [
           {
             required: true,
             message: "訂單號（對外业务號）不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         orderId: [
-          { required: true, message: "訂單id不能為空", trigger: "blur" }
+          { required: true, message: "訂單id不能為空", trigger: "blur" },
         ],
         alipayTradeNo: [
           {
             required: true,
             message: "支付宝交易流水號不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         totalAmount: [
-          { required: true, message: "支付總金額不能為空", trigger: "blur" }
+          { required: true, message: "支付總金額不能為空", trigger: "blur" },
         ],
         subject: [
-          { required: true, message: "交易内容不能為空", trigger: "blur" }
+          { required: true, message: "交易内容不能為空", trigger: "blur" },
         ],
         paymentStatus: [
-          { required: true, message: "支付狀態不能為空", trigger: "blur" }
+          { required: true, message: "支付狀態不能為空", trigger: "blur" },
         ],
         createTime: [
-          { required: true, message: "創建時間不能為空", trigger: "blur" }
+          { required: true, message: "創建時間不能為空", trigger: "blur" },
         ],
         confirmTime: [
-          { required: true, message: "確認時間不能為空", trigger: "blur" }
+          { required: true, message: "確認時間不能為空", trigger: "blur" },
         ],
         callbackContent: [
-          { required: true, message: "回调内容不能為空", trigger: "blur" }
+          { required: true, message: "回調内容不能為空", trigger: "blur" },
         ],
         callbackTime: [
-          { required: true, message: "回调時間不能為空", trigger: "blur" }
-        ]
-      }
+          { required: true, message: "回調時間不能為空", trigger: "blur" },
+        ],
+      },
     };
   },
   methods: {
@@ -121,7 +121,7 @@ export default {
               `/order/paymentinfo/info/${this.dataForm.id}`
             ),
             method: "get",
-            params: this.$http.adornParams()
+            params: this.$http.adornParams(),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.dataForm.orderSn = data.paymentInfo.orderSn;
@@ -141,7 +141,7 @@ export default {
     },
     // 表單提交
     dataFormSubmit() {
-      this.$refs["dataForm"].validate(valid => {
+      this.$refs["dataForm"].validate((valid) => {
         if (valid) {
           this.$http({
             url: this.$http.adornUrl(
@@ -159,8 +159,8 @@ export default {
               createTime: this.dataForm.createTime,
               confirmTime: this.dataForm.confirmTime,
               callbackContent: this.dataForm.callbackContent,
-              callbackTime: this.dataForm.callbackTime
-            })
+              callbackTime: this.dataForm.callbackTime,
+            }),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -170,7 +170,7 @@ export default {
                 onClose: () => {
                   this.visible = false;
                   this.$emit("refreshDataList");
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -178,7 +178,7 @@ export default {
           });
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>

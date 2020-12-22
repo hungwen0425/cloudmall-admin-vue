@@ -16,8 +16,7 @@
             border
             v-loading="dataListLoading"
             @selection-change="innerSelectionChangeHandle"
-            style="width: 100%;"
-          >
+            style="width: 100%;">
             <el-table-column type="selection" header-align="center" align="center"></el-table-column>
             <el-table-column prop="attrId" header-align="center" align="center" label="屬性id"></el-table-column>
             <el-table-column prop="attrName" header-align="center" align="center" label="屬性名"></el-table-column>
@@ -45,15 +44,15 @@
           <el-button
             type="danger"
             @click="batchDeleteRelation"
-            :disabled="dataListSelections.length <= 0"
-          >批量删除</el-button>
-          <!--  -->
+            :disabled="dataListSelections.length <= 0">
+            批量删除
+          </el-button>
+
           <el-table
             :data="relationAttrs"
             style="width: 100%"
             @selection-change="selectionChangeHandle"
-            border
-          >
+            border>
             <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
             <el-table-column prop="attrId" label="#"></el-table-column>
             <el-table-column prop="attrName" label="屬性名"></el-table-column>
@@ -160,6 +159,7 @@ export default {
         }
       });
     },
+    // 新增屬性
     submitAddRealtion() {
       this.innerVisible = false;
       //準備資料
@@ -183,6 +183,7 @@ export default {
       } else {
       }
     },
+    // 查詢屬性分組資料列表
     init(id) {
       this.attrGroupId = id || 0;
       this.visible = true;
@@ -196,10 +197,9 @@ export default {
         this.relationAttrs = data.data;
       });
     },
-    dialogClose() {},
-
-    //========
-    // 取得資料列表
+    dialogClose() {
+    },
+    // 查詢資料列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({

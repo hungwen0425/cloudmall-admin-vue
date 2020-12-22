@@ -70,7 +70,7 @@ export function scheduleList() {
   }
 }
 
-// 取得定時任務日誌資料
+// 取得定時任務日誌信息
 export function scheduleInfo() {
   let name = Mock.Random.name()
   return {

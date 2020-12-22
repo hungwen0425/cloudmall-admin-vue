@@ -24,14 +24,14 @@
           type="danger"
           @click="resumeHandle()"
           :disabled="dataListSelections.length <= 0"
-        >批量恢复</el-button>
+        >批量恢復</el-button>
         <el-button
           v-if="isAuth('sys:schedule:run')"
           type="danger"
           @click="runHandle()"
           :disabled="dataListSelections.length <= 0"
         >批量立即執行</el-button>
-        <el-button v-if="isAuth('sys:schedule:log')" type="success" @click="logHandle()">日志列表</el-button>
+        <el-button v-if="isAuth('sys:schedule:log')" type="success" @click="logHandle()">日誌列表</el-button>
       </el-form-item>
     </el-form>
     <el-table
@@ -78,7 +78,7 @@
             type="text"
             size="small"
             @click="resumeHandle(scope.row.jobId)"
-          >恢复</el-button>
+          >恢復</el-button>
           <el-button
             v-if="isAuth('sys:schedule:run')"
             type="text"
@@ -97,9 +97,9 @@
       :total="totalPage"
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
-    <!-- 弹窗, 新增 / 修改 -->
+    <!-- 彈窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
-    <!-- 弹窗, 日志列表 -->
+    <!-- 彈窗, 日誌列表 -->
     <log v-if="logVisible" ref="log"></log>
   </div>
 </template>
@@ -111,7 +111,7 @@ export default {
   data() {
     return {
       dataForm: {
-        beanName: ""
+        beanName: "",
       },
       dataList: [],
       pageIndex: 1,
@@ -120,12 +120,12 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       addOrUpdateVisible: false,
-      logVisible: false
+      logVisible: false,
     };
   },
   components: {
     AddOrUpdate,
-    Log
+    Log,
   },
   activated() {
     this.getDataList();
@@ -140,8 +140,8 @@ export default {
         params: this.$http.adornParams({
           page: this.pageIndex,
           limit: this.pageSize,
-          beanName: this.dataForm.beanName
-        })
+          beanName: this.dataForm.beanName,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -179,7 +179,7 @@ export default {
     deleteHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.jobId;
           });
       this.$confirm(
@@ -188,14 +188,14 @@ export default {
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       )
         .then(() => {
           this.$http({
             url: this.$http.adornUrl("/sys/schedule/delete"),
             method: "post",
-            data: this.$http.adornData(ids, false)
+            data: this.$http.adornData(ids, false),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -204,7 +204,7 @@ export default {
                 duration: 1500,
                 onClose: () => {
                   this.getDataList();
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -217,7 +217,7 @@ export default {
     pauseHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.jobId;
           });
       this.$confirm(
@@ -226,14 +226,14 @@ export default {
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       )
         .then(() => {
           this.$http({
             url: this.$http.adornUrl("/sys/schedule/pause"),
             method: "post",
-            data: this.$http.adornData(ids, false)
+            data: this.$http.adornData(ids, false),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -242,7 +242,7 @@ export default {
                 duration: 1500,
                 onClose: () => {
                   this.getDataList();
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -251,27 +251,27 @@ export default {
         })
         .catch(() => {});
     },
-    // 恢复
+    // 恢復
     resumeHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.jobId;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "恢复" : "批量恢复"}]操作?`,
+        `確定對[id=${ids.join(",")}]進行[${id ? "恢復" : "批量恢復"}]操作?`,
         "提示",
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       )
         .then(() => {
           this.$http({
             url: this.$http.adornUrl("/sys/schedule/resume"),
             method: "post",
-            data: this.$http.adornData(ids, false)
+            data: this.$http.adornData(ids, false),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -280,7 +280,7 @@ export default {
                 duration: 1500,
                 onClose: () => {
                   this.getDataList();
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -293,7 +293,7 @@ export default {
     runHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.jobId;
           });
       this.$confirm(
@@ -304,14 +304,14 @@ export default {
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       )
         .then(() => {
           this.$http({
             url: this.$http.adornUrl("/sys/schedule/run"),
             method: "post",
-            data: this.$http.adornData(ids, false)
+            data: this.$http.adornData(ids, false),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -320,7 +320,7 @@ export default {
                 duration: 1500,
                 onClose: () => {
                   this.getDataList();
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -329,13 +329,13 @@ export default {
         })
         .catch(() => {});
     },
-    // 日志列表
+    // 日誌列表
     logHandle() {
       this.logVisible = true;
       this.$nextTick(() => {
         this.$refs.log.init();
       });
-    }
-  }
+    },
+  },
 };
 </script>

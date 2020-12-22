@@ -1,16 +1,16 @@
 <template>
-  <el-dialog title="日志列表" :close-on-click-modal="false" :visible.sync="visible" width="75%">
+  <el-dialog title="日誌列表" :close-on-click-modal="false" :visible.sync="visible" width="75%">
     <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
       <el-form-item>
-        <el-input v-model="dataForm.id" placeholder="任务ID" clearable></el-input>
+        <el-input v-model="dataForm.id" placeholder="任務ID" clearable></el-input>
       </el-form-item>
       <el-form-item>
         <el-button @click="getDataList()">查詢</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="dataList" border v-loading="dataListLoading" height="460" style="width: 100%;">
-      <el-table-column prop="logId" header-align="center" align="center" width="80" label="日志ID"></el-table-column>
-      <el-table-column prop="jobId" header-align="center" align="center" width="80" label="任务ID"></el-table-column>
+      <el-table-column prop="logId" header-align="center" align="center" width="80" label="日誌ID"></el-table-column>
+      <el-table-column prop="jobId" header-align="center" align="center" width="80" label="任務ID"></el-table-column>
       <el-table-column prop="beanName" header-align="center" align="center" label="bean名稱"></el-table-column>
       <el-table-column prop="params" header-align="center" align="center" label="参數"></el-table-column>
       <el-table-column prop="status" header-align="center" align="center" label="狀態">
@@ -52,13 +52,13 @@ export default {
     return {
       visible: false,
       dataForm: {
-        id: ""
+        id: "",
       },
       dataList: [],
       pageIndex: 1,
       pageSize: 10,
       totalPage: 0,
-      dataListLoading: false
+      dataListLoading: false,
     };
   },
   methods: {
@@ -75,8 +75,8 @@ export default {
         params: this.$http.adornParams({
           page: this.pageIndex,
           limit: this.pageSize,
-          jobId: this.dataForm.id
-        })
+          jobId: this.dataForm.id,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -104,7 +104,7 @@ export default {
       this.$http({
         url: this.$http.adornUrl(`/sys/scheduleLog/info/${id}`),
         method: "get",
-        params: this.$http.adornParams()
+        params: this.$http.adornParams(),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.$alert(data.log.error);
@@ -112,7 +112,7 @@ export default {
           this.$message.error(data.msg);
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>

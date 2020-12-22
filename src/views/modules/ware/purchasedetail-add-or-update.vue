@@ -2,16 +2,14 @@
   <el-dialog
     :title="!dataForm.id ? '新增' : '修改'"
     :close-on-click-modal="false"
-    :visible.sync="visible"
-  >
+    :visible.sync="visible">
     <el-form
       :model="dataForm"
       :rules="dataRule"
       ref="dataForm"
       @keyup.enter.native="dataFormSubmit()"
-      label-width="120px"
-    >
-      <el-form-item label="採購商品id" prop="skuId">
+      label-width="120px">
+      <el-form-item label="採購商品 id" prop="skuId">
         <el-input v-model="dataForm.skuId" placeholder="採購商品id"></el-input>
       </el-form-item>
       <el-form-item label="採購數量" prop="skuNum">
@@ -22,16 +20,6 @@
           <el-option :label="w.name" :value="w.id" v-for="w in wareList" :key="w.id"></el-option>
         </el-select>
       </el-form-item>
-      <!-- [0新建，1已分配，2正在採購，3已完成，4採購失败] -->
-      <!-- <el-form-item label="狀態" prop="status">
-        <el-select v-model="dataForm.status" placeholder="請選擇狀態" clearable>
-          <el-option label="新建" :value="0"></el-option>
-          <el-option label="已分配" :value="1"></el-option>
-          <el-option label="正在採購" :value="2"></el-option>
-          <el-option label="已完成" :value="3"></el-option>
-          <el-option label="採購失败" :value="4"></el-option>
-        </el-select>
-      </el-form-item>-->
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
@@ -107,14 +95,12 @@ export default {
         }
       });
     },
-    // 表單提交
+    // 表單提交 - 新增、修改
     dataFormSubmit() {
       this.$refs["dataForm"].validate(valid => {
         if (valid) {
           this.$http({
-            url: this.$http.adornUrl(
-              `/ware/purchasedetail/${!this.dataForm.id ? "save" : "update"}`
-            ),
+            url: this.$http.adornUrl(`/ware/purchasedetail/${!this.dataForm.id ? "save" : "update"}`),
             method: "post",
             data: this.$http.adornData({
               id: this.dataForm.id || undefined,

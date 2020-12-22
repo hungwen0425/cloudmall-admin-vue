@@ -55,14 +55,14 @@ export default {
   data() {
     return {
       dataForm: {
-        key: ""
+        key: "",
       },
       dataList: [],
       pageIndex: 1,
       pageSize: 10,
       totalPage: 0,
       dataListLoading: false,
-      selectionDataList: []
+      selectionDataList: [],
     };
   },
   created() {
@@ -78,8 +78,8 @@ export default {
         params: this.$http.adornParams({
           page: this.pageIndex,
           limit: this.pageSize,
-          key: this.dataForm.key
-        })
+          key: this.dataForm.key,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -101,7 +101,7 @@ export default {
     currentChangeHandle(val) {
       this.pageIndex = val;
       this.getDataList();
-    }
-  }
+    },
+  },
 };
 </script>

@@ -44,14 +44,14 @@
       <el-form-item label="優惠券抵扣金額" prop="couponAmount">
         <el-input v-model="dataForm.couponAmount" placeholder="優惠券抵扣金額"></el-input>
       </el-form-item>
-      <el-form-item label="後台调整訂單使用的折扣金額" prop="discountAmount">
-        <el-input v-model="dataForm.discountAmount" placeholder="後台调整訂單使用的折扣金額"></el-input>
+      <el-form-item label="後台調整訂單使用的折扣金額" prop="discountAmount">
+        <el-input v-model="dataForm.discountAmount" placeholder="後台調整訂單使用的折扣金額"></el-input>
       </el-form-item>
       <el-form-item label="支付方式【1->支付宝；2->微信；3->银聯； 4->貨到付款；】" prop="payType">
         <el-input v-model="dataForm.payType" placeholder="支付方式【1->支付宝；2->微信；3->银聯； 4->貨到付款；】"></el-input>
       </el-form-item>
-      <el-form-item label="訂單来源[0->PC訂單；1->app訂單]" prop="sourceType">
-        <el-input v-model="dataForm.sourceType" placeholder="訂單来源[0->PC訂單；1->app訂單]"></el-input>
+      <el-form-item label="訂單來源[0->PC訂單；1->app訂單]" prop="sourceType">
+        <el-input v-model="dataForm.sourceType" placeholder="訂單來源[0->PC訂單；1->app訂單]"></el-input>
       </el-form-item>
       <el-form-item label="訂單狀態【0->待付款；1->待發貨；2->已發貨；3->已完成；4->已關閉；5->無效訂單】" prop="status">
         <el-input
@@ -192,183 +192,199 @@ export default {
         deliveryTime: "",
         receiveTime: "",
         commentTime: "",
-        modifyTime: ""
+        modifyTime: "",
       },
       dataRule: {
         memberId: [
-          { required: true, message: "member_id不能為空", trigger: "blur" }
+          { required: true, message: "member_id不能為空", trigger: "blur" },
         ],
         orderSn: [
-          { required: true, message: "訂單號不能為空", trigger: "blur" }
+          { required: true, message: "訂單號不能為空", trigger: "blur" },
         ],
         couponId: [
-          { required: true, message: "使用的優惠券不能為空", trigger: "blur" }
+          { required: true, message: "使用的優惠券不能為空", trigger: "blur" },
         ],
         createTime: [
-          { required: true, message: "create_time不能為空", trigger: "blur" }
+          { required: true, message: "create_time不能為空", trigger: "blur" },
         ],
         memberUsername: [
-          { required: true, message: "使用者名稱不能為空", trigger: "blur" }
+          { required: true, message: "使用者名稱不能為空", trigger: "blur" },
         ],
         totalAmount: [
-          { required: true, message: "訂單總額不能為空", trigger: "blur" }
+          { required: true, message: "訂單總額不能為空", trigger: "blur" },
         ],
         payAmount: [
-          { required: true, message: "應付總額不能為空", trigger: "blur" }
+          { required: true, message: "應付總額不能為空", trigger: "blur" },
         ],
         freightAmount: [
-          { required: true, message: "運費金額不能為空", trigger: "blur" }
+          { required: true, message: "運費金額不能為空", trigger: "blur" },
         ],
         promotionAmount: [
           {
             required: true,
             message: "促銷優化金額（促銷價、滿減、阶梯價）不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         integrationAmount: [
-          { required: true, message: "積分抵扣金額不能為空", trigger: "blur" }
+          { required: true, message: "積分抵扣金額不能為空", trigger: "blur" },
         ],
         couponAmount: [
-          { required: true, message: "優惠券抵扣金額不能為空", trigger: "blur" }
+          {
+            required: true,
+            message: "優惠券抵扣金額不能為空",
+            trigger: "blur",
+          },
         ],
         discountAmount: [
           {
             required: true,
-            message: "後台调整訂單使用的折扣金額不能為空",
-            trigger: "blur"
-          }
+            message: "後台調整訂單使用的折扣金額不能為空",
+            trigger: "blur",
+          },
         ],
         payType: [
           {
             required: true,
             message:
               "支付方式【1->支付宝；2->微信；3->银聯； 4->貨到付款；】不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         sourceType: [
           {
             required: true,
-            message: "訂單来源[0->PC訂單；1->app訂單]不能為空",
-            trigger: "blur"
-          }
+            message: "訂單來源[0->PC訂單；1->app訂單]不能為空",
+            trigger: "blur",
+          },
         ],
         status: [
           {
             required: true,
             message:
               "訂單狀態【0->待付款；1->待發貨；2->已發貨；3->已完成；4->已關閉；5->無效訂單】不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         deliveryCompany: [
           {
             required: true,
             message: "物流公司(配送方式)不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         deliverySn: [
-          { required: true, message: "物流單號不能為空", trigger: "blur" }
+          { required: true, message: "物流單號不能為空", trigger: "blur" },
         ],
         autoConfirmDay: [
           {
             required: true,
             message: "自動確認時間（天）不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         integration: [
-          { required: true, message: "可以获得的積分不能為空", trigger: "blur" }
+          {
+            required: true,
+            message: "可以获得的積分不能為空",
+            trigger: "blur",
+          },
         ],
         growth: [
           {
             required: true,
             message: "可以获得的成長值不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         billType: [
           {
             required: true,
             message: "發票類型[0->不開發票；1->電子發票；2->纸质發票]不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         billHeader: [
-          { required: true, message: "發票抬頭不能為空", trigger: "blur" }
+          { required: true, message: "發票抬頭不能為空", trigger: "blur" },
         ],
         billContent: [
-          { required: true, message: "發票内容不能為空", trigger: "blur" }
+          { required: true, message: "發票内容不能為空", trigger: "blur" },
         ],
         billReceiverPhone: [
-          { required: true, message: "收票人電話不能為空", trigger: "blur" }
+          { required: true, message: "收票人電話不能為空", trigger: "blur" },
         ],
         billReceiverEmail: [
-          { required: true, message: "收票人電子信箱不能為空", trigger: "blur" }
+          {
+            required: true,
+            message: "收票人電子信箱不能為空",
+            trigger: "blur",
+          },
         ],
         receiverName: [
-          { required: true, message: "收貨人姓名不能為空", trigger: "blur" }
+          { required: true, message: "收貨人姓名不能為空", trigger: "blur" },
         ],
         receiverPhone: [
-          { required: true, message: "收貨人電話不能為空", trigger: "blur" }
+          { required: true, message: "收貨人電話不能為空", trigger: "blur" },
         ],
         receiverPostCode: [
-          { required: true, message: "收貨人郵遞區號不能為空", trigger: "blur" }
+          {
+            required: true,
+            message: "收貨人郵遞區號不能為空",
+            trigger: "blur",
+          },
         ],
         receiverProvince: [
-          { required: true, message: "省份/直辖市不能為空", trigger: "blur" }
+          { required: true, message: "省份/直辖市不能為空", trigger: "blur" },
         ],
         receiverCity: [
-          { required: true, message: "城市不能為空", trigger: "blur" }
+          { required: true, message: "城市不能為空", trigger: "blur" },
         ],
         receiverRegion: [
-          { required: true, message: "區不能為空", trigger: "blur" }
+          { required: true, message: "區不能為空", trigger: "blur" },
         ],
         receiverDetailAddress: [
-          { required: true, message: "詳细地址不能為空", trigger: "blur" }
+          { required: true, message: "詳细地址不能為空", trigger: "blur" },
         ],
         note: [
-          { required: true, message: "訂單備註不能為空", trigger: "blur" }
+          { required: true, message: "訂單備註不能為空", trigger: "blur" },
         ],
         confirmStatus: [
           {
             required: true,
             message: "確認收貨狀態[0->未確認；1->已確認]不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         deleteStatus: [
           {
             required: true,
             message: "删除狀態【0->未删除；1->已删除】不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         useIntegration: [
           {
             required: true,
             message: "下單時使用的積分不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         paymentTime: [
-          { required: true, message: "支付時間不能為空", trigger: "blur" }
+          { required: true, message: "支付時間不能為空", trigger: "blur" },
         ],
         deliveryTime: [
-          { required: true, message: "發貨時間不能為空", trigger: "blur" }
+          { required: true, message: "發貨時間不能為空", trigger: "blur" },
         ],
         receiveTime: [
-          { required: true, message: "確認收貨時間不能為空", trigger: "blur" }
+          { required: true, message: "確認收貨時間不能為空", trigger: "blur" },
         ],
         commentTime: [
-          { required: true, message: "評價時間不能為空", trigger: "blur" }
+          { required: true, message: "評價時間不能為空", trigger: "blur" },
         ],
         modifyTime: [
-          { required: true, message: "修改時間不能為空", trigger: "blur" }
-        ]
-      }
+          { required: true, message: "修改時間不能為空", trigger: "blur" },
+        ],
+      },
     };
   },
   methods: {
@@ -381,7 +397,7 @@ export default {
           this.$http({
             url: this.$http.adornUrl(`/order/order/info/${this.dataForm.id}`),
             method: "get",
-            params: this.$http.adornParams()
+            params: this.$http.adornParams(),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.dataForm.memberId = data.order.memberId;
@@ -433,7 +449,7 @@ export default {
     },
     // 表單提交
     dataFormSubmit() {
-      this.$refs["dataForm"].validate(valid => {
+      this.$refs["dataForm"].validate((valid) => {
         if (valid) {
           this.$http({
             url: this.$http.adornUrl(
@@ -482,8 +498,8 @@ export default {
               deliveryTime: this.dataForm.deliveryTime,
               receiveTime: this.dataForm.receiveTime,
               commentTime: this.dataForm.commentTime,
-              modifyTime: this.dataForm.modifyTime
-            })
+              modifyTime: this.dataForm.modifyTime,
+            }),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -493,7 +509,7 @@ export default {
                 onClose: () => {
                   this.visible = false;
                   this.$emit("refreshDataList");
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -501,7 +517,7 @@ export default {
           });
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>

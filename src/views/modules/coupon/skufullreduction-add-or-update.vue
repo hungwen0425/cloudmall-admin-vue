@@ -22,8 +22,8 @@
         <el-form-item label="減多少" prop="reducePrice">
           <el-input v-model="dataForm.reducePrice" placeholder="減多少"></el-input>
         </el-form-item>
-        <el-form-item label="是否参与其他優惠" prop="addOther">
-          <el-input v-model="dataForm.addOther" placeholder="是否参与其他優惠"></el-input>
+        <el-form-item label="是否参與其他優惠" prop="addOther">
+          <el-input v-model="dataForm.addOther" placeholder="是否参與其他優惠"></el-input>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -44,24 +44,24 @@ export default {
         skuId: "",
         fullPrice: "",
         reducePrice: "",
-        addOther: ""
+        addOther: "",
       },
       dataRule: {
         skuId: [{ required: true, message: "spu_id不能為空", trigger: "blur" }],
         fullPrice: [
-          { required: true, message: "滿多少不能為空", trigger: "blur" }
+          { required: true, message: "滿多少不能為空", trigger: "blur" },
         ],
         reducePrice: [
-          { required: true, message: "減多少不能為空", trigger: "blur" }
+          { required: true, message: "減多少不能為空", trigger: "blur" },
         ],
         addOther: [
           {
             required: true,
-            message: "是否参与其他優惠不能為空",
-            trigger: "blur"
-          }
-        ]
-      }
+            message: "是否参與其他優惠不能為空",
+            trigger: "blur",
+          },
+        ],
+      },
     };
   },
   methods: {
@@ -76,7 +76,7 @@ export default {
               `/coupon/skufullreduction/info/${this.dataForm.id}`
             ),
             method: "get",
-            params: this.$http.adornParams()
+            params: this.$http.adornParams(),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.dataForm.skuId = data.skuFullReduction.skuId;
@@ -90,7 +90,7 @@ export default {
     },
     // 表單提交
     dataFormSubmit() {
-      this.$refs["dataForm"].validate(valid => {
+      this.$refs["dataForm"].validate((valid) => {
         if (valid) {
           this.$http({
             url: this.$http.adornUrl(
@@ -104,8 +104,8 @@ export default {
               skuId: this.dataForm.skuId,
               fullPrice: this.dataForm.fullPrice,
               reducePrice: this.dataForm.reducePrice,
-              addOther: this.dataForm.addOther
-            })
+              addOther: this.dataForm.addOther,
+            }),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -115,7 +115,7 @@ export default {
                 onClose: () => {
                   this.visible = false;
                   this.$emit("refreshDataList");
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -123,7 +123,7 @@ export default {
           });
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>

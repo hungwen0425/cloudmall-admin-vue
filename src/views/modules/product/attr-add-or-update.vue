@@ -234,7 +234,7 @@ export default {
         }
       });
     },
-    // 表單提交
+    // 規格參數新增、修改
     dataFormSubmit() {
       this.$refs["dataForm"].validate(valid => {
         if (valid) {
@@ -274,7 +274,6 @@ export default {
         }
       });
     },
-    //dialogClose
     dialogClose() {
       this.catelogPath = [];
     }

@@ -130,22 +130,22 @@ export default {
         perms: "",
         orderNum: 0,
         icon: "",
-        iconList: []
+        iconList: [],
       },
       dataRule: {
         name: [
-          { required: true, message: "選單名稱不能為空", trigger: "blur" }
+          { required: true, message: "選單名稱不能為空", trigger: "blur" },
         ],
         parentName: [
-          { required: true, message: "上級選單不能為空", trigger: "change" }
+          { required: true, message: "上級選單不能為空", trigger: "change" },
         ],
-        url: [{ validator: validateUrl, trigger: "blur" }]
+        url: [{ validator: validateUrl, trigger: "blur" }],
       },
       menuList: [],
       menuListTreeProps: {
         label: "name",
-        children: "children"
-      }
+        children: "children",
+      },
     };
   },
   created() {
@@ -157,7 +157,7 @@ export default {
       this.$http({
         url: this.$http.adornUrl("/sys/menu/select"),
         method: "get",
-        params: this.$http.adornParams()
+        params: this.$http.adornParams(),
       })
         .then(({ data }) => {
           this.menuList = treeDataTranslate(data.menuList, "menuId");
@@ -177,7 +177,7 @@ export default {
             this.$http({
               url: this.$http.adornUrl(`/sys/menu/info/${this.dataForm.id}`),
               method: "get",
-              params: this.$http.adornParams()
+              params: this.$http.adornParams(),
             }).then(({ data }) => {
               this.dataForm.id = data.menu.menuId;
               this.dataForm.type = data.menu.type;
@@ -192,12 +192,12 @@ export default {
           }
         });
     },
-    // 選單树選中
+    // 選單樹選中
     menuListTreeCurrentChangeHandle(data, node) {
       this.dataForm.parentId = data.menuId;
       this.dataForm.parentName = data.name;
     },
-    // 選單树設定當前選中节點
+    // 選單樹設定當前選中節點
     menuListTreeSetCurrentNode() {
       this.$refs.menuListTree.setCurrentKey(this.dataForm.parentId);
       this.dataForm.parentName = (this.$refs.menuListTree.getCurrentNode() ||
@@ -209,7 +209,7 @@ export default {
     },
     // 表單提交
     dataFormSubmit() {
-      this.$refs["dataForm"].validate(valid => {
+      this.$refs["dataForm"].validate((valid) => {
         if (valid) {
           this.$http({
             url: this.$http.adornUrl(
@@ -224,8 +224,8 @@ export default {
               url: this.dataForm.url,
               perms: this.dataForm.perms,
               orderNum: this.dataForm.orderNum,
-              icon: this.dataForm.icon
-            })
+              icon: this.dataForm.icon,
+            }),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -235,7 +235,7 @@ export default {
                 onClose: () => {
                   this.visible = false;
                   this.$emit("refreshDataList");
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -243,8 +243,8 @@ export default {
           });
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

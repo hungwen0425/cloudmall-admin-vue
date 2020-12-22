@@ -3,15 +3,13 @@
     :title="!dataForm.id ? '新增' : '修改'"
     :close-on-click-modal="false"
     :visible.sync="visible"
-    @closed="dialogClose"
-  >
+    @closed="dialogClose">
     <el-form
       :model="dataForm"
       :rules="dataRule"
       ref="dataForm"
       @keyup.enter.native="dataFormSubmit()"
-      label-width="120px"
-    >
+      label-width="120px">
       <el-form-item label="組名" prop="attrGroupName">
         <el-input v-model="dataForm.attrGroupName" placeholder="組名"></el-input>
       </el-form-item>
@@ -39,9 +37,14 @@
 </template>
 
 <script>
+// 這裡可以導入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
+// 例如：import 《组件名稱》 from '《組件路径》';
 import CategoryCascader from "../common/category-cascader";
 export default {
+  //import引入的組件需要注入到物件中才能使用
+  components: { CategoryCascader },
   data() {
+    // 這裡存放資料
     return {
       props: {
         value: "catId",
@@ -49,6 +52,7 @@ export default {
         children: "children"
       },
       visible: false,
+      // 宣告商品選單陣列變數
       categorys: [],
       catelogPath: [],
       dataForm: {
@@ -69,13 +73,16 @@ export default {
         ],
         icon: [{ required: true, message: "組圖標不能為空", trigger: "blur" }],
         catelogId: [
-          { required: true, message: "所屬分類id不能為空", trigger: "blur" }
+          { required: true, message: "所屬分類 id 不能為空", trigger: "blur" }
         ]
       }
     };
   },
-  components: { CategoryCascader },
-
+  //監聽屬性 類似於data概念
+  computed: {},
+  //監控data中的資料變化
+  watch: {},
+  //方法集合
   methods: {
     dialogClose() {
       this.catelogPath = [];
@@ -114,15 +121,13 @@ export default {
         }
       });
     },
-    // 表單提交
+    // 表單提交 - 新增、修改
     dataFormSubmit() {
       this.$refs["dataForm"].validate(valid => {
         if (valid) {
           this.$http({
             url: this.$http.adornUrl(
-              `/product/attrgroup/${
-                !this.dataForm.attrGroupId ? "save" : "update"
-              }`
+              `/product/attrgroup/${!this.dataForm.attrGroupId ? "save" : "update"}`
             ),
             method: "post",
             data: this.$http.adornData({
@@ -155,5 +160,9 @@ export default {
   created() {
     this.getCategorys();
   }
-};
+}
 </script>
+<style lang='scss' scoped>
+//@import url(); 引入公共css類
+
+</style>

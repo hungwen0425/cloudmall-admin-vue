@@ -7,10 +7,11 @@ const devEnv = require('./dev.env')
 
 module.exports = {
   dev: {
+
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    // 代理列表, 是否開啟代理通過[./dev.env.js]設定
+    // 代理列表, 是否开启代理通過[./dev.env.js]配置
     proxyTable: devEnv.OPEN_PROXY === false ? {} : {
       '/proxyApi': {
         target: 'http://demo.renren.io/renren-fast/',

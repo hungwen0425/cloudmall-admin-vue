@@ -2,7 +2,7 @@
  * 全站路由設定
  *
  * 建議:
- * 1. 程式碼中路由统一使用name屬性跳轉(不使用path屬性)
+ * 1. 程式碼中路由统一使用name屬性跳轉 (不使用path屬性)
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -12,16 +12,16 @@ import { clearLoginInfo } from '@/utils'
 
 Vue.use(Router)
 
-// 開發環境不使用懒加載, 因為懒加載頁面太多的話會造成webpack熱更新太慢, 所以只有生產環境使用懒加載
+// 開發環境不使用懒加載, 因為懒加載頁面太多的話會造成 webpack 熱更新太慢, 所以只有生產環境使用懒加載
 const _import = require('./import-' + process.env.NODE_ENV)
 
-// 全局路由(無需嵌套上左右整體布局)
+// 全局路由 (無需嵌套上左右整體布局)
 const globalRoutes = [
   { path: '/404', component: _import('common/404'), name: '404', meta: { title: '404未找到' } },
   { path: '/login', component: _import('common/login'), name: 'login', meta: { title: '登入' } }
 ]
 
-// 主入口路由(需嵌套上左右整體布局)
+// 主入口路由 (需嵌套上左右整體布局)
 const mainRoutes = {
   path: '/',
   component: _import('main'),
@@ -51,12 +51,12 @@ const mainRoutes = {
 const router = new Router({
   mode: 'hash',
   scrollBehavior: () => ({ y: 0 }),
-  isAddDynamicMenuRoutes: false, // 是否已經添加動態(選單)路由
+  isAddDynamicMenuRoutes: false, // 是否已經添加動態 (選單) 路由
   routes: globalRoutes.concat(mainRoutes)
 })
 
 router.beforeEach((to, from, next) => {
-  // 添加動態(選單)路由
+  // 添加動態 (選單) 路由
   // 1. 已經添加 or 全局路由, 直接訪問
   // 2. 取得選單列表, 添加並保存本地存儲
   if (router.options.isAddDynamicMenuRoutes || fnCurrentRouteType(to, globalRoutes) === 'global') {

@@ -29,8 +29,8 @@ export default {
       expandedKey: [],
       defaultProps: {
         children: "children",
-        label: "name"
-      }
+        label: "name",
+      },
     };
   },
   //計算屬性 類似於data概念
@@ -39,11 +39,11 @@ export default {
   watch: {
     filterText(val) {
       this.$refs.menuTree.filter(val);
-    }
+    },
   },
   //方法集合
   methods: {
-    //树节點過濾
+    //樹節點過濾
     filterNode(value, data) {
       if (!value) return true;
       return data.name.indexOf(value) !== -1;
@@ -51,16 +51,16 @@ export default {
     getMenus() {
       this.$http({
         url: this.$http.adornUrl("/product/category/list/tree"),
-        method: "get"
+        method: "get",
       }).then(({ data }) => {
         this.menus = data.data;
       });
     },
     nodeclick(data, node, component) {
-      console.log("子組件category的节點被點擊", data, node, component);
+      console.log("子組件 category 的節點被點擊", data, node, component);
       //向父組件發送事件；
       this.$emit("tree-node-click", data, node, component);
-    }
+    },
   },
   //生命週期 - 創建完成（可以訪問當前this實例）
   created() {
@@ -74,7 +74,7 @@ export default {
   updated() {}, //生命週期 - 更新之後
   beforeDestroy() {}, //生命週期 - 銷毁之前
   destroyed() {}, //生命週期 - 銷毁完成
-  activated() {} //如果頁面有keep-alive緩存功能，這個函數會觸發
+  activated() {}, //如果頁面有keep-alive緩存功能，這個函數會觸發
 };
 </script>
 <style scoped>

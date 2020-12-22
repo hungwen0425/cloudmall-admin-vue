@@ -164,6 +164,7 @@ export default {
         }
       });
     },
+    // 分配採購人員
     getUserList() {
       this.$http({
         url: this.$http.adornUrl("/sys/user/list"),

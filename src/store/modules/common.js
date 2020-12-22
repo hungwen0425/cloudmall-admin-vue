@@ -1,20 +1,20 @@
 export default {
   namespaced: true,
   state: {
-    // 頁面文件可視高度(随窗口改變大小)
+    // 页面文档可视高度(随窗口改变大小)
     documentClientHeight: 0,
-    // 導航條, 布局風格, defalut(默認) / inverse(反向)
+    // 导航条, 布局风格, defalut(默认) / inverse(反向)
     navbarLayoutType: 'default',
-    // 側邊欄, 布局皮膚, light(浅色) / dark(黑色)
+    // 侧边栏, 布局皮肤, light(浅色) / dark(黑色)
     sidebarLayoutSkin: 'dark',
-    // 側邊欄, 折疊狀態
+    // 侧边栏, 折叠狀態
     sidebarFold: false,
-    // 側邊欄, 選單
+    // 侧边栏, 菜单
     menuList: [],
     menuActiveName: '',
     // 内容, 是否需要刷新
     contentIsNeedRefresh: false,
-    // 主入口標簽頁
+    // 主入口標签页
     mainTabs: [],
     mainTabsActiveName: ''
   },

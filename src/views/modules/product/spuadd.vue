@@ -19,7 +19,6 @@
             <el-form-item label="商品描述" prop="spuDescription">
               <el-input v-model="spu.spuDescription"></el-input>
             </el-form-item>
-
             <el-form-item label="選擇分類" prop="catalogId">
               <category-cascader></category-cascader>
             </el-form-item>
@@ -375,38 +374,38 @@ export default {
         bounds: {
           //積分
           buyBounds: 0,
-          growBounds: 0
+          growBounds: 0,
         },
         baseAttrs: [], //基本屬性
-        skus: [] //所有sku資料
+        skus: [], //所有sku資料
       },
       spuBaseInfoRules: {
         spuName: [
-          { required: true, message: "請输入商品名稱", trigger: "blur" }
+          { required: true, message: "請输入商品名稱", trigger: "blur" },
         ],
         spuDescription: [
-          { required: true, message: "請编寫一個简單描述", trigger: "blur" }
+          { required: true, message: "請编寫一個简單描述", trigger: "blur" },
         ],
         catalogId: [
-          { required: true, message: "請選擇一個分類", trigger: "blur" }
+          { required: true, message: "請選擇一個分類", trigger: "blur" },
         ],
         brandId: [
-          { required: true, message: "請選擇一個品牌", trigger: "blur" }
+          { required: true, message: "請選擇一個品牌", trigger: "blur" },
         ],
         decript: [
-          { required: false, message: "請上傳商品詳情圖集", trigger: "blur" }
+          { required: false, message: "請上傳商品詳情圖集", trigger: "blur" },
         ],
         images: [
-          { required: false, message: "請上傳商品圖片集", trigger: "blur" }
+          { required: false, message: "請上傳商品圖片集", trigger: "blur" },
         ],
         weight: [
           {
             type: "number",
             required: true,
             message: "請填寫正確的重量值",
-            trigger: "blur"
-          }
-        ]
+            trigger: "blur",
+          },
+        ],
       },
       dataResp: {
         //後台返回的所有資料
@@ -416,10 +415,10 @@ export default {
         tempSaleAttrs: [],
         tableAttrColumn: [],
         memberLevels: [],
-        steped: [false, false, false, false, false]
+        steped: [false, false, false, false, false],
       },
       inputVisible: [],
-      inputValue: []
+      inputValue: [],
     };
   },
   //計算屬性 類似於data概念
@@ -427,13 +426,11 @@ export default {
   //監控data中的資料變化
   watch: {
     uploadImages(val) {
-      //擴展每個skus裡面的imgs選項
+      // 擴展每個 skus 裡面的 imgs 選項
       let imgArr = Array.from(new Set(this.spu.images.concat(val)));
-
-      //{imgUrl:"",defaultImg:0} 由於concat每次迭代上次，有很多重複。所以我们必須得到上次+這次的總長
-
+      // {imgUrl:"",defaultImg:0} 由於 concat 每次迭代上次，有很多重複。所以我们必須得到上次 + 這次的總長
       this.spu.skus.forEach((item, index) => {
-        let len = imgArr.length - this.spu.skus[index].images.length; //還差這么多
+        let len = imgArr.length - this.spu.skus[index].images.length; //還差這麼多
         if (len > 0) {
           let imgs = new Array(len);
           imgs = imgs.fill({ imgUrl: "", defaultImg: 0 });
@@ -443,7 +440,7 @@ export default {
 
       this.spu.images = imgArr; //去重
       console.log("this.spu.skus", this.spu.skus);
-    }
+    },
   },
   //方法集合
   methods: {
@@ -463,10 +460,10 @@ export default {
         images: [],
         bounds: {
           buyBounds: 0,
-          growBounds: 0
+          growBounds: 0,
         },
         baseAttrs: [],
-        skus: []
+        skus: [],
       };
     },
     handlePriceChange(scope, mpidx, e) {
@@ -478,13 +475,13 @@ export default {
         method: "get",
         params: this.$http.adornParams({
           page: 1,
-          limit: 500
-        })
+          limit: 500,
+        }),
       })
         .then(({ data }) => {
           this.dataResp.memberLevels = data.page.list;
         })
-        .catch(e => {
+        .catch((e) => {
           console.log(e);
         });
     },
@@ -520,7 +517,7 @@ export default {
     },
     collectSpuBaseInfo() {
       //spuBaseForm
-      this.$refs.spuBaseForm.validate(valid => {
+      this.$refs.spuBaseForm.validate((valid) => {
         if (valid) {
           this.step = 1;
           this.showBaseAttrs();
@@ -530,15 +527,15 @@ export default {
       });
     },
     generateSaleAttrs() {
-      //把頁面绑定的所有attr處理到spu裡面,這一步都要做
+      //把頁面绑定的所有 attr 處理到 spu 裡面,這一步都要做
       this.spu.baseAttrs = [];
-      this.dataResp.baseAttrs.forEach(item => {
-        item.forEach(attr => {
+      this.dataResp.baseAttrs.forEach((item) => {
+        item.forEach((attr) => {
           let { attrId, attrValues, showDesc } = attr;
-          //跳過没有录入值的屬性
+          // 跳過没有录入值的屬性
           if (attrValues != "") {
             if (attrValues instanceof Array) {
-              //多個值用;隔開
+              // 多個值用;隔開
               attrValues = attrValues.join(";");
             }
             this.spu.baseAttrs.push({ attrId, attrValues, showDesc });
@@ -551,11 +548,10 @@ export default {
     },
     generateSkus() {
       this.step = 3;
-
-      //根據笛卡爾積運算進行生成sku
+      // 根據笛卡爾積運算進行生成 sku
       let selectValues = [];
       this.dataResp.tableAttrColumn = [];
-      this.dataResp.tempSaleAttrs.forEach(item => {
+      this.dataResp.tempSaleAttrs.forEach((item) => {
         if (item.attrValues.length > 0) {
           selectValues.push(item.attrValues);
           this.dataResp.tableAttrColumn.push(item);
@@ -563,31 +559,31 @@ export default {
       });
 
       let descartes = this.descartes(selectValues);
-      //[["黑色","6GB","移動"],["黑色","6GB","聯通"],["黑色","8GB","移動"],["黑色","8GB","聯通"],
-      //["白色","6GB","移動"],["白色","6GB","聯通"],["白色","8GB","移動"],["白色","8GB","聯通"],
-      //["蓝色","6GB","移動"],["蓝色","6GB","聯通"],["蓝色","8GB","移動"],["蓝色","8GB","聯通"]]
+      // [["黑色","6GB","移動"],["黑色","6GB","聯通"],["黑色","8GB","移動"],["黑色","8GB","聯通"],
+      // ["白色","6GB","移動"],["白色","6GB","聯通"],["白色","8GB","移動"],["白色","8GB","聯通"],
+      // ["蓝色","6GB","移動"],["蓝色","6GB","聯通"],["蓝色","8GB","移動"],["蓝色","8GB","聯通"]]
       console.log("生成的組合", JSON.stringify(descartes));
-      //有多少descartes就有多少sku
+      // 有多少 descartes 就有多少 sku
       let skus = [];
 
       descartes.forEach((descar, descaridx) => {
-        let attrArray = []; //sku屬性組
+        let attrArray = []; // sku 屬性組
         descar.forEach((de, index) => {
-          //構造saleAttr資料
+          // 構造 saleAttr 資料
           let saleAttrItem = {
             attrId: this.dataResp.tableAttrColumn[index].attrId,
             attrName: this.dataResp.tableAttrColumn[index].attrName,
-            attrValue: de
+            attrValue: de,
           };
           attrArray.push(saleAttrItem);
         });
-        //先初始化幾個images，後面的上傳還要加
+        // 先初始化幾個 images，後面的上傳還要加
         let imgs = [];
         this.spu.images.forEach((img, idx) => {
           imgs.push({ imgUrl: "", defaultImg: 0 });
         });
 
-        //會員價，也必須在循環裡面生成，否则會導致資料绑定問題
+        // 會員價，也必須在循環裡面生成，否則會導致資料绑定問題
         let memberPrices = [];
         if (this.dataResp.memberLevels.length > 0) {
           for (let i = 0; i < this.dataResp.memberLevels.length; i++) {
@@ -595,7 +591,7 @@ export default {
               memberPrices.push({
                 id: this.dataResp.memberLevels[i].id,
                 name: this.dataResp.memberLevels[i].name,
-                price: 0
+                price: 0,
               });
             }
           }
@@ -617,7 +613,7 @@ export default {
             fullPrice: 0.0,
             reducePrice: 0.0,
             priceStatus: 0,
-            memberPrice: new Array().concat(memberPrices)
+            memberPrice: new Array().concat(memberPrices),
           });
         } else {
           skus.push(res);
@@ -626,7 +622,7 @@ export default {
       this.spu.skus = skus;
       console.log("結果!!!", this.spu.skus, this.dataResp.tableAttrColumn);
     },
-    //判斷如果包含之前的sku的descar組合，就返回這個sku的詳细資料；
+    // 判斷如果包含之前的 sku 的 descar 組合，就返回這個sku的詳细資料；
     hasAndReturnSku(skus, descar) {
       let res = null;
       if (skus.length > 0) {
@@ -639,7 +635,7 @@ export default {
       return res;
     },
     getShowSaleAttr() {
-      //取得當前分類可以使用的銷售屬性
+      // 取得當前分類可以使用的銷售屬性
       if (!this.dataResp.steped[1]) {
         this.$http({
           url: this.$http.adornUrl(
@@ -648,15 +644,15 @@ export default {
           method: "get",
           params: this.$http.adornParams({
             page: 1,
-            limit: 500
-          })
+            limit: 500,
+          }),
         }).then(({ data }) => {
           this.dataResp.saleAttrs = data.page.list;
-          data.page.list.forEach(item => {
+          data.page.list.forEach((item) => {
             this.dataResp.tempSaleAttrs.push({
               attrId: item.attrId,
               attrValues: [],
-              attrName: item.attrName
+              attrName: item.attrName,
             });
             this.inputVisible.push({ view: false });
             this.inputValue.push({ val: "" });
@@ -672,16 +668,17 @@ export default {
             `/product/attrgroup/${this.spu.catalogId}/withattr`
           ),
           method: "get",
-          params: this.$http.adornParams({})
+          params: this.$http.adornParams({}),
         }).then(({ data }) => {
-          //先對表單的baseAttrs進行初始化
-          data.data.forEach(item => {
+          console.log("data: ", data);
+          //先對表單的 baseAttrs 進行初始化
+          data.data.forEach((item) => {
             let attrArray = [];
-            item.attrs.forEach(attr => {
+            item.attrs.forEach((attr) => {
               attrArray.push({
                 attrId: attr.attrId,
                 attrValues: "",
-                showDesc: attr.showDesc
+                showDesc: attr.showDesc,
               });
             });
             this.dataResp.baseAttrs.push(attrArray);
@@ -697,46 +694,44 @@ export default {
       this.$confirm("將要提交商品資料，需要一小段時間，是否繼續?", "提示", {
         confirmButtonText: "確定",
         cancelButtonText: "取消",
-        type: "warning"
+        type: "warning",
       })
         .then(() => {
           this.$http({
             url: this.$http.adornUrl("/product/spuinfo/save"),
             method: "post",
-            data: this.$http.adornData(this.spu, false)
+            data: this.$http.adornData(this.spu, false),
           }).then(({ data }) => {
             if (data.code == 0) {
               this.$message({
                 type: "success",
-                message: "新增商品成功!"
+                message: "新增商品成功!",
               });
               this.step = 4;
             } else {
               this.$message({
                 type: "error",
-                message: "保存失败，原因【" + data.msg + "】"
+                message: "保存失败，原因【" + data.msg + "】",
               });
             }
           });
         })
-        .catch(e => {
+        .catch((e) => {
           console.log(e);
           this.$message({
             type: "info",
-            message: "已取消"
+            message: "已取消",
           });
         });
     },
-    //笛卡爾積運算
+    // 笛卡爾積運算
     descartes(list) {
-      //parent上一級索引;count指針計數
+      // parent 上一級索引; count 指針計數
       var point = {};
-
       var result = [];
       var pIndex = null;
       var tempCount = 0;
       var temp = [];
-
       //根據参數列生成指針物件
       for (var index in list) {
         if (typeof list[index] == "object") {
@@ -778,7 +773,7 @@ export default {
           }
         }
       }
-    }
+    },
   },
   //生命週期 - 創建完成（可以訪問當前this實例）
   created() {},
@@ -801,7 +796,7 @@ export default {
     PubSub.unsubscribe(this.brandIdSub);
   }, //生命週期 - 銷毁之前
   destroyed() {}, //生命週期 - 銷毁完成
-  activated() {} //如果頁面有keep-alive緩存功能，這個函數會觸發
+  activated() {}, //如果頁面有keep-alive緩存功能，這個函數會觸發
 };
 </script>
 <style scoped>

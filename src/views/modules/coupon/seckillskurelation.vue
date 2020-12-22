@@ -1,8 +1,16 @@
 <template>
   <div class="mod-config">
-    <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
+    <el-form
+      :inline="true"
+      :model="dataForm"
+      @keyup.enter.native="getDataList()"
+    >
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
+        <el-input
+          v-model="dataForm.key"
+          placeholder="参數名"
+          clearable
+        ></el-input>
       </el-form-item>
       <el-form-item>
         <el-button @click="getDataList()">查詢</el-button>
@@ -10,13 +18,15 @@
           v-if="isAuth('coupon:seckillskurelation:save')"
           type="primary"
           @click="addOrUpdateHandle()"
-        >新增</el-button>
+          >新增</el-button
+        >
         <el-button
           v-if="isAuth('coupon:seckillskurelation:delete')"
           type="danger"
           @click="deleteHandle()"
           :disabled="dataListSelections.length <= 0"
-        >批量删除</el-button>
+          >批量删除</el-button
+        >
       </el-form-item>
     </el-form>
     <el-table
@@ -24,20 +34,76 @@
       border
       v-loading="dataListLoading"
       @selection-change="selectionChangeHandle"
-      style="width: 100%;"
+      style="width: 100%"
     >
-      <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
-      <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
-      <el-table-column prop="promotionSessionId" header-align="center" align="center" label="場次id"></el-table-column>
-      <el-table-column prop="skuId" header-align="center" align="center" label="商品id"></el-table-column>
-      <el-table-column prop="seckillPrice" header-align="center" align="center" label="秒杀價格"></el-table-column>
-      <el-table-column prop="seckillCount" header-align="center" align="center" label="秒杀總量"></el-table-column>
-      <el-table-column prop="seckillLimit" header-align="center" align="center" label="每人限購數量"></el-table-column>
-      <el-table-column prop="seckillSort" header-align="center" align="center" label="排序"></el-table-column>
-      <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
+      <el-table-column
+        type="selection"
+        header-align="center"
+        align="center"
+        width="50"
+      ></el-table-column>
+      <el-table-column
+        prop="id"
+        header-align="center"
+        align="center"
+        label="id"
+      ></el-table-column>
+      <el-table-column
+        prop="promotionSessionId"
+        header-align="center"
+        align="center"
+        label="場次id"
+      ></el-table-column>
+      <el-table-column
+        prop="skuId"
+        header-align="center"
+        align="center"
+        label="商品id"
+      ></el-table-column>
+      <el-table-column
+        prop="seckillPrice"
+        header-align="center"
+        align="center"
+        label="限時搶購價格"
+      ></el-table-column>
+      <el-table-column
+        prop="seckillCount"
+        header-align="center"
+        align="center"
+        label="限時搶購總量"
+      ></el-table-column>
+      <el-table-column
+        prop="seckillLimit"
+        header-align="center"
+        align="center"
+        label="每人限購數量"
+      ></el-table-column>
+      <el-table-column
+        prop="seckillSort"
+        header-align="center"
+        align="center"
+        label="排序"
+      ></el-table-column>
+      <el-table-column
+        fixed="right"
+        header-align="center"
+        align="center"
+        width="150"
+        label="操作"
+      >
         <template slot-scope="scope">
-          <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>
-          <el-button type="text" size="small" @click="deleteHandle(scope.row.id)">删除</el-button>
+          <el-button
+            type="text"
+            size="small"
+            @click="addOrUpdateHandle(scope.row.id)"
+            >修改</el-button
+          >
+          <el-button
+            type="text"
+            size="small"
+            @click="deleteHandle(scope.row.id)"
+            >删除</el-button
+          >
         </template>
       </el-table-column>
     </el-table>
@@ -68,7 +134,7 @@ export default {
   data() {
     return {
       dataForm: {
-        key: ""
+        key: "",
       },
       promotionSessionId: "",
       dataList: [],
@@ -77,17 +143,17 @@ export default {
       totalPage: 0,
       dataListLoading: false,
       dataListSelections: [],
-      addOrUpdateVisible: false
+      addOrUpdateVisible: false,
     };
   },
   props: {
     sessionId: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   components: {
-    AddOrUpdate
+    AddOrUpdate,
   },
   activated() {
     this.getDataList();
@@ -103,8 +169,8 @@ export default {
           page: this.pageIndex,
           limit: this.pageSize,
           key: this.dataForm.key,
-          promotionSessionId: this.sessionId
-        })
+          promotionSessionId: this.sessionId,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -143,7 +209,7 @@ export default {
     deleteHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.id;
           });
       this.$confirm(
@@ -152,13 +218,13 @@ export default {
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       ).then(() => {
         this.$http({
           url: this.$http.adornUrl("/coupon/seckillskurelation/delete"),
           method: "post",
-          data: this.$http.adornData(ids, false)
+          data: this.$http.adornData(ids, false),
         }).then(({ data }) => {
           if (data && data.code === 0) {
             this.$message({
@@ -167,14 +233,14 @@ export default {
               duration: 1500,
               onClose: () => {
                 this.getDataList();
-              }
+              },
             });
           } else {
             this.$message.error(data.msg);
           }
         });
       });
-    }
-  }
+    },
+  },
 };
 </script>

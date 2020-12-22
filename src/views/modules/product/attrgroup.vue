@@ -7,7 +7,7 @@
       <div class="mod-config">
         <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
           <el-form-item>
-            <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
+            <el-input v-model="dataForm.key" placeholder="參數名" clearable></el-input>
           </el-form-item>
           <el-form-item>
             <el-button @click="getDataList()">查詢</el-button>
@@ -22,7 +22,7 @@
               type="danger"
               @click="deleteHandle()"
               :disabled="dataListSelections.length <= 0"
-            >批量删除</el-button>
+            >批量刪除</el-button>
           </el-form-item>
         </el-form>
         <el-table
@@ -53,7 +53,7 @@
                 size="small"
                 @click="addOrUpdateHandle(scope.row.attrGroupId)"
               >修改</el-button>
-              <el-button type="text" size="small" @click="deleteHandle(scope.row.attrGroupId)">删除</el-button>
+              <el-button type="text" size="small" @click="deleteHandle(scope.row.attrGroupId)">刪除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -66,10 +66,9 @@
           :total="totalPage"
           layout="total, sizes, prev, pager, next, jumper"
         ></el-pagination>
-        <!-- 弹窗, 新增 / 修改 -->
+        <!-- 彈窗, 新增 / 修改 -->
         <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
-
-        <!-- 修改關聯關系 -->
+        <!-- 修改關聯關係 -->
         <relation-update v-if="relationVisible" ref="relationUpdate" @refreshData="getDataList"></relation-update>
       </div>
     </el-col>
@@ -78,25 +77,25 @@
 
 <script>
 /**
- * 父子組件傳递資料
- * 1)、子組件给父組件傳递資料，事件機制；
- *    子組件给父組件發送一個事件，携带上資料。
- * // this.$emit("事件名",携带的資料...)
+ * 父子組件傳遞數據
+ * 1)、子組件給父組件傳遞數據，事件機制；
+ *    子組件給父組件发送一個事件，攜帶上數據。
+ * // this.$emit("事件名",攜帶的數據...)
  */
-//這裡可以導入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
+//這里可以導入其他文件（比如：組件，工具js，第三方插件js，json文件，圖片文件等等）
 //例如：import 《組件名稱》 from '《組件路徑》';
 import Category from "../common/category";
 import AddOrUpdate from "./attrgroup-add-or-update";
 import RelationUpdate from "./attr-group-relation";
 export default {
-  //import引入的組件需要注入到物件中才能使用
+  //import引入的組件需要注入到對象中才能使用
   components: { Category, AddOrUpdate, RelationUpdate },
   props: {},
   data() {
     return {
       catId: 0,
       dataForm: {
-        key: ""
+        key: "",
       },
       dataList: [],
       pageIndex: 1,
@@ -105,21 +104,21 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       addOrUpdateVisible: false,
-      relationVisible: false
+      relationVisible: false,
     };
   },
   activated() {
     this.getDataList();
   },
   methods: {
-    //處理分組与屬性的關聯
+    //處理分組與屬性的關聯
     relationHandle(groupId) {
       this.relationVisible = true;
       this.$nextTick(() => {
         this.$refs.relationUpdate.init(groupId);
       });
     },
-    //感知树节點被點擊
+    //感知樹節點被點擊
     treenodeclick(data, node, component) {
       if (node.level == 3) {
         this.catId = data.catId;
@@ -130,7 +129,7 @@ export default {
       this.catId = 0;
       this.getDataList();
     },
-    // 取得資料列表
+    // 獲取數據列表
     getDataList() {
       this.dataListLoading = true;
       this.$http({
@@ -139,8 +138,8 @@ export default {
         params: this.$http.adornParams({
           page: this.pageIndex,
           limit: this.pageSize,
-          key: this.dataForm.key
-        })
+          key: this.dataForm.key,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -174,26 +173,26 @@ export default {
         this.$refs.addOrUpdate.init(id);
       });
     },
-    // 删除
+    // 刪除
     deleteHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.attrGroupId;
           });
       this.$confirm(
-        `確定對[id=${ids.join(",")}]進行[${id ? "删除" : "批量删除"}]操作?`,
+        `確定對[id=${ids.join(",")}]進行[${id ? "刪除" : "批量刪除"}]操作?`,
         "提示",
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       ).then(() => {
         this.$http({
           url: this.$http.adornUrl("/product/attrgroup/delete"),
           method: "post",
-          data: this.$http.adornData(ids, false)
+          data: this.$http.adornData(ids, false),
         }).then(({ data }) => {
           if (data && data.code === 0) {
             this.$message({
@@ -202,15 +201,15 @@ export default {
               duration: 1500,
               onClose: () => {
                 this.getDataList();
-              }
+              },
             });
           } else {
             this.$message.error(data.msg);
           }
         });
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

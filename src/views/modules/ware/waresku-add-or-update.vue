@@ -100,7 +100,7 @@ export default {
         }
       });
     },
-    // 表單提交
+    // 表單提交 - 新增、修改
     dataFormSubmit() {
       this.$refs["dataForm"].validate(valid => {
         if (valid) {

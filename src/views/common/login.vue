@@ -15,8 +15,7 @@
             :rules="dataRule"
             ref="dataForm"
             @keyup.enter.native="dataFormSubmit()"
-            status-icon
-          >
+            status-icon>
             <el-form-item prop="userName">
               <el-input v-model="dataForm.userName" placeholder="帐號"></el-input>
             </el-form-item>

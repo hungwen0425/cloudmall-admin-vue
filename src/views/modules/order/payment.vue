@@ -36,8 +36,8 @@
       <el-table-column prop="paymentStatus" header-align="center" align="center" label="支付狀態"></el-table-column>
       <el-table-column prop="createTime" header-align="center" align="center" label="創建時間"></el-table-column>
       <el-table-column prop="confirmTime" header-align="center" align="center" label="確認時間"></el-table-column>
-      <el-table-column prop="callbackContent" header-align="center" align="center" label="回调内容"></el-table-column>
-      <el-table-column prop="callbackTime" header-align="center" align="center" label="回调時間"></el-table-column>
+      <el-table-column prop="callbackContent" header-align="center" align="center" label="回調内容"></el-table-column>
+      <el-table-column prop="callbackTime" header-align="center" align="center" label="回調時間"></el-table-column>
       <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>
@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       dataForm: {
-        key: ""
+        key: "",
       },
       dataList: [],
       pageIndex: 1,
@@ -73,11 +73,11 @@ export default {
       totalPage: 0,
       dataListLoading: false,
       dataListSelections: [],
-      addOrUpdateVisible: false
+      addOrUpdateVisible: false,
     };
   },
   components: {
-    AddOrUpdate
+    AddOrUpdate,
   },
   activated() {
     this.getDataList();
@@ -92,8 +92,8 @@ export default {
         params: this.$http.adornParams({
           page: this.pageIndex,
           limit: this.pageSize,
-          key: this.dataForm.key
-        })
+          key: this.dataForm.key,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -131,7 +131,7 @@ export default {
     deleteHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.id;
           });
       this.$confirm(
@@ -140,13 +140,13 @@ export default {
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       ).then(() => {
         this.$http({
           url: this.$http.adornUrl("/order/paymentinfo/delete"),
           method: "post",
-          data: this.$http.adornData(ids, false)
+          data: this.$http.adornData(ids, false),
         }).then(({ data }) => {
           if (data && data.code === 0) {
             this.$message({
@@ -155,14 +155,14 @@ export default {
               duration: 1500,
               onClose: () => {
                 this.getDataList();
-              }
+              },
             });
           } else {
             this.$message.error(data.msg);
           }
         });
       });
-    }
-  }
+    },
+  },
 };
 </script>

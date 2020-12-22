@@ -10,7 +10,7 @@ for (let i = 0; i < Math.floor(Math.random() * 10 + 1); i++) {
   }))
 }
 
-// 取得文件列表
+// 取得檔案列表
 export function list() {
   return {
     // isOpen: false,
@@ -30,7 +30,7 @@ export function list() {
   }
 }
 
-// 取得雲端存儲設定資料
+// 取得雲端存儲配置信息
 export function config() {
   return {
     // isOpen: false,
@@ -64,7 +64,7 @@ export function config() {
   }
 }
 
-// 保存雲端存儲設定資料
+// 保存雲端存儲配置信息
 export function addConfig() {
   return {
     // isOpen: false,
@@ -77,7 +77,7 @@ export function addConfig() {
   }
 }
 
-// 删除文件
+// 删除檔案
 export function del() {
   return {
     // isOpen: false,

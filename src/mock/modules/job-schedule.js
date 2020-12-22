@@ -36,7 +36,7 @@ export function list() {
   }
 }
 
-// 取得定時任務資料
+// 取得定時任務信息
 export function info() {
   return {
     // isOpen: false,
@@ -89,7 +89,7 @@ export function del() {
   }
 }
 
-// 運行定時任務
+// 运行定時任務
 export function run() {
   return {
     // isOpen: false,

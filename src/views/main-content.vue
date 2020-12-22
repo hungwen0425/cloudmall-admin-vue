@@ -91,7 +91,7 @@ export default {
     }
   },
   methods: {
-    // tabs, 選中tab
+    // tabs, 選中 tab
     selectedTabHandle(tab) {
       tab = this.mainTabs.filter(item => item.name === tab.name);
       if (tab.length >= 1) {
@@ -102,11 +102,11 @@ export default {
         });
       }
     },
-    // tabs, 删除tab
+    // tabs, 删除 tab
     removeTabHandle(tabName) {
       this.mainTabs = this.mainTabs.filter(item => item.name !== tabName);
       if (this.mainTabs.length >= 1) {
-        // 當前選中tab被删除
+        // 當前選中 tab 被删除
         if (tabName === this.mainTabsActiveName) {
           var tab = this.mainTabs[this.mainTabs.length - 1];
           this.$router.push(

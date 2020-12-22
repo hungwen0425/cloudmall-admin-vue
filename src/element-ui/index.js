@@ -1,11 +1,11 @@
 /**
- * UI組件, 统一使用饿了么桌面端組件庫(https://github.com/ElemeFE/element）
+ * UI组件, 统一使用饿了麼桌面端组件库(https://github.com/ElemeFE/element）
  *
  * 使用:
- *  1. 專案中需要的組件進行釋放(解開註釋)
+ *  1. 项目中需要的组件进行释放(解开注释)
  *
  * 注意:
- *  1. 打包只會包含釋放(解開註釋)的組件, 減少打包文件大小
+ *  1. 打包只會包含释放(解开注释)的组件, 减少打包檔案大小
  */
 import Vue from 'vue'
 import {
@@ -30,7 +30,6 @@ import {
   Switch,
   Select,
   Option,
-  Divider,
   OptionGroup,
   Button,
   ButtonGroup,
@@ -100,7 +99,6 @@ Vue.use(CheckboxGroup)
 Vue.use(Switch)
 Vue.use(Select)
 Vue.use(Option)
-Vue.use(Divider)
 Vue.use(OptionGroup)
 Vue.use(Button)
 Vue.use(ButtonGroup)

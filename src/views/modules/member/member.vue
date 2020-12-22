@@ -30,7 +30,7 @@
       <el-table-column prop="city" header-align="center" align="center" label="所在城市"></el-table-column>
       <el-table-column prop="job" header-align="center" align="center" label="职业"></el-table-column>
       <el-table-column prop="sign" header-align="center" align="center" label="個性簽名"></el-table-column>
-      <el-table-column prop="sourceType" header-align="center" align="center" label="使用者来源"></el-table-column>
+      <el-table-column prop="sourceType" header-align="center" align="center" label="使用者來源"></el-table-column>
       <el-table-column prop="integration" header-align="center" align="center" label="積分"></el-table-column>
       <el-table-column prop="growth" header-align="center" align="center" label="成長值"></el-table-column>
       <el-table-column prop="status" header-align="center" align="center" label="啟用狀態">
@@ -72,7 +72,7 @@ export default {
   data() {
     return {
       dataForm: {
-        key: ""
+        key: "",
       },
       dataList: [],
       pageIndex: 1,
@@ -80,11 +80,11 @@ export default {
       totalPage: 0,
       dataListLoading: false,
       dataListSelections: [],
-      addOrUpdateVisible: false
+      addOrUpdateVisible: false,
     };
   },
   components: {
-    AddOrUpdate
+    AddOrUpdate,
   },
   activated() {
     this.getDataList();
@@ -99,8 +99,8 @@ export default {
         params: this.$http.adornParams({
           page: this.pageIndex,
           limit: this.pageSize,
-          key: this.dataForm.key
-        })
+          key: this.dataForm.key,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -133,7 +133,7 @@ export default {
       this.$nextTick(() => {
         this.$refs.addOrUpdate.init(id);
       });
-    }
+    },
     // 删除
     //   deleteHandle (id) {
     //     var ids = id ? [id] : this.dataListSelections.map(item => {
@@ -164,6 +164,6 @@ export default {
     //       })
     //     })
     //   }
-  }
+  },
 };
 </script>

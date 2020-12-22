@@ -2,15 +2,13 @@
   <el-dialog
     :title="!dataForm.id ? '新增' : '修改'"
     :close-on-click-modal="false"
-    :visible.sync="visible"
-  >
+    :visible.sync="visible">
     <el-form
       :model="dataForm"
       :rules="dataRule"
       ref="dataForm"
       @keyup.enter.native="dataFormSubmit()"
-      label-width="120px"
-    >
+      label-width="120px">
       <el-form-item label="優先級" prop="priority">
         <el-input v-model="dataForm.priority" placeholder="優先級"></el-input>
       </el-form-item>
@@ -95,7 +93,7 @@ export default {
         }
       });
     },
-    // 表單提交
+    // 表單提交 - 新增、修改
     dataFormSubmit() {
       this.$refs["dataForm"].validate(valid => {
         if (valid) {

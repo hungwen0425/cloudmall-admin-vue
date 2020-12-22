@@ -23,10 +23,10 @@
           end-placeholder="結束日期"
         ></el-date-picker>
       </el-form-item>
-      <el-form-item label="上下线狀態" prop="status">
-        <el-select v-model="dataForm.status" placeholder="上下线狀態">
-          <el-option :value="1" label="上线"></el-option>
-          <el-option :value="0" label="下线"></el-option>
+      <el-form-item label="上下線狀態" prop="status">
+        <el-select v-model="dataForm.status" placeholder="上下線狀態">
+          <el-option :value="1" label="上線"></el-option>
+          <el-option :value="0" label="下線"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="創建人" prop="userId">
@@ -120,7 +120,7 @@ export default {
                 }
               });
             } else {
-              this.$message.error(data.msg);
+              this.$message.error(data.msg);n
             }
           });
         }

@@ -46,7 +46,7 @@ export default {
     }
   },
   methods: {
-    // 通過menuId與動態(選單)路由進行匹配跳轉至指定路由
+    // 通過 menuId 與動態(選單)路由進行匹配跳轉至指定路由
     gotoRouteHandle(menu) {
       var route = this.dynamicMenuRoutes.filter(
         item => item.meta.menuId === menu.menuId

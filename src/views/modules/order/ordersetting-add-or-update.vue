@@ -11,23 +11,50 @@
       @keyup.enter.native="dataFormSubmit()"
       label-width="120px"
     >
-      <el-form-item label="秒杀訂單超時關閉時間(分)" prop="flashOrderOvertime">
-        <el-input v-model="dataForm.flashOrderOvertime" placeholder="秒杀訂單超時關閉時間(分)"></el-input>
+      <el-form-item
+        label="限時搶購訂單超時關閉時間(分)"
+        prop="flashOrderOvertime"
+      >
+        <el-input
+          v-model="dataForm.flashOrderOvertime"
+          placeholder="限時搶購訂單超時關閉時間(分)"
+        ></el-input>
       </el-form-item>
       <el-form-item label="正常訂單超時時間(分)" prop="normalOrderOvertime">
-        <el-input v-model="dataForm.normalOrderOvertime" placeholder="正常訂單超時時間(分)"></el-input>
+        <el-input
+          v-model="dataForm.normalOrderOvertime"
+          placeholder="正常訂單超時時間(分)"
+        ></el-input>
       </el-form-item>
       <el-form-item label="發貨後自動確認收貨時間（天）" prop="confirmOvertime">
-        <el-input v-model="dataForm.confirmOvertime" placeholder="發貨後自動確認收貨時間（天）"></el-input>
+        <el-input
+          v-model="dataForm.confirmOvertime"
+          placeholder="發貨後自動確認收貨時間（天）"
+        ></el-input>
       </el-form-item>
-      <el-form-item label="自動完成交易時間，不能申請退貨（天）" prop="finishOvertime">
-        <el-input v-model="dataForm.finishOvertime" placeholder="自動完成交易時間，不能申請退貨（天）"></el-input>
+      <el-form-item
+        label="自動完成交易時間，不能申請退貨（天）"
+        prop="finishOvertime"
+      >
+        <el-input
+          v-model="dataForm.finishOvertime"
+          placeholder="自動完成交易時間，不能申請退貨（天）"
+        ></el-input>
       </el-form-item>
       <el-form-item label="訂單完成後自動好評時間（天）" prop="commentOvertime">
-        <el-input v-model="dataForm.commentOvertime" placeholder="訂單完成後自動好評時間（天）"></el-input>
+        <el-input
+          v-model="dataForm.commentOvertime"
+          placeholder="訂單完成後自動好評時間（天）"
+        ></el-input>
       </el-form-item>
-      <el-form-item label="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】" prop="memberLevel">
-        <el-input v-model="dataForm.memberLevel" placeholder="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】"></el-input>
+      <el-form-item
+        label="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】"
+        prop="memberLevel"
+      >
+        <el-input
+          v-model="dataForm.memberLevel"
+          placeholder="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】"
+        ></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -49,53 +76,53 @@ export default {
         confirmOvertime: "",
         finishOvertime: "",
         commentOvertime: "",
-        memberLevel: ""
+        memberLevel: "",
       },
       dataRule: {
         flashOrderOvertime: [
           {
             required: true,
-            message: "秒杀訂單超時關閉時間(分)不能為空",
-            trigger: "blur"
-          }
+            message: "限時搶購訂單超時關閉時間(分)不能為空",
+            trigger: "blur",
+          },
         ],
         normalOrderOvertime: [
           {
             required: true,
             message: "正常訂單超時時間(分)不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         confirmOvertime: [
           {
             required: true,
             message: "發貨後自動確認收貨時間（天）不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         finishOvertime: [
           {
             required: true,
             message: "自動完成交易時間，不能申請退貨（天）不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         commentOvertime: [
           {
             required: true,
             message: "訂單完成後自動好評時間（天）不能為空",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         memberLevel: [
           {
             required: true,
             message:
               "會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】不能為空",
-            trigger: "blur"
-          }
-        ]
-      }
+            trigger: "blur",
+          },
+        ],
+      },
     };
   },
   methods: {
@@ -110,7 +137,7 @@ export default {
               `/order/ordersetting/info/${this.dataForm.id}`
             ),
             method: "get",
-            params: this.$http.adornParams()
+            params: this.$http.adornParams(),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.dataForm.flashOrderOvertime =
@@ -128,7 +155,7 @@ export default {
     },
     // 表單提交
     dataFormSubmit() {
-      this.$refs["dataForm"].validate(valid => {
+      this.$refs["dataForm"].validate((valid) => {
         if (valid) {
           this.$http({
             url: this.$http.adornUrl(
@@ -142,8 +169,8 @@ export default {
               confirmOvertime: this.dataForm.confirmOvertime,
               finishOvertime: this.dataForm.finishOvertime,
               commentOvertime: this.dataForm.commentOvertime,
-              memberLevel: this.dataForm.memberLevel
-            })
+              memberLevel: this.dataForm.memberLevel,
+            }),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -153,7 +180,7 @@ export default {
                 onClose: () => {
                   this.visible = false;
                   this.$emit("refreshDataList");
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -161,7 +188,7 @@ export default {
           });
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>

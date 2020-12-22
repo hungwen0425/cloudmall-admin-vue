@@ -64,7 +64,7 @@ export default {
       if (!this.dataForm.id && !/\S/.test(value)) {
         callback(new Error("確認密碼不能為空"));
       } else if (this.dataForm.password !== value) {
-        callback(new Error("確認密碼与密碼输入不一致"));
+        callback(new Error("確認密碼與密碼输入不一致"));
       } else {
         callback();
       }
@@ -95,25 +95,25 @@ export default {
         email: "",
         mobile: "",
         roleIdList: [],
-        status: 1
+        status: 1,
       },
       dataRule: {
         userName: [
-          { required: true, message: "使用者名稱不能為空", trigger: "blur" }
+          { required: true, message: "使用者名稱不能為空", trigger: "blur" },
         ],
         password: [{ validator: validatePassword, trigger: "blur" }],
         comfirmPassword: [
-          { validator: validateComfirmPassword, trigger: "blur" }
+          { validator: validateComfirmPassword, trigger: "blur" },
         ],
         email: [
           { required: true, message: "電子信箱不能為空", trigger: "blur" },
-          { validator: validateEmail, trigger: "blur" }
+          { validator: validateEmail, trigger: "blur" },
         ],
         mobile: [
           { required: true, message: "手機號不能為空", trigger: "blur" },
-          { validator: validateMobile, trigger: "blur" }
-        ]
-      }
+          { validator: validateMobile, trigger: "blur" },
+        ],
+      },
     };
   },
   methods: {
@@ -122,7 +122,7 @@ export default {
       this.$http({
         url: this.$http.adornUrl("/sys/role/select"),
         method: "get",
-        params: this.$http.adornParams()
+        params: this.$http.adornParams(),
       })
         .then(({ data }) => {
           this.roleList = data && data.code === 0 ? data.list : [];
@@ -138,7 +138,7 @@ export default {
             this.$http({
               url: this.$http.adornUrl(`/sys/user/info/${this.dataForm.id}`),
               method: "get",
-              params: this.$http.adornParams()
+              params: this.$http.adornParams(),
             }).then(({ data }) => {
               if (data && data.code === 0) {
                 this.dataForm.userName = data.user.username;
@@ -154,7 +154,7 @@ export default {
     },
     // 表單提交
     dataFormSubmit() {
-      this.$refs["dataForm"].validate(valid => {
+      this.$refs["dataForm"].validate((valid) => {
         if (valid) {
           this.$http({
             url: this.$http.adornUrl(
@@ -169,8 +169,8 @@ export default {
               email: this.dataForm.email,
               mobile: this.dataForm.mobile,
               status: this.dataForm.status,
-              roleIdList: this.dataForm.roleIdList
-            })
+              roleIdList: this.dataForm.roleIdList,
+            }),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -180,7 +180,7 @@ export default {
                 onClose: () => {
                   this.visible = false;
                   this.$emit("refreshDataList");
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -188,7 +188,7 @@ export default {
           });
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>

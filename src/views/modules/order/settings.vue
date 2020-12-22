@@ -1,8 +1,16 @@
 <template>
   <div class="mod-config">
-    <el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList()">
+    <el-form
+      :inline="true"
+      :model="dataForm"
+      @keyup.enter.native="getDataList()"
+    >
       <el-form-item>
-        <el-input v-model="dataForm.key" placeholder="参數名" clearable></el-input>
+        <el-input
+          v-model="dataForm.key"
+          placeholder="参數名"
+          clearable
+        ></el-input>
       </el-form-item>
       <el-form-item>
         <el-button @click="getDataList()">查詢</el-button>
@@ -10,13 +18,15 @@
           v-if="isAuth('order:ordersetting:save')"
           type="primary"
           @click="addOrUpdateHandle()"
-        >新增</el-button>
+          >新增</el-button
+        >
         <el-button
           v-if="isAuth('order:ordersetting:delete')"
           type="danger"
           @click="deleteHandle()"
           :disabled="dataListSelections.length <= 0"
-        >批量删除</el-button>
+          >批量删除</el-button
+        >
       </el-form-item>
     </el-form>
     <el-table
@@ -24,15 +34,25 @@
       border
       v-loading="dataListLoading"
       @selection-change="selectionChangeHandle"
-      style="width: 100%;"
+      style="width: 100%"
     >
-      <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
-      <el-table-column prop="id" header-align="center" align="center" label="id"></el-table-column>
+      <el-table-column
+        type="selection"
+        header-align="center"
+        align="center"
+        width="50"
+      ></el-table-column>
+      <el-table-column
+        prop="id"
+        header-align="center"
+        align="center"
+        label="id"
+      ></el-table-column>
       <el-table-column
         prop="flashOrderOvertime"
         header-align="center"
         align="center"
-        label="秒杀訂單超時關閉時間(分)"
+        label="限時搶購訂單超時關閉時間(分)"
       ></el-table-column>
       <el-table-column
         prop="normalOrderOvertime"
@@ -64,10 +84,26 @@
         align="center"
         label="會員等級【0-不限會員等級，全部通用；其他-對應的其他會員等級】"
       ></el-table-column>
-      <el-table-column fixed="right" header-align="center" align="center" width="150" label="操作">
+      <el-table-column
+        fixed="right"
+        header-align="center"
+        align="center"
+        width="150"
+        label="操作"
+      >
         <template slot-scope="scope">
-          <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>
-          <el-button type="text" size="small" @click="deleteHandle(scope.row.id)">删除</el-button>
+          <el-button
+            type="text"
+            size="small"
+            @click="addOrUpdateHandle(scope.row.id)"
+            >修改</el-button
+          >
+          <el-button
+            type="text"
+            size="small"
+            @click="deleteHandle(scope.row.id)"
+            >删除</el-button
+          >
         </template>
       </el-table-column>
     </el-table>
@@ -81,7 +117,11 @@
       layout="total, sizes, prev, pager, next, jumper"
     ></el-pagination>
     <!-- 弹窗, 新增 / 修改 -->
-    <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
+    <add-or-update
+      v-if="addOrUpdateVisible"
+      ref="addOrUpdate"
+      @refreshDataList="getDataList"
+    ></add-or-update>
   </div>
 </template>
 
@@ -91,7 +131,7 @@ export default {
   data() {
     return {
       dataForm: {
-        key: ""
+        key: "",
       },
       dataList: [],
       pageIndex: 1,
@@ -99,11 +139,11 @@ export default {
       totalPage: 0,
       dataListLoading: false,
       dataListSelections: [],
-      addOrUpdateVisible: false
+      addOrUpdateVisible: false,
     };
   },
   components: {
-    AddOrUpdate
+    AddOrUpdate,
   },
   activated() {
     this.getDataList();
@@ -118,8 +158,8 @@ export default {
         params: this.$http.adornParams({
           page: this.pageIndex,
           limit: this.pageSize,
-          key: this.dataForm.key
-        })
+          key: this.dataForm.key,
+        }),
       }).then(({ data }) => {
         if (data && data.code === 0) {
           this.dataList = data.page.list;
@@ -157,7 +197,7 @@ export default {
     deleteHandle(id) {
       var ids = id
         ? [id]
-        : this.dataListSelections.map(item => {
+        : this.dataListSelections.map((item) => {
             return item.id;
           });
       this.$confirm(
@@ -166,13 +206,13 @@ export default {
         {
           confirmButtonText: "確定",
           cancelButtonText: "取消",
-          type: "warning"
+          type: "warning",
         }
       ).then(() => {
         this.$http({
           url: this.$http.adornUrl("/order/ordersetting/delete"),
           method: "post",
-          data: this.$http.adornData(ids, false)
+          data: this.$http.adornData(ids, false),
         }).then(({ data }) => {
           if (data && data.code === 0) {
             this.$message({
@@ -181,14 +221,14 @@ export default {
               duration: 1500,
               onClose: () => {
                 this.getDataList();
-              }
+              },
             });
           } else {
             this.$message.error(data.msg);
           }
         });
       });
-    }
-  }
+    },
+  },
 };
 </script>

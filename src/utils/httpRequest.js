@@ -38,10 +38,10 @@ http.interceptors.response.use(response => {
 
 /**
  * 請求地址處理
- * @param {*} actionName action方法名稱
+ * @param {*} actionName action 方法名稱
  */
 http.adornUrl = (actionName) => {
-  // 非生產環境 && 開啟代理, 接口前缀统一使用[/proxyApi/]前缀做代理攔截!
+  // 非生產環境 && 開啟代理, 接口前缀统一使用 [/proxyApi/] 前缀做代理攔截!
   return (process.env.NODE_ENV !== 'production' && process.env.OPEN_PROXY ? '/proxyApi/' : window.SITE_CONFIG.baseUrl) + actionName
 }
 

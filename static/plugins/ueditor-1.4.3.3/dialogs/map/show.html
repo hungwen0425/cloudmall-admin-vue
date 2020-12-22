@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="keywords" content="百度地圖,百度地圖API，百度地圖自定義工具，百度地圖所見即所得工具" />
-    <meta name="description" content="百度地圖API自定義地圖，幫助使用者在可視化操作下生成百度地圖" />
-    <title>百度地圖API自定義地圖</title>
+    <meta name="keywords" content="百度地圖,百度地圖API，百度地圖自定义工具，百度地圖所见即所得工具" />
+    <meta name="description" content="百度地圖API自定义地圖，帮助用户在可视化操作下生成百度地圖" />
+    <title>百度地圖API自定义地圖</title>
     <!--引用百度地圖API-->
     <style type="text/css">
         html,
@@ -35,9 +35,9 @@
     var markersParam = getParam('markers');
     var markerStylesParam = getParam('markerStyles');
 
-    //創建和初始化地圖函數：
+    //创建和初始化地圖函數：
     function initMap() {
-        // [FF]切換模式後報錯
+        // [FF]切换模式後報錯
         if (!window.BMap) {
             return;
         }
@@ -45,36 +45,36 @@
         dituContent.style.width = widthParam + 'px';
         dituContent.style.height = heightParam + 'px';
 
-        createMap();//創建地圖
-        setMapEvent();//設定地圖事件
+        createMap();//创建地圖
+        setMapEvent();//设置地圖事件
         addMapControl();//向地圖添加控件
 
-        // 創建標注
+        // 创建標注
         var markersArr = markersParam.split(',');
         var point = new BMap.Point(markersArr[0], markersArr[1]);
         marker = new BMap.Marker(point);
         marker.enableDragging();
         map.addOverlay(marker); // 將標注添加到地圖中
 
-        if (parent.editor && parent.document.body.contentEditable == "true") { //在編輯狀態下
-            setMapListener();//地圖改變修改外層的iframe標簽src屬性
+        if (parent.editor && parent.document.body.contentEditable == "true") { //在编辑狀態下
+            setMapListener();//地圖改变修改外層的iframe標签src屬性
         }
     }
 
-    //創建地圖函數：
+    //创建地圖函數：
     function createMap() {
-        map = new BMap.Map("dituContent");//在百度地圖容器中創建一個地圖
+        map = new BMap.Map("dituContent");//在百度地圖容器中创建一個地圖
         var centerArr = centerParam.split(',');
-        var point = new BMap.Point(parseFloat(centerArr[0]), parseFloat(centerArr[1]));//定義一個中心點坐標
-        map.centerAndZoom(point, parseInt(zoomParam));//設定地圖的中心點和坐標並將地圖顯示在地圖容器中
+        var point = new BMap.Point(parseFloat(centerArr[0]), parseFloat(centerArr[1]));//定义一個中心点坐標
+        map.centerAndZoom(point, parseInt(zoomParam));//设定地圖的中心点和坐標并將地圖顯示在地圖容器中
     }
 
-    //地圖事件設定函數：
+    //地圖事件设置函數：
     function setMapEvent() {
-        map.enableDragging();//啟用地圖托拽事件，默認啟用(可不寫)
-        map.enableScrollWheelZoom();//啟用地圖滚轮放大縮小
-        map.enableDoubleClickZoom();//啟用鼠標双击放大，默認啟用(可不寫)
-        map.enableKeyboard();//啟用键盘上下左右键移動地圖
+        map.enableDragging();//启用地圖拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地圖滚轮放大縮小
+        map.enableDoubleClickZoom();//启用鼠標双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移動地圖
     }
 
     //地圖控件添加函數：

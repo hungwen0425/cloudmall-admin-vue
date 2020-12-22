@@ -31,7 +31,7 @@ export function list() {
   }
 }
 
-// 取得参數資料
+// 取得参數信息
 export function info() {
   return {
     // isOpen: false,

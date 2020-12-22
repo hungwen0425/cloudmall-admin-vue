@@ -61,7 +61,7 @@
         </template>
       </el-table-column>
     </el-table>
-    <!-- 弹窗, 新增 / 修改 -->
+    <!-- 彈窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
   </div>
 </template>
@@ -75,11 +75,11 @@ export default {
       dataForm: {},
       dataList: [],
       dataListLoading: false,
-      addOrUpdateVisible: false
+      addOrUpdateVisible: false,
     };
   },
   components: {
-    AddOrUpdate
+    AddOrUpdate,
   },
   activated() {
     this.getDataList();
@@ -91,7 +91,7 @@ export default {
       this.$http({
         url: this.$http.adornUrl("/sys/menu/list"),
         method: "get",
-        params: this.$http.adornParams()
+        params: this.$http.adornParams(),
       }).then(({ data }) => {
         this.dataList = treeDataTranslate(data, "menuId");
         this.dataListLoading = false;
@@ -109,13 +109,13 @@ export default {
       this.$confirm(`確定對[id=${id}]進行[删除]操作?`, "提示", {
         confirmButtonText: "確定",
         cancelButtonText: "取消",
-        type: "warning"
+        type: "warning",
       })
         .then(() => {
           this.$http({
             url: this.$http.adornUrl(`/sys/menu/delete/${id}`),
             method: "post",
-            data: this.$http.adornData()
+            data: this.$http.adornData(),
           }).then(({ data }) => {
             if (data && data.code === 0) {
               this.$message({
@@ -124,7 +124,7 @@ export default {
                 duration: 1500,
                 onClose: () => {
                   this.getDataList();
-                }
+                },
               });
             } else {
               this.$message.error(data.msg);
@@ -132,7 +132,7 @@ export default {
           });
         })
         .catch(() => {});
-    }
-  }
+    },
+  },
 };
 </script>

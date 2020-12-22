@@ -9,8 +9,8 @@ import * as sysRole from './modules/sys-role'
 import * as sysUser from './modules/sys-user'
 
 // tips
-// 1. 開啟/關閉[業務模塊]攔截, 通過調用fnCreate方法[isOpen参數]設定.
-// 2. 開啟/關閉[業務模塊中某個請求]攔截, 通過函數返回物件中的[isOpen屬性]設定.
+// 1. 开启/關闭[业务模块]拦截, 通過調用fnCreate方法[isOpen参數]设置.
+// 2. 开启/關闭[业务模块中某個請求]拦截, 通過函數返回物件中的[isOpen屬性]设置.
 fnCreate(common, false)
 fnCreate(jobSchedule, false)
 fnCreate(oss, false)
@@ -21,9 +21,9 @@ fnCreate(sysRole, false)
 fnCreate(sysUser, false)
 
 /**
- * 創建mock模擬資料
- * @param {*} mod 模塊
- * @param {*} isOpen 是否開啟?
+ * 创建mock模拟資料
+ * @param {*} mod 模块
+ * @param {*} isOpen 是否开启?
  */
 function fnCreate(mod, isOpen = true) {
   if (isOpen) {
@@ -34,8 +34,8 @@ function fnCreate(mod, isOpen = true) {
             opts['data'] = opts.body ? JSON.parse(opts.body) : null
             delete opts.body
             console.log('\n')
-            console.log('%cmock攔截, 請求: ', 'color:blue', opts)
-            console.log('%cmock攔截, 響應: ', 'color:blue', res.data)
+            console.log('%cmock拦截, 請求: ', 'color:blue', opts)
+            console.log('%cmock拦截, 响應: ', 'color:blue', res.data)
             return res.data
           })
         }

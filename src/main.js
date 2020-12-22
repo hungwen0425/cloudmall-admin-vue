@@ -10,22 +10,20 @@ import '@/assets/scss/index.scss'
 import httpRequest from '@/utils/httpRequest' // api: https://github.com/axios/axios
 import { isAuth } from '@/utils'
 import cloneDeep from 'lodash/cloneDeep'
-import PubSub from 'pubsub-js'
 
 Vue.use(VueCookie)
 Vue.config.productionTip = false
 
-// 非生產環境, 適配mockjs模擬資料                 // api: https://github.com/nuysoft/Mock
+// 非生产環境, 适配mockjs模拟資料                 // api: https://github.com/nuysoft/Mock
 if (process.env.NODE_ENV !== 'production') {
   require('@/mock')
 }
 
-// 掛載全局
+// 挂载全局
 Vue.prototype.$http = httpRequest // ajax請求方法
-Vue.prototype.isAuth = isAuth     // 權限方法
-Vue.prototype.PubSub = PubSub    //組件發佈訂閱消息
+Vue.prototype.isAuth = isAuth     // 权限方法
 
-// 保存整站vuex本地儲存初始狀態
+// 保存整站vuex本地储存初始狀態
 window.SITE_CONFIG['storeState'] = cloneDeep(store.state)
 
 /* eslint-disable no-new */

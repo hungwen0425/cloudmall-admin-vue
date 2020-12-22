@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    title="上傳文件"
+    title="上傳檔案"
     :close-on-click-modal="false"
     @close="closeHandle"
     :visible.sync="visible"
@@ -16,10 +16,10 @@
     >
       <i class="el-icon-upload"></i>
       <div class="el-upload__text">
-        將文件拖到此處，或
+        將檔案拖到此處，或
         <em>點擊上傳</em>
       </div>
-      <div class="el-upload__tip" slot="tip">只支持jpg、png、gif格式的圖片！</div>
+      <div class="el-upload__tip" slot="tip">只支持 jpg、png、gif 格式的圖片！</div>
     </el-upload>
   </el-dialog>
 </template>
@@ -32,7 +32,7 @@ export default {
       url: "",
       num: 0,
       successNum: 0,
-      fileList: []
+      fileList: [],
     };
   },
   methods: {
@@ -64,7 +64,7 @@ export default {
           this.$confirm("操作成功, 是否繼續操作?", "提示", {
             confirmButtonText: "確定",
             cancelButtonText: "取消",
-            type: "warning"
+            type: "warning",
           }).catch(() => {
             this.visible = false;
           });
@@ -77,7 +77,7 @@ export default {
     closeHandle() {
       this.fileList = [];
       this.$emit("refreshDataList");
-    }
-  }
+    },
+  },
 };
 </script>
